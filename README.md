@@ -15,6 +15,9 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Combine and replicate data across multiple data stores using SQL (View)
     * No custom code, Glue monitors for changes in the source data, serverless
     * Leverages a "virtual table" (materialized view)
+### AWS SageMaker
+  * File Mode
+  * Pipe Mode
 ## Exploratory Data Analysis 
 ## Modeling 
 ### Confusion Matrix
