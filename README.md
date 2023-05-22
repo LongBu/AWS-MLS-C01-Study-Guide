@@ -24,4 +24,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * F1 Score (harmonic mean of precision and recall) = TP/(TP + (FN + FP/2))
 ## Machine Learning Implementation and Operations
 
+## Acronyms
 
+| Acronym  | Definition |
+| ------------- | ------------- |
+| EMR | Elastic Map Reduce |
+| ETL | Extract, Translate, Load |
+| FN | False Negative |
+| FP | False Positive |
+| TN | True Negative |
+| TP | True Positive |
