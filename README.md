@@ -48,8 +48,20 @@ Note these are my own personal notes and are a work in progress as I study torwa
         * Leverages a "virtual table" (materialized view)
   * Job scheduling 
 ### Identify and implement a data transformation solution. 
-  * Transforming data transit (ETL: Glue, EMR, AWS Batch)
   * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
+  * Transforming data transit (ETL: Glue, EMR, AWS Batch)
+#### AWS Batch:
+  * Fully managed batch processing at any scale using dynamically launched *EC2 instances (spot)*
+  * Job with a start and an end (not continuous)
+  * Can run 100,000s of computing batch jobs
+  * You submit/schedule batch jobs and AWS Batch handles it
+  * Provisions right amount of compute/memory
+  * Batch jobs are defined as *docker images and run on ECS*
+  * Helpful for cost optimization and focusing less on infrastructure
+  * No time limit
+  * Any run time packaged in docker image
+  * Rely on EBS/instance store for disk space
+  * Advantage over λ=>time limit, limited runtimes, limited disk space
 
 ## Exploratory Data Analysis
 
@@ -89,7 +101,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Compute choice (GPU vs. CPU, distributed vs. non-distributed, platform [Spark vs. non-Spark])
   * Model updates and retraining
      * Batch vs. real-time/online 
-### Perform hyperparameter optimization.  
+### Perform hyperparameter optimization. 
   * Regularization
     * Drop out
     * L1/L2 
