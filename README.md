@@ -26,7 +26,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 ### Create data repositories for machine learning
   * Identify data sources (e.g., content and location, primary sources such as user data)
-		* Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS) 
+  * Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS) 
 ### Identify and implement a data ingestion solution.
   * Data job styles/types (batch load, streaming)
   * Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
