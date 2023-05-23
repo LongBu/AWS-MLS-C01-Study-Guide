@@ -31,7 +31,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Data job styles/types (batch load, streaming)
   * Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
     * Kinesis
-    * Kinesis Analytics
+    * Kinesis Data Analytics
     * Kinesis Firehose
     * EMR
     * AWS Glue 
@@ -53,6 +53,8 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 ## Exploratory Data Analysis
 
+
+
 ### Sanitize and prepare data for modeling
   * Identify and handle missing data, corrupt data, stop words, etc.
   * Formatting, normalizing, augmenting, and scaling data
@@ -65,6 +67,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Graphing (scatter plot, time series, histogram, box plot)
   * Interpreting descriptive statistics (correlation, summary statistics, p value)
   * Clustering (hierarchical, diagnosing, elbow plot, cluster size)
+#### Amazon Athena:
+  * Serverless query service enabling analysis and querying of data in S3 using standard SQL, while allowing more advanced queries (joins permitted)
+  * Compress data for smaller retrieval
+  * Use target files (> 128 MB) to minimize overhead
+  * $5.00 per TB scanned
+  * Commonly used with Amazon Quicksight
+  * Federated query allows SQL queries across relational, object, non-relational, custom (AWS or on-premisis) using Data Source Connectors that run on λ with results being returned and stored in S3
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
