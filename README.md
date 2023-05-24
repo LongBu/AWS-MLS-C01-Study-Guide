@@ -114,10 +114,16 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Avoid overfitting/underfitting (detect and handle bias and variance)
   * Metrics (AUC-ROC, accuracy, precision, recall, RMSE, F1 score)
   * Confusion Matrix:
-    * Recall = TP/(TP + FN)
-    * Precision = TP/(TP + FP)
-    * Accuracy = (TP + TN)/(TP + FP + TN + FN)
-    * F1 Score (harmonic mean of precision and recall) = TP/(TP + (FN + FP/2))
+    | Measure | Abbreviation | Formula |
+    | ------------- | ------------- | ------------- |
+    | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
+    | Accuracy | ACC | (TP + TN)/(TP + FP + TN + FN) |
+    | Sensitivity, True positive rate, Recall | SN, TPR, REC | TP/(TP + FN) = TP/P|
+    | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
+    | Precision, Positive predictive value | PREC, PPV | TP/(TP + FP) |
+    | False positive rate | FPR | FP/(TN + FP) = 1 - SP = 1 - TNR|
+    | F1 Score (harmonic mean of precision and recall) | F1 | TP/(TP + (FN + FP/2)) |
+   
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
   * Cross validation 
