@@ -71,7 +71,9 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Amazon Redshift (copy through S3)
     * Amazon Elastic Search
     * 3rd party partners (datadog/splunk/etc.)
-    * Custom destination (http[s] endpoint)##### EMR:
+    * Custom destination (http[s] endpoint)
+
+##### EMR:
   * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
   * Supports Apache Spark, HBase, Presto, Flink, etc.
   * Takes care of provisioning and configuration
