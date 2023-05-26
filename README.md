@@ -239,9 +239,17 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 #### AWS service limits(TBD)
 #### Build your own model vs. SageMaker built-in algorithms(TBD)
-#### AWS SageMaker(TBD)
-    * File Mode
-    * Pipe Mode
+#### AWS SageMaker:
+  * File Mode:
+    * Useful for small files that fit in memory and where the algorithm has a large number of epochs
+    * Can leverage the file system cache for secondary epochs, the overall I/O throughput with Pipe mode is still faster than file mode
+  * Pipe Mode:
+    * Recommended for large datasets
+    * Overall I/O throughput with Pipe mode is still faster than file mode
+    * Can stream dataset directly to your training instances where data is fed on-the-fly without using any disk I/O or downloading the complete file prior to execution. 
+    * Shorter startup times because the data is being streamed instead of being downloaded to your training instances.
+    * Higher I/O throughputs due to our high-performance streaming agent (no disk I/O usage).
+    
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
 ### Apply basic AWS security practices to machine learning solutions(TBD)
