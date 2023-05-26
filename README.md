@@ -133,7 +133,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 
 ##### Amazon Kinesis Data Streams:
-  * On-demand capacity mode or Provisioned mode (if throughput exceeded exception => add shard[s]) to provide low latency streaming ingestion
+  * On-demand capacity mode or Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically) to provide low latency streaming ingestion
   * Can have up to 5 parallel consumers
   * Synchronously replicate streaming data across 3 AZ in a single Region and store between 24 hours and 365 days in shard(s) to be consumed/processed/replayed by another service and stored elsewhere
   * Use fan-out if lag is encountered by stream consumers
