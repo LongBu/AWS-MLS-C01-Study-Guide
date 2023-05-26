@@ -133,10 +133,18 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 
 ##### Amazon Kinesis Data Streams:
-  * On-demand capacity mode or Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically) to provide low latency streaming ingestion
-  * Can have up to 5 parallel consumers
+  * Service to provide low latency, real-time streaming ingestion 
+  * On-demand capacity mode
+    * 4 MB/s input, ??? output?
+    * Scales automatically to accommodate up to double its previous peak write throughput observed in the last 30 days
+    * Pay per stream per hour and data/in/out per GB
+  * Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically)
+    * 1 MB/s input, 2 MB/s output
+    * Pay per shard per hour
+  * Can have up to 5 parallel consumers (5 consuming api calls per second \[per shard])
   * Synchronously replicate streaming data across 3 AZ in a single Region and store between 24 hours and 365 days in shard(s) to be consumed/processed/replayed by another service and stored elsewhere
-  * Use fan-out if lag is encountered by stream consumers
+  * Use fan-out if lag is encountered by stream consumers (~200ms vs ~70ms latency)
+  * Requires code (producer/consumer)
   * Shards can be split or merged
   * 1 MB message size limit
   * TLS in flight or KMS at-rest encryption
@@ -171,6 +179,9 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Amazon Elastic Search
     * 3rd party partners (datadog/splunk/etc.)
     * Custom destination (http[s] endpoint)
+  * Data Conversion from csv/json to Parquet/ORC (only for S3)
+  * Data Transformation through λ (eg: csv=>json)
+  * Supports compression if target is S3 (GZIP/ZIP/SNAPPY)
 
 ##### EMR:
   * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
