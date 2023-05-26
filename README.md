@@ -161,21 +161,26 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ### Select the appropriate model(s) for a given machine learning problem
   * Xgboost, logistic regression, K-means, linear regression, decision trees, random forests, RNN, CNN, Ensemble, Transfer learning
   * Express intuition behind models
+
 ### Train machine learning models
-  * Train validation test split, cross-validation
-  * Optimizer, gradient descent, loss functions, local minima, convergence, batches, probability, etc. 
-  * Compute choice (GPU vs. CPU, distributed vs. non-distributed, platform [Spark vs. non-Spark])
-  * Model updates and retraining
-     * Batch vs. real-time/online 
+#### Train validation test split, cross-validation (TBD)
+#### Optimizer, gradient descent, loss functions, local minima, convergence, batches, probability, etc.(TBD)
+
+##### Loss Functions (aka Cost Function): seek to calculate/minimize the error (difference between actual and predicted value)
+
+#### Compute choice (GPU vs. CPU, distributed vs. non-distributed, platform [Spark vs. non-Spark]) (TBD)
+#### Model updates and retraining (TBD)
+##### Batch vs. real-time/online (TBD)
 ### Perform hyperparameter optimization. 
   * Regularization
     * Drop out
-    * L1/L2 
+    * L1 /L2 
   * Cross validation
   * Model initialization
-  * Neural network architecture (layers/nodes), learning rate, activation functions
+  * Neural network architecture (layers/nodes), learning rate, activation functions (see below as the notes need to be organized better w/ time)
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
+#### Activation functions: a gated function that verifies how an incoming value is higher than a threshold value to prevent linearity, used within internal/output layer cells in neural networks 
 ### Evaluate machine learning models.
   * Avoid overfitting/underfitting (detect and handle bias and variance)
   * Metrics (AUC-ROC, RMSE)
