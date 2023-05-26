@@ -178,7 +178,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Linear models (learning rate)
 ### Evaluate machine learning models.
   * Avoid overfitting/underfitting (detect and handle bias and variance)
-  * Metrics (AUC-ROC, accuracy, precision, recall, RMSE, F1 score)
+  * Metrics (AUC-ROC, RMSE)
   * Confusion Matrix:
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
@@ -281,5 +281,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| SNS | Simple Notification Service |
 | TN | True Negative |
 | TP | True Positive |
+
