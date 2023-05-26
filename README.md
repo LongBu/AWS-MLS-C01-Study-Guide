@@ -25,8 +25,87 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ## Data Engineering 
 
 ### Create data repositories for machine learning
-  * Identify data sources (e.g., content and location, primary sources such as user data)
-  * Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS) 
+
+#### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
+#### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)(TBD)
+##### DB(TBD)
+##### Data Lake(TBD)
+##### S3(TBD)
+
+##### EFS: 
+  * Linux based only
+  * Can mount on many EC2(s)
+  * Use SG control access
+  * Connected via ENI
+  * 10GB+ throughput
+  * *Performance mode* (set at creation time): 
+    * General purpose (default); latency-sensitive; use cases (web server, CMS); 
+    * Max I/O-higher latency, throughput, highly parallel (big data, media processing)
+  * *Throughput mode*: 
+    * Bursting (1 TB = 50 MiB/s and burst of up to 100 MiB/s)
+    * Provisioned-set your throughput regardless of storage size (eg 1 GiB/s for 1 TB storage)
+  * *Storage Classes*, Storage Tiers (lifecycle management=>move file after N days):
+    * Standard: for frequently accessed files
+    * Infrequent access (EFS-IA): cost to retrieve files, lower price to store
+  * *Availability and durability*: 
+    * Standard: multi-AZ, great for production
+    * One Zone: great for development, backup enabled by default, compatible with IA (EFS One Zone-IA)
+
+##### EBS:
+  * Volumes exist on EBS => virtual hard disk
+  * Snapshots exist on S3 (point in time copy of disk)
+  * Snapshots are incremental-only the blocks that have changed since the last snapshot are move to S3
+  * First snapshot might take more time
+  * Best to stop root EBS device to take snapshots, though you don't have to
+  * Provisioned IOPS (PIOPS [io1/io2])=> DB workloads/multi-attach
+  * Multi-attach (EC2 =>rd/wr)=>attach the same EBS to multiple EC2 in the same AZ; up to 16 (all in the same AZ)
+  * Can change volume size and storage type on the fly
+  * Always in the same region as EC2
+  * To move EC2 volume=>snapshot=>AMI=>copy to destination Region/AZ=>launch AMI
+  * EBS snapshot archive (up to 75% cheaper to store, though 24-72 hours to restore)
+
+##### AWS FSx:
+  * Launch 3rd party high performance file system(s) on AWS
+  * Can be accessed via FSx File Gateway for on-premises needs via VPN and/or Direct Connect
+  * Fully managed
+  * Accessible via ENI within Multi-AZ
+  * Types include:
+    * FSx for Windows FileServer
+    * FSx for Lustre
+    * FSx for Net App ONTAP (NFS, SMB, iSCSI protocols); offering:
+     * Works with most OSs
+     * ONTAP or NAS
+     * Storage shrinks or grows
+     * Compression, dedupe, snapshot replication
+     * Point in time cloning
+    * FSx for Open ZFS; offering:
+     * Works with most OSs
+     * Snapshots, compression
+     * Point in time cloning
+
+##### Amazon FSx for Windows:
+  * Fully managed Windows file system share drive
+  * Supports SMB and Windows NTFS
+  * Microsoft Active Directory integration, ACLs, user quotas
+  * Can be mounted on Linux EC2 instances
+  * Scale up to 10s of GBps, millions IOPs, 100s of PB of data
+  * Storage Options:
+   * SSD - latency sensitive workloads (DB, data analytics)
+   * HDD - broad spectrum of workloads (home directories, CMS)
+  * On-premises accessible (VPN and/or Direct Connect)
+  * Can be configured to be Multi-AZ
+  * Data is backed up daily to S3
+  * Amazon FSx File Gateway allows native access to FSx for Windows from on-premises, local cache for frequently accessed data via Gateway
+
+##### Amazon FSx for Lustre ("Linux" "Cluster"):
+  * High performance, parallel, distributed file system designed for Applications that require fast storage to keep up with your compute such as ML, high peformance computing, video processing, Electronic Design Automation, or financial modeling
+  * Integrates with linked S3 bucket(s), making it easy to process S3 objects as files and allows you to write changed data back to S3
+  * Provides ability to both process 'hot data' in parallel/distributed fashion as well as easily store 'cold data' to S3
+  * Storage options include SSD or HDD
+  * Can be used from on-premises servers (VPN and/or Direct Connect)
+  * Scratch File System can be used for temporary or burst storage use
+  * Persistent File System can be used for storage / replicated with AZ
+
 ### Identify and implement a data ingestion solution.
 
 #### Data job styles/types (batch load, streaming)
