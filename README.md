@@ -242,12 +242,25 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Pipe Mode
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
-### Apply basic AWS security practices to machine learning solutions. 
-  * IAM
-  * S3 bucket policies
-  * Security groups
-  * VPC
-  * Encryption/anonymization
+### Apply basic AWS security practices to machine learning solutions(TBD)
+#### IAM(TBD)
+### S3 Bucket Policies vs Access permissions:
+  * Used to add or deny permissions across some or all S3 objects in a bucket, enabling central management of permissions
+  * Can grant users within an AWS account or other AWS accounts to S3 resources
+  * Can restrict based on request time (Date condition), request sent using SSL (Boolean condition), requester IP Address (Ip address condition) using policy keys
+  * User access to S3 => IAM permissions
+  * Instance (EC2) access => IAM role
+  * Public access to S3 => bucket policy
+
+| Type of Access Control | Account Level Control | User Level Control |
+| ------------- | ------------- | ------------- |
+| IAM Policies | No | Yes |
+| ACLs | Yes | No |
+| Bucket Policies | Yes | Yes |
+
+#### Security groups(TBD)
+#### VPC(TBD)
+#### Encryption/anonymization(TBD)
 ### Deploy and operationalize machine learning solutions.
   * Exposing endpoints and interacting with them
   * ML model versioning
