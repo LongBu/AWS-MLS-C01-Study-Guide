@@ -135,6 +135,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Graphing (scatter plot, time series, histogram, box plot)
   * Interpreting descriptive statistics (correlation, summary statistics, p value)
   * Clustering (hierarchical, diagnosing, elbow plot, cluster size)
+
 #### Amazon Athena:
   * Serverless query service enabling analysis and querying of data in S3 using standard SQL, while allowing more advanced queries (joins permitted)
   * Compress data for smaller retrieval
@@ -142,6 +143,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * $5.00 per TB scanned
   * Commonly used with Amazon Quicksight
   * Federated query allows SQL queries across relational, object, non-relational, custom (AWS or on-premisis) using Data Source Connectors that run on λ with results being returned and stored in S3
+
+#### Amazon Quicksight:
+  * BI/analytics sereverless ML service used to build interactive visualizations, perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
+  * Integrates with RDS 
+  * In memory computation using Spice Engine
+  * Column-Level security (CLS)
+  * Can share analysis (if published) or the dashboard (read only) with users or groups
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
@@ -201,17 +209,39 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Load balancing
   * AWS best practices
 ### Recommend and implement the appropriate machine learning services and features for a given problem.
-  * ML on AWS (application services)
-    * Poly
-    * Lex
-    * Transcribe
-  * AWS service limits
-  * Build your own model vs. SageMaker built-in algorithms
-  * AWS SageMaker
+#### ML on AWS (application services)
+
+##### Amazon Polly:
+* Turn text into lifelike speech using deep learning (for talking applications)
+* Customize pronunciation of words with pronunciation lexicons that are harnessed by the Sythesize Speech Operation
+* Can map stylized words and/or acronyms to resultant output
+* Generate more customized output from text marked up with SSML including:
+  * breating, whispering
+  * emphasis on words
+  * phonetic pronunciation
+
+##### Amazon Lex: 
+  * ASR to convert speech to text
+  * Natural language understanding to recognize parts of speech/text
+  * Helps to build chatbots, call center bots
+
+##### Amazon Transcribe:
+  * Automatically convert speech to text
+  * Uses Deep Learning - Automatic Speech Recognition (ASR)
+  * Use cases:
+    * Transcribe customer calls
+    * Automate close capitioning/subtitles
+    * Generate metadata for media assets to create full scaleable architecture
+  * Can remove PII using redaction
+  * Supports automatic language identification for multi-lingual audio
+
+#### AWS service limits(TBD)
+#### Build your own model vs. SageMaker built-in algorithms(TBD)
+#### AWS SageMaker(TBD)
     * File Mode
     * Pipe Mode
-  * Infrastructure: (spot, instance types), cost considerations
-    * Using spot instances to train deep learning models using AWS Batch 
+#### Infrastructure: (spot, instance types), cost considerations(TBD)
+##### Using spot instances to train deep learning models using AWS Batch (TBD)
 ### Apply basic AWS security practices to machine learning solutions. 
   * IAM
   * S3 bucket policies
