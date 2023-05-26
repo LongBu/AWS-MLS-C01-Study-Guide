@@ -119,6 +119,19 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 #### Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
 
+##### Amazon Kinesis:
+  * Platform to send stream data making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
+  * Any mention of "streaming (system[s])" and/or "real time" (big) data is of importance, kinesis is likely the best fit as it makes it easy to collect, process, and analyze real-time, streaming data to allow quick reactions from information taken in.  
+  * Output can be classic or enhanced fan-out consumers
+  * Accessed via VPC
+  * IAM access => Identity-based (used by users and/or groups)
+  * Types:
+    * Kinesis Data Streams
+    * Kinesis Data Firehose
+    * Kinesis Analytics
+    * Kinesis Video Streams (capture, process and store video streams)
+
+
 ##### Amazon Kinesis Data Streams:
   * On-demand capacity mode or Provisioned mode (if throughput exceeded exception => add shard[s]) to provide low latency streaming ingestion
   * Can have up to 5 parallel consumers
