@@ -232,6 +232,10 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Natural language understanding to recognize parts of speech/text
   * Helps to build chatbots, call center bots
 
+##### Amazon Comprehend (Medical):
+  * Serverless NLP service harnessing ML to uncover valuable insights and connections in text
+  * Medical version detects PHI via DetectPHI API
+
 ##### Amazon Transcribe:
   * Automatically convert speech to text
   * Uses Deep Learning - Automatic Speech Recognition (ASR)
@@ -241,6 +245,32 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Generate metadata for media assets to create full scaleable architecture
   * Can remove PII using redaction
   * Supports automatic language identification for multi-lingual audio
+  
+##### Amazon Rekognition:
+  * Find objects, people, text, scenes in images and videos using ML
+  * Facial analysis and search to perform user verification, people counting
+  * Create a DB of "familiar faces" or compare against celebrities
+  * Use cases: 
+    * Labeling
+    * Text detection
+    * Face detection and analysis (gender, emotions, age range, etc.)
+    * Face search and verification
+    * Celebrity recognition
+    * Pathing (eg: for sports game analysis)
+    * Content Moderation (inappropriate, unwanted, or offensive images/videos)
+      * Social media/broadcast media/advertising/e-commerce
+      * Confidence level of content flags/gates (threshold configuration based)
+      * Flag sensitive content for manual review in A2I
+      * Help comply with regulations
+		
+ ##### Amazon Textract:
+   * Extracts text, handwriting and data from any scanned documents (eg: forms, tables, etc.) using ML
+   * Read from any type of document (PDFs, images, etc.)
+   * Good for invoices, financial reports, medical records, insurance claims, taxforms, ids, passports
+		
+##### Amazon Translate:
+  * Natural and accurate language translation
+  * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently 
 
 #### AWS service limits(TBD)
 #### Build your own model vs. SageMaker built-in algorithms(TBD)
