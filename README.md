@@ -28,28 +28,84 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Identify data sources (e.g., content and location, primary sources such as user data)
   * Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS) 
 ### Identify and implement a data ingestion solution.
-  * Data job styles/types (batch load, streaming)
-  * Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
-    * Kinesis
+
+#### Data job styles/types (batch load, streaming)
+
+#### Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
+
+##### Amazon Kinesis Data Streams:
+  * On-demand capacity mode or Provisioned mode (if throughput exceeded exception => add shard[s])
+  * Can have up to 5 parallel consumers
+  * Synchronously replicate streaming data across 3 AZ in a single Region and store between 24 hours and 365 days in shard(s) to be consumed/processed/replayed by another service and stored elsewhere
+  * Use fan-out if lag is encountered by stream consumers
+  * Shards can be split or merged
+  * 1 MB message size limit
+  * TLS in flight or KMS at-rest encryption
+  * *Can't subscribe to SNS*
+  * *Can't write directly to S3*
+  * Can output to:
+    * Kinesis Data Firehose
     * Kinesis Data Analytics
-    * Kinesis Firehose
-    * EMR
-    * AWS Glue 
-      * Managed ETL service (fully serverless) used to prepare/transform data for analysis
-      * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
-      * Glue Data catalog uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
-      * Glue Job bookmarks prevent reprocessing old data
-      * Glue Databrew-clean/normalize data using pre-built transformation
-      * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
-      * Glue Streaming ETL (built on Apache Spark Structured Streaming)-compatible with Kinesis Data Streaming, Kafka, MSK
-      * Glue Elastic Views:
-        * Combine and replicate data across multiple data stores using SQL (View)
-        * No custom code, Glue monitors for changes in the source data, serverless
-        * Leverages a "virtual table" (materialized view)
-  * Job scheduling 
+    * Containers
+    * λ
+    * AWS Glue
+
+##### Amazon Kinesis Data Analytics:
+  * Fully Managed (serverless)
+  * Can use either Kinesis Data Streams or Kinesis Data Firehose to analyze data in kinesis
+  * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
+  * For Apache Flink (on a cluster): 
+    * Input: Kinesis Data Stream or Amazon MSK
+    * Output: Sink (S3/Kinesis Data Firehose)    
+
+##### Amazon Kinesis Data Firehose:
+  * Fully Managed (serverless) service, no administration, automatic scaling
+  * Can use λ to filter/transform data prior to output (Better to use if filter/tranform with a λ to S3 over Kinesis Data Streams)
+  * Near real time: 60 seconds latency minimum for non-full batches
+  * Minimum 1 MB of data at a time
+  * Pay only for the data going through
+  * Can subscribe to SNS
+  * No data persistence and must bre immediately consumed/processed
+  * Sent to (S3 as a backup or failed case[s]):
+    * S3
+    * Amazon Redshift (copy through S3)
+    * Amazon Elastic Search
+    * 3rd party partners (datadog/splunk/etc.)
+    * Custom destination (http[s] endpoint)##### EMR:
+  * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
+  * Supports Apache Spark, HBase, Presto, Flink, etc.
+  * Takes care of provisioning and configuration
+  * Autoscaling and integrated with Spot Instances
+  * Use cases: Data processing, ML, Web Indexing, BigData
+  * Node types: 
+    * Master Node: manage the cluster, coordinate, manage health-long running process
+    * Core Node: run tasks and store data-long running process
+    * Task Node (optional): only to run tasks-usually Spot Instances
+  * Can have long-running cluster or transient (temporary) cluster
+  * Purchasing options: 
+    * On-demand: reliable, predictable, won't be terminated
+    * Reserved: cost savings (EMR will use if available)
+    * Spot instances: cheaper, can be terminated, less reliable
+
+##### AWS Glue:
+  * Managed ETL service (fully serverless) used to prepare/transform data for analysis
+  * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
+  * Glue Data catalog uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
+  * Glue Job bookmarks prevent reprocessing old data
+  * Glue Databrew-clean/normalize data using pre-built transformation
+  * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
+  * Glue Streaming ETL (built on Apache Spark Structured Streaming)-compatible with Kinesis Data Streaming, Kafka, MSK
+  * Glue Elastic Views:
+    * Combine and replicate data across multiple data stores using SQL (View)
+    * No custom code, Glue monitors for changes in the source data, serverless
+    * Leverages a "virtual table" (materialized view)
+
+##### Job scheduling (TBD)
+
 ### Identify and implement a data transformation solution. 
   * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
   * Transforming data transit (ETL: Glue, EMR, AWS Batch)
+
 #### AWS Batch:
   * Fully managed batch processing at any scale using dynamically launched *EC2 instances (spot)*
   * Job with a start and an end (not continuous)
@@ -119,9 +175,9 @@ Note these are my own personal notes and are a work in progress as I study torwa
     | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
     | Accuracy | ACC | (TP + TN)/(TP + FP + TN + FN) |
     | Sensitivity, True positive rate, Recall | SN, TPR, REC | TP/(TP + FN) = TP/P|
-    | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
     | Precision, Positive predictive value | PREC, PPV | TP/(TP + FP) |
-    | False positive rate | FPR | FP/(TN + FP) = 1 - SP = 1 - TNR|
+    | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
+    | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
     | F1 Score (harmonic mean of precision and recall) | F1 | TP/(TP + (FN + FP/2)) |
    
   * Offline and online model evaluation, A/B testing
