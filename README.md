@@ -29,7 +29,11 @@ Note these are my own personal notes and are a work in progress as I study torwa
 #### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
 #### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)(TBD)
 ##### DB(TBD)
-##### Data Lake(TBD)
+##### Data Lake
+  * Offers centralized architecture within S3
+  * Decouples storage (S3) from compute resources
+  * Analagous to S3 buckets any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
+
 ##### S3
 
 ###### Buckets:
@@ -139,11 +143,6 @@ graph LR
   * Expiration Actions: rules for when to delete an object after some period of time
     * Good for deleting log files, deleting old versions of files (if versioning enabled), or incomplete multi-part uploads
   * Rules can be created for object prefixes (addresses) or associated object tags
-
-###### S3 Data Lake
-  * Offers centralized architecture
-  * Decouples storage (S3) from compute resources
-  * Analagous to S3 buckets any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
 
 ###### S3 Data Partioning
   * Harnesses disparate key \[path] to speed up queries (eg: Athena)
