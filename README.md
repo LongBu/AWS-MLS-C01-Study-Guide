@@ -30,7 +30,115 @@ Note these are my own personal notes and are a work in progress as I study torwa
 #### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)(TBD)
 ##### DB(TBD)
 ##### Data Lake(TBD)
-##### S3(TBD)
+##### S3
+
+###### Buckets:
+  * Service to allow objects/files within a virtual "directory"
+  * Bucker names must be *globally unique*
+  * Buckets exist within AWS regions
+  * Not a file system, and if a file system is needed, EBS/EFS/FSx should be considered
+  * Not mountable as is a NFS
+  * Supports any file format
+  * Name formalities:
+    * Must not start with the prefix 'xn--'
+    * Must not end with the the suffix '-s3alias'
+    * Not an IP address
+    * Must start with a lowercase letter or number
+    * Between 3-63 characters long
+    * No uppercase
+    * No underscores
+
+###### Objects/Files
+   * Each has a key, it's full path within the s3 bucket including the object/file separated by backslashes ("/")
+   * Each has a value, it's content
+   * Note there is no such thing as a true directory within S3, but the convention effectively serves as a namespace
+   * Compression is good for cost savings concerning persistence
+   * Max size is 5 TB
+   * If uploading > 100MB and absolutely for > 5 GB, use Multi-Part upload
+   * S3 Transfer Acceleration also can be utilized to increase transfer rates (upload and download) by going through an AWS edge location that passes the object to the target S3 bucket (can work with Multi-Part upload)
+   * Strong consistency model to reflect latest version/value upon write/delete to read actions
+   * Version ID if versioning enabled at the bucket level
+   * Metadata (list of key/val pairs)
+   * Tags (Unicode key/val pair >= 10) handy for lifecycle/security
+   * Endpoint offers HTTP (non encrypted) and HTTPS (encryption in flight via SSL/TLS)
+
+
+###### S3 Storage Classes
+
+| |Std|Intelligent Tiering|Std-IA|One Zone-IA|Glacier Instant Retrieval|Glacier Flexible Retrieval|Glacier Deep Archive|
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| *Durability | 99.99999999999% | 99.99999999999% | 99.99999999999% | 99.99999999999% | 99.99999999999% | 99.99999999999% | 99.99999999999% |
+| *Availability | 99.99% | 99.9% | 99.9% | 99.5% | 99.9% | 99.99% | 99.99% |
+| *Availability SLA | 99.99% | 99% | 99% | 99% | 99% | 99.99% | 99.99% |
+| *AZs | >= 3 | >= 3| >= 3 | 1 | >= 3 | >= 3 | >= 3 |
+| *Min Storage Duration Charge | None | None| 30 days | 30 days | 90 days | 90 days | 180 days |
+| *Min Billable Obj Size | None | None| 128 KB | 128 KB | 128 KB | 40 KB | 40 KB |
+| *Retieval Fee | None | None| Per GB | Per GB | Per GB | Per GB | Per GB |
+| *Storage Cost (GB per month) | .023 | .0025 - .023 | .0125 | .01 | .004 | .0036 | .00099 |
+| *Retieval Cost (per 1000 requests) | GET: .0004<br />POST: .005 | GET: .0004<br />POST: .005 | GET: .001<br />POST: .01 | GET: .001<br />POST: .01 | GET: .01<br />POST: .02 | GET: .0004<br />POST: .03<br />Expediated: $10<br />Std: .05<br />Bulk: free| GET: .0004<br />POST: .05<br />Std: .10<br />Bulk: .025 |
+| *Retieval Time | immediate | immediate | immediate | immediate | immediate (milliseconds) | Expediated (1-5 mins)<br />Std (3-5 hrs)<br />Bulk (5-12 hrs) | Std (12 hrs)<br />Bulk (48 hrs) |
+| *Monitoring Cost (per 1000 requests) | 0 | .0025 | 0 | 0 | 0 | 0 | 0 |
+\*Note: US-East-1 for the sake of example, entire table subject to change by AWS
+
+  * Durability: How often a file is not to be lost
+  * Availability: How readily S3 bucket/files are available
+
+###### S3 Standard:
+  * Used data frequently accessed
+  * Provides high throughput and low latency
+  * Good for mobile and gaming applications, pseudo cdn, big data/analytics
+
+###### S3 Infrequent Access
+  * Good for data less frequently acessed, but can be rapidly available
+  * Cheaper than Standard
+
+###### S3 Intelligent-Tiering
+  * Modest fee for monthly monitoring and auto-tiering
+  * Moves objects between tiers based on usage
+  * Access tiers include:
+    * Frequent (automatic) default
+    * Infrequent (automatic) not acessed for 30 days
+    * Archive Instant (automatic) not accessed for 90 days
+    * Archive (optional) configurable between 90 days to >= 700 days
+    * Deep Archive (optional) configurable between 180 days to >= 700 days
+
+###### S3 Standard-IA
+  * Good for Disaster Recovery and/or backups
+
+###### S3 One Zone-IA
+  * Data lost when AZ is lost/destroyed
+  * Good for recreateable data or on-prem data secondary backup copies
+
+###### S3 Glacier
+  * Never setup a transition to glacier classes if usage might need to be rapid
+  * Good for archiving/backup
+  * Glacier Instant Retrieval is a good option for accessing data once a quarter
+  * Harness Glacier Vault Lock (WORM) to no longer allow future edits, which is great for compliance and data retention
+
+###### S3 Lifecycle Transitions (can also be conducted manually via AWS Console)
+```mermaid
+graph LR
+    A[Std] --> B[Std-IA]
+    A --> C[Intelligent-Tiering]
+    A --> D[One Zone-IA]
+    A --> E[Glacier]
+    A --> F[Glacier Deep Archive]
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    C --> D
+    C --> E
+    C --> F
+    D --> E
+    D --> F
+    E --> F
+```
+###### S3 Lifecycle Rules
+  * Transition Actions: rules for when to transtion objects between s3 classes (see S3 storage classed above)
+  * Expiration Actions: rules for when to delete an object after some period of time
+    * Good for deleting log files, deleting old versions of files (if versioning enabled), or incomplete multi-part uploads
+  * Rules can be created for object prefixes (addresses) or associated object tags
 
 ##### EFS: 
   * Linux based only
