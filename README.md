@@ -140,6 +140,18 @@ graph LR
     * Good for deleting log files, deleting old versions of files (if versioning enabled), or incomplete multi-part uploads
   * Rules can be created for object prefixes (addresses) or associated object tags
 
+###### S3 Data Lake
+  * Offers centralized architecture
+  * Decouples storage (S3) from compute resources
+  * Analagous to S3 buckets any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
+
+###### S3 Data Partioning
+  * Harnesses disparate key \[path] to speed up queries (eg: Athena)
+  * Typical scenarios are:
+    * time/date (eg: s3://bucket/datasetname/year/month/day/....)
+    * product (eg: s3://bucket/datasetname/productid/...)
+  * Partitioning handled by tools such as Kinesis, Glue, etc.
+
 ##### EFS: 
   * Linux based only
   * Can mount on many EC2(s)
