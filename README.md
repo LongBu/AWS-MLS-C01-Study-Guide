@@ -66,6 +66,43 @@ Note these are my own personal notes and are a work in progress as I study torwa
    * Tags (Unicode key/val pair >= 10) handy for lifecycle/security
    * Endpoint offers HTTP (non encrypted) and HTTPS (encryption in flight via SSL/TLS)
 
+###### Security (IAM principle can access if either of the policy types below allows it and there is no Deny present):
+  * Types
+    * User Based: governed by IAM policies (eg: which user,  within a given AWS account, via IAM should be allowed to access resources) 
+    * Resource Based:
+      * Bucket Policies (JSON based statements)
+        * Governing such things as:
+          * (Blocking) public access \[setting was created to prevent company data leaks, and can be set at the account level to ensure of inheritance]
+          * Forced encryption at upload (necessitates encryption headers).  Can be alternatively be done by "default encryption" via S3, though Bucket Policies are evaluated first
+          * Cross account access
+        * Bucket policy statement attributes 
+          * SID: statement id
+          * Resources: per S3, either buckets or objects
+          * Effect: Allow or Deny
+          * Actions: The set of api action to apply the effect to
+          * Principal: User/Account the policy applies to
+      * Object Access Control List (ACL) - finer control of individual objects (eg: block public access)
+      * Bucket Access Control List (ACL) - control at the bucket level (eg: block public access)
+  * S3 Object(s) are owned by the AWS account that uploaded it, not the bucket owner
+  * Settings to block public access to bucket(s)/object(s) can be set at the account level
+  * S3 is VPC endpoint accessible
+  * S3 Access Logs can be stored to another S3 bucket (not the same to prevent infinite looping)
+  * Api calls can be sent to AWS CloudTrail
+  * MFA Delete of object(s) within *only* versioned buckets to prevent accidental permanent deletions *[only enabled/disabled by bucket owner via CLI]*
+
+###### S3 Bucket Policies vs Access permissions:
+  * Used to add or deny permissions across some or all S3 objects in a bucket, enabling central management of permissions
+  * Can grant users within an AWS account or other AWS accounts to S3 resources
+  * Can restrict based on request time (Date condition), request sent using SSL (Boolean condition), requester IP Address (Ip address condition) using policy keys
+  * User access to S3 => IAM permissions
+  * Instance (EC2) access => IAM role
+  * Public access to S3 => bucket policy
+
+| Type of Access Control | Account Level Control | User Level Control |
+| ------------- | ------------- | ------------- |
+| IAM Policies | No | Yes |
+| ACLs | Yes | No |
+| Bucket Policies | Yes | Yes |
 
 ###### S3 Storage Classes
 
@@ -92,9 +129,10 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Provides high throughput and low latency
   * Good for mobile and gaming applications, pseudo cdn, big data/analytics
 
-###### S3 Infrequent Access
-  * Good for data less frequently acessed, but can be rapidly available
+###### S3 Standard Infrequent Access
+  * Good for data less frequently acessed that need immediate access
   * Cheaper than Standard
+  * Good for Disaster Recovery and/or backups
 
 ###### S3 Intelligent-Tiering
   * Modest fee for monthly monitoring and auto-tiering
@@ -104,10 +142,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Infrequent (automatic) not acessed for 30 days
     * Archive Instant (automatic) not accessed for 90 days
     * Archive (optional) configurable between 90 days to >= 700 days
-    * Deep Archive (optional) configurable between 180 days to >= 700 days
-
-###### S3 Standard-IA
-  * Good for Disaster Recovery and/or backups
+    * Deep Archive (optional) configurable between 180 days to >= 700 days 
 
 ###### S3 One Zone-IA
   * Data lost when AZ is lost/destroyed
@@ -118,6 +153,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Good for archiving/backup
   * Glacier Instant Retrieval is a good option for accessing data once a quarter
   * Harness Glacier Vault Lock (WORM) to no longer allow future edits, which is great for compliance and data retention
+  * Glacier or Deep Archive are good for infrequentyly accessed objects that don't need immediate access
 
 ###### S3 Lifecycle Transitions (can also be conducted manually via AWS Console)
 ```mermaid
