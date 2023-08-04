@@ -187,6 +187,29 @@ graph LR
     * product (eg: s3://bucket/datasetname/productid/...)
   * Partitioning handled by tools such as Kinesis, Glue, etc.
 
+###### Encryption
+  * SSE-S3:
+    * Encryption (keys) managed by AWS (S3)
+    * Encryption type of AES-256
+    * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"AES256"
+    * Enabled by default for new buckets and objects
+  * SSE-KMS
+    * Encryption (KMS Customer Master Key [CMK]) managed by AWS KMS
+    * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"aws:kms"
+    * Offers further user control and audit trail via cloudtrail
+    * May be impacted by KMS limits, though you can increase them via Service Quotas Console
+      * Upload calls the GenerateDataKey KMS API (counts towards KMS quota 5500, 10000, or 30000 req/s based upon region)
+      * Download calls the Decrypt KMS API (also counts towards KMS quota)
+  * SSE-C:
+    * Server side encryption via *HTTPS only*, using a fully managed external customer key external to AWS that must be provided in the HTTP headers for every HTTP request (key isn't saved by AWS)
+    * Objects encrypted with SSE-C are never replicated between S3 Buckets
+  * Client Side Encryption:
+    * Utilizes a client library such as Amazon S3 Encryption Client
+    * Encrypted prior to sending to S3 and must be decrypted by clients when retrieving from S3 conducted over HTTP/S
+    * Utilizes a fully managed external customer key external to AWS
+    * S3 objects useing SSE-C not able to be replicated between buckets
+
+
 ##### EFS: 
   * Linux based only
   * Can mount on many EC2(s)
