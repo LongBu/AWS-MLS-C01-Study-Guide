@@ -298,7 +298,7 @@ graph LR
 #### Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
 
 ##### Amazon Kinesis:
-  * Platform to send stream data making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
+  * Platform to send stream data (eg: IoT, metrics and logs) making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
   * Any mention of "streaming (system[s])" and/or "real time" (big) data is of importance, kinesis is likely the best fit as it makes it easy to collect, process, and analyze real-time, streaming data to allow quick reactions from information taken in.  
   * Output can be classic or enhanced fan-out consumers
   * Accessed via VPC
@@ -317,6 +317,7 @@ graph LR
     * Scales automatically to accommodate up to double its previous peak write throughput observed in the last 30 days
     * Pay per stream per hour and data/in/out per GB
   * Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically)
+    * Streams are divided into ordered shards
     * 1 MB/s input, 2 MB/s output
     * Pay per shard per hour
   * Can have up to 5 parallel consumers (5 consuming api calls per second \[per shard])
