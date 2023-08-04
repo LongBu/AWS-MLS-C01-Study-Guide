@@ -90,20 +90,6 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Api calls can be sent to AWS CloudTrail
   * MFA Delete of object(s) within *only* versioned buckets to prevent accidental permanent deletions *[only enabled/disabled by bucket owner via CLI]*
 
-###### S3 Bucket Policies vs Access permissions:
-  * Used to add or deny permissions across some or all S3 objects in a bucket, enabling central management of permissions
-  * Can grant users within an AWS account or other AWS accounts to S3 resources
-  * Can restrict based on request time (Date condition), request sent using SSL (Boolean condition), requester IP Address (Ip address condition) using policy keys
-  * User access to S3 => IAM permissions
-  * Instance (EC2) access => IAM role
-  * Public access to S3 => bucket policy
-
-| Type of Access Control | Account Level Control | User Level Control |
-| ------------- | ------------- | ------------- |
-| IAM Policies | No | Yes |
-| ACLs | Yes | No |
-| Bucket Policies | Yes | Yes |
-
 ###### S3 Storage Classes
 
 | |Std|Intelligent Tiering|Std-IA|One Zone-IA|Glacier Instant Retrieval|Glacier Flexible Retrieval|Glacier Deep Archive|
