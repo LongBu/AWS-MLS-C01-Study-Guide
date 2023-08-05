@@ -32,13 +32,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ##### Data Lake
   * Offers centralized architecture within S3
   * Decouples storage (S3) from compute resources
-  * Analagous to S3 buckets any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
+  * Analagous to S3, any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
 
 ##### S3
 
 ###### Buckets:
   * Service to allow objects/files within a virtual "directory"
-  * Bucker names must be *globally unique*
+  * Bucket names must be *globally unique*
   * Buckets exist within AWS regions
   * Not a file system, and if a file system is needed, EBS/EFS/FSx should be considered
   * Not mountable as is a NFS
