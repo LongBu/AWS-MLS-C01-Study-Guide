@@ -85,7 +85,11 @@ Note these are my own personal notes and are a work in progress as I study torwa
       * Bucket Access Control List (ACL) - control at the bucket level (eg: block public access)
   * S3 Object(s) are owned by the AWS account that uploaded it, not the bucket owner
   * Settings to block public access to bucket(s)/object(s) can be set at the account level
-  * S3 is VPC endpoint accessible
+  * S3 is accessible to other AWS resources via:
+    * VPC endpoint=>public ip tied to a bucket policy tied to AWS:SourceIP
+    * Public internet via an IGW:
+      * bucket policy tied to AWS:SourceVpce (for one endpoint)
+      * bucket policy tied to AWS:SourceVpc (for all possible endpoint(s))
   * S3 Access Logs can be stored to another S3 bucket (not the same to prevent infinite looping)
   * Api calls can be sent to AWS CloudTrail
   * MFA Delete of object(s) within *only* versioned buckets to prevent accidental permanent deletions *[only enabled/disabled by bucket owner via CLI]*
@@ -342,7 +346,7 @@ graph LR
     * Kinesis Data Streams
     * Kinesis Data Firehose
     * Kinesis Analytics
-    * Kinesis Video Streams (capture, process and store video streams)
+    * Kinesis Video Streams (capture, process and store video streams in real-time)
 
 
 ##### Amazon Kinesis Data Streams:
@@ -373,6 +377,7 @@ graph LR
 
 ##### Amazon Kinesis Data Analytics:
   * Fully Managed (serverless)
+  * Perform real-time analytics on stream via SQL
   * Can use either Kinesis Data Streams or Kinesis Data Firehose to analyze data in kinesis
   * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
   * For Apache Flink (on a cluster): 
