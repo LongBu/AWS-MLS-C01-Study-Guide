@@ -195,6 +195,55 @@ graph LR
     * Utilizes a fully managed external customer key external to AWS
     * S3 objects useing SSE-C not able to be replicated between buckets
 
+###### Encryption in transit (SSL/TLS) vs none
+  * HTTP Endpoint - non-encrypted
+  * HTTPS Endpoint - encrypted
+  * To force encryption, a bucket policy is in order, and the following is an HTTP Get version
+    * { "Version": "2012-10-17",
+       "Statement": [
+         {
+           "Effect":"Deny",
+           "Principal":"\*",
+           "Action":"s3:GetObject",
+           "Resource":"arn:aws:s3:::random-bucket-o-stuff/*",
+           "Condition":{
+             "Bool":"aws:SecureTransport":"false"
+           }
+
+         }
+       ]
+      }
+  * To force SSE-KMS encryption
+    * { "Version": "2012-10-17",
+       "Statement": [
+         {
+           "Effect":"Deny",
+           "Principal":"\*",
+           "Action":"s3:PutObject",
+           "Resource":"arn:aws:s3:::random-bucket-o-stuff/*",
+           "Condition":{
+             "StringNotEquals":{"s3:x-amz-server-side-encryption":"aws-kms"}
+           }
+
+         }
+       ]
+      }
+  * To force SSE-C encryption
+    * { "Version": "2012-10-17",
+       "Statement": [
+         {
+           "Effect":"Deny",
+           "Principal":"\*",
+           "Action":"s3:PutObject",
+           "Resource":"arn:aws:s3:::random-bucket-o-stuff/*",
+           "Condition":{
+             "Null":{"s3:x-amz-server-side-encryption-customer-algorithm":"true"}
+           }
+
+         }
+       ]
+      }
+
 
 ##### EFS: 
   * Linux based only
