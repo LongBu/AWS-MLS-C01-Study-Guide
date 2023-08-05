@@ -86,10 +86,10 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * S3 Object(s) are owned by the AWS account that uploaded it, not the bucket owner
   * Settings to block public access to bucket(s)/object(s) can be set at the account level
   * S3 is accessible to other AWS resources via:
-    * VPC endpoint=>public ip tied to a bucket policy tied to AWS:SourceIP
-    * Public internet via an IGW:
+    * VPC endpoint (private connection)
       * bucket policy tied to AWS:SourceVpce (for one endpoint)
       * bucket policy tied to AWS:SourceVpc (for all possible endpoint(s))
+    * Public internet via an IGW=>public ip tied to a bucket policy tied to AWS:SourceIP:
   * S3 Access Logs can be stored to another S3 bucket (not the same to prevent infinite looping)
   * Api calls can be sent to AWS CloudTrail
   * MFA Delete of object(s) within *only* versioned buckets to prevent accidental permanent deletions *[only enabled/disabled by bucket owner via CLI]*
