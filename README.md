@@ -653,6 +653,7 @@ graph LR
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| IGW | Internet Gateway |
 | SNS | Simple Notification Service |
 | TN | True Negative |
 | TP | True Positive |
