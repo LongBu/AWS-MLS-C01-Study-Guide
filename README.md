@@ -649,16 +649,28 @@ graph LR
 
 | Acronym  | Definition |
 | ------------- | ------------- |
+| AZ | Availability Zones |
+| CLS | Column Level Security |
+| Db | Database |
 | EBS | Elastic Block Store |
+| ECS | Elastic Container Service |
 | EFS | Elastic File System |
 | EMR | Elastic Map Reduce |
+| ENI | Elastic Network Interface |
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| IAM | Identity and Access Management |
 | IGW | Internet Gateway |
+| IOPS | Input/Output operations per second |
+| ML | Machine Learning |
+| MSK | Managed Streaming Kafka |
 | NFS | Network File System |
+| S3 | Simple Storage Service |
 | SNS | Simple Notification Service |
+| SQS | Simple Queue Service |
 | SSE | Server Side Encryption |
 | TN | True Negative |
 | TP | True Positive |
-
+| VPC | Virtual Private Cloud |
+| VPN | Virtual Private Network |
