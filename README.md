@@ -649,12 +649,16 @@ graph LR
 
 | Acronym  | Definition |
 | ------------- | ------------- |
+| EBS | Elastic Block Store |
+| EFS | Elastic File System |
 | EMR | Elastic Map Reduce |
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
 | IGW | Internet Gateway |
+| NFS | Network File System |
 | SNS | Simple Notification Service |
+| SSE | Server Side Encryption |
 | TN | True Negative |
 | TP | True Positive |
 
