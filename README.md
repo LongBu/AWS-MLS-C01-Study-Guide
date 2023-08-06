@@ -667,6 +667,7 @@ graph LR
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
 | S3 | Simple Storage Service |
+| SG | Security Group |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
 | SSE | Server Side Encryption |
