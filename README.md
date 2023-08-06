@@ -63,7 +63,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
    * Strong consistency model to reflect latest version/value upon write/delete to read actions
    * Version ID if versioning enabled at the bucket level
    * Metadata (list of key/val pairs)
-   * Tags (Unicode key/val pair >= 10) handy for lifecycle/security
+   * Tags (Unicode key/val pair <= 10) handy for lifecycle/security
    * Endpoint offers HTTP (non encrypted) and HTTPS (encryption in flight via SSL/TLS)
 
 ###### Security (IAM principle can access if either of the policy types below allows it and there is no Deny present):
