@@ -357,7 +357,8 @@ graph LR
     * Pay per stream per hour and data/in/out per GB
   * Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically)
     * Streams are divided into ordered shards
-    * 1 MB/s input, 2 MB/s output
+    * 1 MB/s or 1k messages input per shard else 'ProvisionedThroughputException'
+    * 2 MB/s output per shard
     * Pay per shard per hour
   * Can have up to 5 parallel consumers (5 consuming api calls per second \[per shard])
   * Synchronously replicate streaming data across 3 AZ in a single Region and store between 24 hours and 365 days in shard(s) to be consumed/processed/replayed by another service and stored elsewhere
