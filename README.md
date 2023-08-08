@@ -399,7 +399,7 @@ graph LR
     * Amazon Elastic Search
     * 3rd party partners (datadog/splunk/etc.)
     * Custom destination (http[s] endpoint)
-  * Data Conversion from csv/json to Parquet/ORC (only for S3)
+  * Data Conversion from csv/json to Parquet/ORC using AWS Glue (only for S3)
   * Data Transformation through λ (eg: csv=>json)
   * Supports compression if target is S3 (GZIP/ZIP/SNAPPY)
 
