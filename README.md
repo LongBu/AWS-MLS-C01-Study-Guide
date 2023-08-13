@@ -419,7 +419,8 @@ graph LR
     * One producer per video streams
     * Video playback capability
   * Consumers
-    * custom build  (MXNet, Tensorflow, etc.)
+    * custom build server (MXNet, Tensorflow, etc.)
+      * This may pass on the data to db (checkpoint stream per processing status), decode the input frames and pass onto SageMaker, or even inference results to Kinesis Streams=>λ for downstream notifications
     * AWS SageMaker
     * Amazon Rekognition Video
   *  retention between 1 hr to 10 years
