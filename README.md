@@ -389,8 +389,11 @@ graph LR
   * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
   * For Apache Flink (on a cluster): 
     * Input: Kinesis Data Stream or Amazon MSK
-    * Output: Sink (S3/Kinesis Data Firehose)    
-
+    * Output: Sink (S3/Kinesis Data Firehose)
+  * Uses:
+    * Streaming ETL (simple selections/translations)
+    * Continuous metric generation (eg: leaderboard)
+    * Responsive analytics to generate alerts when certain metrics encountered
 ##### Amazon Kinesis Data Firehose:
   * Fully Managed (serverless) service, no administration, automatic scaling
   * Allows for custom code to be written for producer/consumer
