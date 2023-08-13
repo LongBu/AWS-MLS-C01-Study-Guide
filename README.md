@@ -346,7 +346,7 @@ graph LR
     * Kinesis Data Streams
     * Kinesis Data Firehose
     * Kinesis Analytics
-    * Kinesis Video Streams (capture, process and store video streams in real-time)
+    * Kinesis Video Streams
 
 
 ##### Amazon Kinesis Data Streams:
@@ -413,6 +413,17 @@ graph LR
   * Data Transformation through λ (eg: csv=>json)
   * Supports compression if target is S3 (GZIP/ZIP/SNAPPY)
 
+##### Amazon Kinesis Video Streams 
+  * Producers
+    * used to capture, process and store video streams in real-time such as smartphone/security/body camera(s), AWS DeepLens, audio feeds, images, RADAR data; RTSP camera.
+    * One producer per video streams
+    * Video playback capability
+  * Consumers
+    * custom build  (MXNet, Tensorflow, etc.)
+    * AWS SageMaker
+    * Amazon Rekognition Video
+  *  retention between 1 hr to 10 years
+
 ##### EMR:
   * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
   * Supports Apache Spark, HBase, Presto, Flink, etc.
@@ -428,9 +439,6 @@ graph LR
     * On-demand: reliable, predictable, won't be terminated
     * Reserved: cost savings (EMR will use if available)
     * Spot instances: cheaper, can be terminated, less reliable
-
-##### Kinesis Video Streams (capture, process and store video streams in real-time)
-  * TBD
 
 ##### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
