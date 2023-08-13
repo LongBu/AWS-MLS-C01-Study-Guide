@@ -429,6 +429,9 @@ graph LR
     * Reserved: cost savings (EMR will use if available)
     * Spot instances: cheaper, can be terminated, less reliable
 
+##### Kinesis Video Streams (capture, process and store video streams in real-time)
+  * TBD
+
 ##### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
   * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
