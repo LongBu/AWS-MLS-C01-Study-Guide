@@ -458,6 +458,11 @@ graph LR
   * Glue Data Catalog:
     * Uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
     * Metadata repo for all tables with versioned schemas and automated schema inference
+  * Glue Crawlers go through your data to infer schemas and partitions
+    * formats supported: ]SON, Parquet, CSV, relational store
+    * Crawlers work for: S3, Amazon Redshift, Amazon RDS
+    * Can be schedule or On-Demand
+    * Need an IAM role / credentials to access the data stores
   * Glue Job bookmarks prevent reprocessing old data
   * Glue Databrew-clean/normalize data using pre-built transformation
   * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
