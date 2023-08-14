@@ -390,10 +390,18 @@ graph LR
   * For Apache Flink (on a cluster): 
     * Input: Kinesis Data Stream or Amazon MSK
     * Output: Sink (S3/Kinesis Data Firehose)
-  * Uses:
+  * Use cases:
     * Streaming ETL (simple selections/translations)
     * Continuous metric generation (eg: leaderboard)
     * Responsive analytics to generate alerts when certain metrics encountered
+  * ML use cases:
+    * Random Cut Forest:
+      * SQL function for anomaly detection on numeric columns in a stream
+      * uses only recent history to generate model
+    * HOTSPOTS:
+      * locate and return info about relatively dense regions of data
+      * uses more than only recent history
+      * 
 ##### Amazon Kinesis Data Firehose:
   * Fully Managed (serverless) service, no administration, automatic scaling
   * Allows for custom code to be written for producer/consumer
@@ -447,7 +455,9 @@ graph LR
 ##### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
   * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
-  * Glue Data catalog uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
+  * Glue Data Catalog:
+    * Uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
+    * Metadata repo for all tables with versioned schemas and automated schema inference
   * Glue Job bookmarks prevent reprocessing old data
   * Glue Databrew-clean/normalize data using pre-built transformation
   * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
