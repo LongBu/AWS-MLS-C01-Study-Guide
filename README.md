@@ -40,7 +40,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Compute node for performing queries to be sent back to the leader
   * Provisioning node sizes in advance
   * Enhanced VPC Routing
-  * Forces all COPY and UNLOAD traffic moving between your cluster and data repositories through your VPCs, otherwise over the internet routing, including to other AWS servicesq
+  * Forces all COPY and UNLOAD traffic moving between your cluster and data repositories through your VPCs, otherwise over the internet routing, including to other AWS services
   * Can configure to automatically copy snapshots to other Regions
   * Large inserts are better (S3 copy, firehose)
 
