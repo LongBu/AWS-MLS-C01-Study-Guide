@@ -28,7 +28,136 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 #### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
 #### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)(TBD)
-##### DB(TBD)
+##### Data Stores
+
+###### Amazon Redshift:
+  * fully managed, scalable cloud data warehouse, columnar instead of row based (no Multi-AZ, based on Postgres, No OLTP [row based], but OLAP [column based])
+  * Offered parallel sql queries
+  * Can be server less or use cluster(s)
+  * Uses SQL to analyze structured and semi-structured data across data warehouses, operational DBs, and data lakes
+  * Integrates with quicksight or Tableau
+  * Leader node for query planning, results aggregation
+  * Compute node for performing queries to be sent back to the leader
+  * Provisioning node sizes in advance
+  * Enhanced VPC Routing
+  * Forces all COPY and UNLOAD traffic moving between your cluster and data repositories through your VPCs, otherwise over the internet routing, including to other AWS servicesq
+  * Can configure to automatically copy snapshots to other Regions
+  * Large inserts are better (S3 copy, firehose)
+
+###### Amazon Redshift Spectrum:
+  * Resides on dedicated Amazon Redshift servers independent of your cluster
+  * Can efficiently query and retrieve structured and semistructured data from files in S3 into Redshift Cluster tables (points at S3) without loading data in Redshift tables
+  * Pushes many compute intensive tasks such as predicate filtering and aggregation, down to the Redshift Spectrum layer
+  * Redshift Spectrum queries use much less of the formal cluster's processing capacity than other queries
+
+###### AWS RDS:
+  * Autoscaling when running out of storage
+  * OLTP based
+  * Must be provisioned
+  * Max read replicas: 5
+  * Read replicas are not equal to a DB
+  * Read replicas cross region/AZ incur $
+  * IAM Auth
+  * Integrates with Secrets Manager
+  * Supports MySQL, MariaDB, Postgres, oracle, aurora, MySQL
+  * Fully customized => MS SQL Server or RDS Custom for Oracle => can use ssh or SSM session manager; full admin access to OS/DB
+  * At rest encryption via KMS
+  * Use SSL for data in transit to ensure secure access
+  * Use permission boundary to control the maximum permissions employees can grant to the IAM principals (eg: to avoid dropped/deleted tables)
+  * Multi-AZ: 
+    * Can be set at creation or live
+    * Synchronous replication, at least 2 AZs in region, while Read replicas => asynchronous replication can be in an AZ, cross-AZ or cross Region
+
+###### Aurora:
+  * MySQL or Postgres
+  * OLTP based
+  * Better performance than RDS version
+  * Lower price
+  * At rest encryption via KMS
+  * 2 copies in each AZ, with a minimum of 3 AZ => 6 copies
+  * max read replica: 15 (autoscales)
+  * Shareable snapshots with other accounts
+  * Replicas: MySQL, Postgres, or Aurora
+  * Replicas can autoscale
+  * Cross region replication (< 1 second) support available 
+    * Aurora Global: multi region (up to 5)
+    * Aurora Cloning: copy of production (faster than a snapshot)
+  * Aurora multimaster (for write failover/high write availability)
+  * Aurora serverless for cost effective option (pay per second) for infrequent, intermittent or unpredictable workloads
+  * Non-serverless option must be provisioned
+  * Automated backups
+  * Automated failover with Aurora replicas 
+    * Fail over tiers: lowest ranking number first, then greatest size
+  * Aurora ML: ML using SageMaker and Comprehend on Aurora
+
+###### DynamoDB:
+  * (Serverless) NoSQL Key-value and document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
+  * Stored on SSD
+  * Good candidate to store ML model served by application(s)
+  * Stored across 3 geographically distinct data centers
+  * Eventual consitent reads (default) or strongly consistent reads (1 sec or less)
+  * Session storage alternative (TTL)
+  * IAM for security, authorization, and administration
+  * Primay key possibilities could involve creation time
+  * On-Demand (pay per request pricing) => $$$
+  * Provisioned Mode (default) is less expensive where you pay for provisioned RCU/WCU
+  * Backup: optionally lasts 35 days and can be used to recreate the table
+  * Standard and IA Table Classes are available
+  * Max size of an item in DynamoDB Table: 400KB
+  * Can be exported to S3 as DynamoDB JSON or ion format
+  * Can be imported from S3 as CSV, DynamoDB JSON or ion format
+
+###### Amazon OpenSearch Service (Amazon ElasticSearch Service)
+  * Service to search any field, even partial matches at petabyte scale
+  * Common to use as a complement to another DB (conduct search in the service, but retrieve data based on indices from an actual DB)
+  * Requires a cluster of instances (can also be Multi-AZ)
+  * Doesn't support SQL (own query language)
+  * Comes with Opensearch dashboards (visualization)
+  * Built in integrations: Kinesis Firehose, AWS IOT, λ, Cloudwatch logs for data ingest
+  * Security through Cognito and IAM, KMS encryption, SSL and VPC
+  * Can help efficiently store and analyze logs (amongst cluster) for uses such as Clickstream Analytics
+  * Patterns:
+ ```mermaid
+sequenceDiagram
+    participant Kinesis data streams
+    participant Kinesis data firehose (near real time)
+    participant OpenSearch
+    Kinesis data streams->>Kinesis data firehose (near real time): 
+    Kinesis data firehose (near real time)->>OpenSearch: 
+    Kinesis data firehose (near real time)->>Kinesis data firehose (near real time): data tranformation via λ
+```
+```mermaid
+sequenceDiagram
+    participant Kinesis data streams
+    participant λ (real time)
+    participant OpenSearch
+    Kinesis data streams->>λ (real time): 
+    λ (real time)->>OpenSearch: 
+```
+
+###### AWS Elasticache
+  * Good to improve latency and throughput for read heavy applications or compute intensive workloads
+  * Good for storing sessions of instances
+  * Good for performance improvement of DB(s), though use of involves heavy application code changes
+  * Must provision EC2 instance type(s)
+  * IAM auth no supported
+  * Redis versus Mem Cached:
+    * Redis:
+      * backup and restore features
+      * read replicas to scale reads/HA
+      * data durability using AOF persistence
+      * multi AZ with failover 
+      * Redis sorted sets are good for leaderboards
+      * Redis Auth tokens enable Redis to require a token (password) before allowing clients to execute commands, thus improving security (SSL/Inflight encryption)
+      * Fast in-memory data store providing sub-millisecond latency, Hippa compliant, replication, HA, and cluster sharding
+    * Mem Cached:
+      * Multinode partitioning of data (sharing)
+      * No replication (HA)
+      * Non persistence
+      * No backup/restore
+      * Multithreaded
+      * Supports SASL auth
+
 ##### Data Lake
   * Offers centralized architecture within S3
   * Decouples storage (S3) from compute resources
@@ -401,7 +530,6 @@ graph LR
     * HOTSPOTS:
       * locate and return info about relatively dense regions of data
       * uses more than only recent history
-      * 
 ##### Amazon Kinesis Data Firehose:
   * Fully Managed (serverless) service, no administration, automatic scaling
   * Allows for custom code to be written for producer/consumer
@@ -454,11 +582,26 @@ graph LR
 
 ##### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
+    * Utilizes Python (PySpark) or Scala (Spark) scripts, but run on serverless Spark platform
+    * Targets: S3, JDBC (RDS, Redshift), or in Glue Data Catalog
+    * Jobs scheduled via Glue Scheduler
+    * Jobs triggered by events=>Glue Triggers
+    * Transformations:
+      * Bundled Transformations
+        * DropFields/DropNullFields
+        * Filter records
+        * Join data to make more interesting data
+        * Map/Reduce
+      * ML Transformations
+        * FindMatches ML: identify duplicate or matching data, even when the records lack a common unique identifier, and no fields exactly match
+        * K-Means
+      * Format conversions: CSV, JSON, Avro, Parquet, ORC, XML
+      * Need an IAM role / credentials to access the TO/FROM data stores
   * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
   * Glue Data Catalog:
     * Uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
     * Metadata repo for all tables with versioned schemas and automated schema inference
-  * Glue Crawlers go through your data to infer schemas and partitions
+  * Glue Crawlers go through your data to infer schemas and partitions (s3 based on organization \[see S3 Data Partitioning])
     * formats supported: ]SON, Parquet, CSV, relational store
     * Crawlers work for: S3, Amazon Redshift, Amazon RDS
     * Can be schedule or On-Demand
