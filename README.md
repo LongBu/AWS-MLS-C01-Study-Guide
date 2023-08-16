@@ -47,7 +47,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ###### Amazon Redshift Spectrum:
   * Resides on dedicated Amazon Redshift servers independent of your cluster
   * Can efficiently query and retrieve structured and semistructured data from files in S3 into Redshift Cluster tables (points at S3) without loading data in Redshift tables
-  * Pushes many compute intensive tasks such as predicate filtering and aggregation, down to the Redshift Spectrum layer
+  * Pushes many compute intensive tasks such as predicate filtering (ability to skip reading unnecessary data at storage level from a data set into RAM) and aggregation, down to the Redshift Spectrum layer
   * Redshift Spectrum queries use much less of the formal cluster's processing capacity than other queries
 
 ###### AWS RDS:
