@@ -32,7 +32,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 ###### Amazon Redshift:
   * fully managed, scalable cloud data warehouse, columnar instead of row based (no Multi-AZ, based on Postgres, No OLTP [row based], but OLAP [column based])
-  * Offeres parallel sql queries
+  * Offers parallel sql queries
   * Can be server less or use cluster(s)
   * Uses SQL to analyze structured and semi-structured data across data warehouses, operational DBs, and data lakes
   * Integrates with quicksight or Tableau
