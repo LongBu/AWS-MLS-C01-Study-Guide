@@ -157,6 +157,27 @@ sequenceDiagram
       * No backup/restore
       * Multithreaded
       * Supports SASL auth
+     
+###### AWS DB Migration Service (AWS DMS):
+  * Service to transition (no transformations) supported sources to relation DB, data warehouses, streaming platforms, and other data stores in AWS without new code (or any?)
+  * Sources: 
+    * On-premises and EC2 DBs: Oracle, MS SQL Server, MySQL, MariaDB, postgres, mongoDB, SAP, DB2
+    * Azure: Azure SQL DB
+    * Amazon RDS: all including Aurora
+    * S3
+  * Targets
+    * On-premises and EC2 DBs: Oracle, MS SQL Server, MySQL, MariaDB, postgres, SAP
+    * Amazon RDS: all including Aurora
+    * Amazon Redshift
+    * DynamoDB
+    * S3
+    * Elastic Search service
+    * Kinesis Data Streams
+    * DocumentDB
+  * Homogenous migration: Oracle => Oracle
+  * Heteregenous: Oracle => Aurora
+  * EC2 server runs replication software, as well as continuous data replication using Change Data Capture (CDC) [for new deltas] and DMS 
+  * Can pre-create target tables manually or use AWS Schema Conversion Tool (SCT) [runs on the same server] to create some/all of the target tables, indices, views, etc. (only necessary for heterogeneous case)
 
 ##### Data Lake
   * Offers centralized architecture within S3
@@ -560,11 +581,28 @@ graph LR
   * Consumers
     * custom build server (MXNet, Tensorflow, etc.)
       * This may pass on the data to db (checkpoint stream per processing status), decode the input frames and pass onto SageMaker, or even inference results to Kinesis Streams=>λ for downstream notifications
+    * EC2 instances
     * AWS SageMaker
     * Amazon Rekognition Video
   *  retention between 1 hr to 10 years
 
-##### EMR:
+
+
+##### Job scheduling (TBD)
+
+### Identify and implement a data transformation solution. 
+  * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
+  * Transforming data transit (ETL: Glue, EMR, AWS Batch)
+
+#### AWS Step Functions:
+  * A visual workflow service that helps developers use AWS services with λ to build distributed applications, automate processes, orchestrate micro services, or create data (ML) pipelines
+  * JSON used to declare state machines under the hood
+  * Advanced Error Handling and retry mechanism outside the code
+  * Audit history of workflows is available
+  * Able to "wait" for any length of time, though the max execustion time of a state machine is 1 year
+  * Great for orchestrating and tracking and ordered flow of resources
+
+#### EMR:
   * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
   * Supports Apache Spark, HBase, Presto, Flink, etc.
   * Takes care of provisioning and configuration
@@ -580,8 +618,9 @@ graph LR
     * Reserved: cost savings (EMR will use if available)
     * Spot instances: cheaper, can be terminated, less reliable
 
-##### AWS Glue:
+#### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
+    * upper limit of 5 minutes as it is serverless
     * Utilizes Python (PySpark) or Scala (Spark) scripts, but run on serverless Spark platform
     * Targets: S3, JDBC (RDS, Redshift), or in Glue Data Catalog
     * Jobs scheduled via Glue Scheduler
@@ -614,12 +653,6 @@ graph LR
     * Combine and replicate data across multiple data stores using SQL (View)
     * No custom code, Glue monitors for changes in the source data, serverless
     * Leverages a "virtual table" (materialized view)
-
-##### Job scheduling (TBD)
-
-### Identify and implement a data transformation solution. 
-  * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
-  * Transforming data transit (ETL: Glue, EMR, AWS Batch)
 
 #### AWS Batch:
   * Fully managed (serverless) batch processing at any scale using dynamically launched *EC2 instances (spot or on-demand)* managed by AWS for which you pay
