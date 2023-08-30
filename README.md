@@ -473,6 +473,13 @@ graph LR
   * Scratch File System can be used for temporary or burst storage use
   * Persistent File System can be used for storage / replicated with AZ
 
+##### AWS Datasync:
+  * A schedulable online data movement and discovery service that simplifies and accelerates *data migration* to AWS or *moving data* between on-premises storage, edge locations, other clouds and AWS storage (AWS to AWS, too)
+  * Deployed VM AWS Datasync Agent used to convey data from internal storage (via NFS, SMB, or HDFS protocols) to the DataSync service over the internet or AWS Direct Connect to within AWS.  Agent is unnecessary for AWS to AWS
+  * Directly within AWS =>S3/EFS/FSx for Windows File Server/FSx for Lustre/FSx open zfs/FSx for NetAp ONTAP
+  * File permissions and metadata are preserved
+  * transfers encrypted and data validation conducted
+
 ### Identify and implement a data ingestion solution.
 
 #### Data job styles/types (batch load, streaming)
@@ -485,6 +492,25 @@ graph LR
   * If there is an acceptable latency, run the batch load job(s) every n seconds/minutes/hours/days/weeks/etc.
 
 #### Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
+
+##### AWS Data Pipeline (DP)
+  * Data sources can be on-prem or AWS
+  * Destinations: S3, RDS, DynamoDB, Redshift, EMR
+  * Conducted with EC2 or EMR instances managed by DP
+  * Manages task dependencies
+  * Retries and notifies upon failure(s)
+  * HA
+
+##### AWS DP vs. Glue:
+  * Glue: 
+    * focused on ETL
+    * resources all managed by AWS
+    * Data Catalog is there to make the data available to Athena or Redshift Spectrum
+    * Lambda based
+  * DP:
+    * Move data from one location to another
+    * More control over environment, compute resources that run code and the code itself
+    * EC2 or EMR instance based
 
 ##### Amazon Kinesis:
   * Platform to send stream data (eg: IoT, metrics and logs) making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
@@ -586,8 +612,6 @@ graph LR
     * Amazon Rekognition Video
   *  retention between 1 hr to 10 years
 
-
-
 ##### Job scheduling (TBD)
 
 ### Identify and implement a data transformation solution. 
@@ -673,7 +697,45 @@ graph LR
 
 ## Exploratory Data Analysis
 
+### Libraries to know at a high level:
+  * Pandas:
+    * used for slicing and mapping data (DataFrames, Series) and interoperates with bumpy
+    * Dataframe/Series are interchangeable with numpy arrays, though the former is often converted to the former to feed ML algorithms
+  * Matplotlib (graphics might be good?)
+    * boxplot (with whiskers)
+    * histograms (binning: bins of results of similar measure)
+  *Seaborn  (graphics might be good?)
+    * essentially Matplotlib extended
+    * heatmap: demonstrates another dimension within the given plot axes
+    * pairplot: good for attribute correlations
+    * jointplot: scatterplot with histograms adjoining each axis
+  * scikit_learn
+    * toolkit for/to make ML models
+    * X=>attributes
+    * y=>labels
+    * X and y are utilized in conjunction with the fit function to train the model(s)
+    * predict function harnesses the model to output inferences based on input
+    * good for preprocessing data (input data=>normal distribution)
+      * to avoid unequal weightings, scale to the around the mean for each column
 
+### Jupyter Notebooks
+  * runs in browser(s) to communicate with the python environment (eg: anaconda) server
+ 
+*from sklearn import preprocessing*
+
+*scaler = preprocessing.standardScaler()*
+
+*new_data = scaler.fit_transform(input)*
+
+### General flow for analyzing data import at first glance (note consider merging this with the next topic):
+  * import data
+  * head()
+  * Does the data have column names?
+  * Are certain rows attributes of the data type or na values?
+    * Can drop rows potentially (*.dropna(inplace=True), though this might introduce bias if the missing values aren't evenly distributed
+  * describe()=> are counts of all the columns equal?
+  * If remapping the data, it is a good idea to check the mean/std of attributes from/to via describe()
+  * To convert to the numpy array=>*.values()
 
 ### Sanitize and prepare data for modeling
   * Identify and handle missing data, corrupt data, stop words, etc.
@@ -795,7 +857,8 @@ graph LR
     * Generate metadata for media assets to create full scaleable architecture
   * Can remove PII using redaction
   * Supports automatic language identification for multi-lingual audio
-  
+
+##### DeepLens: AWS camera service
 ##### Amazon Rekognition:
   * Find objects, people, text, scenes in images and videos using ML
   * Facial analysis and search to perform user verification, people counting
@@ -886,7 +949,8 @@ graph LR
 | ------------- | ------------- |
 | AZ | Availability Zones |
 | CLS | Column Level Security |
-| Db | Database |
+| DB | Database |
+| DP | Data Pipeline |
 | EBS | Elastic Block Store |
 | ECS | Elastic Container Service |
 | EFS | Elastic File System |
