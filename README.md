@@ -140,7 +140,7 @@ sequenceDiagram
   * Good for storing sessions of instances
   * Good for performance improvement of DB(s), though use of involves heavy application code changes
   * Must provision EC2 instance type(s)
-  * IAM auth no supported
+  * IAM auth not supported
   * Redis versus Mem Cached:
     * Redis:
       * backup and restore features
@@ -603,7 +603,7 @@ graph LR
   * Great for orchestrating and tracking and ordered flow of resources
 
 #### EMR:
-  * Service to create Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
+  * Service to create managed Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
   * Supports Apache Spark, HBase, Presto, Flink, etc.
   * Takes care of provisioning and configuration
   * Autoscaling and integrated with Spot Instances
@@ -639,6 +639,7 @@ graph LR
   * Can be event driven (eg: λ triggered by S3 put object) to call Glue ETL
   * Glue Data Catalog:
     * Uses an AWS Glue Data Crawler scanning DBs/S3/data to write associated metadata utilized by Glue ETL, or data discovery on Athena, Redshift Spectrum or EMR
+    * Can issue crawlers throughout a DP to be able to know what data is where in the flow
     * Metadata repo for all tables with versioned schemas and automated schema inference
   * Glue Crawlers go through your data to infer schemas and partitions (s3 based on organization \[see S3 Data Partitioning])
     * formats supported: ]SON, Parquet, CSV, relational store
@@ -853,7 +854,21 @@ graph LR
 | Bucket Policies | Yes | Yes |
 
 #### Security groups(TBD)
-#### VPC(TBD)
+#### VPC
+##### VPC Endpoint:
+  * Every AWS service is publicly exposed (public url)
+  * VPC Endpoints (using AWS PrivateLink) allows connections to AWS service(s) using a private network instead of public internet
+  * Redundant and scales horizontally
+  * Removes the need for IGW, NATGW, etc. to access AWS service(s)
+  * In case of issues: 
+    * Check DNS setting resolution in VPC 
+    * Check Route tables
+  * Types of Endpoints:
+    * Interface Endpoints: provisions an ENI (private ip) as an entry point (must attach a SG); supports most AWS services; powered by Private Link
+    * Gateway Endpoints: provisions a gateway and must be used as a target in Route table; supports both *S3 and DynamoDB*
+  * Gateway Endpoints are preferred most of the time over Interface Endpoints as the former is free and the latter costs $
+  * Interface endpoint is preferred if access is required from on-premises (site-to-site VPN or Direct Connect), a different VPC or a different region
+
 #### Encryption/anonymization(TBD)
 ### Deploy and operationalize machine learning solutions.
   * Exposing endpoints and interacting with them
