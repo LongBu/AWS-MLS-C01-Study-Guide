@@ -37,7 +37,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Uses SQL to analyze structured and semi-structured data across data warehouses, operational DBs, and data lakes
   * Integrates with quicksight or Tableau
   * Leader node for query planning, results aggregation
-  * Compute node for performing queries to be sent back to the leader
+  * Compute node(s) for performing queries to be sent back to the leader
   * Provisioning node sizes in advance
   * Enhanced VPC Routing
   * Forces all COPY and UNLOAD traffic moving between your cluster and data repositories through your VPCs, otherwise over the internet routing, including to other AWS services
