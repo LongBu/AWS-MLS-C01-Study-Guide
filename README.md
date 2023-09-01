@@ -27,7 +27,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ### Create data repositories for machine learning
 
 #### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
-#### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)(TBD)
+#### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)
 ##### Data Stores
 
 ###### Amazon Redshift:
