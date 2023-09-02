@@ -965,6 +965,8 @@ graph LR
 | ML | Machine Learning |
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
+| OLAP | Online Analytical Processing |
+| OLTP | Online Transaction Processing |
 | S3 | Simple Storage Service |
 | SG | Security Group |
 | SNS | Simple Notification Service |
