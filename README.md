@@ -973,9 +973,13 @@ graph LR
 | SG | Security Group |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
+| SSD | Solid State Drive |
 | SSE | Server Side Encryption |
+| SSH	| Secure Shell |
 | SSL	| Secure Sockets Layer |
+| SSM	| Systems Manager |
 | TN | True Negative |
 | TP | True Positive |
+| TTL	| Time to live |
 | VPC | Virtual Private Cloud |
 | VPN | Virtual Private Network |
