@@ -968,11 +968,13 @@ graph LR
 | NFS | Network File System |
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
+| RDS	| Relational Database Service |
 | S3 | Simple Storage Service |
 | SG | Security Group |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
 | SSE | Server Side Encryption |
+| SSL	| Secure Sockets Layer |
 | TN | True Negative |
 | TP | True Positive |
 | VPC | Virtual Private Cloud |
