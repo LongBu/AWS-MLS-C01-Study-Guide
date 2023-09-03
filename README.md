@@ -59,7 +59,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Read replicas cross region/AZ incur $
   * IAM Auth
   * Integrates with Secrets Manager
-  * Supports MySQL, MariaDB, Postgres, oracle, aurora, MySQL
+  * Supports MySQL, MariaDB, Postgres, oracle, aurora
   * Fully customized => MS SQL Server or RDS Custom for Oracle => can use ssh or SSM session manager; full admin access to OS/DB
   * At rest encryption via KMS
   * Use SSL for data in transit to ensure secure access
