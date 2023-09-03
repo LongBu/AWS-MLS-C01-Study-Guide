@@ -1,4 +1,4 @@
-# AWS-MLS-C01-Study-Guide
+## AWS-MLS-C01-Study-Guide
 
 Note these are my own personal notes and are a work in progress as I study torwards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
 
@@ -962,6 +962,7 @@ graph LR
 | IAM | Identity and Access Management |
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
+| KMS	| Key Management Service |
 | ML | Machine Learning |
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
