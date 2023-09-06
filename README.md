@@ -947,6 +947,7 @@ graph LR
 
 | Acronym  | Definition |
 | ------------- | ------------- |
+| AOF | Append-only file |
 | AZ | Availability Zones |
 | CLS | Column Level Security |
 | DB | Database |
@@ -959,6 +960,7 @@ graph LR
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| IA | Infrequent Access |
 | IAM | Identity and Access Management |
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
@@ -968,8 +970,10 @@ graph LR
 | NFS | Network File System |
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
+| RCU | Read Capacity Units |
 | RDS	| Relational Database Service |
 | S3 | Simple Storage Service |
+| SCT	| AWS Schema Conversion Tool |
 | SG | Security Group |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
@@ -983,3 +987,4 @@ graph LR
 | TTL	| Time to live |
 | VPC | Virtual Private Cloud |
 | VPN | Virtual Private Network |
+| WCU | Write Capacity Units |
