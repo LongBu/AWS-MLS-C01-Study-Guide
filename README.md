@@ -612,6 +612,11 @@ graph LR
     * Amazon Rekognition Video
   *  retention between 1 hr to 10 years
 
+##### MQTT
+  * An IOT Standard messaging protocol
+  * Sensor data transferred to your model
+  * The AWS loT Device SDK can connect via MQTT
+
 ##### Job scheduling (TBD)
 
 ### Identify and implement a data transformation solution. 
@@ -964,8 +969,10 @@ graph LR
 | IAM | Identity and Access Management |
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
+| IOT | Internet of Things |
 | KMS	| Key Management Service |
 | ML | Machine Learning |
+| MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
 | OLAP | Online Analytical Processing |
