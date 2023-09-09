@@ -653,7 +653,7 @@ graph LR
   * Node types: 
     * Master Node: manage the cluster, coordinate, manage health-long running process
     * Core Node: run tasks and store data-long running process
-    * Task Node (optional): only to run tasks-usually Spot Instances
+    * Task Node (optional): only to run tasks-usually Spot Instances; can spin up/down as needed
   * Can have long-running cluster or transient (temporary) cluster
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated
