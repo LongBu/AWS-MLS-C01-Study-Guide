@@ -493,6 +493,19 @@ graph LR
 
 #### Data ingestion pipelines (Batch-based ML workloads and streaming-based ML workloads)
 
+##### Example Full Data Engineering Analytics pipeline
+
+ ```mermaid
+graph LR
+    A[S3]-->B[AWS Glue Data Catalog:Schema]
+    B-->C[Athena]
+    A-->D[EMR:Hadoop/Spark/Hive]
+    A-->E[Redshift/Spectrum]
+    E-->C
+    E-->F[QuickSight]
+    C-->F
+```
+
 ##### AWS Data Pipeline (DP)
   * Data sources can be on-prem or AWS
   * Destinations: S3, RDS, DynamoDB, Redshift, EMR
