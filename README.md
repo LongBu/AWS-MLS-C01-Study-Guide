@@ -658,8 +658,22 @@ graph LR
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated
     * Reserved: cost savings (EMR will use if available)
-    * Spot instances: cheaper, can be terminated, less reliable
-
+    * Spot instances: 
+      * cheaper, can be terminated, less reliable
+      * Good choice for task nodes
+      * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
+  * Instance Type(s) selection
+    * Master node:
+      * m4.large if < 50 nodes, m4 .xlarge if > 50 nodes
+    * Core & task nodes:
+      * m4.large is usually good
+      * If cluster waits a lot on external dependencies (i.e. a web crawler), t2.medium
+      * Improved performance: m4.xlarge
+      * Computation-intensive applications: high CPU instances
+      * Database, memory-caching applications: high memory instances
+      * Network / CPU-intensive (NLP, ML) - cluster computer instances
+      * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
+  
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
     * upper limit of 5 minutes as it is serverless
