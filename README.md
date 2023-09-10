@@ -497,10 +497,10 @@ graph LR
 
  ```mermaid
 graph LR
-    A[S3]-->B[AWS Glue Data Catalog:Schema]
-    B-->C[Athena]
-    A-->D[EMR:Hadoop/Spark/Hive]
-    A-->E[Redshift/Spectrum]
+    A[S3]-->B[AWS Glue Data Catalog]
+    B---|Schema|C[Athena]
+    A-->E["Redshift /(Redshift Spectrum)"]
+    A-->D["EMR (Hadoop/Spark/Hive)"]
     E-->C
     E-->F[QuickSight]
     C-->F
