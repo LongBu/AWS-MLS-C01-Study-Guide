@@ -673,6 +673,18 @@ graph LR
       * Database, memory-caching applications: high memory instances
       * Network / CPU-intensive (NLP, ML) - cluster computer instances
       * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
+  * Security
+    * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
+    * Kerberos
+    * SSH can use kerboros or EC2 key pairs for client authentication
+    * IAM roles:
+      * Every cluster in EMR must have a service role and a role for EC2 instance profile(s).  These roles, attached via policies, will provide permission(s) to interact with other AWS Services
+      * If a cluster uses automatic scaling, an autoscaling role is necessary
+      * Service linked roles can be used if service for EMR has lost ability to clean up EC2 resources
+      * IAM roles can also be sued for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
+    * Security configurations may be specified for Lake Formation (JSON)
+    * Native integration with  Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
+    * For data security on Hadoop /Hive
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
@@ -988,6 +1000,7 @@ graph LR
 | ECS | Elastic Container Service |
 | EFS | Elastic File System |
 | EMR | Elastic Map Reduce |
+| EMRFS | Elastic Map Reduce File System|
 | ENI | Elastic Network Interface |
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
