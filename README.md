@@ -645,8 +645,8 @@ graph LR
   * Great for orchestrating and tracking and ordered flow of resources
 
 #### EMR:
-  * Service to create managed Hadoop clusters (Big Data) to analyze/process lots of data using (many) instances
-  * Supports Apache Spark, HBase, Presto, Flink, etc.
+  * Service to create a managed Hadoop framework clusters (Big Data) to analyze/process lots of data using (many) instances
+  * Supports Apache Spark, HBase, Presto, Flink, Hive, etc.
   * Takes care of provisioning and configuration
   * Autoscaling and integrated with Spot Instances
   * Use cases: Data processing, ML, Web Indexing, BigData
