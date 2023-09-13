@@ -651,17 +651,26 @@ graph LR
   * Autoscaling and integrated with Spot Instances
   * Use cases: Data processing, ML, Web Indexing, BigData
   * Node types: 
-    * Master Node: single EC2 instance to manage the cluster, coordinate distribution of data and tasks, manage health-long running process
-    * Core Node: Hosts HDFS data and runs tasks and store data-long running process; can spin up/down as needed
-    * Task Node (optional): only to run tasks-usually Spot Instances are a best option; no hosted data, so no risk of data loss upon removal; can spin up/down as needed
+    * Master Node:
+      * single EC2 instance to manage the cluster
+      * coordinates distribution of data and tasks
+      * manages health-long running process
+    * Core Node:
+      * Hosts HDFS data and runs tasks and store data-long running process
+      * can spin up/down as needed
+    * Task Node (optional):
+      * only to run tasks-usually Spot Instances are a best option
+      * no hosted data, so no risk of data loss upon removal
+      * can spin up/down as needed
   * Can have long-running cluster or transient (temporary) cluster
   * Purchasing options: 
-    * On-demand: reliable, predictable, won't be terminated
-    * Reserved: cost savings (EMR will use if available)
+    * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
+    * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
     * Spot instances: 
       * cheaper, can be terminated, less reliable
-      * Good choice for task nodes
+      * Good choice for task nodes (temporary capacity)
       * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
+  * At installation of the cluster you need to select frameworks and applications to install
   * Instance Type(s) selection
     * Master node:
       * m4.large if < 50 nodes, m4 .xlarge if > 50 nodes
