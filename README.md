@@ -651,9 +651,9 @@ graph LR
   * Autoscaling and integrated with Spot Instances
   * Use cases: Data processing, ML, Web Indexing, BigData
   * Node types: 
-    * Master Node: manage the cluster, coordinate, manage health-long running process
-    * Core Node: run tasks and store data-long running process
-    * Task Node (optional): only to run tasks-usually Spot Instances; can spin up/down as needed
+    * Master Node: single EC2 instance to manage the cluster, coordinate distribution of data and tasks, manage health-long running process
+    * Core Node: Hosts HDFS data and runs tasks and store data-long running process; can spin up/down as needed
+    * Task Node (optional): only to run tasks-usually Spot Instances are a best option; no hosted data, so no risk of data loss upon removal; can spin up/down as needed
   * Can have long-running cluster or transient (temporary) cluster
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated
