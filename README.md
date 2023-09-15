@@ -804,19 +804,29 @@ graph LR
   * Clustering (hierarchical, diagnosing, elbow plot, cluster size)
 
 #### Amazon Athena:
-  * Serverless query service enabling analysis and querying of data in S3 using standard SQL, while allowing more advanced queries (joins permitted)
+  * Serverless ad-hoc query service enabling analysis and querying of data in S3 using standard SQL, while allowing more advanced queries (joins permitted)
   * Compress data for smaller retrieval
-  * Use target files (> 128 MB) to minimize overhead
+  * Use target files (> 128 MB) to minimize overhead and as a cost savings measure
   * $5.00 per TB scanned
-  * Commonly used with Amazon Quicksight
+  * Commonly used/integrated with Amazon Quicksight
   * Federated query allows SQL queries across relational, object, non-relational, custom (AWS or on-premisis) using Data Source Connectors that run on λ with results being returned and stored in S3
+  * presto under the hood
+  * supports: csv, json, orc, parquet, Auro
+  * able to query unstructured, semi-structured or structured data with in the data lake
+  * use cases
+    * query web logs (CloudTrail, CloudFront, VPC, ELB)
+    * query data prior to loading in DB
+  * can integrate with Jupiter, Zepplin, or R-Studio notebooks
+  * able to integrate with other visualization tools via ODBC/JDBC protocols
+  * can harness Glue Data Catalog metadata for queries
 
 #### Amazon Quicksight:
-  * BI/analytics sereverless ML service used to build interactive visualizations, perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
-  * Integrates with RDS 
+  * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
+  * Integrates with source both in and out of AWS (RDS)
   * In memory computation using Spice Engine
   * Column-Level security (CLS)
   * Can share analysis (if published) or the dashboard (read only) with users or groups
+  * Available as an application anytime on any device (browsers [mobile])
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
