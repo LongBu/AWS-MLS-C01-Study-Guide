@@ -840,6 +840,17 @@ graph LR
   * Column-Level security (CLS)
   * Can share analysis (if published) or the dashboard (read only) with users or groups
   * Available as an application anytime on any device (browsers [mobile])
+  * Data Sources
+    * Redshift
+    * Aurora / RDS
+    * Athena
+    * EC2-hosted databases
+    * Files (S3 or on-premises)
+      * Excel
+      * CSV, TSV
+      * Common or extended log format
+    * AWS loT Analytics
+    * Data preparation allows limited ETL
   * Quicksight Paginated Reports
     * Reports designed to be printed
     * May span many pages
