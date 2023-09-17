@@ -844,8 +844,7 @@ graph LR
     * Reports designed to be printed
     * May span many pages
     * Can be based on existing Quicksight dashboards
-  
-* Security:
+  * Security:
     * Multi-factor authentication on your account
     * VPC connectivity
       * Add QuickSight's IP address range to your database security groups
