@@ -819,6 +819,19 @@ graph LR
   * can integrate with Jupiter, Zepplin, or R-Studio notebooks
   * able to integrate with other visualization tools via ODBC/JDBC protocols
   * can harness Glue Data Catalog metadata for queries
+  * Security:
+    *  Access control
+      * IAM, ACLs, S3 bucket policies
+      * AmazonAthenaFullAccess/AWSQuicksightAthenaAccess
+    * Encrypt results at rest in S3 staging directory
+      * Server-side encryption with S3-managed key (SSE-S3)
+      * Server-side encryption with KMS key (SSE-KMS)
+      * Client-side encryption with KMS key (CSE-KMS)
+    * Cross-account access in S3 bucket policy possible
+    * Transport Layer Security (TLS) encrypts in-transit (between Athena and S3)
+  * anti-patterns:
+    * Highly formatted reports / visualization=>That's what QuickSight is for
+    * ETL=>Use Glue instead
 
 #### Amazon Quicksight:
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
@@ -827,6 +840,28 @@ graph LR
   * Column-Level security (CLS)
   * Can share analysis (if published) or the dashboard (read only) with users or groups
   * Available as an application anytime on any device (browsers [mobile])
+  * Quicksight Paginated Reports
+    * Reports designed to be printed
+    * May span many pages
+    * Can be based on existing Quicksight dashboards
+  
+* Security:
+    * Multi-factor authentication on your account
+    * VPC connectivity
+      * Add QuickSight's IP address range to your database security groups
+    * Row-level security
+      * Column-level security too (CLS) - Enterprise edition only
+    * Private VPC access
+      * Elastic Network Interface, AWS DirectConnect
+  * Use Cases:
+    * Interactive ad-hoc exploration / visualization of data
+    * Dashboards and KPI's
+    * Analyze / visualize data from:
+      * Logs in S3
+      * On-premise databases
+      * AWS (RDS, Redshift, Athena, S3)
+      * SaaS applications, such as Salesforce
+      * Any JDBC/ODBC data source
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
