@@ -863,6 +863,11 @@ graph LR
       * Column-level security too (CLS) - Enterprise edition only
     * Private VPC access
       * Elastic Network Interface, AWS DirectConnect
+  * User Management
+    * Users defined via IAM, or email signup
+    * SAML-based single sign-on
+    * Active Directory integration (Enterprise Edition)
+    * MFA
   * Use Cases:
     * Interactive ad-hoc exploration / visualization of data
     * Dashboards and KPI's
