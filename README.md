@@ -872,6 +872,12 @@ graph LR
       * AWS (RDS, Redshift, Athena, S3)
       * SaaS applications, such as Salesforce
       * Any JDBC/ODBC data source
+  * Anti-Patterns
+    * Highly formatted canned reports
+      * QuickSight is for ad ho queries, analysis, and visualization
+      * No longer true with paginated reports!
+    * ETL
+      * Use Glue instead, although QuickSight can do some transformations
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
