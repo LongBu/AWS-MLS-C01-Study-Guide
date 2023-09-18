@@ -663,6 +663,12 @@ graph LR
       * no hosted data, so no risk of data loss upon removal
       * can spin up/down as needed
   * Can have long-running cluster or transient (temporary) cluster
+  * EMR Notebook
+    * Similar concept to Zeppelin, with more AWS integration
+    * Notebooks backed up to S3
+    * Provision clusters from the notebook!
+    * Hosted inside a VPC
+    * Accessed only via AWS console
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
     * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
