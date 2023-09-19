@@ -850,6 +850,13 @@ graph LR
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
   * Integrates with source both in and out of AWS (RDS)
   * In memory computation using Spice Engine
+    * Data sets are imported into SPICE
+      * Super-fast, Parallel, In-memory Calculation Engine
+      * Uses columnar storage, in-memory, machine code generation
+      * Accelerates interactive queries on large datasets
+    * Each user gets 10GB of SPICE
+    * Highly available / durable
+    * Scales to hundreds of thousands of users
   * Column-Level security (CLS)
   * Can share analysis (if published) or the dashboard (read only) with users or groups
   * Available as an application anytime on any device (browsers [mobile])
