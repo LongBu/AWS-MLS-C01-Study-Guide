@@ -688,6 +688,13 @@ graph LR
       * Database, memory-caching applications: high memory instances
       * Network / CPU-intensive (NLP, ML) - cluster computer instances
       * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
+  * Storage
+    * HDFS
+    * EMRFS: access S3 as if it were HDFS
+    * EMRFS Consistent View - Optional for S3 consistency
+    * Uses DynamoDB to track consistency
+    * Local file system
+    * EBS for HDFS
   * Security
     * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
     * Kerberos
@@ -698,8 +705,8 @@ graph LR
       * Service linked roles can be used if service for EMR has lost ability to clean up EC2 resources
       * IAM roles can also be sued for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
     * Security configurations may be specified for Lake Formation (JSON)
-    * Native integration with  Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
-    * For data security on Hadoop /Hive
+    * Native integration with Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
+      * For data security on Hadoop/Hive
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
