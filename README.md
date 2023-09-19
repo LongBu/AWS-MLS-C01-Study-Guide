@@ -691,8 +691,8 @@ graph LR
   * Storage
     * HDFS
     * EMRFS: access S3 as if it were HDFS
-    * EMRFS Consistent View - Optional for S3 consistency
-    * Uses DynamoDB to track consistency
+      * EMRFS Consistent View - Optional for S3 consistency
+      * Uses DynamoDB to track consistency
     * Local file system
     * EBS for HDFS
   * Security
@@ -888,6 +888,21 @@ graph LR
     * SAML-based single sign-on
     * Active Directory integration (Enterprise Edition)
     * MFA
+  * Pricing
+    * Annual subscription
+      * Standard: $9 / user /month
+      * Enterprise: $18 / user / month
+      * Enterprise with Q: $28 / user / month
+    * Extra SPICE capacity (beyond 10GB)
+      * $0.25 (standard) $0.38 (enterprise) / GB / month
+    * Month to month
+      * Standard: $12 / user / month
+      * Enterprise: $24 / user / month
+      * Enterprise with Q: $34 / user / month
+    * Additional charges for paginated reports, alerts & anomaly detection, Q capacity, readers, and reader session capacity.
+    * Enterprise edition
+      * Encryption at rest
+      * Microsoft Active Directory integration
   * Use Cases:
     * Interactive ad-hoc exploration / visualization of data
     * Dashboards and KPI's
