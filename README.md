@@ -841,7 +841,12 @@ graph LR
 
 #### Amazon Quicksight:
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
-  * Integrates with data source both in and out of AWS (RDS):
+  * Integrates with source both in and out of AWS (RDS)
+  * In memory computation using Spice Engine
+  * Column-Level security (CLS)
+  * Can share analysis (if published) or the dashboard (read only) with users or groups
+  * Available as an application anytime on any device (browsers [mobile])
+  * Data Sources
     * Redshift
     * Aurora / RDS
     * Athena
@@ -852,10 +857,6 @@ graph LR
       * Common or extended log format
     * AWS loT Analytics
     * Data preparation allows limited ETL
-  * In memory computation using Spice Engine
-  * Column-Level security (CLS)
-  * Can share analysis (if published) or the dashboard (read only) with users or groups
-  * Available as an application anytime on any device (browsers [mobile])
   * Quicksight Paginated Reports
     * Reports designed to be printed
     * May span many pages
@@ -888,6 +889,23 @@ graph LR
       * No longer true with paginated reports!
     * ETL
       * Use Glue instead, although QuickSight can do some transformations
+  * Visual Types
+    * AutoGraph
+    *  Bar Charts
+      *   For comparison and distribution (histograms)
+    *  Line graphs
+      *   For changes over time
+    *   Scatter plots, heat maps
+      *   For correlation
+    *   Pie graphs, tree maps
+      *   For aggregation
+    *  Pivot tables
+      * For tabular data
+    * KPIs
+    * Geospatial Charts (maps)
+    * Donut Charts
+    * Gauge Charts
+    * Word Clouds
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
