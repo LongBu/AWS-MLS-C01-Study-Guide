@@ -875,6 +875,14 @@ graph LR
     * Reports designed to be printed
     * May span many pages
     * Can be based on existing Quicksight dashboards
+  * Q
+    *   Machine learning-powered
+    *   Answers business questions with NLP eg: "What are the top-selling items in Florida?"
+    *   Offered as an add-on for given regions
+    *   Personal training on how to use it is required
+    *   Must set up topics associated with datasets
+      *   Datasets and their fields must be NLP-friendly
+      *   How to handle dates must be defined
   * Security:
     * Multi-factor authentication on your account
     * VPC connectivity
