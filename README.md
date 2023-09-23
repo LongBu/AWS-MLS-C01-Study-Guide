@@ -770,7 +770,7 @@ graph LR
   * Matplotlib (graphics might be good?)
     * boxplot (with whiskers)
     * histograms (binning: bins of results of similar measure)
-  *Seaborn  (graphics might be good?)
+  * Seaborn  (graphics might be good?)
     * essentially Matplotlib extended
     * heatmap: demonstrates another dimension within the given plot axes
     * pairplot: good for attribute correlations
