@@ -765,7 +765,7 @@ graph LR
 
 ### Libraries to know at a high level:
   * Pandas:
-    * used for slicing and mapping data (DataFrames, Series) and interoperates with bumpy
+    * used for slicing and mapping data (DataFrames, Series) and interoperates with numpy
     * Dataframe/Series are interchangeable with numpy arrays, though the former is often converted to the former to feed ML algorithms
   * Matplotlib (graphics might be good?)
     * boxplot (with whiskers)
