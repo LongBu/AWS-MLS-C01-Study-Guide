@@ -811,32 +811,31 @@ graph LR
 
 #### Imputing missing data
 ##### Mean Replacement 
-  *   Replace missing values with the mean value from the rest of the column (columns, rut rows!  A column represents a single feature; it only makes sense to take the mean from other samples of the same feature.)
-  *   Fast & easy, won't affect mean or sample size of overall data set
-  *   Median may be a better choice than mean when outliers are present
-  *   But it's generally pretty terrible.
+  * Replace missing values with the mean value from the rest of the column (single feature)
+  * Fast & easy, won't affect mean or sample size of overall data set
+  * Median may be a better choice than mean when outliers are present
+  * But it's generally pretty terrible.
     * Only works on column level, misses correlations between features
     * Can't use on categorical features (imputing, with most frequent value can work in this case, though)
     * Not very accurate
 ##### Dropping 
-  * If not many rows contain missing Data...
-    *   and dropping those rows doesn't bias your data...
-    *   and you don't have a lot of time...
-    *  maybe it's a reasonable thing to do.
-  *   But, it's never going to be the right answer for the "best" approach.
-  *   Almost anything is better. Can you substitute another similar field perhaps? (i.e., review summary vs. full text)
+  * If not many rows contain missing Data
+    * dropping those rows doesn't bias your data
+    * you don't have a lot of time
+    * maybe it's a reasonable thing to do?
+  * But, it's never going to be the right answer for the "best" approach.
+  * Almost anything is better. Can you substitute another similar field perhaps? (i.e., review summary vs. full text)
 ##### KNN: Find K "nearest" (most similar) rows and average their values
-  *   Assumes numerical data, not categorical
-  *   There are ways to handle categorical data (Hamming distance), but categorical data is probably better served by...
+  * Assumes numerical data, not categorical
+  * There are ways to handle categorical data (Hamming distance)
 ##### Deep Learning
-  *   Build a machine learning model to impute data for your machine learning model!
-  *   Works well for categorical data. Really well. But it's complicated.
+  * Build a machine learning model to impute data for your machine learning model!
+  * Works well for categorical data, though complicated.
 ##### Regression
-  *   Find linear or non-linear relationships between the missing feature and other features
-  *   Most advanced technique: MICE (Multiple Imputation by Chained Equations)
+  * Find linear or non-linear relationships between the missing feature and other features
+  * Most advanced technique: MICE (Multiple Imputation by Chained Equations)
 ##### Get more data
-  *  What's better than imputing data? Getting more real data!
-  *   Sometimes you just have to try harder or collect more data
+  * What's better than imputing data? Getting more real data!
 
 ### Perform feature engineering
   * Identify and extract features from data sets, including from data sources such as text, speech,image, public datasets, etc.
