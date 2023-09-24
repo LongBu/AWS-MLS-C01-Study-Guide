@@ -956,7 +956,7 @@ graph LR
     * ETL
       * Use Glue instead, although QuickSight can do some transformations
   * Visual Types
-    * AutoGraph
+    * AutoGraph - automatically selects chart based on input features 
     * Bar Charts
       * For comparison and distribution (histograms)
     * Line graphs
@@ -967,7 +967,7 @@ graph LR
       * For aggregation
     * Pivot tables
       * For tabular data
-    * KPIs
+    * KPIs - chart detailing measurement(s) between current value(s) vs target(s)
     * Geospatial Charts (maps)
     * Donut Charts
     * Gauge Charts
@@ -1175,6 +1175,7 @@ graph LR
 | IOPS | Input/Output operations per second |
 | IOT | Internet of Things |
 | KMS	| Key Management Service |
+| KPI | Key Performance Indicator |
 | ML | Machine Learning |
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
