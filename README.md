@@ -957,15 +957,15 @@ graph LR
       * Use Glue instead, although QuickSight can do some transformations
   * Visual Types
     * AutoGraph
-    *  Bar Charts
-      *   For comparison and distribution (histograms)
-    *  Line graphs
-      *   For changes over time
-    *   Scatter plots, heat maps
-      *   For correlation
-    *   Pie graphs, tree maps
-      *   For aggregation
-    *  Pivot tables
+    * Bar Charts
+      * For comparison and distribution (histograms)
+    * Line graphs
+      * For changes over time
+    * Scatter plots, heat maps
+      * For correlation
+    * Pie graphs, tree maps
+      * For aggregation
+    * Pivot tables
       * For tabular data
     * KPIs
     * Geospatial Charts (maps)
