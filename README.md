@@ -665,10 +665,12 @@ graph LR
   * Can have long-running cluster or transient (temporary) cluster
   * EMR Notebook
     * Similar concept to Zeppelin, with more AWS integration
-    * Notebooks backed up to S3
+    * Notebooks backed up to S3 only (not in within the cluster)
     * Provision clusters from the notebook!
+    * Able to use multiple Notebooks to share the multi-tenant EMR clusters
     * Hosted inside a VPC
     * Accessed only via AWS console
+    * build Apache Spark Apps and run queries against the cluter (python, pyspark, spark sql, spark r, scala, andor anaconda based open source graphical libs)
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
     * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
