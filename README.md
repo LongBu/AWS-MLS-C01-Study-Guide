@@ -590,6 +590,7 @@ graph LR
     * HOTSPOTS:
       * locate and return info about relatively dense regions of data
       * uses more than only recent history
+
 ##### Amazon Kinesis Data Firehose:
   * Fully Managed (serverless) service, no administration, automatic scaling
   * Allows for custom code to be written for producer/consumer
@@ -650,6 +651,14 @@ graph LR
   * Takes care of provisioning and configuration
   * Autoscaling and integrated with Spot Instances
   * Use cases: Data processing, ML, Web Indexing, BigData
+  * AWS Integration
+    * Amazon EC2 for the instances that comprise the nodes in the cluster
+    * Amazon VPC to configure the virtual network in which you launch your instances
+    * Amazon S3 to store input and output data
+    * Amazon CloudWatch to monitor cluster performance and configure alarms
+    * AWS IAM to configure permissions
+    * AWS CloudTrail to audit requests made to the service
+    * AWS Data Pipeline to schedule and start your clusters
   * Node types: 
     * Master Node:
       * single EC2 instance to manage the cluster
