@@ -697,6 +697,12 @@ graph LR
       * Uses DynamoDB to track consistency
     * Local file system
     * EBS for HDFS
+  * EMR promises
+    * EMR charges by the hour
+      * Plus EC2 charges
+    * Provisions new nodes if a core node fails
+    * Can add and remove tasks nodes on the fly
+    * Can resize a running cluster's core nodes
   * Security
     * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
     * Kerberos
