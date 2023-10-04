@@ -961,7 +961,7 @@ graph LR
       * Standard: $9 / user /month
       * Enterprise: $18 / user / month
       * Enterprise with Q: $28 / user / month
-    * Extra SPICE capacity (beyond 10GB)
+    * Extra SPICE capacity (beyond 10GB), otherwise more $
       * $0.25 (standard) $0.38 (enterprise) / GB / month
     * Month to month
       * Standard: $12 / user / month
@@ -972,7 +972,6 @@ graph LR
       * Encryption at rest
       * Microsoft Active Directory integration
       * CLS
-    * 10 GB/month spice memory limit, otherwise more $
   * Use Cases:
     * Interactive ad-hoc exploration / visualization of data
     * Dashboards and KPI's
