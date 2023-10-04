@@ -700,12 +700,17 @@ graph LR
       * Network / CPU-intensive (NLP, ML) - cluster computer instances
       * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
   * Storage
-    * HDFS
+    * HDFS (distributed scalable file system for Hadoop)
+      * distributes data that it stores across every instance in a cluster, as well as multiple copies of data on different instances to ensure no data is lost if instance(s) fail
+      * each file stored as blocks
+      * default block size is 128 MB
+      * storage is ephemeral and is lost upon termination
+      * performance benefit of processing data where stored to avoid latency
+      * EBS serves as a backup for HDFS
     * EMRFS: access S3 as if it were HDFS
       * EMRFS Consistent View - Optional for S3 consistency
       * Uses DynamoDB to track consistency
     * Local file system
-    * EBS for HDFS
   * EMR promises
     * EMR charges by the hour
       * Plus EC2 charges
@@ -935,7 +940,7 @@ graph LR
       * Add QuickSight's IP address range to your database security groups
     * Row-level security
       * Column-level security too (CLS) - Enterprise edition only
-    * Private VPC access
+    * Private VPC access (for on-prem access)
       * Elastic Network Interface, AWS DirectConnect
   * User Management
     * Users defined via IAM, or email signup
@@ -973,22 +978,24 @@ graph LR
     * ETL
       * Use Glue instead, although QuickSight can do some transformations
   * Visual Types
-    * AutoGraph - automatically selects chart based on input features 
+    * AutoGraph - automatically selects chart based on input features to best display the data and relationships.  Not 100% effective and might require intervention
     * Bar Charts
       * For comparison and distribution (histograms)
     * Line graphs
-      * For changes over time
+      * For changes/trends over time
+      * \[stacked] area line charts - allows visualization of different components added up to a change/trend
     * Scatter plots, heat maps
       * For correlation
-    * Pie graphs, tree maps
+    * Pie graphs, tree maps - Heirarchical Aggregation chart (eg: npm package map)
       * For aggregation
     * Pivot tables
-      * For tabular data
+      * For tabular data to aggregate in certain ways into other tables
+      * applying statistical functions applied to (multi-dimensional) data  
     * KPIs - chart detailing measurement(s) between current value(s) vs target(s)
-    * Geospatial Charts (maps)
-    * Donut Charts
-    * Gauge Charts
-    * Word Clouds
+    * Geospatial Charts (maps) - map with sized circles annotating certain amounts in certain areas
+    * Donut Charts - when precision isn't important and few items in the dimension; show percentile/proportion of the total amount
+    * Gauge Charts - compare values in a measure (eg: fuel left in a tank)
+    * Word Clouds - word or phrase frequency within a corpus
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
