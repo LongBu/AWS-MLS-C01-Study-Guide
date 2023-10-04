@@ -649,12 +649,12 @@ graph LR
   * Service to create a managed Hadoop framework clusters (Big Data) to analyze/process lots of data using (many) instances
   * Supports Apache Spark, HBase, Presto, Flink, Hive, etc.
   * Takes care of provisioning and configuration
-  * Autoscaling and integrated with Spot Instances
+  * Autoscaling and integrated with Spot Instances for cost savings
   * Use cases: Data processing, ML, Web Indexing, BigData
   * AWS Integration
-    * Amazon EC2 for the instances that comprise the nodes in the cluster
+    * Amazon EC2 for the instances that comprise the nodes in the  cluster
     * Amazon VPC to configure the virtual network in which you launch your instances
-    * Amazon S3 to store input and output data
+    * Amazon S3 to store input and output data or HDFS (default)
     * Amazon CloudWatch to monitor cluster performance and configure alarms
     * AWS IAM to configure permissions
     * AWS CloudTrail to audit requests made to the service
@@ -688,6 +688,7 @@ graph LR
       * Good choice for task nodes (temporary capacity)
       * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
   * At installation of the cluster you need to select frameworks and applications to install
+  * Connect to the master node through an EC2 instance and run jobs from the terminal or via ordered steps submitted via the console
   * Instance Type(s) selection
     * Master node:
       * m4.large if < 50 nodes, m4 .xlarge if > 50 nodes
@@ -896,6 +897,14 @@ graph LR
   * anti-patterns:
     * Highly formatted reports / visualization=>That's what QuickSight is for
     * ETL=>Use Glue instead
+   
+##### Typical pipeline use case of Athena
+```mermaid
+graph LR
+    A[S3] --> B[Glue]
+    B --> C[Athena]
+    C --> D[QuickSight]
+```
 
 #### Amazon Quicksight:
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
@@ -962,6 +971,8 @@ graph LR
     * Enterprise edition
       * Encryption at rest
       * Microsoft Active Directory integration
+      * CLS
+    * 10 GB limit, otherwise more $
   * Use Cases:
     * Interactive ad-hoc exploration / visualization of data
     * Dashboards and KPI's
@@ -971,6 +982,10 @@ graph LR
       * AWS (RDS, Redshift, Athena, S3)
       * SaaS applications, such as Salesforce
       * Any JDBC/ODBC data source
+  * ML insights feature (only ML capabilties of Quicksight)
+    * Anomaly detection (uses Random Cut Forest)
+    * Forcasting to get rid of anomalies to make forcast (uses Random Cut Forest)
+    * Autonarratives to build rich dashboards with embedded narratives
   * Anti-Patterns
     * Highly formatted canned reports
       * QuickSight is for ad ho queries, analysis, and visualization
