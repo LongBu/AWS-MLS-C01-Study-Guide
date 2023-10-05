@@ -806,6 +806,15 @@ graph LR
     * predict function harnesses the model to output inferences based on input
     * good for preprocessing data (input data=>normal distribution)
       * to avoid unequal weightings, scale to the around the mean for each column
+  * Spark MLLib
+      * Classification: logistic regression, naïve Bayes
+      * Regression
+      * Decision trees
+      * Recommendation engine (ALS)
+      * Clustering (K-Means)
+      * LDA (topic modeling)
+      * ML workflow utilities (pipelines, feature transformation, persistence)
+      * SVD, PCA, statistics
 
 ### Jupyter Notebooks
   * runs in browser(s) to communicate with the python environment (eg: anaconda) server
