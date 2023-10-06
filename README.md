@@ -1289,7 +1289,28 @@ graph LR
     * Licence Manager Configurations accross accounts using Private IP(s)
 
 
-#### Security groups(TBD)
+#### Security Groups (SGs):
+  * Stateful connection, allowing inbound traffic to the necessary ports, thus enabling the connection
+  * If adding an Internet Gateway, ensure the SG allows traffic in
+  * SG => EC2 instances level, LBs, EFS, DBs, Elasticache
+  * Allow rules only
+
+#### NACL Groups:
+  * Stateless, thus a source port inbound will become the outbound port (or possibly taking the defined port and responding via an ephemeral port)
+  * Great way of allowing/blocking ip addresses at the subnet level
+  * Like a firewall controlling to/from subnet traffic
+  * One NACL per subnet
+  * New Subnet automatically set to default NACL which denies all inbound/outbound traffic
+  * Do not modify default NACL, instead create custom NACL(s)
+  * If accepting internet traffic routed via internet gateway
+  * If accepting vpn or AWS Direct Connect traffic routed via Virtual Private Gateway
+  * NACL rules:
+    * Range from 1-32766, with a higher precedence placed on lower numbers
+    * Allow and Deny rules
+    * First rule match drives acceptance/denial
+    * Last rule match is a catch all (\*) and denies a request in case no rules match
+    * AWS recommends adding rules by an increment of 100
+
 #### VPC
 ##### VPC Endpoint:
   * Every AWS service is publicly exposed (public url)
