@@ -1231,8 +1231,18 @@ graph LR
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
 ### Apply basic AWS security practices to machine learning solutions(TBD)
-#### IAM(TBD)
-### S3 Bucket Policies vs Access permissions:
+
+#### Identity and Access Management (IAM)
+
+##### Allow vs Deny: If any denial in policy is present, the resource is denied regardless of allow statement(s).  The default behavior is to deny resource(s) and resource(s) need allow statements to be allowed.  
+
+##### LDAP: software protocol for enabling the location of data about organizations, individuals and other resources in a network.  
+
+##### Identity federation: a system of trust between two parties for the purpose of authenticating users and conveying information needed to authorize their access to resources.
+
+##### User groups can only contain users
+
+##### S3 Bucket Policies vs Access permissions:
   * Used to add or deny permissions across some or all S3 objects in a bucket, enabling central management of permissions
   * Can grant users within an AWS account or other AWS accounts to S3 resources
   * Can restrict based on request time (Date condition), request sent using SSL (Boolean condition), requester IP Address (Ip address condition) using policy keys
@@ -1245,6 +1255,39 @@ graph LR
 | IAM Policies | No | Yes |
 | ACLs | Yes | No |
 | Bucket Policies | Yes | Yes |
+
+##### IAM Credentials Report: IAM security tool that lists all your AWS accounts, IAM users and the status of their various credentials; good for auditing permissions at the **account level**
+
+##### IAM Access Advisor: shows the service permissions granted to a user and when those services were last used; can use this information to revise policies at the **user level**
+
+##### AWS Policy Simulator: used to test and troubleshoot IAM policies that are attached to users, user groups, or resources.  
+
+#####  IAM Access Analyzer: service to identify unintended access  to resources in an organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity to avoid security risk(s)
+
+##### IAM Policy Evaulation Logic:
+![IAM Policy Evaulation Logic](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal111621.png)
+
+##### Amazon Cognito:
+  * Web Identity federation service/identity broker handling interations between application(s)/resource(s) and Web IdPs.
+  * Capable of synchronizing data from multiple devices by means of SNS to send notifications to all devices associated to a given user upon data deltas (IAM policy can be tethered to user ids possibly).
+  * User pool: user based; handling user registration, authentication and account recovery.
+    * Compatible IdPs: Facebook, Amazon, Google, Apple, OpenID Connect providers, SAML
+  * Identity pool: receives authentication token to authorize access to resources directly or through the API GW.
+    * Maps to IAM role(s)
+    * default IAM role(s) for authenticated/guest users
+##### AWS Resource Access Manager (RAM):
+  * Share AWS resources that you own with other AWS accounts (within OU or any account)
+  * Aids in avoiding resource duplication by sharing thing such as:
+    * VPC subnets (owner can share +1 subnets with other accounts in the same OU):
+      * Allows all resources (EC2, etc.) launched in the same VPC
+      * Must be from the same OU
+      * Can't share SGs and default VPC
+      * Users can manage own resources, but can't modify, view, or delete other's resources
+      * VPC by itself can't be shared
+    * AWS Transit Gateway
+    * Route 53 Resolver Rules
+    * Licence Manager Configurations accross accounts using Private IP(s)
+
 
 #### Security groups(TBD)
 #### VPC
