@@ -5,7 +5,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 ## Table of Contents
 1. <a href="#introduction">Introduction</a>
 2. <a href="#data-engineering">Data Engineering</a>
-3. <a href="#exploratory-data-analysis">Exploratory Data Analysis</a>
+3. <a href="#exploratory-data-analysis">Exploratory Data Analysis</a>C
 4. <a href="#modeling">Modeling</a>
 5. <a href="#machine-learning-implementation-and-operations">Machine Learning Implementation and Operations</a>
 6. <a href="#acronyms">Acronyms</a>
@@ -1064,7 +1064,11 @@ graph LR
    
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
-  * Cross validation 
+  * Cross validation (eg: from sklearn.model_selection import cross_val_score)
+    * choose many (k-folds)=>train
+    * choose remaining holdouts to validate against
+    * average out the validation step results
+    * good if lacking data
 
 ## Machine Learning Implementation and Operations
 
