@@ -881,11 +881,11 @@ graph LR
   * What's better than imputing data? Getting more real data!
 
 #### Unbalanced data
-  * Large discrepancy between "positive" and "negative" cases
+  * Large discrepancy between "positive" and "negative" cases
     * i.e., fraud detection. Fraud is rare, and most rows will be not-fraud
     *  Don't let the terminology confuse you; "positive" doesn't mean "good"
       * It means the thing you're testing for is what happened.
-      * If your machine learning model Is made to detect fraud, then fraud is the positive case.
+      * If your machine learning model is made to detect fraud, then fraud is the positive case.
   * Mainly a problem with neural networks
  
 #### Oversampling
