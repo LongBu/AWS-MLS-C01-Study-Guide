@@ -730,6 +730,17 @@ graph LR
     * Security configurations may be specified for Lake Formation (JSON)
     * Native integration with Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
       * For data security on Hadoop/Hive
+  * How to use EMR
+    * Within EMR, select Create studio instance, which is your environment for running workspaces/notebooks
+    * Requires:
+      * VPC access
+      * 1-5 subnets
+      * Security group(s)
+      * Service role (IAM/IAM Identity Center)
+      * S3 bucket
+    * Within the studio instance, create workspaces.  The workspace will need to create/attach an EMR cluster
+    * A notebook must select a kernel at initialization (relative to the technology stack one is using)
+    * Good practice delete your cluster if not using so it's not to be billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for them
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
