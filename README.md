@@ -891,7 +891,7 @@ graph LR
 #### Oversampling
   * Duplicate samples from the minority class
   * Can be done at random
- 
+
 #### Undersampling
   * Instead of creating more positive samples, remove negative ones
   * Throwing data away is usually not the right answer
@@ -1086,6 +1086,69 @@ graph LR
 ### Evaluate machine learning models.
   * Avoid overfitting/underfitting (detect and handle bias and variance)
   * Metrics (AUC-ROC, RMSE)
+  * Outliers
+    * Variance measures how "spread-out" the data is.
+      *   Variance (σ^2) is simply the average of the squared differences from the mean
+      *   Example: What is the variance of the data set (1, 4, 5, 4, 8)?
+      *   First find the mean: (1+4+5+4+8)/5 = 4.4
+      *   Now find the differences from the mean: (-3.4, -0.4, 0.6, -0.4, 3.6)
+      *   Find the squared differences: (11.56, 0.16, 0.36, 0.16, 12.96)
+      *   Find the average of the squared differences:
+      *   σ^2= (11.56 + 0.16 + 0.36 + 0.16 + 12.96) / 5 = 5.04
+
+    * Standard Deviation σ is just the square root of the variance.
+      * σ^2 = 5.04
+      * σ = (5.04)^.5 = 2.24
+      * So the standard deviation of (1, 4, 5, 4, 8) is 2.24.
+      * This is usually used as a way to identify outliers. Data points that lie more than one standard deviation from the mean can be considered unusual.
+      * You can tell how extreme a data point is by asking about "how many sigmas" away from the mean it is?
+    * Dealing with Outliers
+      *   Sometimes it's appropriate to remove outliers from your training data
+      *   Do this responsibly! Understand why you are doing this.
+      *   For example: in collaborative filtering a single user who rates thousands of movies could have a big effect on everyone else's ratings. That may not be desirable.
+      *   Another example: in web log data, outliers may represent bots or other agents that should be discarded.
+      *   But if someone really wants the mean income of US citizens for example, don't toss out billionaires just because you want to.
+      * Our old friend standard deviation provides a principled way to classify outliers.
+      *   Find data points more than some multiple of a standard deviation in your training data.
+      *   What multiple? Use common sense.
+      *   Remember AWS's Random Cut Forest algorithm creeps into many of its services - it is made for outlier detection
+      *   Found within QuickSight, Kinesis Analytics, SageMaker, and more
+
+    * Binning
+      *   Bucket observations together based on ranges of values.
+      *   Example: estimated ages of people
+      *   Put all 20-somethings in one classification, 30-somethings in another, etc.
+      *   Quantile binning categorizes data by their place in the data distribution
+      *   Ensures even sizes of bins
+      *   Transforms numeric data to ordinal data
+      *   Especially useful when there is uncertainty in the measurements
+      * Helps to cover up imprecision in data collection(s)
+
+    * Transforming
+      *   Applying some function to a feature to make it better suited for training
+      *   Feature data with an exponential trend may benefit from a logarithmic transform
+      *   Example: YouTube recommendations
+      *   A numeric feature x is also represented by x?and VX
+      *   This allows learning of super and sub-linear functions
+
+    * Encoding
+      *   Transforming data into some new representation required by the model
+      *   One-hot encoding
+      *   Create "buckets" for every category
+      *   The bucket for your category has a 1, all others have a 0
+      *   Very common in deep learning, where categories are represented by individual output "neurons"
+
+    * Scaling / Normalization
+      *   Some models prefer feature data to be normally distributed around 0 (most neural nets)
+      *   Most models require feature data to at least be scaled to comparable values
+      *   Otherwise features with larger magnitudes will have more weight than they should
+      *   Example: modeling age and income as features - incomes will be much higher values than ages
+      *   Scikit_learn has a preprocessor module that helps (MinMaxScaler, etc)
+      *   Remember to scale your results back up
+    * Shuffling
+      *   Many algorithms benefit from shuffling their training data
+      
+*   Otherwise they may learn from residual signals in the training data resulting from the order in which they were collected
   * Confusion Matrix:
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
