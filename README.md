@@ -28,9 +28,8 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 #### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
 #### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)
-##### Data Stores
 
-###### Amazon Redshift:
+##### Amazon Redshift:
   * fully managed, scalable cloud data warehouse, columnar instead of row based (no Multi-AZ, based on Postgres, No OLTP [row based], but OLAP [column based])
   * Offers parallel sql queries
   * Can be server less or use cluster(s)
@@ -44,13 +43,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Can configure to automatically copy snapshots to other Regions
   * Large inserts are better (S3 copy, firehose)
 
-###### Amazon Redshift Spectrum:
+##### Amazon Redshift Spectrum:
   * Resides on dedicated Amazon Redshift servers independent of your cluster
   * Can efficiently query and retrieve structured and semistructured data from files in S3 into Redshift Cluster tables (points at S3) without loading data in Redshift tables
   * Pushes many compute intensive tasks such as predicate filtering (ability to skip reading unnecessary data at storage level from a data set into RAM) and aggregation, down to the Redshift Spectrum layer
   * Redshift Spectrum queries use much less of the formal cluster's processing capacity than other queries
 
-###### AWS RDS:
+##### AWS RDS:
   * Autoscaling when running out of storage
   * OLTP based
   * Must be provisioned
@@ -68,7 +67,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Can be set at creation or live
     * Synchronous replication, at least 2 AZs in region, while Read replicas => asynchronous replication can be in an AZ, cross-AZ or cross Region
 
-###### Aurora:
+##### Aurora:
   * MySQL or Postgres
   * OLTP based
   * Better performance than RDS version
@@ -90,7 +89,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Fail over tiers: lowest ranking number first, then greatest size
   * Aurora ML: ML using SageMaker and Comprehend on Aurora
 
-###### DynamoDB:
+##### DynamoDB:
   * (Serverless) NoSQL Key-value and document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
   * Stored on SSD
   * Good candidate to store ML model served by application(s)
@@ -107,7 +106,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Can be exported to S3 as DynamoDB JSON or ion format
   * Can be imported from S3 as CSV, DynamoDB JSON or ion format
 
-###### Amazon OpenSearch Service (Amazon ElasticSearch Service)
+##### Amazon OpenSearch Service (Amazon ElasticSearch Service)
   * Service to search any field, even partial matches at petabyte scale
   * Common to use as a complement to another DB (conduct search in the service, but retrieve data based on indices from an actual DB)
   * Requires a cluster of instances (can also be Multi-AZ)
@@ -135,7 +134,7 @@ sequenceDiagram
     λ (real time)->>OpenSearch: 
 ```
 
-###### AWS Elasticache
+##### AWS Elasticache
   * Good to improve latency and throughput for read heavy applications or compute intensive workloads
   * Good for storing sessions of instances
   * Good for performance improvement of DB(s), though use of involves heavy application code changes
@@ -158,7 +157,7 @@ sequenceDiagram
       * Multithreaded
       * Supports SASL auth
      
-###### AWS DB Migration Service (AWS DMS):
+##### AWS DB Migration Service (AWS DMS):
   * Service to transition (no transformations) supported sources to relation DB, data warehouses, streaming platforms, and other data stores in AWS without new code (or any?)
   * Sources: 
     * On-premises and EC2 DBs: Oracle, MS SQL Server, MySQL, MariaDB, postgres, mongoDB, SAP, DB2
