@@ -882,8 +882,7 @@ graph LR
 #### Unbalanced data
   * Large discrepancy between "positive" and "negative" cases
     * i.e., fraud detection. Fraud is rare, and most rows will be not-fraud
-    *  Don't let the terminology confuse you; "positive" doesn't mean "good"
-      * It means the thing you're testing for is what happened.
+    * "positive" doesn't mean "good" it means the thing you're testing for happened.
       * If your machine learning model is made to detect fraud, then fraud is the positive case.
   * Mainly a problem with neural networks
  
