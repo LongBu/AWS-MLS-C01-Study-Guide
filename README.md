@@ -835,15 +835,67 @@ graph LR
     * predict function harnesses the model to output inferences based on input
     * good for preprocessing data (input data=>normal distribution)
       * to avoid unequal weightings, scale to the around the mean for each column
-  * Spark MLLib
-      * Classification: logistic regression, naïve Bayes
-      * Regression
-      * Decision trees
-      * Recommendation engine (ALS)
-      * Clustering (K-Means)
-      * LDA (topic modeling)
-      * ML workflow utilities (pipelines, feature transformation, persistence)
-      * SVD, PCA, statistics
+  * Spark MLLib (see Apache Spark on EMR)
+
+
+### Apache Spark on EMR
+  * Hadoop consists largely of HDFS, YARN and Map Reduce
+  * Hadoop Core or Hadoop - Common java archive (JAR) files/scripts used to boot Hadoop
+  * YARN used to centrally manage cluster resources for different frameworks
+  * Spark (faster alternative to Map Reduce)
+    * Can be included within SageMaker
+    * In memory cache
+    * Optimized query execution on data of any size using directed acyclic graph adding efficiencies concerning dependencies/processing/scheduling
+    * Java, Scala, Python, R apis available
+    * Not used for OLTP or batch processing
+    * Upon connecting acquires executors on nodes in the cluster that run computations and store data for your applications.  Code is sent to the executors and Spark context sends tasks to the executors to run
+
+#### Spark Core: 
+  * Foundation of the platform (memory management, fault recovery, scheduling, distributing, monitoring jobs and interactions with persistence stores)
+    * Uses Resilient Distributed Dataset (RDD) at lowest level, representing a logical collection of data partitioned across nodes
+
+##### Spark SQL
+  * Up to 100x faster than Map Reduce including cost based optimizer, columnar storage and code generation for fast queries, JDBC/ODBC, JSON, HDFS, Hive, Orc, Parquet, or Hive Tables via HIVEQL
+  * Exposes dataframe (python)/dataset (Scala) taking the place of RDD where input (SQL) to the spark cluster and transforms the initial query to a distributed query across the cluster
+
+##### Spark Streaming: 
+  * Data ingested via mini batches and analytics on the data is the same as application code for batch analytics for one application code for batch or streaming
+  * Inputs include twitter, Kafka, Flume, HDFS, ZeroMQ, AWS Kinesis
+  * Able to query unbounded table within windows of time, much like a database
+  * Spark is able to query from Kinesis Data Streams via the Kinesis Client Library (KCL) 
+
+##### Graph X: 
+  * Distributed graph processing framework providing ETL, exploratory analysis, iterative graph computation to enable the building/transformation of graph data structures at scale
+
+##### Spark MLLIB
+  * Distributed and scalable via cluster nodes offering the following:
+    * Classification: logistic regression, naive Bayes
+    * Regression
+    * ﻿﻿Decision trees
+    * Recommendation engine (ALS)
+    * Clustering (K-Means)
+    * LDA (topic modeling), extract topics from text input(s)
+    * ML workflow utilities (pipelines, feature transformation, persistence)
+    * SVD, PCA, statistics
+    * ALS (Alternating Least Squares)
+
+### Spark Workflow 
+```mermaid
+graph LR
+    A[Driver Program - Spark Context] --> B[Cluster Manager]
+    A --> E[Executor - Cache - Tasks2]
+    B --> D[Executor - Cache - Tasks1]
+    A --> D
+    B --> E
+```
+### Zeppelin + Spark 
+  * Can run Spark code interactively (like you can in the Spark shell)
+    * This speeds up your development cycle
+    * And allows easy experimentation and exploration of your big data
+  * Can execute SQL queries directly against SparkSQL
+  * Query results may be visualized in charts and graphs
+  * Makes Spark feel more like a data science tool!
+  * Conducted via browser (Notebook)
 
 ### Jupyter Notebooks
   * runs in browser(s) to communicate with the python environment (eg: anaconda) server
