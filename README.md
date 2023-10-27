@@ -623,7 +623,7 @@ graph LR
     * EC2 instances
     * AWS SageMaker
     * Amazon Rekognition Video
-  *  retention between 1 hr to 10 years
+  * retention between 1 hr to 10 years
 
 ##### MQTT
   * An IOT Standard messaging protocol
@@ -914,8 +914,17 @@ graph LR
   * Generally better than just oversampling
 
 ### Perform feature engineering
-  * Identify and extract features from data sets, including from data sources such as text, speech,image, public datasets, etc.
-  * Analyze/evaluate feature engineering concepts (binning, tokenization, outliers, synthetic features, 1 hot encoding, reducing dimensionality of data)
+
+  * Applying your knowledge of the data - and the model you're using - to identify and extract useful features to train your model with.  * 
+  * Analyze/evaluate feature engineering concepts (binning, tokenization, outliers, synthetic features, 1 hot encoding, reducing dimensionality of data) to understand what features one should use  * Do I need to transform these features in some way?
+    * How do I handle missing data?
+    * Should I create new features from the existing ones?
+    * You can't just throw in raw data and expect good results
+    * This is the art of machine learning; where expertise is applied
+    * Trim down feature data or create and combine new ones
+    * Normalize or encode data
+    * Handle missing data
+
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
   * Interpreting descriptive statistics (correlation, summary statistics, p value)
@@ -938,7 +947,7 @@ graph LR
   * able to integrate with other visualization tools via ODBC/JDBC protocols
   * can harness Glue Data Catalog metadata for queries
   * Security:
-    *  Access control
+    * Access control
       * IAM, ACLs, S3 bucket policies
       * AmazonAthenaFullAccess/AWSQuicksightAthenaAccess
     * Encrypt results at rest in S3 staging directory
@@ -989,13 +998,13 @@ graph LR
     * May span many pages
     * Can be based on existing Quicksight dashboards
   * Q
-    *   Machine learning-powered
-    *   Answers business questions with NLP eg: "What are the top-selling items in Florida?"
-    *   Offered as an add-on for given regions
-    *   Personal training on how to use it is required
-    *   Must set up topics associated with datasets
-      *   Datasets and their fields must be NLP-friendly
-      *   How to handle dates must be defined
+    * Machine learning-powered
+    * Answers business questions with NLP eg: "What are the top-selling items in Florida?"
+    * Offered as an add-on for given regions
+    * Personal training on how to use it is required
+    * Must set up topics associated with datasets
+      * Datasets and their fields must be NLP-friendly
+      * How to handle dates must be defined
   * Security:
     * Multi-factor authentication on your account
     * VPC connectivity
@@ -1125,7 +1134,7 @@ graph LR
 
     * Binning
       * Bucket observations together based on ranges of values.
-      *  Example: estimated ages of people
+      * Example: estimated ages of people
         * Put all 20-somethings in one classification, 30-somethings in another, etc.
       * Quantile binning categorizes data by their place in the data distribution
       * Ensures even sizes of bins
