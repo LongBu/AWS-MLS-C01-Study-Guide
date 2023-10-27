@@ -924,6 +924,15 @@ graph LR
     * Trim down feature data or create and combine new ones
     * Normalize or encode data
     * Handle missing data
+   
+### The Curse of Dimensionality
+  * Too many features can be a problem - leads to sparse data
+  * Every feature is a new dimension
+  * Much of feature engineering is selecting the features most relevant to the problem at hand
+    * This often is where domain knowledge comes into play
+  * Unsupervised dimensionality reduction techniques can also be employed to distill many teatures into fewer features
+    * РСА
+    * K-Means
 
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
