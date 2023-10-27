@@ -921,6 +921,11 @@ graph LR
   * Both generates new samples and undersamples majority class
   * Generally better than just oversampling
 
+#### Adjusting thresholds
+  * When making predictions about a classification (fraud / not fraud), you have some sort of threshold of probability at which point you'll flag something as the positive case (fraud)
+  * If you have too many false positives, one way to fix that is to simply increase that threshold.
+    * Reduces false positives but, could result in more false negatives
+
 ### Perform feature engineering
 
   * Applying your knowledge of the data - and the model you're using - to identify and extract useful features to train your model with.  * 
@@ -941,6 +946,18 @@ graph LR
   * Unsupervised dimensionality reduction techniques can also be employed to distill many teatures into fewer features
     * РСА
     * K-Means
+
+### Time Series Analysis:
+  * Discrete samples taken over a period of time
+  * trends
+    * slope slant
+    * can be seasonal, can superimpose curves vs the trends to decipher if this pattern is exhibited in month to month variations
+    * can both be seasonal and have an overall trend, too.  To get the overall trend, subtract out noise and seasonality 
+  * Noise: random variations
+    * Additive model
+      * Seasonal variation is constant => seasonality + trends + noise = TS model
+    * Multiplicative model
+      * seasonal variation increases as the trend increases => seasonality * trends * noise = TS model
 
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
