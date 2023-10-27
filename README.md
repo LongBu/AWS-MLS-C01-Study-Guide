@@ -806,6 +806,14 @@ graph LR
     * special binomial distribution
     * single trial (n=1)
     * Sum of bernouli=>binomial
+   
+### Types of Data
+  * Numerical - quantitative measurement(s)
+  * Categorical
+    * yes/no, categories
+    * can assign numbers to categories in order to represent them, though the numbers don't possess any real meaning
+  * Ordinal
+    * mix of numerical and categorical types (eg scale of 1 to 5), where 1 is worse than 2 and so forth and 5 being best
 
 ### Libraries to know at a high level:
   * Pandas:
