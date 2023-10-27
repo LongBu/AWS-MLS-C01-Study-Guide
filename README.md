@@ -796,6 +796,17 @@ graph LR
 
 ## Exploratory Data Analysis
 
+### Data Distributions
+  * Normal distribution: bell curve centered around 0
+    * Probability density function: gives the probability of a data point falling within a given range of values (on a curve) with infinite possibilities (non-discrete)
+  * Poisson distribution: series of discrete events that end in a success or failure, where the average number of successes over time is known.  As λ value approaches 0, distribution looks exponential
+    * Probability mass function: discrete data example being a bell curve surrounding a histogram chart
+  * Binomial Distribution: number of successes dealing with a binary result; discrete trials (n)
+  * Bernouli Distribution: 
+    * special binomial distribution
+    * single trial (n=1)
+    * Sum of bernouli=>binomial
+
 ### Libraries to know at a high level:
   * Pandas:
     * used for slicing and mapping data (DataFrames, Series) and interoperates with numpy
