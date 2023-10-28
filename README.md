@@ -1010,6 +1010,38 @@ graph LR
       * Seasonal variation is constant => seasonality + trends + noise = TS model
     * Multiplicative model
       * seasonal variation increases as the trend increases => seasonality * trends * noise = TS model
+     
+### NLP
+
+####  TF-IDF
+  * Stands for Term Frequency and Inverse Document Frequency
+  * Important data for search - figures out what terms are most relevant for a document
+    * Compute TF-IDF for every word in a corpus
+    *  For a given search word, sort the documents by their TF-IDF score for that word
+    *  Display the results
+  * Term Frequency just measures how often a word occurs in a document
+    * A word that occurs frequently is probably important to that document's meaning
+* Document Frequency is how often a word occurs in an entire set of documents, i.e., all of Wikipedia or every web page
+  * This tells us about common words that just appear everywhere no matter what the topic, like "a", "the", "and", etc.
+* So a measure of the relevancy of a word to a document might be:
+  * Term Frequency/Document Frequency
+  * Or: Term Frequency * Inverse Document Frequency
+* That is, take how often the word appears in a document, over how often it just appears everywhere. That gives you a measure of how important and unique this word is for this document
+  * We actually use the log of the IDF, since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
+  * TF-IDF assumes a document is just a "bag of words"
+    * Parsing documents into a bag of words can be most of the work
+    * Words can be represented as a hash value (number) for efficiency
+    * What about synonyms? Various tenses? Abbreviations? Capitalizations? Misspellings?
+  * Doing this at scale is the hard part
+    * That's where Spark comes in!
+ 
+#### Unigrams, bigrams, etc.
+  * An extension of TF-IDF is to not only compute relevancy for individual words (terms) but also for bi-grams or, more generally, n-grams.
+  * "I love certification exams"
+    * Unigrams: "l", "love", "certification", "exams"
+    * Bi-grams: "I love", "love certification", "certification exams"
+    * Tri-grams: "I love certification", "love certification exams"
+  * The TF-IDF matrix will consist of the documents as rows and the selection of n-grams as columns
 
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
