@@ -1016,8 +1016,8 @@ graph LR
 ####  TF-IDF
   * Stands for Term Frequency and Inverse Document Frequency
   * Important data for search - figures out what terms are most relevant for a document
-    * Compute TF-IDF for every word in a corpus
-    * For a given search word, sort the documents by their TF-IDF score for that word
+    * Compute TF-IDF for every word/n-gram in a corpus
+    * For a given search word/n-gram, sort the documents by their TF-IDF score accordingly 
     * Display the results
   * Term Frequency just measures how often a word occurs in a document
     * A word that occurs frequently is probably important to that document's meaning
