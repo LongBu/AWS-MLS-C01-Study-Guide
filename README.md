@@ -1088,7 +1088,7 @@ graph LR
 
 #### Amazon Quicksight:
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
-  * Integrates with source both in and out of AWS (RDS)
+  * Integrates with sources both in and out of AWS (RDS)
   * In memory computation using Spice Engine
     * Data sets are imported into SPICE
       * Super-fast, Parallel, In-memory Calculation Engine
