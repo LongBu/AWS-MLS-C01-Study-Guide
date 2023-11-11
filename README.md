@@ -1050,8 +1050,7 @@ graph LR
     * ﻿﻿The attention mechanism provides context, so no need to process one word at a time.
   * ﻿﻿BERT, RoBERTa, T5, GPT-2 etc., DistilBERT
   * ﻿﻿DistilBERT: uses knowledge distillation to reduce model size by 40%
-  * ﻿﻿BERT: Bi-directional Encoder
-  * ﻿﻿Representations from Transformers
+  * ﻿﻿BERT: Bi-directional Encoder Representations from Transformers
   * ﻿﻿GPT: Generative Pre-trained Transformer
 
 #### Transfer Learning
