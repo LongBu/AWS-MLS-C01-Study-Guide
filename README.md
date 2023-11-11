@@ -1048,10 +1048,8 @@ graph LR
     * ﻿﻿Weighs significance of each part of the input data
     * ﻿﻿Processes sequential data (like words, like an RNN), but processes entire input all at once.
     * ﻿﻿The attention mechanism provides context, so no need to process one word at a time.
-  * ﻿﻿BERT, RoBERTa, T5, GPT-2 etc., DistilBERT
+  * ﻿﻿BERT, RoBERTa, T5, GPT-2, DistilBERT
   * ﻿﻿DistilBERT: uses knowledge distillation to reduce model size by 40%
-  * ﻿﻿BERT: Bi-directional Encoder Representations from Transformers
-  * ﻿﻿GPT: Generative Pre-trained Transformer
 
 #### Transfer Learning
   * ﻿﻿NLP models (and others) are too big and complex to build from scratch and re-train every time
@@ -1060,11 +1058,11 @@ graph LR
     * ﻿﻿Integrated with Sagemaker via Hugging Face Deep Learning Containers
   * ﻿﻿You can fine-tune these models for your own use cases
   * ﻿﻿BERT example:
-  * ﻿﻿Hugging Face offers a Deep Learning Container (DLC) for BERT
-  * ﻿﻿It's pre-trained on BookCorpus and Wikipedia
-  * ﻿﻿You can fine-tune BERT (or DistilBERT etc) with your own additional training data through transfer learning
-    * ﻿﻿Tokenize your own training data to be of the same format
-    * ﻿﻿Just start training it further with your data, with a low learning rate.
+    * ﻿﻿Hugging Face offers a Deep Learning Container (DLC) for BERT
+    * ﻿﻿It's pre-trained on BookCorpus and Wikipedia
+    * ﻿﻿You can fine-tune BERT (or DistilBERT etc) with your own additional training data through transfer learning
+      * ﻿﻿Tokenize your own training data to be of the same format
+      * ﻿﻿Just start training it further with your data, with a low learning rate.
 
 ##### Transfer Learning approaches 
   * ﻿﻿Continue training a pre-trained model (fine-tuning)
@@ -1621,6 +1619,7 @@ have no known algorithm
 | ------------- | ------------- |
 | AOF | Append-only file |
 | AZ | Availability Zones |
+| BERT | Bi-directional Encoder Representations from Transformers |
 | CLS | Column Level Security |
 | DB | Database |
 | DP | Data Pipeline |
@@ -1633,6 +1632,7 @@ have no known algorithm
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| GPT | Generative Pre-trained Transformer |
 | IA | Infrequent Access |
 | IAM | Identity and Access Management |
 | IGW | Internet Gateway |
