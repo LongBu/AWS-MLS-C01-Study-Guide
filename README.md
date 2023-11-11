@@ -1043,6 +1043,43 @@ graph LR
     * Tri-grams: "I love certification", "love certification exams"
   * The TF-IDF matrix will consist of the documents as rows and the selection of n-grams as columns
 
+#### Modern Natural Language Processing
+  * ﻿﻿Transformer deep learning architectures are currently state of the art utilizing a mechanism of "self-attention"
+    * ﻿﻿Weighs significance of each part of the input data
+    * ﻿﻿Processes sequential data (like words, like an RNN), but processes entire input all at once.
+    * ﻿﻿The attention mechanism provides context, so no need to process one word at a time.
+  * ﻿﻿BERT, RoBERTa, T5, GPT-2 etc., DistilBERT
+  * ﻿﻿DistilBERT: uses knowledge distillation to reduce model size by 40%
+  * ﻿﻿BERT: Bi-directional Encoder
+  * ﻿﻿Representations from Transformers
+  * ﻿﻿GPT: Generative Pre-trained Transformer
+
+#### Transfer Learning
+  * ﻿﻿NLP models (and others) are too big and complex to build from scratch and re-train every time
+    * ﻿﻿The latest may have hundreds of billions of parameters!
+  * ﻿﻿Model zoos such as Hugging Face offer pre-trained models to start from
+    * ﻿﻿Integrated with Sagemaker via Hugging Face Deep Learning Containers
+  * ﻿﻿You can fine-tune these models for your own use cases
+  * ﻿﻿BERT example:
+  * ﻿﻿Hugging Face offers a Deep Learning Container (DLC) for BERT
+  * ﻿﻿It's pre-trained on BookCorpus and Wikipedia
+  * ﻿﻿You can fine-tune BERT (or DistilBERT etc) with your own additional training data through transfer learning
+    * ﻿﻿Tokenize your own training data to be of the same format
+    * ﻿﻿Just start training it further with your data, with a low learning rate.
+
+##### Transfer Learning approaches 
+  * ﻿﻿Continue training a pre-trained model (fine-tuning)
+    * ﻿﻿Use for fine-tuning a model that has way more training data than you ever have
+    * ﻿﻿Use a low learning rate to ensure you are just incrementally improving the model
+  * ﻿﻿Add new trainable layers to the top of a frozen model
+    * ﻿﻿Learns to turn old features into predictions on new data
+    * ﻿﻿Can do both: add new layers, then fine tune as well
+  * ﻿﻿Retrain from scratch
+    * ﻿﻿If you have a large amount of training data and it's fundamentally different from what the model was pre-trained with
+    * ﻿﻿And you have the computing capacity for it!
+  * ﻿﻿Use it as-is
+    * ﻿﻿When the model's training data is what you want already
+
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
   * Interpreting descriptive statistics (correlation, summary statistics, p value)
