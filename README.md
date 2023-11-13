@@ -1057,7 +1057,7 @@ graph LR
   * ﻿﻿Model zoos such as Hugging Face offer pre-trained models to start from
     * ﻿﻿Integrated with Sagemaker via Hugging Face Deep Learning Containers
   * ﻿﻿You can fine-tune these models for your own use cases
-  * ﻿﻿BERT example:
+  * ﻿﻿BERT transfer learning example:
     * ﻿﻿Hugging Face offers a Deep Learning Container (DLC) for BERT
     * ﻿﻿It's pre-trained on BookCorpus and Wikipedia
     * ﻿﻿You can fine-tune BERT (or DistilBERT etc) with your own additional training data through transfer learning
