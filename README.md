@@ -681,6 +681,7 @@ graph LR
         * Also used for Android game streaming
       * P4d - A100 "UltraClusters" for supercomputing
     * Deep Learning AMI's
+    * Sagemaker can deploy a cluster using whatever architecture you want
     * Trn1 instances
       * "Powered by Trainium"
       * Optimized for training NN/LLM (50% savings)
