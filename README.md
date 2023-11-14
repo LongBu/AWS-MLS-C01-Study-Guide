@@ -670,6 +670,26 @@ graph LR
       * only to run tasks-usually Spot Instances are a best option
       * no hosted data, so no risk of data loss upon removal
       * can spin up/down as needed
+  * Deep Learning on EC2 / EMR
+    * EMR supports Apache MXNet and GPU instance types
+    * Appropriate instance types for deep learning:
+      * P3: 8 Tesla V100 GPU's
+      * P2: 16 K80 GPU's
+      * G3: 4 M60 GPU's (all Nvidia chips)
+      * G5g : AWS Graviton 2 processors / Nvidia T4G Tensor Core GPU's
+        * Not (yet) available in EMR
+        * Also used for Android game streaming
+      * P4d - A100 "UltraClusters" for supercomputing
+    * Deep Learning AMI's
+    * Trn1 instances
+      * "Powered by Trainium"
+      * Optimized for training (50% savings)
+      * 800 Gbps of Elastic Fabric Adapter (EFA) networking for fast clusters
+    * Trn1n instances
+      * Even more bandwidth (1600 Gbps)
+    * Inf2 instances
+      * "Powered by AWS Inferentia2"
+      * Optimized for inference
   * Can have long-running cluster or transient (temporary) cluster
   * EMR Notebook
     * Similar concept to Zeppelin, with more AWS integration
