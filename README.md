@@ -683,7 +683,7 @@ graph LR
     * Deep Learning AMI's
     * Trn1 instances
       * "Powered by Trainium"
-      * Optimized for training (50% savings)
+      * Optimized for training NN/LLM (50% savings)
       * 800 Gbps of Elastic Fabric Adapter (EFA) networking for fast clusters
     * Trn1n instances
       * Even more bandwidth (1600 Gbps)
