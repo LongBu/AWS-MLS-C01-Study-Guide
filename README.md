@@ -1569,7 +1569,50 @@ Instance Types:
   * ﻿﻿Training
     * ﻿﻿Single or multi-machine CPU or GPU
     * ﻿﻿Multi-GPU does not help (on one machine)
+
 ##### Seq2Seq
+
+Usage:
+  * ﻿﻿Input is a sequence of tokens, output is a sequence of tokens
+  * ﻿﻿Machine Translation
+  * ﻿﻿Text summarization
+  * ﻿﻿Speech to text
+  * ﻿﻿Implemented with RNN's and CNN's with attention
+
+Training input:
+  * ﻿﻿RecordIO-Protobuf
+    * ﻿﻿Tokens must be integers (this is unusual, since most algorithms want floating point data.)
+  * ﻿﻿Start with tokenized text files (integers=>indices in vocabulary files for mapping purposes)
+  * ﻿﻿Convert to protobuf using sample code
+    * ﻿﻿Packs into integer tensors with vocabulary files
+    * ﻿﻿A lot like the TF/IDF lab we did earlier.
+  * ﻿﻿Must provide training data, validation data, and vocabulary files.
+
+How to use:
+  * ﻿﻿Training for machine translation can take days, even on SageMaker
+  * ﻿﻿Pre-trained models are available
+  * ﻿﻿Public training datasets are available for specific translation tasks
+
+Hyperparameters:
+  * ﻿﻿Batch_size
+  * ﻿﻿Optimizer_type (adam, sgd, rmsprop)
+  * ﻿﻿Learning_rate
+  * ﻿﻿Num_layers_encoder
+  * ﻿﻿Num_layers_decoder
+  * ﻿﻿Can optimize on:
+    * ﻿﻿Accuracy
+      * ﻿﻿Vs. provided validation dataset
+    * ﻿﻿BLEU score
+      * ﻿﻿Compares against multiple reference translations
+    * ﻿﻿Perplexity
+      * ﻿﻿Cross-entropy
+    * BLEU score and perplexity are well suited for measuring machine translation problems
+
+Instance Types:
+  * ﻿﻿Can only use GPU instance types (P3 for example
+  * ﻿﻿Can only use a single machine for training
+    * But can use multi-GPU's on one machine
+
 ##### XGBoost
 
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
