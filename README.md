@@ -1613,7 +1613,71 @@ Instance Types:
   * ﻿﻿Can only use a single machine for training
     * But can use multi-GPU's on one machine
 
-##### XGBoost
+##### XGBoost (eXtreme Gradient Boosting)
+
+Usage:
+  * Boosted group of decision trees
+  * New trees made to correct the errors of previous trees
+  * Uses gradient descent to minimize loss as new trees are added
+  * Fast and popular with Kaggle competitions
+  * Can be used for:
+    * classification
+    * regression: using regression trees
+
+ 
+Training input:
+* XGBoost for SageMaker is just open source  XGBoost
+  * Takes CSV or libsvm input.
+  * AWS recently extended it to accept recordIO-protobuf and Parquet
+
+
+How to use:
+* Models are serialized/deserialized with Pickle
+  * Can use as a framework within notebooks
+    * Sagemaker.xgboost
+  * Or as a built-in SageMaker algorithm-> Refer to XG boost docker image in ECR-> Deploy a fleet of training hosts for large scale jobs
+
+
+Hyperparameters:
+  * Subsample
+    * Prevents overfitting
+  * Eta
+    * Step size shrinkage, prevents overfitting
+  * Gamma
+    * Minimum loss reduction to create a partition; larger = more conservative
+  * Alpha
+    * L1 regularization term; larger = more conservative
+  * Lambda
+    * L2 regularization term; larger = more conservative
+  * eval metric
+    * Optimize on AUC, error, rmse...
+    * For example, if you care about false positives more than accuracy, you might use AUL here
+  * scale_pos_weight
+    * Adjusts balance of positive and negative weights
+    * Helpful for unbalanced classes
+    * Might set to sum(negative cases) / sum (positive cases)
+  * max_depth
+    * Max depth of the tree
+    * The more deep a tree is the more complicated the model is, risking overfitting
+
+##### DeepAR
+##### BlazingText
+ 
+Instance Types:
+  * Is memory-bound, not compute-bound
+  * So, M5 is a good choice
+  * As of XGBoost 1.2 single instance GPU training is available
+    * For example P2, P3
+    * Must set tree_method hyperparameter to gpu_hist
+    * Trains more quickly and can be more cost effective.
+  * XGBoost 1.2-2
+    * P2, P3, G4dn, G5
+  * XGBoost 1.5+: Distributed GPU training now available
+    * Must set use_dask gpu_training to true 
+    * Must also set tree_method hyperparameter to gpu_hist 
+    * Set distribution to fully_replicated in Training nput
+    * Only works with csv or parquet input
+
 
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
