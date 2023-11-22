@@ -1349,6 +1349,7 @@ have no known algorithm
       * Many algorithms benefit from shuffling their training data
       * Otherwise they may learn from residual signals in the training data resulting from the order in which they were collected
   * Binary confusion matrix:
+
     | --- | Actual Yes | Actual No |
     | Predicted Yes | true positives | false positives |
     | Predicted No | false negatives| true negatives |
