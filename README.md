@@ -1352,12 +1352,13 @@ have no known algorithm
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
     | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
+    | Root Mean Square | RMSE | square root of the sum of all squared errors of each prediction from the actual true value |
     | Accuracy | ACC | (TP + TN)/(TP + FP + TN + FN) |
-    | Sensitivity, True positive rate, Recall | SN, TPR, REC | TP/(TP + FN) = TP/P|
-    | Precision, Positive predictive value | PREC, PPV | TP/(TP + FP) |
+    | Sensitivity, True positive rate, Recall, Completeness| SN, TPR, REC | TP/(TP + FN) = TP/P|
+    | Precision, Positive predictive value, Correct Positives| PREC, PPV | TP/(TP + FP) |
     | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
     | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
-    | F1 Score (harmonic mean of precision and recall) | F1 | TP/(TP + (FN + FP/2)) |
+    | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 *(Precision*Recall)/(Precision+Recall)|
    
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
