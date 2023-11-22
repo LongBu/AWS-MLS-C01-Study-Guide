@@ -1358,7 +1358,7 @@ have no known algorithm
     | Precision, Positive predictive value, Correct Positives| PREC, PPV | TP/(TP + FP) |
     | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
     | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
-    | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 *(Precision*Recall)/(Precision+Recall)|
+    | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)|
    
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
