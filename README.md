@@ -1348,13 +1348,12 @@ have no known algorithm
     * Shuffling
       * Many algorithms benefit from shuffling their training data
       * Otherwise they may learn from residual signals in the training data resulting from the order in which they were collected
-  * Binary confusion matrix
-|- | Actual Yes | Actual No |
-| Predicted Yes | true positives | false positives |
-| Predicted No | false negatives| true negatives |
-
+  * Binary confusion matrix:
+    |--- | Actual Yes | Actual No |
+    | Predicted Yes | true positives | false positives |
+    | Predicted No | false negatives| true negatives |
   * Multi-class confusion matrix + heat map, where heat map shows how the classifications or misclassifications happened (note true positives would be on the diagonal)
-  * Confusion Matrix Measurements :
+  * Confusion Matrix Measurements:
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
     | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
