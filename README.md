@@ -1808,6 +1808,7 @@ Instance Types:
 | FN | False Negative |
 | FP | False Positive |
 | GPT | Generative Pre-trained Transformer |
+| GRU | Gated Recurrent Unit |
 | IA | Infrequent Access |
 | IAM | Identity and Access Management |
 | IGW | Internet Gateway |
@@ -1815,6 +1816,7 @@ Instance Types:
 | IOT | Internet of Things |
 | KMS	| Key Management Service |
 | KPI | Key Performance Indicator |
+| LSTM | Long Short Term Memory |
 | ML | Machine Learning |
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
