@@ -1360,6 +1360,11 @@ have no known algorithm
     | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
     | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)|
    
+  * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection)
+  * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing)
+  * F1 is a good choice when you care about precision AND recall
+  * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
+
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
   * Cross validation (eg: from sklearn.model_selection import cross_val_score)
