@@ -1352,6 +1352,7 @@ have no known algorithm
     | --- | Actual Yes | Actual No |
     | Predicted Yes | true positives | false positives |
     | Predicted No | false negatives| true negatives |
+
   * Multi-class confusion matrix + heat map, where heat map shows how the classifications or misclassifications happened (note true positives would be on the diagonal)
   * Confusion Matrix Measurements:
     | Measure | Abbreviation | Formula |
