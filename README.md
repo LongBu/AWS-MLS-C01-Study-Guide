@@ -1739,10 +1739,62 @@ Instance Types:
 ##### BlazingText
 
 Usage:
+  * Text classification
+    * Predict labels for a sentence
+    * Useful in web searches, information retrieval
+    * Supervised
+  * Word2vec
+    * Creates a vector representation of words
+    * Semantically, similar words a representative vectors is close to one another
+    * This is called a word embedding (aka word embeddings)
+    * It is usetul for NLP, but is not an NLP algorithm in itself!
+      * Used in machine translation, sentiment analysis
+    * Remember it only works on individual words, not sentences or documents
+
 Training input:
+  * For supervised mode (text classification):
+    * need to supply labels
+    * One sentence per line
+    * First "word" in the sentence is the string _label _ followed by the label
+  * Also, "augmented manifest text format"
+  * Word2vec just wants a text file with one training sentence per line.
+  *  augmented manifest text format:
+
+__label__4 linux ready for prime time, intel says, despite all the linux hype, the open-source movement has yet to make a huge splash in the desktop market. that may be about to change, thanks to chipmaking giant intel corp.
+
+__label__2 bowled by the slower one again, kolkata, november 14 the past caught up with sourav ganguly as the indian skippers return to international cricket was short lived.
+
+  * augmented text format (Tokenized and pre-processed):
+
+    {"source" "linux ready for prime time, intel says, despite all the linux hype", "label":1} 
+
+    {"source":"bowled by the slower one again, kolkata, november 14 the past caught up with sourav ganguly", "label" :2}
+
 How to use:
+  * Word2vec has multiple modes
+    * Cbow (Continuous Bag of Words)
+    * Skip-gram =>Order of words matters
+    * Batch skip-gram => Order of words matters
+      * Distributed computation over many CPU nodes
+
 Hyperparameters:
+  * Word2vec:
+    * Mode (batch_skipgram, skipgram, cbow)
+    * Learning_rate
+    * Window_size
+    * Vector_dim
+    * Negative_samples
+  * Text classification:
+    * Epochs
+    * Learning_rate
+    * Word_ngrams
+    * Vector_dim
+
 Instance Types:
+  * For cbow and skipgram, recommend a single ml.p3.2xlarge
+    * Any single CPU or single GPU instance will work
+  * For batch skipgram, can use single or multiple CPU instances
+  * For text classification, C5 recommended if less than 2GB training data. For larger data sets, use a single GPU instance (ml.p2.xlarge or ml.p3.2xlarge)
 
 ##### Object2Vec
 
