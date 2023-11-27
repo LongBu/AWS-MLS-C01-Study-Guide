@@ -1858,10 +1858,66 @@ Instance Types:
 ##### Object Detectection
 
 Usage:
+  * ﻿﻿Identify all objects in an image with bounding boxes
+  * ﻿﻿Detects and classifies objects with a single deep neural network
+  * ﻿﻿Classes are accompanied by confidence scores
+  * ﻿﻿Can train from scratch, or use pre-trained models based on ImageNet
+
 Training input:
+  * ﻿﻿MXNet: RecordIO or image format (jpg or png)
+  * Tensor flow input varies based upon the model selected
+  * ﻿﻿With image format, supply a JSON file for annotation data for each image
+  * Example input:
+
+"file": "your_image_directory/sample_image1.jpg".
+"image_size": [
+{
+"width": 500,
+"height": 400,
+"depth": 3
+}
+]
+"annotations": [
+{
+"class_id": 0,
+"left": 111,
+"top": 134,
+"width": 61,
+"height": 128
+}
+],
+"categories": [
+{
+"class id": 0,
+"name": "dog"
+}
+]
+}
+
 How to use:
+  * ﻿﻿Two variants: MXNet and Tensorflow
+  * ﻿﻿Takes an image as input, outputs all instances of objects in the image with categories and confidence scores
+  * ﻿﻿MXNet
+    * Uses a CNN with the Single Shot multibox Detector (SSD) Algorithm
+      * ﻿﻿The base CNN can be VGG-16 or ResNet-50
+    * ﻿﻿Transfer learning mode / incremental training
+      * Use a pre-trained model for the base network weights instead of random imital weights
+    * ﻿﻿Uses flip, rescale, and jitter internally to avoid overfitting
+  * ﻿﻿Tensorflow
+    * ﻿﻿Uses ResNet, EfficientNet, MobileNet models from the TensorFlow Model Garden
+
 Hyperparameters:
+  * ﻿﻿Mini_batch_size / batch_size
+  * ﻿﻿Learning_rate
+  * ﻿﻿Optimizer
+    * ﻿﻿Sgd, adam, rmsprop, adadelta
+
 Instance Types:
+  * ﻿﻿Use GPU instances for training (multi-GPU and multi-machine OK)
+    * ﻿﻿ml.p2.xlarge, ml.p2.16xlarge, ml.p3.2xlarge, ml.p3.16xlarge, G4dn, G5
+  * ﻿﻿Use CPU or GPU for inference
+    * ﻿﻿M5, P2, P3, G4dn all OK
+
 
 ##### Image Classification
 
