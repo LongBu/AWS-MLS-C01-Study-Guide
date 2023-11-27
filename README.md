@@ -1673,9 +1673,6 @@ Hyperparameters:
     * Max depth of the tree
     * The more deep a tree is the more complicated the model is, risking overfitting
 
-##### DeepAR
-##### BlazingText
- 
 Instance Types:
   * Is memory-bound, not compute-bound
   * So, M5 is a good choice
@@ -1691,6 +1688,133 @@ Instance Types:
     * Set distribution to fully_replicated in Training nput
     * Only works with csv or parquet input
 
+##### DeepAR
+
+Usage:
+  * Forecasting one-dimensional time series data
+  * Uses RNN's
+  * Allows you to train the same model over several related time series
+  * Can train over several related times series at once, not limited to single time series. Good if these multiple times series are interdependent, it can learn those relationships to create a better model to generalize to a given singular time series. 
+  * Finds frequencies and seasonality
+
+Training input:
+  * JSON lines format
+    * Gzip or Parquet for better performance
+  * Each record must contain:
+    * Start: the starting time stamp
+    * Target: the time series values
+  * Each record can contain:
+    * Dynamic_feat: dynamic features (such as, was a promotion applied to a product in a time series product purchases)
+    * Cat: categorical features
+  * Example data:
+{"start": "2009-11-01 00:00:00", "target": [4.3, "NaN", 5.1, ...], "cat": [0,1], "dynamic_feat": [[1.3, 0.4, ...]]}
+{"start": "2012-01-30 00:00:00","target": [4.3, "NaN", 6.1, ...], "cat": [3,5], "dynamic_feat": [[1.2, 0.6, ...]]}
+{"start": "1999-01-30 00:00:00", "target": [4.3, "NaN", 7.1, ...], "cat": [2,4], "dynamic_feat": [[2.3, 0.4, ...]]}
+ 
+How to use:
+  * Always include entire time series for training, testing, and inference
+  * Use entire dataset as test set, remove last time points for training. Evaluate on withheld values.
+  * Don t use very large values for prediction length (> 400 data points)
+  * Train on many time series and not just one when possible
+
+Hyperparameters:
+  * Context_length
+    * Number of time points the model sees before making a prediction
+    * Can be smaller than seasonalities; the model will lag one year anyhow.
+  * Epochs
+  * mini_batch_size
+  * Learning_rate
+  * Num_cells (eg: the neurons used)
+
+Instance Types:
+  * Can use CPU or GPU
+  * Single or multi machine
+  * Start with CPU (ml.c4.2xlarge, ml.c4.4xlarge)
+  * Move up to GPU if necessary.
+    * Only helps with larger models
+    * Or with large mini-batch sizes (>512)
+  * CPU-only for inference
+  * May need larger instances for tuning
+
+##### BlazingText
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Object2Vec
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Object Detectection
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Image Classification
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Semantic Segmentation
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Random Cut Forest
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Neural Topic Model
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Latent Dirichlet Allocation (LDA)
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### KNN
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### K-Means Clustering
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
 
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
