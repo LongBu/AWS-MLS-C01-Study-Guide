@@ -1799,11 +1799,62 @@ Instance Types:
 ##### Object2Vec
 
 Usage:
-Training input:
-How to use:
-Hyperparameters:
-Instance Types:
+  * Remember word2vec from Blazing Text? It's like that, but arbitrary objects
+  * It creates low-dimensional dense embeddings of high-dimensional objects
+  * It is basically word2vec, generalized to handle things other than words.
+  * Compute nearest neighbors of objects
+  * Visualize clusters
+  * Genre prediction
+  * Recommendations (similar items or users)
 
+Training input:
+  * Data must be tokenized into integers
+  * Training data consists of pairs of tokens and/or sequences of tokens
+    * Sentence - sentence
+    * Labels-sequence (genre to description?)
+    * Customer-customer
+    * Product-product
+    * User-item
+  * Example input:
+
+{"label": 0, "in0": [6, 17, 606, 19, 53, 67, 52, 12, 5, 10, 15, 10178, 7, 33, 652, 80, 15, 69, 821, 4], "in1": [16, 21, 13, 45, 14, 9, 80, 59,
+164, 4]}
+
+{"label": 1, "in0": [22, 1016, 32, 13, 25, 11, 5, 64, 573, 45, 5, 80, 15, 67, 21, 7, 9, 107, 4], "in1": [22, 32, 13, 25, 1016, 573, 3252, 4]} 
+
+{"label": 1, "ino": [774, 14, 21, 206], "in1": [21, 366, 125]}
+ 
+How to use:
+  * Process data into JSON Lines and shuffle it
+  * Train with two input channels, two encoders, and a comparator
+  * Encoder choices:
+    * Average pooled embeddings
+    * Bidirectional LSTM
+  * Comparator is followed by a feed-forward neural network, like so:
+```mermaid
+graph LR
+    A[Input] --> B[Encoder]
+    B --> C[Comparator]
+    C --> D[Label]
+    E[Input] --> F[Encoder]
+    F --> C
+```
+
+Hyperparameters:
+  * The usual deep learning ones...
+    * Dropout, early stopping, epochs, learning rate, batch size, layers, activation function, optimizer, weight decay
+  * Enc1_network, enc2_network
+    * Choose henn, bilstm, pooled embedding
+ 
+Instance Types:
+  * Can only train on a single machine (CPU or GPU, multi-GPU OK)
+    * ml.m5.2xlarge
+    * ml.p2.xlarge
+    * If needed, go up to ml.m5.4xlarge or ml.m5.12xlarge
+    * GPU options: P2, P3, G4dn, G5
+  * Inference: use ml. p3.2xlarge
+    * Use INFERENCE PREFERRED MODE environment variable to optimize for encoder embeddings rather than classification or regression.
+ 
 ##### Object Detectection
 
 Usage:
