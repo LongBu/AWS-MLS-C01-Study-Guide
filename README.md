@@ -1918,14 +1918,35 @@ Instance Types:
   * ﻿﻿Use CPU or GPU for inference
     * ﻿﻿M5, P2, P3, G4dn all OK
 
-
 ##### Image Classification
 
 Usage:
-Training input:
+  * Assign one or more labels to an image
+  * ﻿﻿Doesn't tell you where objects are, just what objects are in the image
+
 How to use:
+  * ﻿﻿Separate algorithms for MXNet and Tensorflow
+  * ﻿﻿MXNet:
+    * Full training mode
+      * ﻿﻿Network initialized with random weights
+    * Transfer learning mode
+      * Initialized with pre-trained weights
+      * The top fully-connected layer is initialized with random weights
+      * Network is fine-tuned with new training data
+    * Default image size is 3-channel 224×224 (ImageNet's dataset)
+  * Tensorflow: Uses various Tensorflow Hub models MobileNet, Inception, ResNet, EfficientNet)
+    * Top classification layer is available for fine tuning or further training
+
 Hyperparameters:
+  * The usual suspects for deep learning
+    * Batch size, learning rate, optimizer
+  * Optimizer-specific parameters
+    * Weight decay, beta 1, beta 2, eps, gamma
+    * Slightly different between MXNet and Tensorflow versions
+
 Instance Types:
+  * GPU instances for training (ml.p2, p3, g4dn, g5) Multi-GPU  and multi-machine OK.
+  * CPU or GPU for inference (m5, p2, p3, g4dn, g5); instance types are really ml varieties of course (ml.m5, ml.p2, etc.
 
 ##### Semantic Segmentation
 
