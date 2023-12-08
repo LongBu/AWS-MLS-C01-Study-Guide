@@ -2138,6 +2138,100 @@ Instance Types:
     * ﻿﻿GPU for higher throughput on large batches
 
 ##### K-Means Clustering
+Usage:
+  * ﻿﻿Unsupervised clustering
+  * ﻿﻿Divide data into K groups, where members of a group are as similar as possible to each other
+    * ﻿﻿You define what "similar" means
+    * ﻿﻿Measured by Euclidean distance
+  * ﻿﻿Web-scale K-Means clustering
+
+Training input:
+  * ﻿﻿Train channel, optional test
+    * ﻿﻿Train ShardedByS3Key (More efficient), test FullyReplicated
+  * ﻿﻿recordIO-protobuf or CSV
+  * ﻿﻿File or Pipe on either
+
+How to use:
+  * ﻿﻿Every observation mapped to n-dimensional space (n = number of features)
+  * ﻿﻿Works to optimize the center of K clusters
+    * ﻿﻿"extra cluster centers" may be specified to improve accuracy (which end up getting reduced to k)
+    * ﻿﻿K = k*x
+      * Where k => # of clusters we want to end up with
+      * Where x => extra cluster centers term
+  * ﻿﻿Algorithm:
+    * ﻿﻿Determine initial cluster centers
+      * ﻿﻿Random or k-means++ approach
+      * ﻿﻿K-means++ tries to make initial clusters far apart
+    * ﻿﻿Iterate over training data and calculate cluster centers
+    * ﻿﻿Reduce clusters from K to k
+      * K is a larger number of clusters we want to reduce down to the desired k
+    * ﻿﻿Using Lloyd's method with means++
+
+Hyperparameters:
+  * K！
+    * ﻿﻿Choosing K is tricky
+    * ﻿﻿Plot within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit
+    * ﻿﻿Use "elbow method"
+    * ﻿﻿Basically optimize for tightness of clusters
+  * ﻿﻿Mini _batch_size
+  * ﻿﻿Extra_center_factor: this is the x variable
+  * ﻿﻿Init_method: random or K-means++
+
+Instance Types:
+  * ﻿﻿CPU or GPU, but CPU recommended
+    * ﻿﻿Only one GPU per instance used on GPU
+    * ﻿﻿So use ml.g4dn.xlarge if you're going to use GPU
+    * ﻿﻿p2, p3, g4dn, and g4 supported
+
+##### Principal Component Analysis (PCA)
+ 
+Usage:
+  * ﻿﻿Dimensionality reduction
+    * ﻿﻿Project higher-dimensional data (lots of features) into lower-dimensional (like a 2D plot) while minimizing loss of information
+    * ﻿﻿The reduced dimensions are called components
+      * ﻿﻿First component has largest possible variability
+      * ﻿﻿Second component has the next largest...
+  * ﻿﻿Unsupervised
+
+Training input:
+  * ﻿﻿recordIO-protobuf or CSV
+  * ﻿﻿File or Pipe on either
+
+How to use:
+  * ﻿﻿Covariance matrix is created, then singular value decomposition (SVD)
+  * ﻿﻿Two modes
+    * ﻿﻿Regular
+      * ﻿﻿For sparse data and moderate number of observations and features
+    * ﻿﻿Randomized: better for large data, scales better
+      * ﻿﻿For large number of observations and features
+      * ﻿﻿Uses approximation algorithm
+
+Hyperparameters:
+  * ﻿﻿Algorithm_mode
+  * ﻿﻿Subtract_mean
+    * ﻿﻿Unbias data
+
+Instance Types:
+  * ﻿﻿GPU or CPU
+    * ﻿﻿It depends "on the specifics of the input data"
+
+##### Factorization Machines
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### IP Insights
+
+Usage:
+Training input:
+How to use:
+Hyperparameters:
+Instance Types:
+
+##### Reinforcement Learning
 
 Usage:
 Training input:
