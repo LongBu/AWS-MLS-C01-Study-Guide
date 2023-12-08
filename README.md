@@ -1282,7 +1282,79 @@ have no known algorithm
   * Neural network architecture (layers/nodes), learning rate, activation functions (see below as the notes need to be organized better w/ time)
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
-#### Activation functions: a gated function that verifies how an incoming value is higher than a threshold value to prevent linearity, used within internal/output layer cells in neural networks 
+
+#### Activation functions
+
+A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
+
+TODO: throw up graphics of the given functions
+
+Linear activation function (eg: y=x)
+  * ﻿﻿It doesn't really *do* anything
+  * ﻿﻿Can't do backpropagation
+ 
+Binary step function
+  * ﻿﻿It's on or off
+  * ﻿﻿Can't handle multiple classification - it's binary after all
+  * ﻿﻿Vertical slopes don't work well with calculus!
+
+Non-linear activation functions
+  * ﻿﻿These can create complex mappings between inputs and outputs
+  * ﻿﻿Allow backpropagation (because they have a useful derivative)
+  * ﻿﻿Allow for multiple layers (linear functions degenerate to a single layer)
+ 
+Sigmoid / Logistic / TanH
+  * ﻿﻿Nice & smooth
+  * ﻿﻿Scales everything from 0-1  (Sigmoid AKA Logistic) or -1 to 1 (tanh / hyperbolic tangent)
+  * But: changes slowly for high or low values
+    * The "Vanishing Gradient" problem exists for both when getting toward extremes in +/-, output changes very slowly, where numerical precision can become an issue
+  * ﻿﻿Computationally expensive
+  * ﻿﻿Tanh generally preferred over sigmoid
+  * Tanh well suited for RNN
+  * sigmoid appropriate for more than one classification
+ 
+Rectified Linear Unit (ReLU)
+  *  If using slower neural network convergence
+    * ReLU - solution to sigmoid and tanh 
+  * ﻿﻿Very popular choice
+  * ﻿﻿Easy & fast to compute
+  * ﻿﻿But, when inputs are zero or negative, we have a linear function and all of its problems
+    * ﻿﻿The "Dying ReLU problem", where input is <= 0
+
+Leaky RelU
+* Solves "dying ReLU" by introducing a negative slope below 0 (usually not as steep as this)
+ 
+Parametric ReLU (PReLU)
+  * ﻿﻿ReLU, but the slope in the negative part is learned via backpropagation
+  * ﻿﻿Complicated and YMMV (your mileage may vary)
+ 
+Other ReLU variants
+  * ﻿﻿Exponential Linear Unit (ELU)
+  * ﻿﻿Swish
+    * ﻿﻿From Google, performs really well
+    * ﻿﻿But it's from Google, not Amazon...
+    * ﻿﻿Mostly a benefit with very deep networks (40+ layers)
+  * ﻿﻿Maxout
+    * ﻿﻿Outputs the max of the inputs
+    * ﻿﻿Technically ReLU is a special case ot maxout
+    * ﻿﻿But doubles parameters that need to be trained, not often practical.
+
+Softmax
+  * ﻿﻿Used on the final output layer of a multiple classification problem
+  * ﻿﻿Basically converts outputs to probabilities of each classification
+  * ﻿﻿Can't produce more than one label for something (sigmoid can)
+  * ﻿﻿Don't worry about the actual function for the exam, just know what it's used for 
+
+How to choose an activation function
+  * ﻿﻿For multiple classification, use softmax on the output layer
+  * ﻿﻿RNN's do well with Tanh
+  * ﻿﻿For everything else
+    * ﻿﻿Start with ReLU
+    * ﻿﻿If you need to do better, try Leaky ReLU
+    * ﻿﻿Last resort: PReLU, Maxout
+    * ﻿﻿Swish for really deep networks
+  * Leaky ReLU or PReLU are the answer to dying ReLU, while the latter is computationally expensive slope calculations along with the weights in said NN
+
 ### Evaluate machine learning models.
   * Avoid overfitting/underfitting (detect and handle bias and variance)
   * Metrics (AUC-ROC, RMSE)
