@@ -1951,11 +1951,40 @@ Instance Types:
 ##### Semantic Segmentation
 
 Usage:
-Training input:
-How to use:
-Hyperparameters:
-Instance Types:
+  * ﻿﻿Pixel-level object classification
+  * ﻿﻿Different from image classification - that assigns labels to whole images
+  * ﻿﻿Different from object detection - that assigns labels to bounding boxes
+  * ﻿﻿Useful for self-driving vehicles, medical imaging diagnostics, robot sensing
+  * ﻿﻿Produces a segmentation mask, which maps individual pixels to labels or classifications
 
+Training input:
+  * ﻿﻿JPG Images and PNG annotations
+  * ﻿﻿For both training and validation
+  * ﻿﻿Label maps to describe annotations
+  * ﻿﻿Augmented manifest image format supported for Pipe mode (for performance).
+  * ﻿﻿JPG images accepted for inference
+
+How to use:
+  * ﻿﻿Built on MXNet Gluon and Gluon CV
+  * ﻿﻿Choice of 3 algorithms:
+    * ﻿﻿Fully-Convolutional Network (FCN)
+    * ﻿﻿Pyramid Scene Parsing (PSP)
+    * ﻿﻿DeepLabV3
+  * ﻿﻿Choice of backbones:
+    * ﻿﻿ResNet50
+    * ﻿﻿ResNet101
+    * ﻿﻿Both trained on ImageNet database
+  * ﻿﻿Incremental training, or training from scratch, supported too
+
+Hyperparameters:
+  * ﻿﻿Epochs, learning rate, batch size, optimizer, etc
+  * ﻿﻿Algorithm
+  * ﻿﻿Backbone
+
+Instance Types:
+  * ﻿﻿Only GPU supported for training (P2, P3, G4dn, G5) on a single machine only
+  * ﻿﻿Inference on CPU (C5 or M5) or GPU (P3 or G4dn)
+ 
 ##### Random Cut Forest
 
 Usage:
