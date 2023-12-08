@@ -1283,6 +1283,22 @@ have no known algorithm
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
 
+#### Neural Network (NN)
+  * Deep Learning Network is the case where there are multiple layers of neurons in a NN
+  * Training involves learning the appropriate weights and biases throughout the network to generate classifications
+  * Great for parallelization (GPU)
+  * Deep Learning Frameworks (AWS supports both, but tend to build using MXNet):
+    * TensorFlow/Keras
+    * MXNet
+  * Types:
+    * Feedforward Neural Network
+    * Convolutional Neural Network (CNN)
+      * Image classification
+    * Recurrent Neural Network (RNN)
+      * Deal with Time series data or words in a sentence
+      * RNN types:
+        * Long Short Term Memory (LSTM), Gated Recurrent Unit (GRU)
+
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
