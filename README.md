@@ -1549,7 +1549,7 @@ Usage:
     * ﻿﻿Can do binary or multi-class
 
 Training input:
-  * ﻿﻿RecordIO-wrapped protobuf
+  * ﻿﻿recordIO-wrapped protobuf
     * ﻿﻿Float32 data only!
   * ﻿﻿CSV
     * ﻿﻿First column assumed to be the label
@@ -1593,7 +1593,7 @@ Usage:
   * ﻿﻿Implemented with RNN's and CNN's with attention
 
 Training input:
-  * ﻿﻿RecordIO-Protobuf
+  * ﻿﻿recordIO-Protobuf
     * ﻿﻿Tokens must be integers (this is unusual, since most algorithms want floating point data.)
   * ﻿﻿Start with tokenized text files (integers=>indices in vocabulary files for mapping purposes)
   * ﻿﻿Convert to protobuf using sample code
@@ -1864,7 +1864,7 @@ Usage:
   * ﻿﻿Can train from scratch, or use pre-trained models based on ImageNet
 
 Training input:
-  * ﻿﻿MXNet: RecordIO or image format (jpg or png)
+  * ﻿﻿MXNet: recordIO or image format (jpg or png)
   * Tensor flow input varies based upon the model selected
   * ﻿﻿With image format, supply a JSON file for annotation data for each image
   * Example input:
@@ -1997,7 +1997,7 @@ Usage:
   * Based on an algorithm developed by Amazon that they seem to be very proud of! and trying
 
 Training input:
-  * RecordIO-protobuf or CSV
+  * recordIO-protobuf or CSV
   * Can use File or Pipe mode on either
   * Optional test channel for computing accuracy, precision, recall, and F1 on labeled data (anomaly or not)
 
@@ -2064,19 +2064,78 @@ Instance Types:
 
 Usage:
   * A topic modeling algorithm (like Neural Topic Model)
+  * Latent Dirichlet Allocation
+  * Another topic modeling algorithm
+    * Not deep learning
+  * Unsupervised
+    * The topics themselves are unlabeled; they are just groupings of documents with a shared subset of words
+  * Can be used for things other than words
+    * Cluster customers based on purchases
+    * Harmonic analysis in music
 
 Training input:
+  * Train channel, optional test channel (to measure accuracy)
+  * recordIO-protobuf or CSV
+  * Each document has counts for every word in vocabulary (in CSV format)
+  * Pipe mode only supported with recordIO
+
 How to use:
+  * Unsupervised; generates however many topics you specify
+  * Optional test channel can be used for scoring results
+    * Per-word log likelihood
+  * Functionally similar to NTM, but CPU-based
+    * Therefore maybe cheaper / more efficient
+
 Hyperparameters:
+  * Num_topics
+  * Alpha
+    * Initial guess for concentration parameter
+    * Smaller values generate sparse topic mixtures
+    * Larger values (>1.0) produce uniform mixtures
+
 Instance Types:
+  * Single-instance CPU 
 
 ##### KNN
 
 Usage:
+  * Supervised
+  * ﻿﻿K-Nearest-Neighbors
+  * ﻿﻿Simple classification or regression algorithm
+  * ﻿﻿Classification
+    * ﻿﻿Find the K closest points to a sample point and return the most frequent label
+  * ﻿﻿Regression
+    * ﻿﻿Find the K closest points to a sample point and return the average value
+
 Training input:
+  * ﻿﻿Train channel contains your data
+  * ﻿﻿Test channel emits accuracy or MSE
+  * ﻿﻿recordIO-protobuf or CSV training
+    * ﻿﻿First column is label
+  * ﻿﻿File or pipe mode on either
+
 How to use:
+  * ﻿﻿Data is first sampled
+  * ﻿﻿SageMaker includes a dimensionality reduction stage
+    * ﻿﻿Avoid sparse data ("curse of dimensionality")
+    * ﻿﻿At cost of noise / accuracy
+    * ﻿﻿"sign" or "fjlt" methods
+  * ﻿﻿Build an index for looking up neighbors
+  * ﻿﻿Serialize the model
+  * Query the model for a given K
+  * k parameter=> Experiment on this till you get diminishing returns on high values of K
+
 Hyperparameters:
+  * ﻿﻿К!
+  * ﻿﻿Sample_size
+
 Instance Types:
+  * ﻿﻿Training on CPU or GPU
+    * ﻿﻿MI.m5.2xlarge
+    * ﻿﻿MI.p2.xlarge
+  * ﻿﻿Inference
+    * ﻿﻿CPU for lower latency
+    * ﻿﻿GPU for higher throughput on large batches
 
 ##### K-Means Clustering
 
