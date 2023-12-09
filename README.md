@@ -1665,7 +1665,7 @@ Hyperparameters:
     * ﻿﻿Regularization
   * ﻿﻿Wd
     * Weight decay (L2 regularization)
- 
+
 Instance Types:
   * ﻿﻿Training
     * ﻿﻿Single or multi-machine CPU or GPU
