@@ -1299,6 +1299,63 @@ have no known algorithm
       * RNN types:
         * Long Short Term Memory (LSTM), Gated Recurrent Unit (GRU)
 
+##### CNN
+
+Usage:
+  * When you have data that doesn't neatly align into columns
+    * Images Analysis that you want to find features or patterns within (eg: feature-location invariant)
+    * Machine translation
+    * Sentence classification
+    * Sentiment analysis (can pick out sentences that flag the certain sentiment, this is more appropriate for CNN variants with attention)
+  * They can find features that aren't in a specific spot
+    * Like a stop sign in a picture
+    * Or words within a sentence
+
+How do they work?
+  * ﻿﻿Inspired by the biology of the visual cortex
+    * Local receptive fields are groups of neurons that only respond to a part of what your eyes see (subsampling)
+    * ﻿﻿They overlap each other to cover the entire visual field (convolutions)
+    * They feed into higher layers that identify increasingly complex Images
+      * Some receptive fields identify horizontal lines, lines at different angles, etc. (filters)
+      * These would feed into a layer that identifies shapes
+      * Which might feed into a layer that indentifies objects
+  * For color images, extra layers for red, green, and blue
+
+How do we "know" what we're seeing is what we're seeing?
+  * Individual local receptive fields scan the image looking for edges, and pick up the edges of an object in a layer
+  * The edges of the object get picked up by a higher level convolution that identifies the object's shape (and letters, too)
+  * This shape then gets matched against your pattern of what your desired object looks like, also using the color layers to help narrow it down
+  * The information continues to be processed upward until you are aware of what the object is
+  * A CNN works the same way
+
+CNNs using Keras / Tensorflow
+  * ﻿﻿Source data must be of appropriate dimensions
+    * ﻿﻿ie width x length x color channels
+  * ﻿﻿Conv2D layer type does the actual convolution on a 2D image
+    * ﻿﻿Conv1D and Conv3D also available - doesn't have to be image data
+  * ﻿﻿MaxPooling2D layers can be used to reduce a 2D layer (data) down by taking the maximum value in a given block reducing processing load on the CNN
+  * ﻿﻿Flatten layers will convert the 2D layer to a 1D layer for passing into a flat hidden layer of neurons
+  * ﻿﻿Typical usage:
+    * ﻿﻿Conv2D=>MaxPooling2D=>Dropout=>Flatten=>Dense=>Dropout=>Softmax
+
+CNN's are hard
+  * ﻿﻿Very resource-intensive (CPU, GPU, and RAM)
+  * ﻿﻿Lots of hyperparameters
+    * ﻿﻿Kernel sizes, many layers with different numbers of units, amount of pooling, number of layers, choice of optimizer, etc.
+  * ﻿﻿Getting the training data is often the hardest part! (As well as storing and accessing it)
+
+CNN example architectures
+  * ﻿﻿Defines specific arrangement of layers, padding, and hyperparameters
+  * ﻿﻿LeNet-5
+    * ﻿﻿Good for handwriting recognition
+  * ﻿﻿AlexNet
+    * ﻿﻿Image classification, deeper than LeNet
+  * ﻿﻿GoogLeNet
+    * ﻿﻿Even deeper, but with better performance
+    * ﻿﻿Introduces inception modules (groups of convolution layers)
+  * ﻿﻿ResNet (Residual Network)
+    * ﻿﻿Even deeper - maintains performance via skip connections.
+
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
