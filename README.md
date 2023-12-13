@@ -1304,7 +1304,7 @@ have no known algorithm
 Usage:
   * When you have data that doesn't neatly align into columns
     * Images Analysis that you want to find features or patterns within (eg: feature-location invariant)
-    * Machine translation
+    * Machine translation (eg: English to French)
     * Sentence classification
     * Sentiment analysis (can pick out sentences that flag the certain sentiment, this is more appropriate for CNN variants with attention)
   * They can find features that aren't in a specific spot
