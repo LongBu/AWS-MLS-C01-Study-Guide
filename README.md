@@ -2411,10 +2411,37 @@ Instance Types:
 ##### Factorization Machines
 
 Usage:
+  * Dealing with sparse data; find factors from a giant sparse matrix
+  * Click prediction
+  * Item recommendations
+  * Since an individual user doesn't interact with most pages / products the data is sparse
+  * Supervised
+  * Classification or regression
+  * Limited to pair-wise interactions
+  * User -> item for example
+
 Training input:
+  * recordIO-protobuf with Float32
+  * Sparse data means CSV isn't practical
+
 How to use:
+* Finds factors we can use to predict a classification (click or not? Purchase or not?) or value (predicted rating?) given a matrix representing some pair of things (users & items?)
+  * Usually used in the context of recommender systems (Really good choice for this scenario)
+  * Good choice of handling only sparse data
+
 Hyperparameters:
+  * Initialization methods for bias, factors, and linear terms
+  * Uniform, normal, or constant
+  * Can tune properties of each method
+
 Instance Types:
+  * CPU or GPU
+  * CPU recommended
+  * GPU only works with dense data
+
+
+
+
 
 ##### IP Insights
 
