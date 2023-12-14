@@ -2439,17 +2439,41 @@ Instance Types:
   * CPU recommended
   * GPU only works with dense data
 
-
-
-
-
 ##### IP Insights
 
 Usage:
+  * Unsupervised learning of IP address usage patterns
+  * Identifies suspicious/anomalous behavior from IP  addresses using a NN
+    * Identify logins from anomalous IP's
+    * Identify accounts creating resources from anomalous IP's
+
 Training input:
+  * User names, account ID's can be fed in directly; no need to pre-process
+  * Training channel, optional validation (computes AUC score)
+  * CSV only
+    * Entity, IP
+
 How to use:
+  * Uses a neural network to learn latent vector representations of entities and IP addresses.
+  * Entities are hashed and embedded
+    * Need sufficiently large hash size
+  * Automatically generates negative samples during training by randomly pairing entities and IP's
 Hyperparameters:
-Instance Types:
+  * Num_entity_vectors
+    * Hash size
+    * Set to twice the number of unique entity identifiers
+  * Vector_dim
+    * Size of embedding vectors
+    * Scales model size
+    * Too large results in overfitting
+  * Epochs, learning rate, batch size, etc.
+
+Instance Types
+  * CPU or GPU
+    * GPU recommended
+    * MI.p3.2xlarge or higher
+    * Can use multiple GPU's
+    * Size of CPU instance depends on vector_dim and num_entity_vectors
 
 ##### Reinforcement Learning
 
