@@ -1874,7 +1874,7 @@ Hyperparameters:
   * Lambda
     * L2 regularization term; larger = more conservative
   * eval metric
-    * Optimize on AUC, error, rmse...
+    * Optimize on AUC, error, rmse...
     * For example, if you care about false positives more than accuracy, you might use AUL here
   * scale_pos_weight
     * Adjusts balance of positive and negative weights
