@@ -1731,6 +1731,24 @@ How to choose an activation function
   * ﻿﻿You track progress via the Ground Truth Plus Project Portal
   * Get labeled data from S3 when done
 
+#### AWS SageMaker integration with Spark
+  * Pre-process data as normal with Spark (eg: distribute computation across an entire cluster)
+    * ﻿﻿Generate DataFrames
+  * ﻿﻿Use sagemaker-spark library
+  * ﻿﻿SageMakerEstimator (takes DF following spark preprocessing to pass onto SM Algorithms and thus SM models)
+    * ﻿﻿KMeans, PCA, XGBoost
+  * ﻿﻿SageMakerModel
+  * Connect notebook to a remote EMR
+  * cluster running Spark (or use Zeppelin)
+  * ﻿﻿Training dataframe should have:
+    * ﻿﻿A features column that is a vector of Doubles
+    * ﻿﻿An optional labels column of Doubles
+  * ﻿﻿Call fit on your SageMakerEstimator to get a SageMakerModel
+  * ﻿﻿Call transform on the SageMakerModel to make inferences
+  * ﻿﻿Works with Spark Pipelines as well.
+  * Allows you to combine pre-processing big data in Spark with training and inference in SageMaker.
+
+
 #### SageMaker Algorithms
 ##### Linear Learner
 Usage:
