@@ -1338,7 +1338,7 @@ CNNs using Keras / Tensorflow
   * ﻿﻿Typical usage:
     * ﻿﻿Conv2D=>MaxPooling2D=>Dropout=>Flatten=>Dense=>Dropout=>Softmax
 
-CNN's are hard
+CNN's training isn't easy
   * ﻿﻿Very resource-intensive (CPU, GPU, and RAM)
   * ﻿﻿Lots of hyperparameters
     * ﻿﻿Kernel sizes, many layers with different numbers of units, amount of pooling, number of layers, choice of optimizer, etc.
@@ -1356,6 +1356,54 @@ CNN example architectures
   * ﻿﻿ResNet (Residual Network)
     * ﻿﻿Even deeper - maintains performance via skip connections.
 
+##### RNN
+Usage:
+  * Time-series data
+    * When you want to predict future behavior based on past behavior
+    * Web logs, sensor logs, stock trades
+    * Where to drive your self-driving car based on past trajectories
+  * Data that consists of sequentes of arbitrary length
+    * Machine translation
+    * Image captions
+    * Machine-generated music
+   
+Types:
+  * Sequence to sequence (e.g. time series)
+    * such as predict stock prices based on series of historical data
+  * Sequence to vector
+    * such as words in a sentence to sentiment
+    * matching sequences to a vector state via multi layer perceptrons
+  * Vector to sequence
+    * such as create captions from an image
+  * Encoder -> Decoder
+    * Sequence -> vector -> sequence
+    * such as machine translation
+
+Training:
+  * Backpropagation through time
+    * Just like backpropagation on MLP's, but applied to each time step.
+    * Back propagation must take into account nn topology as well as the time steps taken
+  * All those time steps add up fast
+    * Ends up looking like a really, really deep neural network.
+    * Can limit backpropagation to a limited number of time steps (truncated backpropagation through time)
+  * State from earlier time steps get diluted over time
+    * This can be a problem (State Dilution), for example when learning sentence structures
+    * Older behavior doesn't matter more than new behavior (eg: first words in a sentence, might be more important); understanding, relationships between words to derive sentiment, meaning, etc.=>LSTM or GRU
+  * Layer of rnn with feedback scales horizontally, and can learn more complicated patterns as results
+  * RNN neurons have a training feedback loop:
+    * training data is fed to its input during training, step and/or, perhaps from the loop input from a previous layer (can be a layer or a single neuron) or step to be summed up-> activation function (eg: tanh)
+    * over time during training is "memory cell" as it maintains memories of previous steps
+  * LSTM Cell
+    * Long Short-Term Memory Cell
+    * Maintains separate short-term and long-term States
+  * GRU Cell
+    * Gated Recurrent Unit
+    * Simplified LSTM Cell that performs about as well, but shorter to train
+  * RNN isn't easy to train
+    * Very sensitive to topologies, choice of hyperparameters
+    * Very resource intensive
+    * A wrong choice can lead to a RNN that doesn't converge at all.
+ 
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
@@ -2501,6 +2549,7 @@ Instance Types:
 | AZ | Availability Zones |
 | BERT | Bi-directional Encoder Representations from Transformers |
 | CLS | Column Level Security |
+| CNN | Convolutional Neural Network |
 | DB | Database |
 | DP | Data Pipeline |
 | EBS | Elastic Block Store |
@@ -2519,7 +2568,7 @@ Instance Types:
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
 | IOT | Internet of Things |
-| KMS	| Key Management Service |
+| KMS | Key Management Service |
 | KPI | Key Performance Indicator |
 | LSTM | Long Short Term Memory |
 | ML | Machine Learning |
@@ -2529,21 +2578,22 @@ Instance Types:
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
 | RCU | Read Capacity Units |
-| RDS	| Relational Database Service |
+| RDS | Relational Database Service |
+| RNN | Recurrent Neural Network |
 | S3 | Simple Storage Service |
-| SCT	| AWS Schema Conversion Tool |
+| SCT | AWS Schema Conversion Tool |
 | SG | Security Group |
 | SMOTE | Synthetic Minority Over-sampling TEchnique |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
 | SSD | Solid State Drive |
 | SSE | Server Side Encryption |
-| SSH	| Secure Shell |
-| SSL	| Secure Sockets Layer |
-| SSM	| Systems Manager |
+| SSH | Secure Shell |
+| SSL | Secure Sockets Layer |
+| SSM | Systems Manager |
 | TN | True Negative |
 | TP | True Positive |
-| TTL	| Time to live |
+| TTL | Time to live |
 | VPC | Virtual Private Cloud |
 | VPN | Virtual Private Network |
 | WCU | Write Capacity Units |
