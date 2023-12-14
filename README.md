@@ -89,6 +89,12 @@ Note these are my own personal notes and are a work in progress as I study torwa
     * Fail over tiers: lowest ranking number first, then greatest size
   * Aurora ML: ML using SageMaker and Comprehend on Aurora
 
+##### Amazon Keyspaces (for Apache Cassandra):
+  * Scalable, highly available, serverless, and managed Apache Cassandra compatible (NoSQL) DB service offering consistent single-digit millisecond server-side read/write performance, while also providing HA and data durability
+  * Uses the Cassandra Query Language (CQL)
+  * All writes are replicated 3x across multiple AWS AZ for durability and availability
+  * Tables can scale up and down with virtually unlimited throughput and storage.  There is no limit on the size of a table or the number of rows you can store in a table. 
+
 ##### DynamoDB:
   * (Serverless) NoSQL Key-value and document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
   * Stored on SSD
