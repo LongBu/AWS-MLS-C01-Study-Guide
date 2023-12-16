@@ -1661,6 +1661,12 @@ How to choose an activation function
   * Natural language understanding to recognize parts of speech/text
   * Helps to build chatbots, call center bots
 
+##### Amazon Personalize:
+  * Fully managed ML service to build real-time personalized recommendations applications
+  * Increments in days, not months (no need to train, or build ML models)
+  * Service ingests via S3 (read data) and/or Amazon Personalize API (real-time data integration)
+
+
 ##### Amazon Comprehend (Medical):
   * Serverless NLP service harnessing ML to uncover valuable insights and connections in text
   * Medical version detects PHI via DetectPHI API
