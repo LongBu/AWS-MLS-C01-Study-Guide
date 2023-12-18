@@ -1795,24 +1795,37 @@ Personalize Pricing
 ![Panorama](https://d1.awsstatic.com/products/Panorama/product-page-diagram_AWS-Panorama.cb37f8acd4b72ebc18735bc01aae132da16a5576.png
 )
 
-
 ##### Amazon Rekognition:
-  * Find objects, people, text, scenes in images and videos using ML
+  * Find objects, people, text, scenes in images and videos using computer vision ML
   * Facial analysis and search to perform user verification, people counting
-  * Create a DB of "familiar faces" or compare against celebrities
+    * Create a DB of "familiar faces" or compare against celebrities
+  * Images come from S3, or provide image bytes as part of request using the API
+    * S3 will be faster if the image is already there
+  * Facial recognition depends on good lighting, angle, visibility of eyes, resolution
+  * Video must come from Kinesis Video Streams
+    * H.264 encoded
+    * 5-30 FPS
+    * Favor resolution over framerate
+  * Can use with Lambda to trigger image analysis upon upload to S3
+  * Rekognition Custom Labels
+    * Train with a small set of labeled images
+    * Use your own labels for unique items
+    * Example: the NFL uses custom labels to identify team logos, pylons, and foam fingers in images.
   * Use cases: 
     * Labeling
-    * Text detection
+    * Text (in image) detection
     * Face detection and analysis (gender, emotions, age range, etc.)
-    * Face search and verification
+    * Face search, comparison and verification
     * Celebrity recognition
-    * Pathing (eg: for sports game analysis)
+    * Video analysis
+      * Objects / people / celebrities marked on timeline
+      * Pathing (eg: for sports game analysis)
     * Content Moderation (inappropriate, unwanted, or offensive images/videos)
       * Social media/broadcast media/advertising/e-commerce
       * Confidence level of content flags/gates (threshold configuration based)
       * Flag sensitive content for manual review in A2I
       * Help comply with regulations
-		
+
  ##### Amazon Textract:
    * OCR that extracts text, handwriting and data from any scanned documents (eg: forms, tables tables, etc.) using ML
    * Read from any type of document (PDFs, images, etc.)
