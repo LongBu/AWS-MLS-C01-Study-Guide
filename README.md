@@ -1662,9 +1662,109 @@ How to choose an activation function
   * Helps to build chatbots, call center bots
 
 ##### Amazon Personalize:
-  * Fully managed ML service to build real-time personalized recommendations applications
-  * Increments in days, not months (no need to train, or build ML models)
-  * Service ingests via S3 (read data) and/or Amazon Personalize API (real-time data integration)
+  * Fully managed ML service to build real-time personalized recommendations applications (same one as Amazon)
+  * Service ingests via S3 (read data [purchases, ratings, impressions, cart adds, catalog, user demographics etc.]) and/or Amazon Personalize API (real-time data integration)
+  * API access
+    * You provide an explicit schema in Avro format
+    * Javascript or SDK
+    * GetRecommendations
+      * Recommended products, content, etc.
+      * Similar items
+    * GetPersonalizedRanking
+      * Rank a list of items provided
+      * Allows editorial control / curation
+  * Console and CLI too
+  * Real-time or batch recommendations
+  * Recommendations for new users and new items (the cold start problem)
+  * Contextual recommendations
+    * Device type, time, etc.
+  * Similar items
+  * Unstructured text input
+  * Intelligent user segmentation
+    * For marketing campaigns
+  * Business rules and filters
+    * Filter out recently purchased items or things that can't be shipped easily or are unavailable
+    * Highlight premium content
+    * Ensure a certain percentage of results are of some category
+  * Promotions
+    * Inject promoted content into recommendations
+    * Can find most relevant promoted content
+  * Trending Now
+  * Personalized Rankings
+    * Search results
+    * Promotions
+    * Curated lists
+
+Personalize Terminology to remember
+  * Datasets
+    * Users, Items, Interactions
+  * Recipes
+    * USER_PERSONALIZATION - recommendations for a specific user
+    * PERSONALIZED_ RANKING - give a list of items that are rent by end, user and a personal way
+    * RELATED_ITEMS - similar items per a given item based on aggregate customer behavior
+  * Solutions
+    * Trains the model
+    * Optimizes for relevance as well as your additional objectives
+      * Video length, price, etc. - must be numeric
+    * Hyperparameter Optimization (HPO)
+  * Campaigns
+    * Deploys your "solution version" (model that has been trained with a given set of data)
+    * Deploys capacity for generating real-time recommendations
+
+Personalize Hyperparameters
+  * User-Personalization, Personalized-Ranking
+    * hidden dimension (HPO) - automatically optimized for USER_PERSONALIZATION and PERSONALIZED_ RANKING; how many hidden variables are there in the underlying model
+    * bptt (back-propagation through time - creates an RNN) - if time is important to recommendations; the older and event is the less significant it is; weighting more towards recent events
+    * recency_mask (weights recent events) - gives more weight to recent events
+    * min/max user history length_percentile (filter out robots/crawlers that have been on the site a lot or an individual who looked at one or two things)
+    * exploration_weight 0-1 (.3 by default), controls relevance; higher weight=> less relevance in results and the reverse in kind (how wide a net is cast)
+    * exploration_item_age_cut_off - how far back in time you go
+  * Similar-items
+    * item_id_hidden_dimension (HPO)
+  * item_metadata_hidden_dimension (HPO with min & max range specified)
+
+Maintaining Relevance
+  * Keep your datasets current
+    * Incremental data import
+  * Use PutEvents operation to feed in real-time user behavior
+  * Retrain the model
+    * They call this a new solution version
+    * Updates every 2 hours by default
+    * Should do a full retrain (trainingMode=FULL) weekly
+
+Personalize Security
+  * Data not shared across accounts
+  * Data may be encrypted with KMS
+  * Data may be encrypted at rest in your region (SSE-S3)
+  * Data in transit between your account and Amazons internal systems encrypted with TLS 1.2
+  * Access control via IAM
+  * Data in S3 must have appropriate bucket policy for Amazon Personalize to process
+  * monitoring & logging via CloudWatch and
+
+Personalize Pricing
+  * Data ingestion: per-GB
+  * Training: per training-hour
+  * Inference: per TPS-hour (the more you hit the service the more you pay)
+  * Batch recommendations: per user or per item
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 ##### Amazon Comprehend (Medical):
