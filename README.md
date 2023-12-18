@@ -2656,6 +2656,7 @@ Instance Types:
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
+| OCR | Optical Character Recognition |
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
 | RCU | Read Capacity Units |
