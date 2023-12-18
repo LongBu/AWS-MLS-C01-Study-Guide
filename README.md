@@ -1652,6 +1652,7 @@ How to choose an activation function
   * Neural Text-To-Speech, many voices & languages
   * Customize pronunciation of words and phrases with pronunciation lexicons that are harnessed by the Sythesize Speech Operation
   * Can map stylized words and/or acronyms to resultant output
+  * Can output directely to Audio or as an audio download (mp3 or other formats)
   * Generate more customized output from text marked up with SSML including:
     * breating, whispering
     * emphasis on words
