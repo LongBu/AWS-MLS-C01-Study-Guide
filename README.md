@@ -1689,7 +1689,10 @@ How to choose an activation function
   * Brings computer vision to your existing IP cameras, those some cameras have this built-in now
   * Results go to S3, cloudwatch, etc.
 
-https://d1.awsstatic.com/products/Panorama/product-page-diagram_AWS-Panorama.cb37f8acd4b72ebc18735bc01aae132da16a5576.png
+
+![Panorama](https://d1.awsstatic.com/products/Panorama/product-page-diagram_AWS-Panorama.cb37f8acd4b72ebc18735bc01aae132da16a5576.png
+)
+
 
 ##### Amazon Rekognition:
   * Find objects, people, text, scenes in images and videos using ML
