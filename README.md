@@ -1681,7 +1681,9 @@ How to choose an activation function
   * Can remove PII using redaction
   * Supports automatic language identification for multi-lingual audio
 
-##### DeepLens: AWS camera service
+##### DeepLens: 
+  * Deep learning-enabled video camera service
+  * Integrated with Rekognition, SageMaker, Polly, Tensorflow, MXNet, Caffe
 
 ##### AWS Panorama
   * Like DeepLens
@@ -1712,13 +1714,37 @@ How to choose an activation function
       * Help comply with regulations
 		
  ##### Amazon Textract:
-   * Extracts text, handwriting and data from any scanned documents (eg: forms, tables, etc.) using ML
+   * OCR that extracts text, handwriting and data from any scanned documents (eg: forms, tables tables, etc.) using ML
    * Read from any type of document (PDFs, images, etc.)
    * Good for invoices, financial reports, medical records, insurance claims, taxforms, ids, passports
 		
 ##### Amazon Translate:
   * Natural and accurate language translation
   * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently 
+
+##### AWS DeepRacer
+  * Reinforcement learning powered 1/18-scale race car
+
+##### Amazon Lookout
+  * Equipment, metrics, vision
+  * Detects abnormalities from sensor data automatically to detect equipment issues or need for maintenance 
+  * Monitors metrics from S3, RDS, Redshift, 3ra party SaaS apps (eg: Salesforce)
+  * Vision uses computer vision to detect defects in silicon wafers, circuit boards, etc.
+
+##### Amazon Monitron
+  * End to end system for monitbring industrial equipment & predictive maintenance
+![Monitron](https://d1.awsstatic.com/products/Monitron/product-page-diagram_Amazon-Monitron_How-it-Works_1%402x.500d92898b2a44b41d93491da90d7118e973a8d7.png)
+
+##### TorchServe 
+  * Serve pytorch models
+  * Model serving framework for PyTorch
+  * Part of the PyTorch open source project from Facebook (Meta?)
+
+##### AWS Neuron
+  * SDK for optimizing ML inference models specifically on AWS Inferentia chips
+  * By using SDK access, you can integrate with anything you care for
+  * EC2 Inf1 instance type
+  * Integrated with SageMaker or whatever else you want (deep learning AMI's, containers, Tensorflow, PyTorch, MXNet)
 
 #### AWS service limits(TBD)
 #### Build your own model vs. SageMaker built-in algorithms(TBD)
