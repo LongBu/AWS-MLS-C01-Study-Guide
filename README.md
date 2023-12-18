@@ -2675,6 +2675,7 @@ Instance Types:
 | SSM | Systems Manager |
 | TN | True Negative |
 | TP | True Positive |
+| TPS | Trasactions Per Second |
 | TTL | Time to live |
 | VPC | Virtual Private Cloud |
 | VPN | Virtual Private Network |
