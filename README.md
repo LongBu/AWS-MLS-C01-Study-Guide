@@ -1648,18 +1648,41 @@ How to choose an activation function
 #### ML on AWS (application services)
 
 ##### Amazon Polly:
-* Turn text into lifelike speech using deep learning (for talking applications)
-* Customize pronunciation of words with pronunciation lexicons that are harnessed by the Sythesize Speech Operation
-* Can map stylized words and/or acronyms to resultant output
-* Generate more customized output from text marked up with SSML including:
-  * breating, whispering
-  * emphasis on words
-  * phonetic pronunciation
+  * Turn text into lifelike speech using deep learning (for talking applications)
+  * Neural Text-To-Speech, many voices & languages
+  * Customize pronunciation of words and phrases with pronunciation lexicons that are harnessed by the Sythesize Speech Operation
+  * Can map stylized words and/or acronyms to resultant output
+  * Generate more customized output from text marked up with SSML including:
+    * breating, whispering
+    * emphasis on words
+    * phonetic pronunciation
+    * speech rate, pitch, pauses
+  * Speech Marks
+    * Can encode when sentence / word starts and ends in the audio stream
+    * Useful for lip-synching animation
 
 ##### Amazon Lex: 
   * ASR to convert speech to text
-  * Natural language understanding to recognize parts of speech/text
-  * Helps to build chatbots, call center bots
+  * Natural language chatbot engine understanding to recognize parts of speech/text
+  * Helps to build chatbots, call center bots around intents
+    * ﻿﻿Utterances invoke intents ("I want to order a pizza")
+    * ﻿﻿Lambda functions are invoked to fulfill the intent
+    * ﻿﻿Slots specify extra information needed by the intent
+    * ﻿﻿Pizza size, toppings, crust type, when to deliver, etc.
+  * ﻿﻿Can deploy to AWS Mobile SDK, Facebook Messenger, Slack, and Twilio
+ 
+Amazon Lex Automated Chatbot Designer
+  * ﻿﻿You provide existing conversation transcripts
+  * ﻿﻿Lex applies NLP & deep learning, removing overlaps & ambiguity
+  * ﻿﻿Intents, user requests, phrases, values for slots are extracted
+  * ﻿﻿Ensures intents are well defined and separated
+  * ﻿﻿Integrates with Amazon Connect transcripts
+
+```mermaid
+graph LR
+    A[Transcripts] --> B[Lex Automated Chatbot Designer]
+    B --> C[Bot Design: intents, requests, prhases, slot values]
+```
 
 ##### Amazon Personalize:
   * Fully managed ML service to build real-time personalized recommendations applications (same one as Amazon)
@@ -2824,6 +2847,7 @@ Instance Types:
 | SSH | Secure Shell |
 | SSL | Secure Sockets Layer |
 | SSM | Systems Manager |
+| SSML | Speech Synthesis Markup Language |
 | TN | True Negative |
 | TP | True Positive |
 | TPS | Trasactions Per Second |
