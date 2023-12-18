@@ -1682,6 +1682,15 @@ How to choose an activation function
   * Supports automatic language identification for multi-lingual audio
 
 ##### DeepLens: AWS camera service
+
+##### AWS Panorama
+  * Like DeepLens
+  * Computer Vision at the edge
+  * Brings computer vision to your existing IP cameras, those some cameras have this built-in now
+  * Results go to S3, cloudwatch, etc.
+
+https://d1.awsstatic.com/products/Panorama/product-page-diagram_AWS-Panorama.cb37f8acd4b72ebc18735bc01aae132da16a5576.png
+
 ##### Amazon Rekognition:
   * Find objects, people, text, scenes in images and videos using ML
   * Facial analysis and search to perform user verification, people counting
