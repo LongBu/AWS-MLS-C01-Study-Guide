@@ -1662,6 +1662,13 @@ How to choose an activation function
     * Can encode when sentence / word starts and ends in the audio stream
     * Useful for lip-synching animation
 
+##### Amazon Kendra:
+  * Intelligent enterprise document search service powered by ML that allows users to search across different content repositories with built-in connectors.  Learns from user interaction/feedback for incremental learning.
+  * Can return precise answers or pointers to document(s) from natural language (eg: "Where is the IT support desk?" "How do I connect to my VPN?")
+  * Allows discovery of information spanning all connected data allocated in AWS (given permission) and any 3rd party connected data (salesforce, ServiceNow, SharePoint, Intranet, sharing services (JDBC, S3), DBs, Microsoft One Drive, etc.) into one searchable repository
+  * Can use other services in AWS to preprocess content to text that is searchable/indexable
+  * Relevance tuning - boost strength of document freshness, view counts, etc.
+
 ##### Amazon Lex: 
   * ASR to convert speech to text
   * Natural language chatbot engine understanding to recognize parts of speech/text
@@ -1684,6 +1691,16 @@ graph LR
     A[Transcripts] --> B[Lex Automated Chatbot Designer]
     B --> C[Bot Design: intents, requests, prhases, slot values]
 ```
+
+##### Contact Lens for Amazon Connect
+  * For customer support call centers
+  * Ingests audio data from recorded calls
+  * Allows search on calls / chats
+  * Sentiment analysis
+  * Find "utterances" that correlate with successful calls
+  * Categorize calls automatically
+  * Measure talk speed and interruptions
+  * Theme detection: discovers emerging issues
 
 ##### Amazon Personalize:
   * Fully managed ML service to build real-time personalized recommendations applications (same one as Amazon)
@@ -1771,39 +1788,51 @@ Personalize Pricing
   * Inference: per TPS-hour (the more you hit the service the more you pay)
   * Batch recommendations: per user or per item
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
+##### Amazon Augmented Al (A2I)
+  * Human review of ML predictions
+  * Builds workflows for reviewing low-confidence predictions
+  * Access the Mechanical Turk workforce or vendors
+  * Integrated into Amazon Textract and Rekognition
+  * Integrates with SageMaker
+  * Very similar to Ground Truth
 
 ##### Amazon Comprehend (Medical):
-  * Serverless NLP service harnessing ML to uncover valuable insights and connections in text
+  * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
   * Medical version detects PHI via DetectPHI API
+  * Input social media, emails, web pages, documents, transcripts, medical records (Comprehend Medical)
+  * PII Identification & Redaction
+  * Targeted sentiment (for specific entities)
+  * Can train on your own data
+  * Results of the model are the following:
+    * Events detection
+    * Entities-nouns
+    * Key phrases-noun phrases
+    * Language
+    * Sentiment
+    * Syntax-boils down each word into a part of speech
 
 ##### Amazon Transcribe:
   * Automatically convert speech to text
+    * Input in FLAC, MP3, MP4, or WAV, in a specified language
+    * Streaming audio supported (HTTP/2 or WebSocket)
+      * French, English, Spanish only
   * Uses Deep Learning - Automatic Speech Recognition (ASR)
   * Use cases:
     * Transcribe customer calls
-    * Automate close capitioning/subtitles
+    * Automate close captioning/subtitles
     * Generate metadata for media assets to create full scaleable architecture
   * Can remove PII using redaction
   * Supports automatic language identification for multi-lingual audio
+  * Speaker Identification
+    * Specify number of speakers
+  * Channel Identification
+    * eg: two callers could be transcribed separately
+    * Merging based on timing of "utterances"
+  * Automatic Language Identification
+    * You don't have to specify a language; it can detect the dominant one spoken.
+  * Custom Vocabularies
+    * Vocabulary Lists just a list of special words - names, acronyms)
+    * Vocabulary Tables (can include "SoundsLike", "IPA", and "DisplayAs")
 
 ##### DeepLens: 
   * Deep learning-enabled video camera service
@@ -1856,8 +1885,68 @@ Personalize Pricing
    * Good for invoices, financial reports, medical records, insurance claims, taxforms, ids, passports
 		
 ##### Amazon Translate:
-  * Natural and accurate language translation
+  * Natural and accurate language translation using deep learning
   * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently 
+  * Supports custom terminology
+    * CSV or TMX format
+    * Appropriate for proper names, brands, etc.
+
+##### Amazon Forecast:
+  * Fully managed service using ML to deliver highly accurate forecasts (time series data)
+  * 50% more accurate than looking at the data itself
+  * Reduces forecasting time from months to hours
+  * Use cases: Product Demand Planning, Financial Planning, Resource Planning
+  * Data => S3 => Amazon Forecast => Model => Predictions
+  * "AutoML" chooses best model for your time series data
+    * ARIMA, DeepAR, ETS, NPTS, Prophet
+  * Works with any time series
+    * Price, promotions, economic performance, etc.
+    * Can combine with associated data to find relationships
+  * Based on "dataset groups," "predictors," and "forecasts.'
+  * Forecast algorithms
+    * CNN-QR ($$$)
+      * Convolutional Neural Network - Quantile Regression
+      * Best for large datasets with hundreds of time series
+      * Accepts related historical time series data & metadata
+    * DeepAR+ ($$$)
+      * Recurrent Neural Network
+      * Best for large datasets
+      * Accepts related forward-looking time series & metadata
+    * Prophet ($$)
+      * Additive model with non-linear trends and seasonality
+    * NPTS ($)
+      * Non-Parametric Time Series
+      * Good for sparse data. Has variants for seasonal / climatological forecasts
+    * ARIMA ($)
+      * Autoregressive integrated moving average
+      * Commonly used ter simple datasets (<100 time series)
+    * ETS ($)
+      * Exponential Smoothing
+      * Commonly used for simple datasets (<100 time series)
+
+##### Amazon Fraud Detector
+  * Upload your own historical fraud data
+  * Builds custom models from a template you choose
+  * Exposes an API for your online application
+  * Assess risk from:
+    * New accounts
+    * Guest checkout
+    * "Try before you buy" abuse
+    * Online payments
+   
+##### Amazon CodeGuru
+  * Automated code reviews!
+  * Finds lines of code that hurt performance
+  * Resource leaks, race conditions
+  * Fix security vulnerabilities
+  * Offers specific recommendations
+  * Powered by ML
+  * Supports Java and Python
+
+##### Amazon DeepComposer
+  * Al-powered keyboard
+  * Composes a melody into an entire song
+  * For educational purposes
 
 ##### AWS DeepRacer
   * Reinforcement learning powered 1/18-scale race car
@@ -1935,6 +2024,64 @@ Personalize Pricing
   * ﻿﻿Works with Spark Pipelines as well.
   * Allows you to combine pre-processing big data in Spark with training and inference in SageMaker.
 
+#### SageMaker Data Wrangler
+  * ETL Visual interface (in SageMaker Studio) to prepare data for machine learning
+  * Import data
+  * Visualize data
+  * Transform data (300+ transformations to choose from)
+    * Or integrate your own custom forms with pandas, PySpark, PySpark SQL
+  * "Quick Model" to train your model with your data and measure its results
+  * Effectively a cogeneration tool to handle transformations
+  * Is not a pipeline itself, but the code it provides can go into a pipeline
+  * Steps:Import=>Preview (can change data types or column names)=> Visualized data=> Transform=>"Quick Model" to analyze (data prep choices check)=> export data flow (python code)
+  * Inputs
+    * S3
+    * Athena
+    * Redshift
+    * Lake formation
+    * SageMaker Feature Store
+    * JDBD (Databricks, Saas)
+  * Outputs (via a notebook)
+    * SageMaker Processing
+    * SageMaker Pipelines
+    * SageMaker Feature Store
+  * Troubleshooting
+    * Make sure your Studio user has appropriate IAM roles
+    * Make sure permissions on your data sources allow Data Wrangler access
+      * Add AmazonSageMakerFullAccess policy to input data
+    * EC2 instance limit
+      * If you get "The following instance type is not available..." errors
+      * May need to request a quota increase
+      * Service Quotas / Amazon SageMaker / Studio KernelGateway Apps running on ml.m5.4xlarge instance
+
+
+#### SageMaker ML Lineage Tracking
+  * ﻿﻿Creates & stores your ML workflow (MLOps)
+  * ﻿﻿Keep a running history of your models
+  * ﻿﻿Tracking for auditing and compliance
+  * ﻿﻿Automatically or manually-created tracking entities
+  * ﻿﻿Integrates with AWS RAM for cross-account lineage
+  * Entities
+    * ﻿﻿Trial component (processing jobs, training jobs, transform jobs)
+    * ﻿﻿Trial (a model composed of trial components)
+    * ﻿﻿Experiment (a group of Trials for a given use case)
+    * ﻿﻿Context (logical grouping of entities)
+    * ﻿﻿Action (workflow step, model deployment
+    * ﻿﻿Artifact (Object or data, such as an S3 bucket or an image in ECR)
+    * ﻿﻿Association (connects entities together) - has optional Association Type:
+      * ﻿﻿Contributed To
+      * ﻿﻿AssociatedWith
+      * ﻿﻿DerivedFrom
+      * ﻿﻿Produced
+      * ﻿﻿SameAs
+  * Querying Lineage Entities
+    * ﻿﻿Use the LineageQuery API from Python
+      * ﻿﻿Part of the Amazon SageMaker SDK for Python
+    * ﻿﻿Do things like find all models / endpoints / etc. that use a given artifact
+    * ﻿﻿Produce a visualization
+      * ﻿﻿Requires external Visualizer helper class
+  * ﻿﻿Sample SageMaker-created lineage graph:
+![SageMaker Lineage](https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/pipelines/PipelineLineageWorkflow.png)
 
 #### SageMaker Algorithms
 ##### Linear Learner
