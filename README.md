@@ -2174,6 +2174,45 @@ Personalize Pricing
     * Fine-grained access control with IAM
     * May also be secured with AWS PrivateLink
 
+#### SageMaker Autopilot
+  * ﻿﻿Automates:
+    * ﻿﻿Algorithm selection
+    * ﻿﻿Data preprocessing
+    * ﻿﻿Model tuning
+    * ﻿﻿All infrastructure
+  * ﻿﻿It does all the trial & error for you
+  * ﻿﻿More broadly this is called AutoML
+  * Can add in human guidance
+  * ﻿﻿With or without code in SageMaker Studio or AWS SDK's
+  * ﻿﻿Problem types:
+    * ﻿﻿Binary classification
+    * ﻿﻿Multiclass classification
+    * ﻿﻿Regression
+  * ﻿﻿Algorithm Types:
+    * ﻿﻿Linear Learner
+    * ﻿﻿XGBoost
+    * ﻿﻿Deep Learning (MLP's)
+    * ﻿﻿Ensemble mode
+  * ﻿﻿Data must be tabular CSV or Parquet
+
+##### SageMaker Autopilot workflow
+  * ﻿﻿Load data from S3 for training
+  * ﻿﻿Select your target column for prediction
+  * ﻿﻿Automatic model creation
+  * Model notebook is available for visibility & control
+  * ﻿﻿Model leaderboard
+    * ﻿﻿Ranked list of recommended models
+    * ﻿﻿You can pick one
+  * ﻿﻿Deploy & monitor the model, refine via notebook if needed
+
+##### SageMaker Autopilot Explainability
+  * ﻿﻿Integrates with SageMaker Clarify
+  * ﻿﻿Transparency on how models arrive at predictions
+  * ﻿﻿Feature attribution
+  * ﻿﻿Uses SHAP Baselines / Shapley Values
+  * ﻿﻿Research from cooperative game theory
+  * ﻿﻿Assigns each feature an importance value for a given prediction
+
 #### SageMaker Canvas
   * No-code machine learning for business analysts
   * Need to set up SageMaker domain=>Launch Application=>Canvas
