@@ -1974,7 +1974,9 @@ Personalize Pricing
 
 #### AWS service limits(TBD)
 #### Build your own model vs. SageMaker built-in algorithms(TBD)
-#### SageMaker:
+#### SageMaker
+
+##### SageMaker I/O Modes:
   * File Mode:
     * Useful for small files that fit in memory and where the algorithm has a large number of epochs
     * Can leverage the file system cache for secondary epochs, the overall I/O throughput with Pipe mode is still faster than file mode
