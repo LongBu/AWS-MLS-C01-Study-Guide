@@ -2083,21 +2083,23 @@ Personalize Pricing
   * ﻿﻿Sample SageMaker-created lineage graph:
 ![SageMaker Lineage](https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/pipelines/PipelineLineageWorkflow.png)
 
-#### SageMaker Clarify Pre-training Bias Metrics
-  * Class Imbalance (CI)
-    * One facet (demographic group) has fewer training values than another
-  * Difference in Proportions of Labels (DPL)
-    * Imbalance of positive outcomes between facet values
-  * Kiverack-Leiber Divergence (KL), Jensen-Shannon
-    * How much outcome distributions of facets diverge (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
-  * Lp-norm (LP)
-    * P-norm difference between distributions of outcomes from facets (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
-  * Total Variation Distance (TVD)
-    * L1-norm difference between distributions of outcomes from facets (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
-  * Kolmogorov-Smirnov (KS) -measures outcomes and distributions, such as a Gaussian distribution of each group's outcome
-    * Maximum divergence between outcomes in distributions from facets
-  * Conditional Demographic Disparity (CDD)-do some groups have a larger proportion of rejections than acceptance? Effectively looking at the groups distributions to check acceptance/rejection disparities
-    * Disparity of outcomes between facets as a whole, and by subgroups
+#### SageMaker Clarify 
+  * Tool to diagnose how features impacted most weight on predictions and resultant bias(es)
+  * Pre-training Bias Metrics
+    * Class Imbalance (CI)
+      * One facet (demographic group) has fewer training values than another
+    * Difference in Proportions of Labels (DPL)
+      * Imbalance of positive outcomes between facet values
+    * Kiverack-Leiber Divergence (KL), Jensen-Shannon
+      * How much outcome distributions of facets diverge (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
+    * Lp-norm (LP)
+      * P-norm difference between distributions of outcomes from facets (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
+    * Total Variation Distance (TVD)
+      * L1-norm difference between distributions of outcomes from facets (E.g.: how different are loan outcomes for different demographic groups, were the actual outcomes of different groups are measured for bias)
+    * Kolmogorov-Smirnov (KS) -measures outcomes and distributions, such as a Gaussian distribution of each group's outcome
+      * Maximum divergence between outcomes in distributions from facets
+    * Conditional Demographic Disparity (CDD)-do some groups have a larger proportion of rejections than acceptance? Effectively looking at the groups distributions to check acceptance/rejection disparities
+      * Disparity of outcomes between facets as a whole, and by subgroups
 
 #### SageMaker Model Monitor
   * Get alerts on quality deviations, drift, etc. on your deployed models (via CloudWatch); set up via SM studio
