@@ -1284,8 +1284,34 @@ have no known algorithm
 ##### Batch vs. real-time/online (TBD)
 ### Perform hyperparameter optimization. 
   * Regularization
-    * Drop out
-    * L1 /L2 
+    * Preventing overfitting
+      * Models that are good at making predictions on the data they were trained bet bret not on new data it hasn't seer
+      * Overfitted models have learned patterns in the training data that don't generalize to the real world
+      * Often seen as high accuracy on training data set, but lower accuracy on test or evaluation data set.
+        * When training and evaluating a model, we use training, evaluation, and testing data sets.
+    * Regularization techniques are intended to prevent overfitting.
+    * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model
+    * Specific to NN:
+      * Dropout: Remove some neurons at each Epoch During training, which forces the model to learn/spread out learning among other neurons Preventing individual neurons from overfitting specific data point(s)
+      * Early stopping is breaking early training from Epochs as accuracy levels out, preventing overfitting
+    * L1 / L2 Regularization
+      * Preventing overfitting in ML in general
+      * A regularization term is added as weights are learned
+      * L1 term is the sum of the weights absolute weights
+        * Performs feature selection - entire features go to O
+        * Computationally inefficient
+        * Sparse output
+        * Good to avoid curse of dimensionality
+        * When to use L1
+          * Feature selection can reduce dimensionality
+          * Out of 100 features, maybe only 10 end up with non-zero coefficients!
+          * The resulting sparsity can make up for its computational inefficiency
+          * But, if you think all of your features are important, L2 is probably a better choice.
+      * L2 term is the sum of the square of the weights
+        * All features remain considered, just weighted
+        * Computationally efficient
+        * Dense output
+      * Same idea can be applied to loss functions and/or weights as learned
   * Cross validation
   * Model initialization
   * Neural network architecture (layers/nodes), learning rate, activation functions (see below as the notes need to be organized better w/ time)
@@ -3136,6 +3162,7 @@ Instance Types:
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
 | NFS | Network File System |
+| NN | Neural Network |
 | OCR | Optical Character Recognition |
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
