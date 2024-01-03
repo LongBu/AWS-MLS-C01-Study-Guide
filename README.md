@@ -1314,7 +1314,22 @@ have no known algorithm
       * Same idea can be applied to loss functions and/or weights as learned
   * Cross validation
   * Model initialization
-  * Neural network architecture (layers/nodes), learning rate, activation functions (see below as the notes need to be organized better w/ time)
+  * Neural network architecture (layers/nodes)
+    * NN Learning Rate
+      * Neural networks are trained by gradient descent (or some similar flavor)
+      * We start at some random point, and sample different solutions (weights) seeking to minimize some cost function, over many epochs
+        * Epochs – iterations at which we train, and attempt a different set of weights, looking to minimize the cost/loss function
+      * How far apart these samples are is the learning rate
+      * *Too high a learning rate means you might overshoot the optimal solution!*
+      * *Too small a learning rate will take too long to train/find the optimal solution*
+      * Learning rate is an example of a hyperparameter
+    * NN Batch Size
+      * How many training samples are used within each batch of each epoch
+      * Somewhat counter-intuitively:
+        * *Smaller batch sizes tend to work their way out of "local minima" more easily*
+        * *Batch sizes that are too large can end up getting stuck in the wrong solution*
+        * Random shuffling at each epoch can make this look like very inconsistent results from run to run
+    * NN activation functions
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
 
