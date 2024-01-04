@@ -1614,7 +1614,6 @@ How to choose an activation function
   * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing)
   * F1 is a good choice when you care about precision AND recall
   * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
-
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
   * Cross validation (eg: from sklearn.model_selection import cross_val_score)
@@ -1622,6 +1621,32 @@ How to choose an activation function
     * choose remaining holdouts to validate against
     * average out the validation step results
     * good if lacking data
+  * Sometimes accuracy isn't everything:
+    * A test for a rare disease can be 99.9% accurate by just guessing "no" all the time
+    * We need to understand true positives and true negative, as well as false positives and false negatives.
+    * A confusion matrix shows this.
+
+![Heat-Confusion to know](https://docs.aws.amazon.com/images/machine-learning/latest/dg/images/mlconcepts_image3.png)
+
+
+  * Number of correct and incorrect predictions per class (infer from colors of each cell)
+  * F1 scores per class
+  * True class frequencies: the "total" column to the left of F1
+  * Predicted class frequencies: the "total" on the bottom row
+
+#### ROC Curve
+![ROC Curve](https://upload.wikimedia.org/wikipedia/commons/6/6b/Roccurves.png)
+  * Receiver Operating Characteristic Curve
+  * Plot of true positive rate (recall) vs. false positive rate at various threshold settings.
+  * Points above the diagonal represent good classification (better than random)
+  * Ideal curve would just be a point in the upper-left corner
+  * The more it's "bent" toward the upper-left, the better
+
+#### AUC Curve
+  * Area Under the Curve (AUC) is the area under an ROC curve
+  * Equal to probability that a classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one
+  * ROC AUC of 0.5 is a useless classifier, 1.0 is perfect
+  * Commonly used metric for comparing classifiers
 
 ## Machine Learning Implementation and Operations
 
