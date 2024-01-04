@@ -3173,6 +3173,7 @@ Instance Types:
 | Acronym  | Definition |
 | ------------- | ------------- |
 | AOF | Append-only file |
+| ASR | Automatic Speech Recognition |
 | AZ | Availability Zones |
 | BERT | Bi-directional Encoder Representations from Transformers |
 | CLS | Column Level Security |
