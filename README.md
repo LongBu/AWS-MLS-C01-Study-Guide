@@ -1,4 +1,4 @@
-## AWS-MLS-C01-Study-Guide
+=## AWS-MLS-C01-Study-Guide
 
 Note these are my own personal notes and are a work in progress as I study torwards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
 
@@ -1269,16 +1269,17 @@ have no known algorithm
 
   * Know the difference between supervised and unsupervised learning
   * Selecting from among classification, regression, forecasting, clustering, recommendation, etc.
+
 ### Select and express intuition behind the appropriate model(s) for a given machine learning problem
   * Xgboost
-  * logistic regression
-  * K-means
-  * linear regression
-  * decision trees
+  * logistic regression - supervised model dealing with probability and classification problems where you can expect only classification and probability outcomes from logistic regression, though the former is more prevalent
+  * K-means - cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
+  * linear regression - useful in predicting a variable based on the value of another variable, a supervised model curvature, if you will, in a n-space dimensional plane 
+  * decision trees - a supervised model based on a set of decision rules for prediction analysis, data classification, and regression. May possibly overfit training data.
   * random forests
   * RNN
   * CNN
-  * Ensemble
+  * Ensemble-supervised, multiple models that are combined to improve the overall performance and accuracy.
   * Transfer learning
 
 ### Train machine learning models
