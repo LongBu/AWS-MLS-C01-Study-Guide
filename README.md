@@ -1272,7 +1272,7 @@ have no known algorithm
 ### Select and express intuition behind the appropriate model(s) for a given machine learning problem
   * Xgboost
   * logistic regression - supervised model dealing with classification and probability outcomes, though the former is more prevalent
-  * K-means - cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
+  * K-means - unsupervised cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
   * linear regression - useful in predicting a variable based on the value of another variable, a supervised model curvature, if you will, in a n-space dimensional plane 
   * decision trees - a supervised model based on a set of decision rules for prediction analysis, data classification, and regression. May possibly overfit training data.
   * random forests
