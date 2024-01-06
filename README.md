@@ -1269,9 +1269,17 @@ have no known algorithm
 
   * Know the difference between supervised and unsupervised learning
   * Selecting from among classification, regression, forecasting, clustering, recommendation, etc.
-### Select the appropriate model(s) for a given machine learning problem
-  * Xgboost, logistic regression, K-means, linear regression, decision trees, random forests, RNN, CNN, Ensemble, Transfer learning
-  * Express intuition behind models
+### Select and express intuition behind the appropriate model(s) for a given machine learning problem
+  * Xgboost
+  * logistic regression
+  * K-means
+  * linear regression
+  * decision trees
+  * random forests
+  * RNN
+  * CNN
+  * Ensemble
+  * Transfer learning
 
 ### Train machine learning models
 #### Train validation test split, cross-validation (TBD)
@@ -2044,6 +2052,61 @@ Personalize Pricing
 #### AWS service limits(TBD)
 #### Build your own model vs. SageMaker built-in algorithms(TBD)
 #### SageMaker
+
+##### SageMaker Notebooks can direct the process (data preparation)
+  * Notebook Instances on EC2 are spun up from the console
+    * S3 data access (data usually comes from here)
+      * Ideal format varies with algorithm - often it is RecordIO / Protobuf being the most efficient
+    * Can also ingest from Athena, EMR, Redshift, and Amazon Keyspaces
+    * Scikit_learn, Apache Spark, Tensorflow frameworks 
+    * Wide variety of built-in models
+    * Ability to spin up training instances
+    * Ability to deploy trained models for making predictions at scale
+  * Sage maker Console can serve as an alternative to notebooks 
+
+###### SageMaker Processing
+  * Processing jobs
+    * Copy data from S3
+    * Spin up a processing container
+      * SageMaker built-in or user provided
+    * Output processed data to S3
+
+###### Training on SageMaker
+  * Create a training job
+    * URL of S3 bucket with training data
+    * ML compute resources
+    * URL of S3 bucket for output
+    * ECR path to training code
+  * Training options
+    * Built-in training algorithms
+    * Spark MLLib
+    * Custom Python Tensorflow / MXNet code
+    * PyTorch, Scikit-Learn, RLEstimator
+    * XGBoost, Hugging Face, Chainer
+    * Your own Docker image
+    * Algorithm purchased from AWS marketplace
+
+###### Deploying Trained Models via SageMaker
+  * Save your trained model to S3
+  * Can deploy two ways.
+    * Persistent endpoints for making individual predictions on demand 
+    * SageMaker Batch Transform to get predictions for an entire dataset
+  * SageMaker deployment options
+    * Inference Pipelines for more complex processing
+    * SageMaker Neo for deploying to edge devices
+    * Elastic Inference for accelerating deep learning models
+    * Automatic scaling (increase # of endpoints as needed)
+    * Shadow Testing evaluates new models against currently deployed model to catch errors
+
+```mermaid
+graph LR
+    A[Deploy model, Evaluate result in prod] --> B(Fetch, clean and prep data)
+    B --> C(Trainand evaluate model)
+    C --> A
+
+```
+![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
+  * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
 
 ##### SageMaker I/O Modes:
   * File Mode:
