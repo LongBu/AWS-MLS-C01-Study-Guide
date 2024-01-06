@@ -985,8 +985,7 @@ graph LR
     * i.e., fraud detection. Fraud is rare, and most rows will be not-fraud
     * "positive" doesn't mean "good" it means the thing you're testing for happened.
       * If your machine learning model is made to detect fraud, then fraud is the positive case.
-  * Mainly a problem with neural networks
- 
+  * Mainly a problem with neural networks 
 #### Oversampling
   * Duplicate samples from the minority class
   * Can be done at random
@@ -1272,7 +1271,7 @@ have no known algorithm
 
 ### Select and express intuition behind the appropriate model(s) for a given machine learning problem
   * Xgboost
-  * logistic regression - supervised model dealing with probability and classification problems where you can expect only classification and probability outcomes from logistic regression, though the former is more prevalent
+  * logistic regression - supervised model dealing with classification and probability outcomes, though the former is more prevalent
   * K-means - cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
   * linear regression - useful in predicting a variable based on the value of another variable, a supervised model curvature, if you will, in a n-space dimensional plane 
   * decision trees - a supervised model based on a set of decision rules for prediction analysis, data classification, and regression. May possibly overfit training data.
