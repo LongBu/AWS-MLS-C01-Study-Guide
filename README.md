@@ -29,8 +29,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 ### Create data repositories for machine learning
 
-#### Identify data sources (e.g., content and location, primary sources such as user data)(TBD)
-#### Determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)
+#### Identify data sources (e.g., content and location, primary sources such as user data) and etermine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)
 
 ##### Amazon Redshift:
   * fully managed, scalable cloud data warehouse, columnar instead of row based (no Multi-AZ, based on Postgres, No OLTP [row based], but OLAP [column based])
