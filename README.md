@@ -1751,8 +1751,7 @@ How to choose an activation function
   * Helps to build chatbots, call center bots around intents
     * ﻿﻿Utterances invoke intents ("I want to order a pizza")
     * ﻿﻿Lambda functions are invoked to fulfill the intent
-    * ﻿﻿Slots specify extra information needed by the intent
-    * ﻿﻿Pizza size, toppings, crust type, when to deliver, etc.
+    * ﻿﻿Slots specify extra information needed by the intent such as pizza size, toppings, crust type, when to deliver, etc.  Note: slot is the variable, while the slot value is the value 
   * ﻿﻿Can deploy to AWS Mobile SDK, Facebook Messenger, Slack, and Twilio
  
 Amazon Lex Automated Chatbot Designer
