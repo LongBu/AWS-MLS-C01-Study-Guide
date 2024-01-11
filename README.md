@@ -1973,7 +1973,7 @@ Personalize Pricing
   * Reduces forecasting time from months to hours
   * Use cases: Product Demand Planning, Financial Planning, Resource Planning
   * Data => S3 => Amazon Forecast => Model => Predictions
-  * "AutoML" chooses best model for your time series data
+  * "AutoML" techniques chooses the best model automatically for your time series data
     * ARIMA, DeepAR, ETS, NPTS, Prophet
   * Works with any time series
     * Price, promotions, economic performance, etc.
