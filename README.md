@@ -1339,6 +1339,7 @@ have no known algorithm
     * NN activation functions
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
+  * Note there is a time/cost consideration with iterations of training, so understand costs vs requirements up front 
 
 #### Neural Network (NN)
   * Deep Learning Network is the case where there are multiple layers of neurons in a NN
