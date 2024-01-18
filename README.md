@@ -1494,6 +1494,23 @@ Sigmoid / Logistic / TanH
   * ﻿﻿Scales everything from 0-1  (Sigmoid AKA Logistic) or -1 to 1 (tanh / hyperbolic tangent)
   * But: changes slowly for high or low values
     * The "Vanishing Gradient" problem exists for both when getting toward extremes in +/-, output changes very slowly, where numerical precision can become an issue
+      * When the slope of the learning curve approaches zero, things can get stuck
+      * We end up working with very small numbers that slow down training, or even introduce numerical errors
+      * Becomes a problem with deeper networks and RNN's as these "vanishing gradients" propagate to deeper layers
+      * Opposite problem: "exploding gradients"
+    * Fixing the Vanishing Gradient Problem
+      * Multi-level heirarchy
+        * Break up levels into their own sub-networks trained individually
+      * Long short-term memory (LSTM)
+      * Residual Networks
+        * eg: ResNet [a CNN based object recognition]
+        * Ensemble of shorter networks
+      * Better choice of activation function
+        * ReLU is a good choice
+    * Gradient checking:
+      * A debugging technique
+      * Numerically check the derivatives of the learning curve computed during training
+      * Useful for validating code of NN training, though it's likely you're probably not gonna write this code
   * ﻿﻿Computationally expensive
   * ﻿﻿Tanh generally preferred over sigmoid
   * Tanh well suited for RNN
