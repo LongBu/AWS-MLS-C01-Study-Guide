@@ -1270,15 +1270,22 @@ have no known algorithm
 
 ### Select and express intuition behind the appropriate model(s) for a given machine learning problem
   * [Xgboost](https://github.com/LongBu/AWS-MLS-C01-Study-Guide#xgboost-extreme-gradient-boosting)
+    * Observations are weighted
+    * Some will take part in new training sets more often
+    * Training is sequential; each classifier takes into account the previous one's success.
+    * Boosting generally yields better accuracy than Bagging
+
   * logistic regression - supervised model dealing with classification and probability outcomes, though the former is more prevalent
   * K-means - unsupervised cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
   * linear regression - useful in predicting a variable based on the value of another variable, a supervised model curvature, if you will, in a n-space dimensional plane 
   * decision trees - a supervised model based on a set of decision rules for prediction analysis, data classification, and regression. May possibly overfit training data.
-  * random forests
   * [RNN](https://github.com/LongBu/AWS-MLS-C01-Study-Guide#rnn)
   * [CNN](https://github.com/LongBu/AWS-MLS-C01-Study-Guide#cnn)
-  * Ensemble-supervised, multiple models that are combined to improve the overall performance and accuracy.
+  * Ensemble-supervised, multiple models that are combined to improve the overall performance and accuracy.  An excellent example being Random Cut Forests, as decision trees are prone to overfitting, where lots of decision trees are modeled and let them all vote on the result.  
   * [Transfer learning](https://github.com/LongBu/AWS-MLS-C01-Study-Guide#transfer-learning)
+  * Bagging - generate N new training sets by random sampling with replacement.  Each resampled model can be trained in parallel
+    * Bagging avoids overfitting over boost
+    * Bagging is easier to parallelize over boost
 
 ### Train machine learning models
 #### Train validation test split, cross-validation (TBD)
