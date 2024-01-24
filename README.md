@@ -2394,7 +2394,7 @@ graph LR
   * Notebooks within Sage maker can be opened directly via the browser
   * Can pass in parameters, they can be set to default values via environment, variables, or directly hardcoded
   * to import and display a script in a notebook => !pygmentize xyz.py
-  * if wanting to see if a model works initially perhaps only try one up epoch to save time and money
+  * if wanting to see if a model works initially perhaps only try one epoch to save time and money
   * Monitoring the progress of a NB can be done in the individual NB or through SM=>Training Jobs in the console
   * Stop notebooks when not use to not incur charges
   * Terminate session deployments when not in use to not incur charges
