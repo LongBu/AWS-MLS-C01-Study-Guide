@@ -574,6 +574,14 @@ graph LR
 
 ##### Amazon Kinesis Data Analytics:
   * Fully Managed (serverless; scales automatically)
+  * AWS Lambda can be a destination as well
+  * Allows lots of flexibility for post-processing
+    * Aggregating rows
+    * Translating to different formats
+    * Transforming and enriching data
+    * Encryption
+  * Opens up access to other services & destinations
+    * S3, DynamoDB, Aurora, Redshift, SNS, SQS, CloudWatch
   * Perform real-time analytics on stream via SQL
   * Can utilize λ for preprocessing (near real-time)
   * Input stream can be joined with a ref table in S3
@@ -583,9 +591,16 @@ graph LR
   * Schema discovery
   * IAM permissions to access input(s)/output(s)
   * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
-  * For Apache Flink (on a cluster): 
+  * Managed Service for Apache Flink [Formerly Kinesis Data Analytics for Apache Flink or for Java (on a cluster)] : 
     * Input: Kinesis Data Stream or Amazon MSK
-    * Output: Sink (S3/Kinesis Data Firehose)
+    * Output: Sink (S3/Kinesis Data Firehose/Kinesis Data Stream)
+    * Kinesis Data Analytics always used; Flink under the hood
+    * Now supports Python and Scala
+    * Flink is a framework for processing data streams
+    * MSAF integrates Flink with AWS
+      * Instead of using SQL, you can develop your own Flink application from scratch and load it into MSAF via S3
+    * In addition to the DataStream API, there is a Table API for SQL access
+    * Serverless
   * Use cases:
     * Streaming ETL (simple selections/translations)
     * Continuous metric generation (eg: leaderboard)
@@ -597,6 +612,16 @@ graph LR
     * HOTSPOTS:
       * locate and return info about relatively dense regions of data
       * uses more than only recent history
+
+Example MSAF Flow
+```mermaid
+graph LR
+    A[Amazon Kinesis Data Streams] -->|Flink Sources to Flink Application DataStream API| C(Managed Service For Apache Flink)
+    B[Amazon Managed Streaming for Apache Kafka] -->|Flink Sources to Flink Application DataStream API| C
+    C -->|Flink Application DataStream API to Flink Sinks| D[S3]
+    C -->|Flink Application DataStream API to Flink Sinks| E[Amazon Kinesis Data Streams]
+    C -->|Flink Application DataStream API to Flink Sinks| F[Amazon Kinesis Data Firehose]
+```
 
 ##### Amazon Kinesis Data Firehose:
   * Fully Managed (serverless) service, no administration, automatic scaling
