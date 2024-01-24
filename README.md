@@ -2166,6 +2166,25 @@ graph LR
 ![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
   * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
 
+##### SM Neo 
+  * Train once, run anywhere 
+  * compiles inference, code to work on edge devices
+    * Edge devices
+    * ARM, Intel, Nvidia processors
+    * Embedded in whatever – your car? 
+  * Optimizes code for specific devices 
+    * Tensorflow, MXNet, PyTorch, ONNX, XGBoost, DarkNet, Keras 
+  * Consists of a compiler and a runtime library
+
+###### SM Neo + AWS IoT Greengrass 
+  * Neo-compiled models can be deployed to an HTTPS endpoint 
+    * Hosted on C5, M5, M4, P3, or P2 instances 
+    * Must be same instance type used for compilation
+  * or can deploy to IoT Greengrass
+    * This is how you get the model to an actual edge device 
+    * Inference at the edge with local data, using model trained in the cloud
+    * Uses Lambda inference applications 
+
 ##### SageMaker I/O Modes:
   * File Mode:
     * Useful for small files that fit in memory and where the algorithm has a large number of epochs
