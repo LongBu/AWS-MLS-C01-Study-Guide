@@ -2399,6 +2399,33 @@ graph LR
   * Stop notebooks when not use to not incur charges
   * Terminate session deployments when not in use to not incur charges
 
+#### SageMaker Serverless Inference 
+  * Introduced for 2022 
+  * Specify your container, memory requirement, concurrency requirements 
+  * Underlying capacity is automatically provisioned and scaled 
+  * Good for infrequent or unpredictable traffic; will scale down to zero when there are no requests. 
+  * Charged based on usage 
+  * Monitor via CloudWatch
+    * ModelSetupTime, Invocations, MemoryUtilization  
+
+#### Amazon SageMaker Inference Recommender 
+  * Recommends best instance type & configuration for your models 
+  * Automates load testing model tuning 
+  * Deploys to optimal inference endpoint
+  * How it works: 
+    * Register your model to the model registry 
+    * Benchmark different endpoint configurations 
+    * Collect & visualize metrics to decide on instance types 
+    * Existing models from zoos may have benchmarks already 
+  * Instance Recommendations 
+    * Runs load tests on recommended instance types 
+    * Takes about 45 minutes 
+  * Endpoint Recommendations 
+    * Custom load test
+    * You specify instances, traffic patterns, latency requirements, throughput requirements 
+    * Takes about 2 hours 
+
+
 #### SageMaker Inference Pipelines 
   * Linear sequence of 2-15 containers 
   * Any combination of pre-trained built-in algorithms or your own algorithms in Docker containers 
