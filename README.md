@@ -2281,6 +2281,48 @@ graph LR
     * Conditional Demographic Disparity (CDD)-do some groups have a larger proportion of rejections than acceptance? Effectively looking at the groups distributions to check acceptance/rejection disparities
       * Disparity of outcomes between facets as a whole, and by subgroups
 
+#### SageMaker Studio
+  * Visual IDE for machine learning!
+  * SageMaker Notebooks
+    * Create and share Jupyter notebooks with SageMaker Studio
+    * Switch between hardware configurations (no infrastructure to manage)
+  * SageMaker Experiments-component of sage maker studio
+    * Organize, capture, compare, and search your ML jobs
+
+#### SageMaker Debugger
+  * Saves internal model state at periodical intervals
+    * Gradients / tensors over time as a model is trained
+    * Define rules for detecting unwanted conditions while training
+    * A debug job is run for each rule you configure
+    * Logs & fires a CloudWatch event when the rule is hit
+  * Integrates with SM studio via SM Studio Debugger Dashboard
+  * SageMaker Studio Debugger dashboards
+  * Auto-generated training reports
+  * Built-in rules:
+    * Monitor system bottlenecks
+    * Profile model framework operations
+    * Debug model parameters
+  * Supported Frameworks & Algorithms:
+    * Tensorflow
+    * PyTorch
+    * MXNet
+    * XGBoost
+    * SageMaker generic estimator (for use with custom training containers)
+  * Debugger API's available in GitHub
+    * Construct hooks & rules for Create Training Job and
+    * Describe TrainingJob API's
+    * SMDebug client library lets you register hooks for accessing training data
+  * SageMaker Debugger Insights Dashboard
+  * Debugger ProfilerRule
+    * ProfilerReport
+    * Hardware system metrics (CPUBottlenck, GPUMemoryIncrease, etc)
+    * Framework Metrics (MaxInitialization Time, OverallFrameworkMetrics, StepOutlier); these metrics are hyperparameters
+  * Built-in actions to receive notifications or stop training
+    * Stop Training(), Email), or SMS()
+    * In response to Debugger Rules
+    * Sends notifications via SNS
+  * Profiling system resource usage and training
+
 #### SageMaker Model Monitor
   * Get alerts on quality deviations, drift, etc. on your deployed models (via CloudWatch); set up via SM studio
   * Visualize data drift
