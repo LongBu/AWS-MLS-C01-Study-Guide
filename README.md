@@ -2399,6 +2399,16 @@ graph LR
   * Stop notebooks when not use to not incur charges
   * Terminate session deployments when not in use to not incur charges
 
+#### SageMaker Inference Pipelines 
+  * Linear sequence of 2-15 containers 
+  * Any combination of pre-trained built-in algorithms or your own algorithms in Docker containers 
+  * Combine pre-processing, predictions, post-processing 
+  * Spark ML and scikit-learn containers OK
+    * Spark ML can be run with Glue or EMR     * Serialized into MLeap format 
+  * Can handle both real-time inference and batch transforms 
+  * chain different docker containers for different stages of the model
+  * spark ML containers are serialized into MLeap format
+
 #### SageMaker Studio
   * Visual IDE for machine learning!
   * SageMaker Notebooks
