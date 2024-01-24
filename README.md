@@ -2085,6 +2085,62 @@ Personalize Pricing
   * Powered by ML
   * Supports Java and Python
 
+##### Amazon CodeWhisperer
+  * An "Al coding companion"
+    * Java, JavaScript, Python, TypeScript, C#
+  * Real-time code suggestions
+    * Write a comment of what you want
+    * It suggests blocks of code into your IDE
+    * Based on LLM's trained on billions of lines of code
+      * Amazon's code and open source code
+  * Security scans
+    * Analyzes code for vulnerabilities
+    * Java, JavaScript, Python
+  * Reference tracker
+    * Flags suggestions that are similar to open source code
+    * Provides annotations for proper attribution
+    * Proper attribution will import the license, so you need to be aware that is allowed within your organization 
+  * Bias avoidance
+    * Filters out code suggestions that might be biased or unfair
+  * AWS service integration
+    * Can suggest code for interacting wIth AWS API's
+      * EC2
+      * Lambda
+      * S3
+  * Security
+    * All content transmitted with TLS
+    * Encrypted in transit
+    * Encrypted at rest
+    * However - Amazon is allowed to mine your data for individual plans
+   
+###### Amazon CodeWhisperer Pricing
+  * Individual Tier
+    * Free to use
+    * Up to 50 security scans / month
+  * Professional Tier
+    * Manage which developers in an organization has access
+    * Organizational policy management
+      * i.e., can you use open source code?
+    * Authenticated with IAM Identity Center
+    * Up to 500/user/month security scans
+    * $19 / user / month
+ 
+###### Amazon CodeWhisperer: Supported IDE'S
+  * Visual Studio Code
+  * JetBrains
+    * IntelliJ
+    * PyCharm
+    * Clion
+    * GoLand
+    * WebStorm
+    * PhpStorm
+    * RubyMine
+    * DataGrip
+  * JupyterLab
+  * SageMaker Studio
+  * AWS Lambda console
+  * AWS Cloud9
+
 ##### Amazon Bedrock
   * An API for Foundation Models
   * Serverless
