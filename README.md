@@ -1112,8 +1112,10 @@ graph LR
   * ﻿﻿DistilBERT: uses knowledge distillation to reduce model size by 40%
 
 #### Transfer Learning
+  * fine-tuning and transfer learning are the same thing
   * ﻿﻿NLP models (and others) are too big and complex to build from scratch and re-train every time
     * ﻿﻿The latest may have hundreds of billions of parameters!
+  * use a pre-trained model to further train for specific task(s)
   * ﻿﻿Model zoos such as Hugging Face offer pre-trained models to start from
     * ﻿﻿Integrated with Sagemaker via Hugging Face Deep Learning Containers
   * ﻿﻿You can fine-tune these models for your own use cases
