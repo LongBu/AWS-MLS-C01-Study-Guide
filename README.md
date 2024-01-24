@@ -2630,6 +2630,18 @@ graph LR
   * Pricing is $1.90/hr plus a charge based on number of training cells in a model
   * effectively fills the business need for the deprecated AWS Machine Learning Service 
 
+#### SM Resource Management (eg: choosing your instance type[s])
+  * In general, algorithms that rely on deep learning will benefit from GPU instances (P3, g4dn) for training 
+  * Inference is usually less demanding and you can often get away with compute instances there (C5) 
+  * general purpose (M5) could be a good fit for training if the algorithm is not deep learning based
+  * GPU instances can be really pricey; however, might be more cost-effective to have a single machine with multiple GPU than many CPU instances
+  * Managed Spot Training 
+    * Can use EC2 Spot instances for training
+      * Save up to 90% over on-demand instances
+      * Spot instances can be interrupted!
+      * Use checkpoints to S3 so training can resume 
+    * Can increase training time as you need to wait for spot instances to become available 
+
 #### SageMaker Algorithms
 ##### Linear Learner
 Usage:
