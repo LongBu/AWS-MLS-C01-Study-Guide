@@ -25,6 +25,13 @@ Note these are my own personal notes and are a work in progress as I study torwa
 | Machine Learning Implementation and Operations | 20% |
 | **Total** | **100%** |
 
+  * 170 minutes 
+  * 65 questions
+  * \>= 75% to pass
+  * Good to use the bathroom before the exam
+  * Average question time should be between 2 and 2 1/2 minutes
+  * Try to understand each question thoroughly
+
 ## Data Engineering 
 
 ### Create data repositories for machine learning
