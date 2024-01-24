@@ -3161,12 +3161,91 @@ Instance Types
     * Size of CPU instance depends on vector_dim and num_entity_vectors
 
 ##### Reinforcement Learning
+  * You have some sort of agent that "explores" some space
+  * As it goes, it learns the value of different state changes in different conditions
+  * Those values inform subsequent behavior of the agent as from learnings a model is created
+  * Examples: Pac-Man, Cat & Mouse game (game Al)
+    * Supply chain management
+    * HVAC systems
+    * Industrial robotics
+    * Dialog systems
+    * Autonomous vehicles
+  * Yields fast on-line performance once the space has been explored
 
-Usage:
+###### Q-Learning
+  * A specific implementation of reinforcement learning
+  * You have:
+    * A set of environmental states s
+    * A set of possible actions in those states a
+    * A value of each state/action Q
+  * Start off with Q values of 0
+  * Explore the space
+  * As bad things happen after a given state/action, reduce its Q
+  * As rewards happen after a given state/action, increase its Q
+  * What are some state/actions here?
+    * Pac-man has a wall to the West
+    * Pac-man dies if he moves one step South
+    * Pac-man just continues to live if going North or East
+  * You can "look ahead" more than one step by using a discount factor when computing Q (here s is previous state, s' is current state)
+    * Q(s,a) += discount * (reward(s,a) + maxQ(s')) - Q(s,a))
+
+###### Q-learning exploration
+  * How do we efficiently explore all of the possible states?
+    * Simple approach: always choose the action for a given state with the highest Q. If there's a tie, choose at random
+      * But that's really inefficient, and you might miss a lot of paths that way
+    * Better way: introduce an epsilon term
+      * If a random number is less than epsilon, don't follow the highest Q, but choose at random
+      * That way, exploration never totally stops
+      * Choosing epsilon can be tricky
+  * Markov Decision Process
+    * From Wikipedia: Markov decision processes (MDPs) provide a mathematical framework for modeling decision making in situations where outcomes are partly random and partly under the control of a decision maker.
+    * Sound familiar? MDP's are just a way to describe what we just did using mathematical notation.
+    * States are still described as s and s'
+    * State transition functions are described as Pa (s, s')
+    * Our "O" values are described as a reward function Ra (s, s')
+  * MDP is a discrete time stochastic control process.
+  * You can make an intelligent Pac-Man in a few steps:
+    * Have it semi-randomly explore different choices of movement (actions) given different conditions (states)
+    * Keep track of the reward or penalty associated with each choice for a given state/action (Q) and can propagate rewards and penalties backwards multiple steps for better performance
+    * Use those stored Q values to inform its future choices
+  * Pretty simple concept. But hey, now you can say you understand reinforcement learning, Q-learning, Markov Decision Processes, and Dynamic Programming!
+
+###### Reinforcement Learning in SM
+Usage: 
+  * Uses a deep learning framework with Tensorflow and MXNet
+  * Supports Intel Coach and Ray Rilib toolkits.
+  * Custom, open-source, or commercial environments supported.
+    * MATLAB, Simulink
+    * EnergyPlus, RoboSchool, PyBullet
+    * Amazon Sumerian, AWS RoboMaker
+
 Training input:
+  * Can distribute training and/or environment rollout
+  * Multi-core and multi-instance
+
 How to use:
+  * Key Terms
+    * Environment
+      * The layout of the board / maze / etc
+    * State
+      * Where the player / pieces are
+    * Action
+      * Move in a given direction, etc
+    * Reward
+      * Value associated with the action from that state
+    * Observation
+      * eg: surroundings in a maze, state of chess board
+
 Hyperparameters:
+  * Parameters of your choosing may be abstracted
+  * Hyperparameter tuning in SageMaker can then optimize them
+
 Instance Types:
+  * No specific guidance given in developer guide
+  * But, it's deep learning - so GPU's are helpful
+  * And we know it supports multiple instances and cores
+  * More than one machine, if using CPUs 
+
 
 #### Infrastructure: (spot, instance types), cost considerations(TBD)
 ##### Using spot instances to train deep learning models using AWS Batch (TBD)
