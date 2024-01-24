@@ -1386,6 +1386,15 @@ graph LR
       * Deal with Time series data or words in a sentence
       * RNN types:
         * Long Short Term Memory (LSTM), Gated Recurrent Unit (GRU)
+       
+##### NN on EC2
+  * within EC2 instance-AMI can search for applicable image (Quickstart AMI is usually a good choice), thereafter, selecting the appropriate instance type for the AMI
+  * can ssh into the instance from your local system
+    * paste given host name
+    * Auth=>ppl or pen file 
+    * Tunnel=>localhost:8888
+    * after running/tunneling into the instance=> 'jupyter notebook' to then run in the browser
+  * NN => data should be re-shaped/scaled appropriately between values of zero to one => Label should ideally be one-hot encoded
 
 ##### CNN
 
