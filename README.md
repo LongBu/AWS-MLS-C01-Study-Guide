@@ -2078,6 +2078,19 @@ Personalize Pricing
   * Powered by ML
   * Supports Java and Python
 
+##### Amazon Bedrock
+  * An API for Foundation Models
+  * Serverless
+  * Fine-tuning API
+  * Provide labeled examples in S3
+  * As few as 20
+  * Your data is only used in your copy of the FM
+  * Your data is encrypted and does not leave your VPC
+  * Integrates with SageMaker
+  * don't have to access model through a SM NB, but an API
+  * integrates with sage maker (notebooks)
+  * able to find two models and/or simply output results from pre-train models
+
 ##### Amazon DeepComposer
   * Al-powered keyboard
   * Composes a melody into an entire song
