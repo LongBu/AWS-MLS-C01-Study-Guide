@@ -1322,10 +1322,13 @@ graph LR
 ### Perform hyperparameter optimization. 
   * Regularization
     * Preventing overfitting
-      * Models that are good at making predictions on the data they were trained bet bret not on new data it hasn't seer
+      * Models that are good at making predictions on the data they were trained on, but not on new data it hasn’t seen before
       * Overfitted models have learned patterns in the training data that don't generalize to the real world
       * Often seen as high accuracy on training data set, but lower accuracy on test or evaluation data set.
         * When training and evaluating a model, we use training, evaluation, and testing data sets.
+      * Batch sizes that are larger can increase chances of becoming stuck in a local minima
+      * Higher learning rates run the risk of overshooting an optimal solution
+      * Generally good to pair a small batch size and a small learning rate
     * Regularization techniques are intended to prevent overfitting.
     * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model
     * Specific to NN:
