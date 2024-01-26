@@ -2904,21 +2904,21 @@ Instance Types:
 
 Usage:
   * Remember word2vec from Blazing Text? It's like that, but arbitrary objects
-  * It creates low-dimensional dense embeddings of high-dimensional objects
-  * It is basically word2vec, generalized to handle things other than words.
-  * Compute nearest neighbors of objects
-  * Visualize clusters
-  * Genre prediction
-  * Recommendations (similar items or users)
+  * It creates low-dimensional dense embeddings of high-dimensional objects
+  * It is basically word2vec, generalized to handle things other than words.
+  * Compute nearest neighbors of objects
+  * Visualize clusters
+  * Genre prediction
+  * Recommendations (similar items or users)
 
 Training input:
   * Data must be tokenized into integers
-  * Training data consists of pairs of tokens and/or sequences of tokens
-    * Sentence - sentence
-    * Labels-sequence (genre to description?)
-    * Customer-customer
-    * Product-product
-    * User-item
+  * Training data consists of pairs of tokens and/or sequences of tokens
+    * Sentence - sentence
+    * Labels-sequence (genre to description?)
+    * Customer-customer
+    * Product-product
+    * User-item
   * Example input:
 
 {"label": 0, "in0": [6, 17, 606, 19, 53, 67, 52, 12, 5, 10, 15, 10178, 7, 33, 652, 80, 15, 69, 821, 4], "in1": [16, 21, 13, 45, 14, 9, 80, 59,
@@ -2930,11 +2930,11 @@ Training input:
  
 How to use:
   * Process data into JSON Lines and shuffle it
-  * Train with two input channels, two encoders, and a comparator
-  * Encoder choices:
+  * Train with two input channels, two encoders, and a comparator
+  * Encoder choices:
     * Average pooled embeddings
-    * Bidirectional LSTM
-  * Comparator is followed by a feed-forward neural network, like so:
+    * Bidirectional LSTM
+  * Comparator is followed by a feed-forward neural network, like so:
 ```mermaid
 graph LR
     A[Input] --> B[Encoder]
@@ -2946,9 +2946,9 @@ graph LR
 
 Hyperparameters:
   * The usual deep learning ones...
-    * Dropout, early stopping, epochs, learning rate, batch size, layers, activation function, optimizer, weight decay
-  * Enc1_network, enc2_network
-    * Choose henn, bilstm, pooled embedding
+    * Dropout, early stopping, epochs, learning rate, batch size, layers, activation function, optimizer, weight decay
+  * Enc1_network, enc2_network
+    * Choose henn, bilstm, pooled embedding
  
 Instance Types:
   * Can only train on a single machine (CPU or GPU, multi-GPU OK)
