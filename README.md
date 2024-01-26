@@ -2353,6 +2353,123 @@ graph LR
 ![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
   * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
 
+##### SM integration with Docker
+
+  * All models in SageMaker are hosted in Docker containers
+    * Pre-built deep learning
+    * Pre-built scikit-learn and Spark ML
+    * Pre-built Tensorflow, MXNet, Chainer, PyTorch
+      * Distributed training via Horovod (tensorflow can't be distributed across multiple machines) or Parameter Servers
+    * Your own training and inference code! Or extend a pre-built image.
+  * This allows you to use any script or algorithm within SageMaker, regardless of runtime or language 
+    * Containers are isolated, and contain all dependencies and resources needed to run 
+
+Using Docker   
+  * Docker containers are created from images
+  * Images are built from a Dockerfile
+  * Can separate or combine images for training and deployment
+  * Run pip install sagemaker-training=> install common functionality necessary to create containers that work with SM
+  * Images are saved in a repository (All SM docker containers need to be registered in ECR) Amazon SageMaker Containers
+    * Library for making containers compatible with SageMaker 
+    * RUN pip install sagemaker-containers in your Dockerfile 
+
+Structure of a training container 
+
+
+/opt/ml 
+
+|── input 
+
+|   ├── config
+
+|   │   ├── hyperparameters.json
+
+|   │   └── resourceConfig.json
+
+|   └── data
+
+|       └── < channel_name >
+
+|           └── <input data>
+
+|── model
+
+├── code
+
+│   └── <script files>
+
+│
+
+└── output
+
+    └── failure
+
+Structure of a Deployment Container 
+
+ /opt/ml
+ 
+ └── model
+ 
+     └── <model files>
+
+Structure of your Docker image 
+  * WORKDIR 
+    * nginx.conf=>front-end server configuration
+    * predictor.py=>flask web server for predictions
+    * serve/ =>deployment materials that launches G-unicorn server running multiple instance os the flask application detailed in predictor.py
+    * train/ =>training image, code, etc.
+    * wsgi.py => wrapper used to invoke flask app for serving results
+
+Assembling it all in a Dockerfile 
+
+FROM tensorflow/tensorflow:2.0.0a0 
+RUN pip install sagemaker-containers 
+
+\# Copies the training code inside the container
+
+COPY train.py /opt/ml/code/train.py 
+
+\# Defines train.py as script entrypoint 
+
+ENV SAGEMAKER_PROGRAM train.py 
+
+
+Environment variables 
+  * SAGEMAKER_PROGRAM=>env variable must be defined if defining your container from scratch
+    * Run a script inside /opt/ml/code 
+  * SAGEMAKER_TRAINING_MODULE =>load libraries and modules
+  * SAGEMAKER_SERVICE_MODULE  =>load libraries and modules
+  * SM_MODEL_DIR => model checkpoints are saved and pushed into S3
+  * SM_CHANNELS / SM_CHANNEL_* =>where your train, test, validations channels are and what to expect in said directories
+  * SM_HPS / SM_HP_* =>hyperparameters
+  * SM_USER_ARGS 
+
+
+Using your own image 
+  * cd dockerfile
+  * !docker build -t foo .
+  * from sagemaker.estimator import Estimator 
+    estimator = Estimator(image_name=‘foo', role='SageMakerRole', train_instance_count=1, train_instance_type='local') 
+    estimator.fit() 
+
+Production Variants 
+  * You can test out multiple models on live traffic using Production Variants 
+    * Variant Weights tell SageMaker how to distribute traffic among them 
+    * So, you could roll out a new iteration of your model at say 10% variant weight 
+    * Once you’re confident in its performance, ramp it up to 100% 
+  * This lets you do A/B tests, and to validate performance in real- world settings 
+    * Offline validation isn’t always useful
+  * Shadow Variants
+  * Deployment Guardrails 
+
+
+  * using your own image SG
+    * changes into docker dir
+    * Build a docker image within SM
+    * does then reference within an ESTIMATOR
+    * which is then trained (fit)
+
+
 ##### SM Security
 
 ###### General SM Security 
