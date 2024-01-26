@@ -1134,13 +1134,15 @@ graph LR
     * ﻿﻿Use a low learning rate to ensure you are just incrementally improving the model
   * ﻿﻿Add new trainable layers to the top of a frozen model
     * ﻿﻿Learns to turn old features into predictions on new data
-    * Can freeze certain layers, re-train others
+    * Can freeze certain layers, re-train others (NN based)
+      * Train a new tokenizer to learn a new Fine-tuning NN language per additional training data
     * ﻿﻿Can do both: add new layers, then fine tune as well
   * ﻿﻿Retrain from scratch
     * ﻿﻿If you have a large amount of training data and it's fundamentally different from what the model was pre-trained with
     * ﻿﻿And you have the computing capacity for it!
   * ﻿﻿Use it as-is
     * ﻿﻿When the model's training data is what you want already
+  * Adapt it to other tasks (eg: classification, etc.)
 
 ### Analyze and visualize data for machine learning
   * Graphing (scatter plot, time series, histogram, box plot)
