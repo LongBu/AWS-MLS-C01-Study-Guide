@@ -1514,7 +1514,80 @@ Training:
     * Very sensitive to topologies, choice of hyperparameters
     * Very resource intensive
     * A wrong choice can lead to a RNN that doesn't converge at all.
+
+##### Transformers
+
+The Evolution of Transformers
+  * Prior to Transformers, there were RNN'S, LSTMs
+  * Introduced a feedback loop for propagating information forward
+  * Useful for modeling sequential things
+    * Time series
+    * Language! A sequence of words (or tokens)
+  * Machine translation
+  * Encoder / Decoder architecture
+  * Encoders and Decoders are RNN's
+  * But, the one vector tying them together creates an information bottleneck
+    * Information from the start of the sequence may be lost
  
+Attention
+  * A hidden state for each step (token)
+  * Deals better with differences in word order
+  * Starts to have a concept of relationships between words
+  * But RNNs are still sequential in nature, can't parallelize it
+ 
+ What are Transformers
+  * Ditch RNN's for feed-forward neural networks (FFNN's)
+  * Use "self-attention"
+  * This makes it parallelizable (so can train on much more data)
+  * Attention-as a token is translated in a sentence, what other token(s) in said sentence, should attention be paid, potentially extracting meaning
+  * Attention weights-certain weighting applied as sequential tokens are processed
+
+Self-Attention (in more depth)
+  * Each encoder or decoder has a list of embeddings (vectors) for each token
+  * Self-attention produces a weighted average of all token embeddings. magic is in computing the attention weights.
+  * This results in tokens being tied to other tokens that are important for its context, and a new embedding that captures its "meaning" in context.
+  * Three matrices of weights are learned through back-propagation
+  * Query (Wq)
+  * Key (Wk)
+  * Value (Wv)
+  * Every token gets a query (q), key (k), and value (v) vector by multiplying its embedding for a token against these matrices
+  * Compute a score for each token by multiplying dot product its query with each key
+  * "Scaled dot-product attention"
+  * Dot product is just one similarity function we can use.
+  * In practice, softmax is then applied to the scores to normalize them.
+ 
+Masked Self-Attention
+  * A mask can be applied to prevent tokens from peeking" into future tokens (words)
+  * GPT does this, but BERT does something else (masked language modeling)
+  * In this example, "good" wouldn't be altected by "novel", but "novel" could by affected by "good"
+  * This is just the concept... actual implementation detalls will vary.
+  * Now we sum.
+  * Multiply values by scores, and sum them up.
+  * Repeat entire process for each token (in parallel)
+  * Now we have our updated embeddings for each token!
+  * These weight each token embedding as it's passed into the feed-forward NN.
+ 
+Multi-Headed Self-Attention
+  * The q, k, and v vectors are reshaped into matrices
+  * Then each row of the matrix can be processed in parallel
+  * The number of rows are the number of "heads"
+  * Transformer Encoder-designed to learn embeddings that can be used for predictive modeling
+    * BERt=> Composed of stacks of encoders
+  * Transformer Decoder-designed to generate new text per query
+    * GPT=> composed entirely of decoders
+  * embeddings fed into an embedding layer
+
+Applications of Transformers 
+  * Chat!
+  * Question answering
+  * Text classification
+    * eg: sentiment analysis
+  * Named entity recognition
+  * Summarization • Translation
+  * Code generation
+  * Text generation
+    * eg: automated customer service 
+ 
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
