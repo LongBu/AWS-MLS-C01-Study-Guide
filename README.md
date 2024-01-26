@@ -1002,12 +1002,14 @@ graph LR
 ##### KNN: Find K "nearest" (most similar) rows and average their values
   * Assumes numerical data, not categorical
   * There are ways to handle categorical data (Hamming distance)
+  * KNN is a good method to produce decent imputation results for missing data
 ##### Deep Learning
   * Build a machine learning model to impute data for your machine learning model!
   * Works well for categorical data, though complicated.
+  * One of the better methods for missing data to produce decent results
 ##### Regression
   * Find linear or non-linear relationships between the missing feature and other features
-  * Most advanced technique: MICE (Multiple Imputation by Chained Equations)
+  * Most advanced technique: MICE (Multiple Imputation by Chained Equations) - finds relationships between features and one of the better imputation methods for missing data
 ##### Get more data
   * What's better than imputing data? Getting more real data!
 
