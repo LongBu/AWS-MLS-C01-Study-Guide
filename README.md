@@ -1134,6 +1134,7 @@ graph LR
     * ﻿﻿Use a low learning rate to ensure you are just incrementally improving the model
   * ﻿﻿Add new trainable layers to the top of a frozen model
     * ﻿﻿Learns to turn old features into predictions on new data
+    * Can freeze certain layers, re-train others
     * ﻿﻿Can do both: add new layers, then fine tune as well
   * ﻿﻿Retrain from scratch
     * ﻿﻿If you have a large amount of training data and it's fundamentally different from what the model was pre-trained with
@@ -1587,7 +1588,38 @@ Applications of Transformers
   * Code generation
   * Text generation
     * eg: automated customer service 
- 
+
+##### GPT
+  * Generative Pre-Trained Transformer (GPT-2 in this example)
+  * Decoder-only - stacks of decoder blocks
+  * Each consisting of a masked self-attention layer, and a feed-forward neural network
+  * As an aside, BERT consists only of encoders. TS is an example of a model that uses both encoders and decoders.
+  * No concept of input, all it does is generate the next token over and over Using attention to maintain relationships to previous words / tokens
+  * You "prompt" it with the tokens of your question or whatever
+  * It then keeps on generating given the previous tokens
+  * Getting rid of the idea of inputs and outputs is what allows us to train it on unlabeled piles of text
+  * It's "learning a language" rather than optimizing for some specific task
+  * Hundreds of billions of parameters
+ 
+GPT Input processing
+  * Tokenization, token encoding
+  * Token embedding
+  * Captures semantic relationships between tokens, token similarities
+  * Positional encoding
+  * Captures the position of the token in the input relative to other nearby tokens
+  * Uses an interleaved sinusoidal function so it works on any length
+ 
+GPT Output processing
+  * The stack of decoders outputs a vector at the end
+  * Multiply this with the token embeddings
+  * This gives you probabilities (logits) of each token being the right next token (word) in the sequence
+  * You can randomize things a bit here ("temperature") instead of always picking the highest probability
+  * can import GPT-2 into AWS via hugging face
+  * Stacking up decoder blocks with own self attention increases the complexity of the model
+  * NN work on numbers only, not words, pictures, etc.
+  * Token embedding => Convert tokens to vectors in a multi dimensional space; space–distance correlating similarity of meeting
+  * positional encoding-process all tokens in parallel
+
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
