@@ -2219,7 +2219,7 @@ Personalize Pricing
     * Custom Python Tensorflow / MXNet code
     * PyTorch, Scikit-Learn, RLEstimator
     * XGBoost, Hugging Face, Chainer
-    * Your own Docker image
+    * Your own Docker image (note all training code, regardless of origin, is deployed to Sagemaker harnessing instances registered and emanating from ECR)
     * Algorithm purchased from AWS marketplace
 
 ###### Deploying Trained Models via SageMaker
