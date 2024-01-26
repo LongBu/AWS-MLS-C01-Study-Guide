@@ -2390,13 +2390,13 @@ Structure of a training container
 
 |       └── < channel_name >
 
-|           └── <input data>
+|           └── \<input data>
 
 |── model
 
 ├── code
 
-│   └── <script files>
+│   └── \<script files>
 
 │
 
@@ -2410,7 +2410,7 @@ Structure of a Deployment Container
  
  └── model
  
-     └── <model files>
+     └── \<model files>
 
 Structure of your Docker image 
   * WORKDIR 
