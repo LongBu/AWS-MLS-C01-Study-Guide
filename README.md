@@ -2280,7 +2280,7 @@ Personalize Pricing
   * Vision uses computer vision to detect defects in silicon wafers, circuit boards, etc.
 
 ##### Amazon Monitron
-  * End to end system for monitbring industrial equipment & predictive maintenance
+  * End to end system for monitoring industrial equipment & predictive maintenance
 ![Monitron](https://d1.awsstatic.com/products/Monitron/product-page-diagram_Amazon-Monitron_How-it-Works_1%402x.500d92898b2a44b41d93491da90d7118e973a8d7.png)
 
 ##### TorchServe 
@@ -2469,6 +2469,28 @@ Production Variants
     * does then reference within an ESTIMATOR
     * which is then trained (fit)
 
+##### SM integration with MLOps and Kubernetes 
+  * Integrates SageMaker with Kubernetes-based ML infrastructure 
+  * Amazon SageMaker Operators for Kubernetes 
+  * Components for Kubeflow Pipelines 
+  * Enables hybrid ML workflows (on-prem + cloud) 
+  * Enables integration of existing ML platforms built on Kubernetes / Kubeflow (K8s MLOps solution)  
+  * SageMaker Operators for Kubernetes -wraps SM operations so K8s can you utilize them via K8s API (kubectl)
+    ![SageMaker Operators for Kubernetes](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Operators%20for%20Kubernetes.e2852ce0148e84e9c135dd155adda07eff6124e7.png)
+  * SageMaker Components for Kubeflow Pipelines 
+ ![SageMaker Components for Kubeflow Pipelines](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Components%20for%20Kubeflow%20Pipelines.457ed1b488de6fe25a0b51951b6ba59f92cc0e38.png)
+  * SageMaker Projects  (effectively MLOps for SM, which manages the larger pipeline for development, testing and deployment of models
+)
+    * SageMaker Studio’s native MLOps solution with CI/CD 
+    * Build images
+    * Prep data, feature engineering
+    * Train models
+    * Evaluate models
+    * Deploy models
+    * Monitor & update models 
+  * Uses code repositories for building & deploying ML solutions 
+  * Uses SageMaker Pipelines defining steps (chain different MLOps steps together within SM)
+![SageMaker Projects](https://docs.aws.amazon.com/images/sagemaker/latest/dg/images/projects/projects-ml-workflow.png)
 
 ##### SM Security
 
