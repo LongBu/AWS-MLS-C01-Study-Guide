@@ -2330,6 +2330,21 @@ Personalize Pricing
     * Your own Docker image (note all training code, regardless of origin, is deployed to Sagemaker harnessing instances registered and emanating from ECR)
     * Algorithm purchased from AWS marketplace
 
+####### SM Elastic Inference 
+  * Accelerates deep learning inference 
+    * At fraction of cost of using a GPU instance for inference 
+  * EI accelerators may be added alongside a CPU instance 
+    * ml.eia1.medium / large / xlarge 
+  * EI accelerators may also be applied to notebooks 
+  * Works with Tensorflow, PyTorch, and MXNet pre-built containers 
+    * ONNX may be used to export models to MXNet 
+    * ONNX-> Used to make model compatible with an elastic interface
+  * Works with custom containers built with EI- enabled Tensorflow, PyTorch, or MXNet 
+  * Works with Image Classification and Object Detection built-in algorithms 
+  * add elastic inference accelerator machine type alongside a CPU instance
+  * Note elastic interface is now deprecated, but may still appear on the exam? 
+
+
 ###### Deploying Trained Models via SageMaker
   * Save your trained model to S3
   * Can deploy two ways.
@@ -2351,6 +2366,18 @@ graph LR
 ```
 ![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
   * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
+
+####### SM Automatic Scaling 
+  * You set up a scaling policy to define target metrics, min/max capacity, cooldown periods 
+  * Works with CloudWatch 
+  * Dynamically adjusts number of instances for a production variant 
+  * Load test your configuration before using it! 
+
+####### SM  and Availability Zones 
+  * SageMaker automatically attempts to distribute instances across availability zones 
+  * But you need more than one instance for this to work! 
+  * Deploy multiple instances for each production endpoint 
+  * Configure VPC’s with at least two subnets, each in a different AZ 
 
 ##### SM integration with Docker
 
