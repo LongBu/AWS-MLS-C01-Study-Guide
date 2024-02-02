@@ -1605,18 +1605,19 @@ Applications of Transformers
 GPT Input processing
   * Tokenization, token encoding
   * Token embedding
-  * Captures semantic relationships between tokens, token similarities
+    * Captures semantic relationships between tokens, token similarities
   * Positional encoding
-  * Captures the position of the token in the input relative to other nearby tokens
-  * Uses an interleaved sinusoidal function so it works on any length
+    * Captures the position of the token in the input relative to other nearby tokens
+    * Uses an interleaved sinusoidal function so it works on any length
  
 GPT Output processing
   * The stack of decoders outputs a vector at the end
   * Multiply this with the token embeddings
   * This gives you probabilities (logits) of each token being the right next token (word) in the sequence
-  * You can randomize things a bit here ("temperature") instead of always picking the highest probability
+  * You can randomize things a bit here ("temperature") instead of always picking the highest probability.  Setting the temperature to 0 picks the highest probability.  
   * can import GPT-2 into AWS via hugging face
   * Stacking up decoder blocks with own self attention increases the complexity of the model
+  * The stack of decoder blocks is conducting masked self-attention and outputting into a feed forward NN to finally produce an output, vector of what the next token is, this output vector is then multiplied back into the embedding matrix to give us probabilities of what the next token is
   * NN work on numbers only, not words, pictures, etc.
   * Token embedding => Convert tokens to vectors in a multi dimensional space; space–distance correlating similarity of meeting
   * positional encoding-process all tokens in parallel
