@@ -1626,6 +1626,31 @@ GPT Output processing
   * Token embedding => Convert tokens to vectors in a multi dimensional space; space–distance correlating similarity of meeting
   * positional encoding-process all tokens in parallel
 
+##### Foundation Models (Generative AI via AWS)
+  * The giant, pre-trained transformer models we are fine tuning for specific tasks, or applying to new applications
+  * GPT-n (OpenAl, Microsoft)
+  * BERT (Google)
+  * DALL-E (OpenAl, Microsoft)
+  * LLaMa (Meta)
+  * Segment Anything (Meta)
+  * Where's Amazon?
+  * Jurassic-2 (Al21labs)
+    * Multilingual LLMs for text generation
+    * Spanish, French, German, Portuguese, Italian, Dutch
+  * Claude (Anthropic)
+    * LLM's for conversations
+    * Question answering
+    * Workflow automation
+  * Stable Diffusion (stability.ai)
+    * Image, art, logo, design generation
+  * Amazon Titan
+    * Text summarization
+    * Text generation
+    * Q&A
+    * Embeddings
+      * Personalization
+      * Search
+
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
