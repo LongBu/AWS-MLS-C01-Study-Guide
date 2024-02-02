@@ -1662,8 +1662,20 @@ GPT Output processing
     * Amazon Alexa (encoder/decoder multilingual LLM)
     * Google, and Microsoft models aren't supported on AWS as their direct competitors
   * jumpstart=> launch NB within SM, with pre-populated foundation, models, (internal, hugging face, etc.)
+    * create a domain
+      * A unique domain name 
+      * The user profile
+        * execution role
+      * IAM/identity center
+      * SM studio integrations
+      * SM canvas
+      * fine tuned network security settings
+      * fine-tuned encryption settings
+      * VPC associated with an account
+     * deploys actual hardware, though you were also given the opportunity to change the instance type(s) or potentially changing the use/# of GPUs
+    * Can fine-tune the model through direct input within the notebook or S3
+      * if input is large, it will train it many times trying to optimally tune, hyperparameters
  
-
 #### Activation functions
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
