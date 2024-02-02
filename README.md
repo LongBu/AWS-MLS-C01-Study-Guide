@@ -1650,6 +1650,19 @@ GPT Output processing
     * Embeddings
       * Personalization
       * Search
+      * Converting input to a vector, which can then be used as a similar to comparison for another import, or even a listing of similar results
+
+###### Amazon SM Jumpstart with Generative AI
+  * SageMaker Studio has a "JumpStart" feature
+  * Lets you quickly open up a notebook with a given model loaded up and ready to go
+  * Current foundation models
+    * Hugging race models (text generation
+      * Falcon, Flan, BloomZ, GPT-J
+    * Stabile Diffusion (image generation)
+    * Amazon Alexa (encoder/decoder multilingual LLM)
+    * Google, and Microsoft models aren't supported on AWS as their direct competitors
+  * jumpstart=> launch NB within SM, with pre-populated foundation, models, (internal, hugging face, etc.)
+ 
 
 #### Activation functions
 
