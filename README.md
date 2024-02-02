@@ -1119,7 +1119,9 @@ graph LR
   * use a pre-trained model to further train for specific task(s)
   * ﻿﻿Model zoos such as Hugging Face offer pre-trained models to start from
     * ﻿﻿Integrated with Sagemaker via Hugging Face Deep Learning Containers
+    * Hugging face is essentially a giant repo of pre-trained models (eg: GPT2, GPTJ, llama, stable-diffusion)
   * ﻿﻿You can fine-tune these models for your own use cases
+  * If fine-tuning a model, need to install the source version of the model
   * ﻿﻿BERT transfer learning example:
     * ﻿﻿Hugging Face offers a Deep Learning Container (DLC) for BERT
     * ﻿﻿It's pre-trained on BookCorpus and Wikipedia
@@ -1601,6 +1603,7 @@ Applications of Transformers
   * Getting rid of the idea of inputs and outputs is what allows us to train it on unlabeled piles of text
   * It's "learning a language" rather than optimizing for some specific task
   * Hundreds of billions of parameters
+  * GPT output is not based on finding true or correct results, but results generated based upon the input it was trained on
  
 GPT Input processing
   * Tokenization, token encoding
@@ -1608,7 +1611,8 @@ GPT Input processing
     * Captures semantic relationships between tokens, token similarities
   * Positional encoding
     * Captures the position of the token in the input relative to other nearby tokens
-    * Uses an interleaved sinusoidal function so it works on any length
+    * Creates a (scalable \[works on any length]) matrix of vectors with overlayed sine and cosine functions interwoven, where words are within a period relative to other words to derive meaning
+
  
 GPT Output processing
   * The stack of decoders outputs a vector at the end
