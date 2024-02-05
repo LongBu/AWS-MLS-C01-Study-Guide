@@ -1663,16 +1663,16 @@ GPT Output processing
     * Google, and Microsoft models aren't supported on AWS as their direct competitors
   * jumpstart=> launch NB within SM, with pre-populated foundation, models, (internal, hugging face, etc.)
     * create a domain
-      * A unique domain name 
-      * The user profile
-        * execution role
+      * A unique domain name
+      * The user profile
+        * execution role
       * IAM/identity center
-      * SM studio integrations
-      * SM canvas
-      * fine tuned network security settings
-      * fine-tuned encryption settings
-      * VPC associated with an account
-     * deploys actual hardware, though you were also given the opportunity to change the instance type(s) or potentially changing the use/# of GPUs
+      * SM studio integrations
+      * SM canvas
+      * fine tuned network security settings
+      * fine-tuned encryption settings
+      * VPC associated with an account
+    * deploys actual hardware, though you were also given the opportunity to change the instance type(s) or potentially changing the use/# of GPUs
     * Can fine-tune the model through direct input within the notebook or S3
       * if input is large, it will train it many times trying to optimally tune, hyperparameters
  
@@ -1724,7 +1724,7 @@ Sigmoid / Logistic / TanH
   * sigmoid appropriate for more than one classification
  
 Rectified Linear Unit (ReLU)
-  *  If using slower neural network convergence
+  * If using slower neural network convergence
     * ReLU - solution to sigmoid and tanh 
   * ﻿﻿Very popular choice
   * ﻿﻿Easy & fast to compute
@@ -1947,9 +1947,9 @@ How to choose an activation function
 #### Docker containers
 #### Auto Scaling groups
 #### Rightsizing
-    * Instances
-    * Provisioned IOPS
-    * Volumes
+  * Instances
+  * Provisioned IOPS
+  * Volumes
   * Load balancing
   * AWS best practices
 ### Recommend and implement the appropriate machine learning services and features for a given problem.
@@ -2640,7 +2640,7 @@ Protecting your Data at Rest in SageMaker
   * compiles inference, code to work on edge devices
     * Edge devices
     * ARM, Intel, Nvidia processors
-    * Embedded in whatever – your car? 
+    * Embedded in any supported mobile device 
   * Optimizes code for specific devices 
     * Tensorflow, MXNet, PyTorch, ONNX, XGBoost, DarkNet, Keras 
   * Consists of a compiler and a runtime library
