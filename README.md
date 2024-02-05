@@ -1326,7 +1326,6 @@ graph LR
     * Bagging is easier to parallelize over boost
 
 ### Train machine learning models
-#### Train validation test split, cross-validation (TBD)
 #### Optimizer, gradient descent, loss functions, local minima, convergence, batches, probability, etc.(TBD)
 
 ##### Loss Functions (aka Cost Function): seek to calculate/minimize the error (difference between actual and predicted value)
@@ -1367,7 +1366,13 @@ graph LR
         * Computationally efficient
         * Dense output
       * Same idea can be applied to loss functions and/or weights as learned
-  * Cross validation
+  * Training data vs Validation data split (eg 80/20 rule if data is largely available)
+    * Test set used to get the error rate (aka generalization or out of sample error)
+    * If you training error is low and the generalization error is high=>overfitting
+    * If you'd like to validate which algorithm is best, harness the training data on them and then validate against test set
+    * If also validating multiple hyperparameters, a holdout, validation set, might be decent to validate following the training set=>validation set (select best model and hyperparameters that perform best), and then testing against the test set to avoid selecting a model that performs best on the test set data
+    * Alternatively there is cross validation too, to avoid wasting too much training data on validation sets.  This involves splitting the training set into complementary subsets and the model is trained against a different combination of the subsets and tested against the remaining data subset(s).  Once the model/hyperparameters are finalized they are then trained on the complete training data to then measure the generalized error against the test set.
+  * Cross validation - usually done if data is in short supply
   * Model initialization
   * Neural network architecture (layers/nodes)
     * NN Learning Rate
@@ -2349,7 +2354,6 @@ Personalize Pricing
   * Integrated with SageMaker or whatever else you want (deep learning AMI's, containers, Tensorflow, PyTorch, MXNet)
 
 #### AWS service limits(TBD)
-#### Build your own model vs. SageMaker built-in algorithms(TBD)
 #### SageMaker
 
 ##### SageMaker Notebooks can direct the process (data preparation)
