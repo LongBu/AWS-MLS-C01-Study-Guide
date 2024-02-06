@@ -3121,7 +3121,7 @@ Hyperparameters:
     * BLEU score and perplexity are well suited for measuring machine translation problems
 
 Instance Types:
-  * ﻿﻿Can only use GPU instance types (P3 for example
+  * ﻿﻿Can only use GPU instance types (P3 for example)
   * ﻿﻿Can only use a single machine for training
     * But can use multi-GPU's on one machine
 
