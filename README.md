@@ -3097,7 +3097,7 @@ Training input:
   * ﻿﻿Start with tokenized text files (integers=>indices in vocabulary files for mapping purposes)
   * ﻿﻿Convert to protobuf using sample code
     * ﻿﻿Packs into integer tensors with vocabulary files
-    * ﻿﻿A lot like the TF/IDF lab we did earlier.
+    * ﻿﻿Similar to TF/IDF
   * ﻿﻿Must provide training data, validation data, and vocabulary files.
 
 How to use:
