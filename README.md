@@ -104,14 +104,14 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Tables can scale up and down with virtually unlimited throughput and storage.  There is no limit on the size of a table or the number of rows you can store in a table. 
 
 ##### DynamoDB:
-  * (Serverless) NoSQL Key-value and document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
+  * (Serverless) NoSQL Key-value / document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
   * Stored on SSD
   * Good candidate to store ML model served by application(s)
   * Stored across 3 geographically distinct data centers
   * Eventual consitent reads (default) or strongly consistent reads (1 sec or less)
   * Session storage alternative (TTL)
   * IAM for security, authorization, and administration
-  * Primay key possibilities could involve creation time
+  * Primary key possibilities could involve creation time
   * On-Demand (pay per request pricing) => $$$
   * Provisioned Mode (default) is less expensive where you pay for provisioned RCU/WCU
   * Backup: optionally lasts 35 days and can be used to recreate the table
@@ -340,27 +340,29 @@ graph LR
     * product (eg: s3://bucket/datasetname/productid/...)
   * Partitioning handled by tools such as Kinesis, Glue, etc.
 
-###### Encryption
-  * SSE-S3:
-    * Encryption (keys) managed by AWS (S3)
-    * Encryption type of AES-256
-    * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"AES256"
-    * Enabled by default for new buckets and objects
-  * SSE-KMS
-    * Encryption (KMS Customer Master Key [CMK]) managed by AWS KMS
-    * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"aws:kms"
-    * Offers further user control and audit trail via cloudtrail
-    * May be impacted by KMS limits, though you can increase them via Service Quotas Console
-      * Upload calls the GenerateDataKey KMS API (counts towards KMS quota 5500, 10000, or 30000 req/s based upon region)
-      * Download calls the Decrypt KMS API (also counts towards KMS quota)
-  * SSE-C:
-    * Server side encryption via *HTTPS only*, using a fully managed external customer key external to AWS that must be provided in the HTTP headers for every HTTP request (key isn't saved by AWS)
-    * Objects encrypted with SSE-C are never replicated between S3 Buckets
-  * Client Side Encryption:
-    * Utilizes a client library such as Amazon S3 Encryption Client
-    * Encrypted prior to sending to S3 and must be decrypted by clients when retrieving from S3 conducted over HTTP/S
-    * Utilizes a fully managed external customer key external to AWS
-    * S3 objects useing SSE-C not able to be replicated between buckets
+###### SSE-S3 S3 Encryption
+  * Encryption (keys) managed by AWS (S3)
+  * Encryption type of AES-256
+  * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"AES256"
+  * Enabled by default for new buckets and objects
+
+###### SSE-KMS S3 Encryption
+  * Encryption (KMS Customer Master Key [CMK]) managed by AWS KMS
+  * Encrypted server side via HTTP/S and Header containing "x-amz-server-side-encryption":"aws:kms"
+  * Offers further user control and audit trail via cloudtrail
+  * May be impacted by KMS limits, though you can increase them via Service Quotas Console
+    * Upload calls the GenerateDataKey KMS API (counts towards KMS quota 5500, 10000, or 30000 req/s based upon region)
+    * Download calls the Decrypt KMS API (also counts towards KMS quota)
+
+###### SSE-C S3 Encryption:
+  * Server side encryption via *HTTPS only*, using a fully managed external customer key external to AWS that must be provided in the HTTP headers for every HTTP request (key isn't saved by AWS)
+  * Objects encrypted with SSE-C are never replicated between S3 Buckets
+
+###### Client Side Encryption S3 Encryption
+  * Utilizes a client library such as Amazon S3 Encryption Client
+  * Encrypted prior to sending to S3 and must be decrypted by clients when retrieving from S3 conducted over HTTP/S
+  * Utilizes a fully managed external customer key external to AWS
+  * S3 objects useing SSE-C not able to be replicated between buckets
 
 ###### Encryption in transit (SSL/TLS) vs none
   * HTTP Endpoint - non-encrypted
@@ -1341,14 +1343,14 @@ graph LR
       * Often seen as high accuracy on training data set, but lower accuracy on test or evaluation data set.
         * When training and evaluating a model, we use training, evaluation, and testing data sets.
       * Batch sizes that are larger can increase chances of becoming stuck in a local minima
-      * Higher learning rates run the risk of overshooting an optimal solution
-      * Generally good to pair a small batch size and a small learning rate
+      * Higher learning rates run the risk of overshooting an optimal solution
+      * Generally good to pair a small batch size and a small learning rate
     * Regularization techniques are intended to prevent overfitting.
-    * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model
+    * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * Specific to NN:
       * Dropout: Remove some neurons at each Epoch During training, which forces the model to learn/spread out learning among other neurons Preventing individual neurons from overfitting specific data point(s)
       * Early stopping is breaking early training from Epochs as accuracy levels out, preventing overfitting
-    * L1 / L2 Regularization
+    * L1 (LASSO) / L2 (Ridge) Regularization
       * Preventing overfitting in ML in general
       * A regularization term is added as weights are learned
       * L1 term is the sum of the weights absolute weights
