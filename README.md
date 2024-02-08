@@ -1177,7 +1177,7 @@ graph LR
       * Server-side encryption with KMS key (SSE-KMS)
       * Client-side encryption with KMS key (CSE-KMS)
     * Cross-account access in S3 bucket policy possible
-    * Transport Layer Security (TLS) encrypts in-transit (between Athena and S3)
+    * TLS encrypts in-transit (between Athena and S3)
   * anti-patterns:
     * Highly formatted reports / visualization=>That's what QuickSight is for
     * ETL=>Use Glue instead
@@ -4033,6 +4033,7 @@ Instance Types:
 | SSL | Secure Sockets Layer |
 | SSM | Systems Manager |
 | SSML | Speech Synthesis Markup Language |
+| TLS | Transport Layer Security |
 | TN | True Negative |
 | TP | True Positive |
 | TPS | Trasactions Per Second |
