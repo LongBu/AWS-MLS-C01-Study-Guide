@@ -1207,7 +1207,6 @@ graph LR
     * Each user gets 10GB/month of SPICE
     * Highly available / durable
     * Scales to hundreds of thousands of users
-  * Column-Level security (CLS)
   * Can share analysis (if published) or the dashboard (read only) with users or groups
   * Available as an application anytime on any device (browsers [mobile])
   * Data Sources
@@ -1234,6 +1233,7 @@ graph LR
       * Datasets and their fields must be NLP-friendly
       * How to handle dates must be defined
   * Security:
+    * Column-Level security (CLS)
     * Multi-factor authentication on your account
     * VPC connectivity
       * Add QuickSight's IP address range to your database security groups
@@ -1281,25 +1281,26 @@ graph LR
       * No longer true with paginated reports!
     * ETL
       * Use Glue instead, although QuickSight can do some transformations
-  * Visual Types
-    * AutoGraph - automatically selects chart based on input features to best display the data and relationships.  Not 100% effective and might require intervention
-    * Bar Charts
-      * For comparison and distribution (histograms)
-    * Line graphs
-      * For changes/trends over time
-      * \[stacked] area line charts - allows visualization of different components added up to a change/trend
-    * Scatter plots, heat maps
-      * For correlation
-    * Pie graphs, tree maps - Heirarchical Aggregation chart (eg: npm package map)
-      * For aggregation
-    * Pivot tables
-      * For tabular data to aggregate in certain ways into other tables
-      * applying statistical functions applied to (multi-dimensional) data  
-    * KPIs - chart detailing measurement(s) between current value(s) vs target(s)
-    * Geospatial Charts (maps) - map with sized circles annotating certain amounts in certain areas
-    * Donut Charts - when precision isn't important and few items in the dimension; show percentile/proportion of the total amount
-    * Gauge Charts - compare values in a measure (eg: fuel left in a tank)
-    * Word Clouds - word or phrase frequency within a corpus
+
+  ##### Quicksight Visual Types
+  * AutoGraph - automatically selects chart based on input features to best display the data and relationships.  Not 100% effective and might require intervention
+  * Bar Charts
+    * For comparison and distribution (histograms)
+  * Line graphs
+    * For changes/trends over time
+    * \[stacked] area line charts - allows visualization of different components added up to a change/trend
+  * Scatter plots, heat maps
+    * For correlation
+  * Pie graphs, tree maps - Heirarchical Aggregation chart (eg: npm package map)
+    * For aggregation
+  * Pivot tables
+    * For tabular data to aggregate in certain ways into other tables
+    * applying statistical functions applied to (multi-dimensional) data  
+  * KPIs - chart detailing measurement(s) between current value(s) vs target(s)
+  * Geospatial Charts (maps) - map with sized circles annotating certain amounts in certain areas
+  * Donut Charts - when precision isn't important and few items in the dimension; show percentile/proportion of the total amount
+  * Gauge Charts - compare values in a measure (eg: fuel left in a tank)
+  * Word Clouds - word or phrase frequency within a corpus
 
 ## Modeling
 ### Frame business problems as machine learning problems. 
@@ -2401,7 +2402,7 @@ Personalize Pricing
     * Your own Docker image (note all training code, regardless of origin, is deployed to Sagemaker harnessing instances registered and emanating from ECR)
     * Algorithm purchased from AWS marketplace
 
-####### SM Elastic Inference 
+###### SM Elastic Inference 
   * Accelerates deep learning inference 
     * At fraction of cost of using a GPU instance for inference 
   * EI accelerators may be added alongside a CPU instance 
@@ -2438,13 +2439,13 @@ graph LR
 ![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
   * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
 
-####### SM Automatic Scaling 
+###### SM Automatic Scaling 
   * You set up a scaling policy to define target metrics, min/max capacity, cooldown periods 
   * Works with CloudWatch 
   * Dynamically adjusts number of instances for a production variant 
   * Load test your configuration before using it! 
 
-####### SM  and Availability Zones 
+###### SM  and Availability Zones 
   * SageMaker automatically attempts to distribute instances across availability zones 
   * But you need more than one instance for this to work! 
   * Deploy multiple instances for each production endpoint 
