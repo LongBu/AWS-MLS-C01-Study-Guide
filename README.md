@@ -1329,7 +1329,6 @@ graph LR
     * Bagging is easier to parallelize over boost
 
 ### Train machine learning models
-#### Optimizer, gradient descent, loss functions, local minima, convergence, batches, probability, etc.(TBD)
 
 ##### Loss Functions (aka Cost Function): seek to calculate/minimize the error (difference between actual and predicted value)
 
