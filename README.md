@@ -671,8 +671,6 @@ graph LR
   * Sensor data transferred to your model
   * The AWS loT Device SDK can connect via MQTT
 
-##### Job scheduling (TBD)
-
 ### Identify and implement a data transformation solution. 
   * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
   * Transforming data transit (ETL: Glue, EMR, AWS Batch)
@@ -855,6 +853,7 @@ graph LR
   * Rely on EBS/instance store for disk space
   * Advantage over λ=>time limit, limited runtimes, limited disk space
   * Good for any compute based job (must harness docker) and for any non-ETL based work, batch is likely best (eg: periodically cleaning up s3 buckets)
+  * Using spot instances to train deep learning models
 
 ## Exploratory Data Analysis
 
@@ -1332,9 +1331,6 @@ graph LR
 
 ##### Loss Functions (aka Cost Function): seek to calculate/minimize the error (difference between actual and predicted value)
 
-#### Compute choice (GPU vs. CPU, distributed vs. non-distributed, platform [Spark vs. non-Spark]) (TBD)
-#### Model updates and retraining (TBD)
-##### Batch vs. real-time/online (TBD)
 ### Perform hyperparameter optimization. 
   * Regularization
     * Preventing overfitting
@@ -2355,7 +2351,6 @@ Personalize Pricing
   * EC2 Inf1 instance type
   * Integrated with SageMaker or whatever else you want (deep learning AMI's, containers, Tensorflow, PyTorch, MXNet)
 
-#### AWS service limits(TBD)
 #### SageMaker
 
 ##### SageMaker Notebooks can direct the process (data preparation)
@@ -3871,11 +3866,6 @@ Instance Types:
   * And we know it supports multiple instances and cores
   * More than one machine, if using CPUs 
 
-
-#### Infrastructure: (spot, instance types), cost considerations(TBD)
-##### Using spot instances to train deep learning models using AWS Batch (TBD)
-### Apply basic AWS security practices to machine learning solutions(TBD)
-
 #### Identity and Access Management (IAM)
 
 ##### Allow vs Deny: If any denial in policy is present, the resource is denied regardless of allow statement(s).  The default behavior is to deny resource(s) and resource(s) need allow statements to be allowed.  
@@ -3970,7 +3960,6 @@ Instance Types:
   * Gateway Endpoints are preferred most of the time over Interface Endpoints as the former is free and the latter costs $
   * Interface endpoint is preferred if access is required from on-premises (site-to-site VPN or Direct Connect), a different VPC or a different region
 
-#### Encryption/anonymization(TBD)
 ### Deploy and operationalize machine learning solutions.
   * Exposing endpoints and interacting with them
   * ML model versioning
