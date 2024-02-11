@@ -1174,16 +1174,6 @@ graph LR
   * can integrate with Jupiter, Zepplin, or R-Studio notebooks
   * able to integrate with other visualization tools via ODBC/JDBC protocols
   * can harness Glue Data Catalog metadata for queries
-  * Security:
-    * Access control
-      * IAM, ACLs, S3 bucket policies
-      * AmazonAthenaFullAccess/AWSQuicksightAthenaAccess
-    * Encrypt results at rest in S3 staging directory
-      * Server-side encryption with S3-managed key (SSE-S3)
-      * Server-side encryption with KMS key (SSE-KMS)
-      * Client-side encryption with KMS key (CSE-KMS)
-    * Cross-account access in S3 bucket policy possible
-    * TLS encrypts in-transit (between Athena and S3)
   * anti-patterns:
     * Highly formatted reports / visualization=>That's what QuickSight is for
     * ETL=>Use Glue instead
@@ -1195,6 +1185,16 @@ graph LR
     B --> C[Athena]
     C --> D[QuickSight]
 ```
+##### Athena Security:
+  * Access control
+    * IAM, ACLs, S3 bucket policies
+    * AmazonAthenaFullAccess/AWSQuicksightAthenaAccess
+  * Encrypt results at rest in S3 staging directory
+    * Server-side encryption with S3-managed key (SSE-S3)
+    * Server-side encryption with KMS key (SSE-KMS)
+    * Client-side encryption with KMS key (CSE-KMS)
+  * Cross-account access in S3 bucket policy possible
+  * TLS encrypts in-transit (between Athena and S3)
 
 #### Amazon Quicksight:
   * BI/analytics serverless ML service used to build interactive visualizations (dashboards, graphs, charts and reports), perform ad-hoc analysis without paying for integrations of data and leaving the data uncanned for exploration
