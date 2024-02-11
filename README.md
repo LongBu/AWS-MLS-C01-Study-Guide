@@ -1683,16 +1683,18 @@ GPT Output processing
 
 A gated function that verifies how an incoming value to a node/neuron is higher than a threshold value to prevent linearity to define the output, used within internal/output layer cells in neural networks
 
-TODO: throw up graphics of the given functions
-
 Linear activation function (eg: y=x)
   * ﻿﻿It doesn't really *do* anything
   * ﻿﻿Can't do backpropagation
+
+![Linear activation function](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*tldIgyDQWqm-sMwP7m3Bww.png)
  
 Binary step function
   * ﻿﻿It's on or off
   * ﻿﻿Can't handle multiple classification - it's binary after all
   * ﻿﻿Vertical slopes don't work well with calculus!
+
+![Binary step function](https://raw.githubusercontent.com/Codecademy/docs/main/media/binary-step-plot.png)
 
 Non-linear activation functions
   * ﻿﻿These can create complex mappings between inputs and outputs
@@ -1725,7 +1727,10 @@ Sigmoid / Logistic / TanH
   * ﻿﻿Tanh generally preferred over sigmoid
   * Tanh well suited for RNN
   * sigmoid appropriate for more than one classification
+
+![Sigmoid vs tanh](https://miro.medium.com/v2/resize:fit:1190/format:webp/1*f9erByySVjTjohfFdNkJYQ.jpeg)
  
+
 Rectified Linear Unit (ReLU)
   * If using slower neural network convergence
     * ReLU - solution to sigmoid and tanh 
@@ -1734,9 +1739,13 @@ Rectified Linear Unit (ReLU)
   * ﻿﻿But, when inputs are zero or negative, we have a linear function and all of its problems
     * ﻿﻿The "Dying ReLU problem", where input is <= 0
 
-Leaky RelU
+![ReLU](https://machinelearningmastery.com/wp-content/uploads/2018/10/Line-Plot-of-Rectified-Linear-Activation-for-Negative-and-Positive-Inputs.png)
+
+Leaky ReLU
 * Solves "dying ReLU" by introducing a negative slope below 0 (usually not as steep as this)
- 
+
+![Leaky ReLU](https://production-media.paperswithcode.com/methods/Screen_Shot_2020-05-25_at_3.09.45_PM.png)
+
 Parametric ReLU (PReLU)
   * ﻿﻿ReLU, but the slope in the negative part is learned via backpropagation
   * ﻿﻿Complicated and YMMV (your mileage may vary)
