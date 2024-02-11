@@ -689,14 +689,6 @@ graph LR
   * Takes care of provisioning and configuration
   * Autoscaling and integrated with Spot Instances for cost savings
   * Use cases: Data processing, ML, Web Indexing, BigData
-  * AWS Integration
-    * Amazon EC2 for the instances that comprise the nodes in the  cluster
-    * Amazon VPC to configure the virtual network in which you launch your instances
-    * Amazon S3 to store input and output data or HDFS (default)
-    * Amazon CloudWatch to monitor cluster performance and configure alarms
-    * AWS IAM to configure permissions
-    * AWS CloudTrail to audit requests made to the service
-    * AWS Data Pipeline to schedule and start your clusters
   * Node types: 
     * Master Node:
       * single EC2 instance to manage the cluster
@@ -709,36 +701,7 @@ graph LR
       * only to run tasks-usually Spot Instances are a best option
       * no hosted data, so no risk of data loss upon removal
       * can spin up/down as needed
-  * Deep Learning on EC2 / EMR
-    * EMR supports Apache MXNet and GPU instance types
-    * Appropriate instance types for deep learning:
-      * P3: 8 Tesla V100 GPU's
-      * P2: 16 K80 GPU's
-      * G3: 4 M60 GPU's (all Nvidia chips)
-      * G5g : AWS Graviton 2 processors / Nvidia T4G Tensor Core GPU's
-        * Not (yet) available in EMR
-        * Also used for Android game streaming
-      * P4d - A100 "UltraClusters" for supercomputing
-    * Deep Learning AMI's
-    * Sagemaker can deploy a cluster using whatever architecture you want
-    * Trn1 instances
-      * "Powered by Trainium"
-      * Optimized for training NN/LLM (50% savings)
-      * 800 Gbps of Elastic Fabric Adapter (EFA) networking for fast clusters
-    * Trn1n instances
-      * Even more bandwidth (1600 Gbps)
-    * Inf2 instances
-      * "Powered by AWS Inferentia2"
-      * Optimized for inference
   * Can have long-running cluster or transient (temporary) cluster
-  * EMR Notebook
-    * Similar concept to Zeppelin, with more AWS integration
-    * Notebooks backed up to S3 only (not in within the cluster)
-    * Provision clusters from the notebook!
-    * Able to use multiple Notebooks to share the multi-tenant EMR clusters
-    * Hosted inside a VPC
-    * Accessed only via AWS console
-    * build Apache Spark Apps and run queries against the cluter (python, pyspark, spark sql, spark r, scala, andor anaconda based open source graphical libs)
   * Purchasing options: 
     * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
     * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
@@ -759,47 +722,90 @@ graph LR
       * Database, memory-caching applications: high memory instances
       * Network / CPU-intensive (NLP, ML) - cluster computer instances
       * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
-  * Storage
-    * HDFS (distributed scalable file system for Hadoop)
-      * distributes data that it stores across every instance in a cluster, as well as multiple copies of data on different instances to ensure no data is lost if instance(s) fail
-      * each file stored as blocks
-      * default block size is 128 MB
-      * storage is ephemeral and is lost upon termination
-      * performance benefit of processing data where stored to avoid latency
-      * EBS serves as a backup for HDFS
-    * EMRFS: access S3 as if it were HDFS
-      * EMRFS Consistent View - Optional for S3 consistency
-      * Uses DynamoDB to track consistency
-    * Local file system
   * EMR promises
     * EMR charges by the hour
       * Plus EC2 charges
     * Provisions new nodes if a core node fails
     * Can add and remove tasks nodes on the fly
     * Can resize a running cluster's core nodes
-  * Security
-    * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
-    * Kerberos
-    * SSH can use kerboros or EC2 key pairs for client authentication
-    * IAM roles:
-      * Every cluster in EMR must have a service role and a role for EC2 instance profile(s).  These roles, attached via policies, will provide permission(s) to interact with other AWS Services
-      * If a cluster uses automatic scaling, an autoscaling role is necessary
-      * Service linked roles can be used if service for EMR has lost ability to clean up EC2 resources
-      * IAM roles can also be sued for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
-    * Security configurations may be specified for Lake Formation (JSON)
-    * Native integration with Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
-      * For data security on Hadoop/Hive
-  * How to use EMR
-    * Within EMR, select Create studio instance, which is your environment for running workspaces/notebooks
-    * Requires:
-      * VPC access
-      * 1-5 subnets
-      * Security group(s)
-      * Service role (IAM/IAM Identity Center)
-      * S3 bucket
-    * Within the studio instance, create workspaces.  The workspace will need to create/attach an EMR cluster
-    * A notebook must select a kernel at initialization (relative to the technology stack one is using)
-    * Good practice delete your cluster if not using so it's not to be billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for them
+
+##### EMR AWS Integration
+  * Amazon EC2 for the instances that comprise the nodes in the  cluster
+  * Amazon VPC to configure the virtual network in which you launch your instances
+  * Amazon S3 to store input and output data or HDFS (default)
+  * Amazon CloudWatch to monitor cluster performance and configure alarms
+  * AWS IAM to configure permissions
+  * AWS CloudTrail to audit requests made to the service
+  * AWS Data Pipeline to schedule and start your clusters
+
+##### EMR Storage
+  * HDFS (distributed scalable file system for Hadoop)
+    * distributes data that it stores across every instance in a cluster, as well as multiple copies of data on different instances to ensure no data is lost if instance(s) fail
+    * each file stored as blocks
+    * default block size is 128 MB
+    * storage is ephemeral and is lost upon termination
+    * performance benefit of processing data where stored to avoid latency
+    * EBS serves as a backup for HDFS
+  * EMRFS: access S3 as if it were HDFS
+    * EMRFS Consistent View - Optional for S3 consistency
+    * Uses DynamoDB to track consistency
+  * Local file system
+
+##### EMR Notebook
+  * Similar concept to Zeppelin, with more AWS integration
+  * Notebooks backed up to S3 only (not in within the cluster)
+  * Provision clusters from the notebook!
+  * Able to use multiple Notebooks to share the multi-tenant EMR clusters
+  * Hosted inside a VPC
+  * Accessed only via AWS console
+  * build Apache Spark Apps and run queries against the cluter (python, pyspark, spark sql, spark r, scala, andor anaconda based open source graphical libs)
+
+##### Deep Learning on EC2 / EMR
+  * EMR supports Apache MXNet and GPU instance types
+  * Appropriate instance types for deep learning:
+    * P3: 8 Tesla V100 GPU's
+    * P2: 16 K80 GPU's
+    * G3: 4 M60 GPU's (all Nvidia chips)
+    * G5g : AWS Graviton 2 processors / Nvidia T4G Tensor Core GPU's
+      * Not (yet) available in EMR
+      * Also used for Android game streaming
+    * P4d - A100 "UltraClusters" for supercomputing
+  * Deep Learning AMI's
+  * Sagemaker can deploy a cluster using whatever architecture you want
+  * Trn1 instances
+    * "Powered by Trainium"
+    * Optimized for training NN/LLM (50% savings)
+    * 800 Gbps of Elastic Fabric Adapter (EFA) networking for fast clusters
+  * Trn1n instances
+    * Even more bandwidth (1600 Gbps)
+  * Inf2 instances
+    * "Powered by AWS Inferentia2"
+    * Optimized for inference
+    
+##### EMR Security
+  * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
+  * Kerberos
+  * SSH can use kerboros or EC2 key pairs for client authentication
+  * IAM roles:
+    * Every cluster in EMR must have a service role and a role for EC2 instance profile(s).  These roles, attached via policies, will provide permission(s) to interact with other AWS Services
+    * If a cluster uses automatic scaling, an autoscaling role is necessary
+    * Service linked roles can be used if service for EMR has lost ability to clean up EC2 resources
+    * IAM roles can also be sued for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
+  * Security configurations may be specified for Lake Formation (JSON)
+  * Native integration with Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
+    * For data security on Hadoop/Hive
+
+##### How to use EMR
+  * Within EMR, select Create studio instance, which is your environment for running workspaces/notebooks
+  * Requires:
+    * VPC access
+    * 1-5 subnets
+    * Security group(s)
+    * Service role (IAM/IAM Identity Center)
+    * S3 bucket
+  * Within the studio instance, create workspaces.  The workspace will need to create/attach an EMR cluster
+  * A notebook must select a kernel at initialization (relative to the technology stack one is using)
+  * Good practice delete your cluster if not using so it's not to be billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for them
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
