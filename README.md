@@ -556,7 +556,7 @@ graph LR
 ##### Amazon Kinesis Data Streams:
   * Service to provide low latency, real-time streaming ingestion 
   * On-demand capacity mode
-    * 4 MB/s input, ??? output?
+    * 4 MB/s input, 8 MB/s output?
     * Scales automatically to accommodate up to double its previous peak write throughput observed in the last 30 days
     * Pay per stream per hour and data/in/out per GB
   * Provisioned mode (if throughput exceeded exception => add shard[s] manually or programmatically)
