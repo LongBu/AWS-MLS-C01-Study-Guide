@@ -1044,7 +1044,8 @@ graph LR
 ### Perform feature engineering
 
   * Applying your knowledge of the data - and the model you're using - to identify and extract useful features to train your model with.  * 
-  * Analyze/evaluate feature engineering concepts (binning, tokenization, outliers, synthetic features, 1 hot encoding, reducing dimensionality of data) to understand what features one should use  * Do I need to transform these features in some way?
+  * Analyze/evaluate feature engineering concepts (binning, tokenization, outliers, synthetic features, 1 hot encoding, reducing dimensionality of data) to understand what features one should use
+    * Do I need to transform these features in some way?
     * How do I handle missing data?
     * Should I create new features from the existing ones?
     * You can't just throw in raw data and expect good results
@@ -2611,7 +2612,8 @@ Protecting your Data at Rest in SageMaker
 ###### SM integration with VPC 
   * Training jobs run in a Virtual Private Cloud (VPC) 
   * You can use a private VPC for even more security (note: the following are necessary for SM to work at all within a private VPC)
-  * You’ll need to set up S3 VPC endpoints     * Custom endpoint policies and S3 bucket policies can keep this secure 
+  * You’ll need to set up S3 VPC endpoints
+  * Custom endpoint policies and S3 bucket policies can keep this secure 
   * Notebooks are Internet-enabled by default 
     * This can be a security hole
     * If disabled, your VPC needs an interface endpoint (PrivateLink) or NAT Gateway, and allow outbound connections, for training and hosting to work
@@ -2687,7 +2689,7 @@ Protecting your Data at Rest in SageMaker
     * ﻿﻿Any pre-trained model or unsupervised technique that may be helpful
 
 #### SageMaker Ground Truth Plus:
-﻿﻿  * Turnkey solution managing the workflow and team of labelers
+  * Turnkey solution managing the workflow and team of labelers
   * You fill out an intake form
   * They contact you and discuss pricing
   * ﻿﻿You track progress via the Ground Truth Plus Project Portal
@@ -2828,7 +2830,8 @@ Protecting your Data at Rest in SageMaker
   * Any combination of pre-trained built-in algorithms or your own algorithms in Docker containers 
   * Combine pre-processing, predictions, post-processing 
   * Spark ML and scikit-learn containers OK
-    * Spark ML can be run with Glue or EMR     * Serialized into MLeap format 
+    * Spark ML can be run with Glue or EMR
+    * Serialized into MLeap format 
   * Can handle both real-time inference and batch transforms 
   * chain different docker containers for different stages of the model
   * spark ML containers are serialized into MLeap format
@@ -3346,14 +3349,14 @@ Hyperparameters:
     * Dropout, early stopping, epochs, learning rate, batch size, layers, activation function, optimizer, weight decay
   * Enc1_network, enc2_network
     * Choose henn, bilstm, pooled embedding
- 
+
 Instance Types:
-  * Can only train on a single machine (CPU or GPU, multi-GPU OK)
-    * ml.m5.2xlarge
-    * ml.p2.xlarge
-    * If needed, go up to ml.m5.4xlarge or ml.m5.12xlarge
-    * GPU options: P2, P3, G4dn, G5
-  * Inference: use ml. p3.2xlarge
+  * Can only train on a single machine  (CPU or GPU, multi-GPU OK)
+    * ml.m5.2xlarge
+    * ml.p2.xlarge
+    * If needed, go up to ml.m5.4xlarge or ml.m5.12xlarge
+    * GPU options: P2, P3, G4dn, G5
+  * Inference: use ml. p3.2xlarge
     * Use INFERENCE PREFERRED MODE environment variable to optimize for encoder embeddings rather than classification or regression.
  
 ##### Object Detectection
