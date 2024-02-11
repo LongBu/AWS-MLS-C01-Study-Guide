@@ -4011,6 +4011,7 @@ Instance Types:
 | GRU | Gated Recurrent Unit |
 | IA | Infrequent Access |
 | IAM | Identity and Access Management |
+| IdP | Identity Provider |
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
 | IOT | Internet of Things |
@@ -4020,6 +4021,7 @@ Instance Types:
 | ML | Machine Learning |
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
+| NACL | Network Access Control List |
 | NFS | Network File System |
 | NN | Neural Network |
 | OCR | Optical Character Recognition |
