@@ -1860,7 +1860,7 @@ How to choose an activation function
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
     | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
-    | Root Mean Square | RMSE | square root of the sum of all squared errors of each prediction from the actual true value |
+    | Root Mean Square | RMSE | square root of the mean of the sum of all squared errors of each prediction from the actual true value |
     | Accuracy | ACC | (TP + TN)/(TP + FP + TN + FN) |
     | Sensitivity, True positive rate, Recall, Completeness| SN, TPR, REC | TP/(TP + FN) = TP/P|
     | Precision, Positive predictive value, Correct Positives| PREC, PPV | TP/(TP + FP) |
