@@ -763,10 +763,10 @@ graph LR
 ##### Deep Learning on EC2 / EMR
   * EMR supports Apache MXNet and GPU instance types
   * Appropriate instance types for deep learning:
-    * P3: 8 Tesla V100 GPU's
-    * P2: 16 K80 GPU's
-    * G3: 4 M60 GPU's (all Nvidia chips)
-    * G5g : AWS Graviton 2 processors / Nvidia T4G Tensor Core GPU's
+    * P3: 8 Tesla V100 GPUs
+    * P2: 16 K80 GPUs
+    * G3: 4 M60 GPUs (all Nvidia chips)
+    * G5g : AWS Graviton 2 processors / Nvidia T4G Tensor Core GPUs
       * Not (yet) available in EMR
       * Also used for Android game streaming
     * P4d - A100 "UltraClusters" for supercomputing
@@ -3065,7 +3065,7 @@ Usage:
 Training input:
   * ﻿﻿recordIO-wrapped protobuf
     * ﻿﻿Float32 data only!
-  * ﻿﻿CSV
+  * ﻿﻿or CSV
     * ﻿﻿First column assumed to be the label
   * ﻿﻿File or Pipe mode both supported
   * Pipe mode streams from S3 -> More efficient and solves the problem of optimizing slow training
@@ -3138,7 +3138,7 @@ Hyperparameters:
 Instance Types:
   * ﻿﻿Can only use GPU instance types (P3 for example)
   * ﻿﻿Can only use a single machine for training
-    * But can use multi-GPU's on one machine
+    * But can use multi-GPUs on one machine
 
 ##### XGBoost (eXtreme Gradient Boosting)
 
@@ -3178,7 +3178,7 @@ Hyperparameters:
     * L2 regularization term; larger = more conservative
   * eval metric
     * Optimize on AUC, error, rmse...
-    * For example, if you care about false positives more than accuracy, you might use AUL here
+    * For example, if you care about false positives more than accuracy, you might use AUC here
   * scale_pos_weight
     * Adjusts balance of positive and negative weights
     * Helpful for unbalanced classes
@@ -3259,7 +3259,7 @@ Usage:
     * Supervised
   * Word2vec
     * Creates a vector representation of words
-    * Semantically, similar words a representative vectors is close to one another
+    * Semantically, similar words are representative vectors close to one another
     * This is called a word embedding (aka word embeddings)
     * It is usetul for NLP, but is not an NLP algorithm in itself!
       * Used in machine translation, sentiment analysis
@@ -3270,9 +3270,8 @@ Training input:
     * need to supply labels
     * One sentence per line
     * First "word" in the sentence is the string _label _ followed by the label
-  * Also, "augmented manifest text format"
   * Word2vec just wants a text file with one training sentence per line.
-  *  augmented manifest text format:
+  * Also "augmented manifest text format", eg:
 
 __label__4 linux ready for prime time, intel says, despite all the linux hype, the open-source movement has yet to make a huge splash in the desktop market. that may be about to change, thanks to chipmaking giant intel corp.
 
@@ -3337,7 +3336,8 @@ Training input:
 {"label": 1, "in0": [22, 1016, 32, 13, 25, 11, 5, 64, 573, 45, 5, 80, 15, 67, 21, 7, 9, 107, 4], "in1": [22, 32, 13, 25, 1016, 573, 3252, 4]} 
 
 {"label": 1, "ino": [774, 14, 21, 206], "in1": [21, 366, 125]}
- 
+
+
 How to use:
   * Process data into JSON Lines and shuffle it
   * Train with two input channels, two encoders, and a comparator
@@ -3366,7 +3366,7 @@ Instance Types:
     * ml.p2.xlarge
     * If needed, go up to ml.m5.4xlarge or ml.m5.12xlarge
     * GPU options: P2, P3, G4dn, G5
-  * Inference: use ml. p3.2xlarge
+  * Inference: use ml.p3.2xlarge
     * Use INFERENCE PREFERRED MODE environment variable to optimize for encoder embeddings rather than classification or regression.
  
 ##### Object Detectection
@@ -3383,15 +3383,15 @@ Training input:
   * ﻿﻿With image format, supply a JSON file for annotation data for each image
   * Example input:
 
-"file": "your_image_directory/sample_image1.jpg".
-"image_size": [
+"file": "your_image_directory/sample_image1.jpg", 
+"image_size": \[
 {
 "width": 500,
 "height": 400,
 "depth": 3
 }
-]
-"annotations": [
+],
+"annotations": \[
 {
 "class_id": 0,
 "left": 111,
@@ -3400,9 +3400,9 @@ Training input:
 "height": 128
 }
 ],
-"categories": [
+"categories": \[
 {
-"class id": 0,
+"class_id": 0,
 "name": "dog"
 }
 ]
@@ -3415,7 +3415,7 @@ How to use:
     * Uses a CNN with the Single Shot multibox Detector (SSD) Algorithm
       * ﻿﻿The base CNN can be VGG-16 or ResNet-50
     * ﻿﻿Transfer learning mode / incremental training
-      * Use a pre-trained model for the base network weights instead of random imital weights
+      * Use a pre-trained model for the base network weights instead of random initial weights
     * ﻿﻿Uses flip, rescale, and jitter internally to avoid overfitting
   * ﻿﻿Tensorflow
     * ﻿﻿Uses ResNet, EfficientNet, MobileNet models from the TensorFlow Model Garden
@@ -3448,7 +3448,7 @@ How to use:
       * The top fully-connected layer is initialized with random weights
       * Network is fine-tuned with new training data
     * Default image size is 3-channel 224×224 (ImageNet's dataset)
-  * Tensorflow: Uses various Tensorflow Hub models MobileNet, Inception, ResNet, EfficientNet)
+  * Tensorflow: Uses various Tensorflow Hub models (MobileNet, Inception, ResNet, EfficientNet)
     * Top classification layer is available for fine tuning or further training
 
 Hyperparameters:
@@ -3456,7 +3456,7 @@ Hyperparameters:
     * Batch size, learning rate, optimizer
   * Optimizer-specific parameters
     * Weight decay, beta 1, beta 2, eps, gamma
-    * Slightly different between MXNet and Tensorflow versions
+    * Slightly different between MXNet and  Tensorflow versions
 
 Instance Types:
   * GPU instances for training (ml.p2, p3, g4dn, g5) Multi-GPU  and multi-machine OK.
@@ -3520,6 +3520,7 @@ How to use:
   * Data is sampled randomly
   * Then trained
   * RCF shows up in Kinesis Analytics as well; it can work on streaming data too.
+
 Hyperparameters:
   * Num_trees
     * Increasing reduces noise
@@ -3578,9 +3579,7 @@ Instance Types:
 
 Usage:
   * A topic modeling algorithm (like Neural Topic Model)
-  * Latent Dirichlet Allocation
-  * Another topic modeling algorithm
-    * Not deep learning
+  * Not deep learning
   * Unsupervised
     * The topics themselves are unlabeled; they are just groupings of documents with a shared subset of words
   * Can be used for things other than words
@@ -3614,7 +3613,6 @@ Instance Types:
 
 Usage:
   * Supervised
-  * ﻿﻿K-Nearest-Neighbors
   * ﻿﻿Simple classification or regression algorithm
   * ﻿﻿Classification
     * ﻿﻿Find the K closest points to a sample point and return the most frequent label
@@ -3625,7 +3623,7 @@ Training input:
   * ﻿﻿Train channel contains your data
   * ﻿﻿Test channel emits accuracy or MSE
   * ﻿﻿recordIO-protobuf or CSV training
-    * ﻿﻿First column is label
+    * ﻿﻿First column is the label
   * ﻿﻿File or pipe mode on either
 
 How to use:
@@ -3637,7 +3635,7 @@ How to use:
   * ﻿﻿Build an index for looking up neighbors
   * ﻿﻿Serialize the model
   * Query the model for a given K
-  * k parameter=> Experiment on this till you get diminishing returns on high values of K
+  * k parameter=> Experiment on this until diminishing returns on high values of K
 
 Hyperparameters:
   * ﻿﻿К!
@@ -3779,6 +3777,7 @@ How to use:
   * Entities are hashed and embedded
     * Need sufficiently large hash size
   * Automatically generates negative samples during training by randomly pairing entities and IP's
+
 Hyperparameters:
   * Num_entity_vectors
     * Hash size
@@ -3793,7 +3792,7 @@ Instance Types
   * CPU or GPU
     * GPU recommended
     * MI.p3.2xlarge or higher
-    * Can use multiple GPU's
+    * Can use multiple GPUs
     * Size of CPU instance depends on vector_dim and num_entity_vectors
 
 ##### Reinforcement Learning
@@ -3878,7 +3877,7 @@ Hyperparameters:
 
 Instance Types:
   * No specific guidance given in developer guide
-  * But, it's deep learning - so GPU's are helpful
+  * But, it's deep learning - so GPUs are helpful
   * And we know it supports multiple instances and cores
   * More than one machine, if using CPUs 
 
@@ -3918,7 +3917,7 @@ Instance Types:
 ![IAM Policy Evaulation Logic](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal111621.png)
 
 ##### Amazon Cognito:
-  * Web Identity federation service/identity broker handling interations between application(s)/resource(s) and Web IdPs.
+  * Web Identity federation service/identity broker handling interactions between application(s)/resource(s) and Web IdPs.
   * Capable of synchronizing data from multiple devices by means of SNS to send notifications to all devices associated to a given user upon data deltas (IAM policy can be tethered to user ids possibly).
   * User pool: user based; handling user registration, authentication and account recovery.
     * Compatible IdPs: Facebook, Amazon, Google, Apple, OpenID Connect providers, SAML
@@ -3927,7 +3926,7 @@ Instance Types:
     * default IAM role(s) for authenticated/guest users
 ##### AWS Resource Access Manager (RAM):
   * Share AWS resources that you own with other AWS accounts (within OU or any account)
-  * Aids in avoiding resource duplication by sharing thing such as:
+  * Aids in avoiding resource duplication by sharing things such as:
     * VPC subnets (owner can share +1 subnets with other accounts in the same OU):
       * Allows all resources (EC2, etc.) launched in the same VPC
       * Must be from the same OU
@@ -4016,6 +4015,7 @@ Instance Types:
 | IOPS | Input/Output operations per second |
 | IOT | Internet of Things |
 | KMS | Key Management Service |
+| KNN | K-Nearest Neighbors |
 | KPI | Key Performance Indicator |
 | LSTM | Long Short Term Memory |
 | ML | Machine Learning |
@@ -4024,15 +4024,18 @@ Instance Types:
 | NACL | Network Access Control List |
 | NFS | Network File System |
 | NN | Neural Network |
+| NTM | Neural Topic Model |
 | OCR | Optical Character Recognition |
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
+| OU | Organizational Unit |
 | RCU | Read Capacity Units |
 | RDS | Relational Database Service |
 | RNN | Recurrent Neural Network |
 | S3 | Simple Storage Service |
 | SCT | AWS Schema Conversion Tool |
 | SG | Security Group |
+| SGD | Stochastic Gradient Descent |
 | SMOTE | Synthetic Minority Over-sampling TEchnique |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
