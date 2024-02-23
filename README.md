@@ -455,15 +455,15 @@ graph LR
     * FSx for Windows FileServer
     * FSx for Lustre
     * FSx for Net App ONTAP (NFS, SMB, iSCSI protocols); offering:
-     * Works with most OSs
-     * ONTAP or NAS
-     * Storage shrinks or grows
-     * Compression, dedupe, snapshot replication
-     * Point in time cloning
+      * Works with most OSs
+      * ONTAP or NAS
+      * Storage shrinks or grows
+      * Compression, dedupe, snapshot replication
+      * Point in time cloning
     * FSx for Open ZFS; offering:
-     * Works with most OSs
-     * Snapshots, compression
-     * Point in time cloning
+      * Works with most OSs
+      * Snapshots, compression
+      * Point in time cloning
 
 ##### Amazon FSx for Windows:
   * Fully managed Windows file system share drive
