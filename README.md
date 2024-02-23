@@ -3989,6 +3989,8 @@ Instance Types:
 
 | Acronym  | Definition |
 | ------------- | ------------- |
+| ACL | Access Control List |
+| AMI | Amazon Machine Image |
 | AOF | Append-only file |
 | ASR | Automatic Speech Recognition |
 | AZ | Availability Zones |
@@ -4022,8 +4024,10 @@ Instance Types:
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
 | NACL | Network Access Control List |
+| NAS | Network-Attached Storage |
 | NFS | Network File System |
 | NN | Neural Network |
+| NTFS | New Technology File System |
 | NTM | Neural Topic Model |
 | OCR | Optical Character Recognition |
 | OLAP | Online Analytical Processing |
@@ -4037,6 +4041,7 @@ Instance Types:
 | SG | Security Group |
 | SGD | Stochastic Gradient Descent |
 | SMOTE | Synthetic Minority Over-sampling TEchnique |
+| SMB | Server Message Block |
 | SNS | Simple Notification Service |
 | SQS | Simple Queue Service |
 | SSD | Solid State Drive |
