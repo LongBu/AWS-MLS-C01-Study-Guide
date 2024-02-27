@@ -4034,6 +4034,7 @@ Instance Types:
 | OLTP | Online Transaction Processing |
 | OU | Organizational Unit |
 | RCU | Read Capacity Units |
+| RDD | Resiliant Distributed Dataset |
 | RDS | Relational Database Service |
 | RNN | Recurrent Neural Network |
 | S3 | Simple Storage Service |
