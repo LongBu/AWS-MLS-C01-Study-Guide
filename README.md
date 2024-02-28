@@ -4037,6 +4037,7 @@ Instance Types:
 | RDD | Resiliant Distributed Dataset |
 | RDS | Relational Database Service |
 | RNN | Recurrent Neural Network |
+| RTSP | Real-Time Streaming Protocol |
 | S3 | Simple Storage Service |
 | SCT | AWS Schema Conversion Tool |
 | SG | Security Group |
