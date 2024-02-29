@@ -695,7 +695,7 @@ graph LR
       * coordinates distribution of data and tasks
       * manages health-long running process
     * Core Node:
-      * Hosts HDFS data and runs tasks and store data-long running process
+      * Hosts HDFS data and runs tasks and stores data-long running process
       * can spin up/down as needed
     * Task Node (optional):
       * only to run tasks-usually Spot Instances are a best option
@@ -713,7 +713,7 @@ graph LR
   * Connect to the master node through an EC2 instance and run jobs from the terminal or via ordered steps submitted via the console
   * Instance Type(s) selection
     * Master node:
-      * m4.large if < 50 nodes, m4 .xlarge if > 50 nodes
+      * m4.large if < 50 nodes, m4.xlarge if > 50 nodes
     * Core & task nodes:
       * m4.large is usually good
       * If cluster waits a lot on external dependencies (i.e. a web crawler), t2.medium
@@ -758,7 +758,7 @@ graph LR
   * Able to use multiple Notebooks to share the multi-tenant EMR clusters
   * Hosted inside a VPC
   * Accessed only via AWS console
-  * build Apache Spark Apps and run queries against the cluter (python, pyspark, spark sql, spark r, scala, andor anaconda based open source graphical libs)
+  * build Apache Spark Apps and run queries against the cluster (python, pyspark, spark sql, spark r, scala, and/or anaconda based open source graphical libs)
 
 ##### Deep Learning on EC2 / EMR
   * EMR supports Apache MXNet and GPU instance types
@@ -785,12 +785,12 @@ graph LR
 ##### EMR Security
   * IAM policies: can be combined with tagging to control access on a cluster-by-cluster basis 
   * Kerberos
-  * SSH can use kerboros or EC2 key pairs for client authentication
+  * SSH can use kerberos or EC2 key pairs for client authentication
   * IAM roles:
     * Every cluster in EMR must have a service role and a role for EC2 instance profile(s).  These roles, attached via policies, will provide permission(s) to interact with other AWS Services
     * If a cluster uses automatic scaling, an autoscaling role is necessary
     * Service linked roles can be used if service for EMR has lost ability to clean up EC2 resources
-    * IAM roles can also be sued for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
+    * IAM roles can also be used for EMRFS requests to S3 to control user access to files with in EMR based on users, groups, or location(s) within S3
   * Security configurations may be specified for Lake Formation (JSON)
   * Native integration with Apache Ranger to provide security for Hive data metastore and Hive instance(s) on EMR
     * For data security on Hadoop/Hive
@@ -804,14 +804,14 @@ graph LR
     * Service role (IAM/IAM Identity Center)
     * S3 bucket
   * Within the studio instance, create workspaces.  The workspace will need to create/attach an EMR cluster
-  * A notebook must select a kernel at initialization (relative to the technology stack one is using)
-  * Good practice delete your cluster if not using so it's not to be billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for them
+  * A notebook must select a kernel at initialization (relative to the technology stack being used)
+  * Good practice delete your cluster if not using so it's not billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for it
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
     * upper limit of 5 minutes as it is serverless
-    * Utilizes Python (PySpark) or Scala (Spark) scripts, but run on serverless Spark platform
-    * Targets: S3, JDBC (RDS, Redshift), or in Glue Data Catalog
+    * Utilizes Python (PySpark) or Scala (Spark) scripts, but runs on serverless Spark platform
+    * Targets: S3, JDBC (RDS, Redshift), or Glue Data Catalog
     * Jobs scheduled via Glue Scheduler
     * Jobs triggered by events=>Glue Triggers
     * Transformations:
@@ -831,10 +831,10 @@ graph LR
     * Can issue crawlers throughout a DP to be able to know what data is where in the flow
     * Metadata repo for all tables with versioned schemas and automated schema inference
   * Glue Crawlers go through your data to infer schemas and partitions (s3 based on organization \[see S3 Data Partitioning])
-    * formats supported: ]SON, Parquet, CSV, relational store
+    * formats supported: JSON, Parquet, CSV, relational store
     * Crawlers work for: S3, Amazon Redshift, Amazon RDS
     * Can be schedule or On-Demand
-    * Need an IAM role / credentials to access the data stores
+    * Need an IAM role / credentials to access the data store(s)
   * Glue Job bookmarks prevent reprocessing old data
   * Glue Databrew-clean/normalize data using pre-built transformation
   * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
@@ -850,7 +850,7 @@ graph LR
   * Can run 100,000s of computing batch jobs
   * You submit/schedule batch jobs and AWS Batch handles it
     * Can be scheduled using CloudWatch Events 
-    * Jobs can also be orchestrated using step functions 
+    * Can also be orchestrated using step functions 
   * Provisions optimal amount/type of compute/memory based on volume and requirements
   * Batch jobs are defined as *docker images and run on ECS*
   * Helpful for cost optimization and focusing less on infrastructure
@@ -879,8 +879,7 @@ graph LR
   * Categorical
     * yes/no, categories
     * can assign numbers to categories in order to represent them, though the numbers don't possess any real meaning
-  * Ordinal
-    * mix of numerical and categorical types (eg scale of 1 to 5), where 1 is worse than 2 and so forth and 5 being best
+  * Ordinal: mix of numerical and categorical types (eg scale of 1 to 5), where 1 is worse than 2 and so forth with 5 being best
 
 ### Libraries to know at a high level:
   * Pandas:
