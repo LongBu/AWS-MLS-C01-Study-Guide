@@ -689,45 +689,49 @@ graph LR
   * Takes care of provisioning and configuration
   * Autoscaling and integrated with Spot Instances for cost savings
   * Use cases: Data processing, ML, Web Indexing, BigData
-  * Node types: 
-    * Master Node:
-      * single EC2 instance to manage the cluster
-      * coordinates distribution of data and tasks
-      * manages health-long running process
-    * Core Node:
-      * Hosts HDFS data and runs tasks and stores data-long running process
-      * can spin up/down as needed
-    * Task Node (optional):
-      * only to run tasks-usually Spot Instances are a best option
-      * no hosted data, so no risk of data loss upon removal
-      * can spin up/down as needed
   * Can have long-running cluster or transient (temporary) cluster
-  * Purchasing options: 
-    * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
-    * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
-    * Spot instances: 
-      * cheaper, can be terminated, less reliable
-      * Good choice for task nodes (temporary capacity)
-      * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
   * At installation of the cluster you need to select frameworks and applications to install
   * Connect to the master node through an EC2 instance and run jobs from the terminal or via ordered steps submitted via the console
-  * Instance Type(s) selection
-    * Master node:
-      * m4.large if < 50 nodes, m4.xlarge if > 50 nodes
-    * Core & task nodes:
-      * m4.large is usually good
-      * If cluster waits a lot on external dependencies (i.e. a web crawler), t2.medium
-      * Improved performance: m4.xlarge
-      * Computation-intensive applications: high CPU instances
-      * Database, memory-caching applications: high memory instances
-      * Network / CPU-intensive (NLP, ML) - cluster computer instances
-      * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
-  * EMR promises
-    * EMR charges by the hour
-      * Plus EC2 charges
-    * Provisions new nodes if a core node fails
-    * Can add and remove tasks nodes on the fly
-    * Can resize a running cluster's core nodes
+
+##### EMR Node types
+  * Master Node:
+    * single EC2 instance to manage the cluster
+    * coordinates distribution of data and tasks
+    * manages health-long running process
+  * Core Node:
+    * Hosts HDFS data and runs tasks and stores data-long running process
+    * can spin up/down as needed
+  * Task Node (optional):
+    * only to run tasks-usually Spot Instances are a best option
+    * no hosted data, so no risk of data loss upon removal
+    * can spin up/down as needed
+
+##### EMR Purchasing options: 
+  * On-demand: reliable, predictable, won't be terminated, good for long running cluster(s) \[though you need to manually delete]
+  * Reserved: cost savings (EMR will use if available), good for long running cluster(s) \[though you need to manually delete]
+  * Spot instances: 
+    * cheaper, can be terminated, less reliable
+    * Good choice for task nodes (temporary capacity)
+    * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
+   
+##### EMR Instance Type(s) selection
+  * Master node:
+    * m4.large if < 50 nodes, m4.xlarge if > 50 nodes
+  * Core & task nodes:
+    * m4.large is usually good
+    * If cluster waits a lot on external dependencies (i.e. a web crawler), t2.medium
+    * Improved performance: m4.xlarge
+    * Computation-intensive applications: high CPU instances
+    * Database, memory-caching applications: high memory instances
+    * Network / CPU-intensive (NLP, ML) - cluster computer instances
+    * Accelerated Computing / AI - GPU instances (g3, g4, p2, p3)
+
+##### EMR promises
+  * EMR charges by the hour
+    * Plus EC2 charges
+  * Provisions new nodes if a core node fails
+  * Can add and remove tasks nodes on the fly
+  * Can resize a running cluster's core nodes
 
 ##### EMR AWS Integration
   * Amazon EC2 for the instances that comprise the nodes in the  cluster
