@@ -203,7 +203,7 @@ sequenceDiagram
   * Service to allow objects/files within a virtual "directory"
   * Bucket names must be *globally unique*
   * Buckets exist within AWS regions
-  * Not a file system, and if a file system is needed, EBS/EFS/FSx should be considered
+  * Not a file system, though if a file system is needed, EBS/EFS/FSx should be considered
   * Not mountable as is a NFS
   * Supports any file format
   * Name formalities:
@@ -233,19 +233,18 @@ sequenceDiagram
   * Types
     * User Based: governed by IAM policies (eg: which user,  within a given AWS account, via IAM should be allowed to access resources) 
     * Resource Based:
-      * Bucket Policies (JSON based statements)
-        * Governing such things as:
-          * (Blocking) public access \[setting was created to prevent company data leaks, and can be set at the account level to ensure of inheritance]
-          * Forced encryption at upload (necessitates encryption headers).  Can be alternatively be done by "default encryption" via S3, though Bucket Policies are evaluated first
-          * Cross account access
-        * Bucket policy statement attributes 
-          * SID: statement id
-          * Resources: per S3, either buckets or objects
-          * Effect: Allow or Deny
-          * Actions: The set of api action to apply the effect to
-          * Principal: User/Account the policy applies to
-      * Object Access Control List (ACL) - finer control of individual objects (eg: block public access)
-      * Bucket Access Control List (ACL) - control at the bucket level (eg: block public access)
+      * Bucket Policies (JSON based statements) governing such things as:
+        * (Blocking) public access \[setting was created to prevent company data leaks, and can be set at the account level to ensure of inheritance]
+        * Forced encryption at upload (necessitates encryption headers).  Can alternatively be done by "default encryption" via S3, though Bucket Policies are evaluated first
+        * Cross account access
+      * Bucket policy statement attributes 
+        * SID: statement id
+        * Resources: per S3, either buckets or objects
+        * Effect: Allow or Deny
+        * Actions: The set of api action(s) to apply the effect to
+        * Principal: User/Account the policy applies to
+    * Object Access Control List (ACL) - finer control of individual objects (eg: block public access)
+    * Bucket Access Control List (ACL) - control at the bucket level (eg: block public access)
   * S3 Object(s) are owned by the AWS account that uploaded it, not the bucket owner
   * Settings to block public access to bucket(s)/object(s) can be set at the account level
   * S3 is accessible to other AWS resources via:
@@ -306,7 +305,7 @@ sequenceDiagram
   * Good for archiving/backup
   * Glacier Instant Retrieval is a good option for accessing data once a quarter
   * Harness Glacier Vault Lock (WORM) to no longer allow future edits, which is great for compliance and data retention
-  * Glacier or Deep Archive are good for infrequentyly accessed objects that don't need immediate access
+  * Glacier or Deep Archive are good for infrequently accessed objects that don't need immediate access
 
 ###### S3 Lifecycle Transitions (can also be conducted manually via AWS Console)
 ```mermaid
@@ -328,7 +327,7 @@ graph LR
     E --> F
 ```
 ###### S3 Lifecycle Rules
-  * Transition Actions: rules for when to transtion objects between s3 classes (see S3 storage classed above)
+  * Transition Actions: rules for when to transtion objects between s3 classes (see S3 storage classes above)
   * Expiration Actions: rules for when to delete an object after some period of time
     * Good for deleting log files, deleting old versions of files (if versioning enabled), or incomplete multi-part uploads
   * Rules can be created for object prefixes (addresses) or associated object tags
@@ -362,7 +361,7 @@ graph LR
   * Utilizes a client library such as Amazon S3 Encryption Client
   * Encrypted prior to sending to S3 and must be decrypted by clients when retrieving from S3 conducted over HTTP/S
   * Utilizes a fully managed external customer key external to AWS
-  * S3 objects useing SSE-C not able to be replicated between buckets
+  * S3 objects using SSE-C unable to be replicated between buckets
 
 ###### Encryption in transit (SSL/TLS) vs none
   * HTTP Endpoint - non-encrypted
@@ -421,7 +420,7 @@ graph LR
   * Connected via ENI
   * 10GB+ throughput
   * *Performance mode* (set at creation time): 
-    * General purpose (default); latency-sensitive; use cases (web server, CMS); 
+    * General purpose (default); latency-sensitive; use cases (web server, CMS)
     * Max I/O-higher latency, throughput, highly parallel (big data, media processing)
   * *Throughput mode*: 
     * Bursting (1 TB = 50 MiB/s and burst of up to 100 MiB/s)
@@ -667,7 +666,7 @@ graph LR
   * retention between 1 hr to 10 years
 
 ##### MQTT
-  * An IOT Standard messaging protocol
+  * An IoT Standard messaging protocol
   * Sensor data transferred to your model
   * The AWS loT Device SDK can connect via MQTT
 
@@ -804,11 +803,11 @@ graph LR
   * Requires:
     * VPC access
     * 1-5 subnets
-    * Security group(s)
+    * SG(s)
     * Service role (IAM/IAM Identity Center)
     * S3 bucket
   * Within the studio instance, create workspaces.  The workspace will need to create/attach an EMR cluster
-  * A notebook must select a kernel at initialization (relative to the technology stack being used)
+  * A notebook must select a kernel at initialization (relative to the tech stack used)
   * Good practice delete your cluster if not using so it's not billed, though good to have a safeguard of the cluster shutting down, automatically to avoid paying for it
   
 #### AWS Glue:
@@ -1005,15 +1004,14 @@ graph LR
   * If not many rows contain missing Data
     * dropping those rows doesn't bias your data
     * you don't have a lot of time
-    * maybe it's a reasonable thing to do?
-  * But, it's never going to be the right answer for the "best" approach.
+  * Will never be the right answer for the "best" approach.
   * Almost anything is better. Can you substitute another similar field perhaps? (i.e., review summary vs. full text)
 ##### KNN: Find K "nearest" (most similar) rows and average their values
   * Assumes numerical data, not categorical
   * There are ways to handle categorical data (Hamming distance)
   * KNN is a good method to produce decent imputation results for missing data
 ##### Deep Learning
-  * Build a machine learning model to impute data for your machine learning model!
+  * Build a machine learning model to impute data for your other machine learning model(s)!
   * Works well for categorical data, though complicated.
   * One of the better methods for missing data to produce decent results
 ##### Regression
@@ -2232,26 +2230,27 @@ Personalize Pricing
     * Price, promotions, economic performance, etc.
     * Can combine with associated data to find relationships
   * Based on "dataset groups," "predictors," and "forecasts.'
-  * Forecast algorithms
-    * CNN-QR ($$$)
-      * Convolutional Neural Network - Quantile Regression
-      * Best for large datasets with hundreds of time series
-      * Accepts related historical time series data & metadata
-    * DeepAR+ ($$$)
-      * Recurrent Neural Network
-      * Best for large datasets
-      * Accepts related forward-looking time series & metadata
-    * Prophet ($$)
-      * Additive model with non-linear trends and seasonality
-    * NPTS ($)
-      * Non-Parametric Time Series
-      * Good for sparse data. Has variants for seasonal / climatological forecasts
-    * ARIMA ($)
-      * Autoregressive integrated moving average
-      * Commonly used ter simple datasets (<100 time series)
-    * ETS ($)
-      * Exponential Smoothing
-      * Commonly used for simple datasets (<100 time series)
+
+###### Amazon Forecast algorithms
+  * CNN-QR ($$$)
+    * Convolutional Neural Network - Quantile Regression
+    * Best for large datasets with hundreds of time series
+    * Accepts related historical time series data & metadata
+  * DeepAR+ ($$$)
+    * Recurrent Neural Network - AutoRegressive recurrent network
+    * Best for large datasets
+    * Accepts related forward-looking time series & metadata
+  * Prophet ($$)
+    * Additive model with non-linear trends and seasonality
+  * NPTS ($)
+    * Non-Parametric Time Series
+    * Good for sparse data. Has variants for seasonal / climatological forecasts
+  * ARIMA ($)
+    * Autoregressive integrated moving average
+    * Commonly used for simple datasets (<100 time series)
+  * ETS ($)
+    * Exponential Smoothing
+    * Commonly used for simple datasets (<100 time series)
 
 ##### Amazon Fraud Detector
   * Upload your own historical fraud data
