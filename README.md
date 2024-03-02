@@ -598,10 +598,14 @@ graph LR
   * Schema discovery
   * IAM permissions to access input(s)/output(s)
   * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
-  * Managed Service for Apache Flink [Formerly Kinesis Data Analytics for Apache Flink or for Java (on a cluster)] : 
+  * Managed Apache Flink [Formerly Kinesis Data Analytics for Apache Flink or for Java (on a cluster)] :
+    * Replacing Kinesis Data Analytics
     * Input: Kinesis Data Stream or Amazon MSK
-    * Output: Sink (S3/Kinesis Data Firehose/Kinesis Data Stream)
-    * Kinesis Data Analytics always used; Flink under the hood
+    * Output: Sink (S3/Kinesis Data Firehose/Kinesis Data Stream), data analysis via data analytics app, or query data stream via queries (studio notebook)
+    * If output is S3, S3 Select available to query the output object(s) data
+    * Managed Apache Flink provides an Apache Flink Dashboard
+    * Managed Apache Flink resultant deployment by Cloud Formation contains a Flink Application (*.jar file based) and the source (Kinesis Data Stream)
+    * Kinesis Data Analytics always used Flink under the hood
     * Now supports Python and Scala
     * Flink is a framework for processing data streams
     * MSAF integrates Flink with AWS
