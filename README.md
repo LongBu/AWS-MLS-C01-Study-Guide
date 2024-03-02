@@ -839,13 +839,33 @@ graph LR
     * Can be schedule or On-Demand
     * Need an IAM role / credentials to access the data store(s)
   * Glue Job bookmarks prevent reprocessing old data
-  * Glue Databrew-clean/normalize data using pre-built transformation
   * Glue Studio-new GUI to create, run, and monitor ETL jobs in Glue
   * Glue Streaming ETL (built on Apache Spark Structured Streaming)-compatible with Kinesis Data Streaming, Kafka, MSK
   * Glue Elastic Views:
     * Combine and replicate data across multiple data stores using SQL (View)
     * No custom code, Glue monitors for changes in the source data, serverless
     * Leverages a "virtual table" (materialized view)
+
+##### AWS Glue Data Brew
+
+  * Allows you to clean, normalize, and translate data without writing any code (ETL)
+  * Reduces ML and analytics data preparation time by up to 80%
+  * +250 ready-made transformations to automate tasks
+  * Filtering anomalies, data conversion, correct invalid values...
+  * Needs access to input via IAM role
+  * Can conduct statistics on data for the sake of analysis
+  * Can find (and remove) missing, invalid, duplicate, and outlier data
+  * Inputs:
+    * File upload
+    * Data lake/data store
+    * Redshift
+    * Aurora
+    * JDBC
+    * AWS Glue Data Catalog
+    * Amazon Appflow
+    * AWS Data Exchange
+    * Snowflake
+
 
 #### AWS Batch:
   * Fully managed (serverless) batch processing at any scale using dynamically launched *EC2 instances (spot or on-demand)* managed by AWS for which you pay
