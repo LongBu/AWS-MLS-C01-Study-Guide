@@ -855,6 +855,7 @@ graph LR
   * Needs access to input via IAM role
   * Can conduct statistics on data for the sake of analysis
   * Can find (and remove) missing, invalid, duplicate, and outlier data
+  * All conducted transformations are recorded into a recipe, from which a glue job might be created
   * Inputs:
     * File upload
     * Data lake/data store
