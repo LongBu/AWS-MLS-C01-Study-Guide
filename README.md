@@ -1721,7 +1721,8 @@ Linear activation function (eg: y=x)
   * ﻿﻿Can't do backpropagation
 
 ![Linear activation function](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*tldIgyDQWqm-sMwP7m3Bww.png)
- 
+
+ 
 Binary step function
   * ﻿﻿It's on or off
   * ﻿﻿Can't handle multiple classification - it's binary after all
@@ -1737,7 +1738,7 @@ Non-linear activation functions
 Sigmoid / Logistic / TanH
   * ﻿﻿Nice & smooth
   * ﻿﻿Scales everything from 0-1  (Sigmoid AKA Logistic) or -1 to 1 (tanh / hyperbolic tangent)
-  * But: changes slowly for high or low values
+  * However, changes slowly for high or low values
     * The "Vanishing Gradient" problem exists for both when getting toward extremes in +/-, output changes very slowly, where numerical precision can become an issue
       * When the slope of the learning curve approaches zero, things can get stuck
       * We end up working with very small numbers that slow down training, or even introduce numerical errors
@@ -1769,13 +1770,13 @@ Rectified Linear Unit (ReLU)
     * ReLU - solution to sigmoid and tanh 
   * ﻿﻿Very popular choice
   * ﻿﻿Easy & fast to compute
-  * ﻿﻿But, when inputs are zero or negative, we have a linear function and all of its problems
+  * ﻿﻿However, when inputs are zero or negative, we have a linear function and all of it's associated problems
     * ﻿﻿The "Dying ReLU problem", where input is <= 0
 
 ![ReLU](https://machinelearningmastery.com/wp-content/uploads/2018/10/Line-Plot-of-Rectified-Linear-Activation-for-Negative-and-Positive-Inputs.png)
 
 Leaky ReLU
-* Solves "dying ReLU" by introducing a negative slope below 0 (usually not as steep as this)
+* Solves "dying ReLU" by introducing a negative slope below 0
 
 ![Leaky ReLU](https://production-media.paperswithcode.com/methods/Screen_Shot_2020-05-25_at_3.09.45_PM.png)
 
@@ -1783,11 +1784,11 @@ Parametric ReLU (PReLU)
   * ﻿﻿ReLU, but the slope in the negative part is learned via backpropagation
   * ﻿﻿Complicated and YMMV (your mileage may vary)
  
+
 Other ReLU variants
   * ﻿﻿Exponential Linear Unit (ELU)
   * ﻿﻿Swish
     * ﻿﻿From Google, performs really well
-    * ﻿﻿But it's from Google, not Amazon...
     * ﻿﻿Mostly a benefit with very deep networks (40+ layers)
   * ﻿﻿Maxout
     * ﻿﻿Outputs the max of the inputs
@@ -1805,10 +1806,10 @@ How to choose an activation function
   * ﻿﻿RNN's do well with Tanh
   * ﻿﻿For everything else
     * ﻿﻿Start with ReLU
-    * ﻿﻿If you need to do better, try Leaky ReLU
+    * ﻿﻿If performance needs to do better, try Leaky ReLU
     * ﻿﻿Last resort: PReLU, Maxout
     * ﻿﻿Swish for really deep networks
-  * Leaky ReLU or PReLU are the answer to dying ReLU, while the latter is computationally expensive slope calculations along with the weights in said NN
+  * Leaky ReLU or PReLU are the answer to dying ReLU, while the latter has computationally expensive slope calculations along with the weights in said NN
 
 ### Evaluate machine learning models.
   * Avoid overfitting/underfitting (detect and handle bias and variance)
@@ -1838,8 +1839,7 @@ How to choose an activation function
       * Our old friend standard deviation provides a principled way to classify outliers.
       * Find data points more than some multiple of a standard deviation in your training data.
       * What multiple? Use common sense.
-      * Remember AWS's Random Cut Forest algorithm creeps into many of its services - it is made for outlier detection
-        * Found within QuickSight, Kinesis Analytics, SageMaker, and more
+      * Remember AWS's Random Cut Forest algorithm creeps into many of its services - it is made for outlier detection, eg: QuickSight, Kinesis Analytics, SageMaker, and more
 
     * Binning
       * Bucket observations together based on ranges of values.
@@ -1855,7 +1855,7 @@ How to choose an activation function
       * Applying some function to a feature to make it better suited for training
       * Feature data with an exponential trend may benefit from a logarithmic transform
       * Example: YouTube recommendations
-        * A numeric feature x is also represented by x?and VX
+        * A numeric feature x is also represented by x^.5 and X^2
         * This allows learning of super and sub-linear functions
 
     * Encoding
@@ -1874,7 +1874,7 @@ How to choose an activation function
       * Remember to scale your results back up
     * Shuffling
       * Many algorithms benefit from shuffling their training data
-      * Otherwise they may learn from residual signals in the training data resulting from the order in which they were collected
+      * Otherwise they may learn from residual signals in the training data resulting from the order in which it was collected
   * Binary confusion matrix:
     | | Actual Yes | Actual No |
     | --- | --- | ---|
@@ -1940,8 +1940,8 @@ How to choose an activation function
 ##### AWS CloudTrail:
   * Service that monitors and records account activity across AWS infrastructure (history of events/API calls)
   * Provides governance, compliance and audit for your AWS account:
-   * Enabled by default
-   * Trail can be applied to all regions (default) or a single region
+    * Enabled by default
+    * Trail can be applied to all regions (default) or a single region
 
 ##### CloudTrail Events:
   * Able to be separated into read/write events
@@ -1949,12 +1949,12 @@ How to choose an activation function
   * Data events (default off due to volume, though can be turned on to trigger/invoke)
   
 ##### CloudTrail Insights:
-  * Used to detect unusual activity in account (if enabled):
+  * Used to detect unusual activity in an account (if enabled):
    * Inaccurate resource provisioning
    * Hitting service limits
    * Bursts of AWS IAM actions
    * Gaps in periodic maintenance
-   * Analyzes normal manangement events to create a baseline to then continuosly analyze write events to detect unusual patterns (S3/CloudTrail console/EventBridge events)
+   * Analyzes normal management events to create a baseline to then continuosly analyze write events to detect unusual patterns (S3/CloudTrail console/EventBridge events)
    * Cloudtrail Events are stored for 90 days, though can be sent to S3 and analyzed by Athena
 
 ##### Amazon EventBridge (aka Cloudwatch Events):
@@ -2018,7 +2018,7 @@ How to choose an activation function
 ##### Amazon Kendra:
   * Intelligent enterprise document search service powered by ML that allows users to search across different content repositories with built-in connectors.  Learns from user interaction/feedback for incremental learning.
   * Can return precise answers or pointers to document(s) from natural language (eg: "Where is the IT support desk?" "How do I connect to my VPN?")
-  * Allows discovery of information spanning all connected data allocated in AWS (given permission) and any 3rd party connected data (salesforce, ServiceNow, SharePoint, Intranet, sharing services (JDBC, S3), DBs, Microsoft One Drive, etc.) into one searchable repository
+  * Allows discovery of information spanning all connected data allocated in AWS (given permission) and any 3rd party connected data (salesforce, ServiceNow, SharePoint, Intranet, sharing services \[JDBC, S3], DBs, Microsoft One Drive, etc.) into one searchable repository
   * Can use other services in AWS to preprocess content to text that is searchable/indexable
   * Relevance tuning - boost strength of document freshness, view counts, etc.
 
@@ -2030,7 +2030,8 @@ How to choose an activation function
     * ﻿﻿Lambda functions are invoked to fulfill the intent
     * ﻿﻿Slots specify extra information needed by the intent such as pizza size, toppings, crust type, when to deliver, etc.  Note: slot is the variable, while the slot value is the value 
   * ﻿﻿Can deploy to AWS Mobile SDK, Facebook Messenger, Slack, and Twilio
- 
+
+ 
 Amazon Lex Automated Chatbot Designer
   * ﻿﻿You provide existing conversation transcripts
   * ﻿﻿Lex applies NLP & deep learning, removing overlaps & ambiguity
@@ -2175,13 +2176,10 @@ Personalize Pricing
     * Generate metadata for media assets to create full scaleable architecture
   * Can remove PII using redaction
   * Supports automatic language identification for multi-lingual audio
-  * Speaker Identification
-    * Specify number of speakers
+  * Speaker Identification=>Specify number of speakers
   * Channel Identification
     * eg: two callers could be transcribed separately
     * Merging based on timing of "utterances"
-  * Automatic Language Identification
-    * You don't have to specify a language; it can detect the dominant one spoken.
   * Custom Vocabularies
     * Vocabulary Lists just a list of special words - names, acronyms)
     * Vocabulary Tables (can include "SoundsLike", "IPA", and "DisplayAs")
