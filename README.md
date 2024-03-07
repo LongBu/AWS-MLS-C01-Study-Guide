@@ -4017,8 +4017,10 @@ Instance Types:
 | Acronym  | Definition |
 | ------------- | ------------- |
 | ACL | Access Control List |
+| ALS | Alternating Least Squares |
 | AMI | Amazon Machine Image |
 | AOF | Append-only file |
+| AR | AutoRegressive |
 | ASR | Automatic Speech Recognition |
 | AZ | Availability Zones |
 | BERT | Bi-directional Encoder Representations from Transformers |
@@ -4060,12 +4062,16 @@ Instance Types:
 | OLAP | Online Analytical Processing |
 | OLTP | Online Transaction Processing |
 | OU | Organizational Unit |
+| PHI | Protected Health Information |
+| PII | Personal Identifiable Information |
+| QR | Quantile Regression |
 | RCU | Read Capacity Units |
 | RDD | Resiliant Distributed Dataset |
 | RDS | Relational Database Service |
 | RNN | Recurrent Neural Network |
 | RTSP | Real-Time Streaming Protocol |
 | S3 | Simple Storage Service |
+| SAML | Security Assertion Markup Language |
 | SCT | AWS Schema Conversion Tool |
 | SG | Security Group |
 | SGD | Stochastic Gradient Descent |
