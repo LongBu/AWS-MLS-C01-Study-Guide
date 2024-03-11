@@ -3044,7 +3044,7 @@ Protecting your Data at Rest in SageMaker
 
 #### SageMaker Canvas
   * No-code machine learning for business analysts
-  * Need to set up SageMaker domain=>Launch Application=>Canvas
+  * Need to set up/(manually updated) SageMaker domain=>Launch Application=>Canvas
   * Import csv data (csv only for now) into the application from S3, select a column to predict, create the model, build it, and make predictions (import files to generate predictions)
     * Quickbuild-shows an overview of the attribute weight per predictions and scoring of predicted versus actual results
     * Standard build (standard able to be shared)
@@ -3058,7 +3058,6 @@ Protecting your Data at Rest in SageMaker
   * Local file uploading must be configured "by your IT administrator."
     * Set up an S3 bucket with appropriate CORS permissions
   * Can integrate with Okta SSO
-  * Canvas lives within a SageMaker Domain that must be manually updated
   * Import from Redshift can be set up
   * Time series forecasting must be enabled via IAM role associated with SM canvas users
   * Can run within a VPC
