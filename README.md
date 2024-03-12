@@ -2130,10 +2130,10 @@ Personalize Security
   * Data not shared across accounts
   * Data may be encrypted with KMS
   * Data may be encrypted at rest in your region (SSE-S3)
-  * Data in transit between your account and Amazons internal systems encrypted with TLS 1.2
+  * Data in transit between your account and Amazon's internal systems encrypted with TLS 1.2
   * Access control via IAM
   * Data in S3 must have appropriate bucket policy for Amazon Personalize to process
-  * monitoring & logging via CloudWatch and
+  * Monitoring & logging via CloudWatch and CloudTrail
 
 Personalize Pricing
   * Data ingestion: per-GB
