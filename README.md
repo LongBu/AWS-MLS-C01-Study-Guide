@@ -1096,7 +1096,7 @@ graph LR
   * Discrete samples taken over a period of time
   * trends
     * slope slant
-    * can be seasonal, can superimpose curves vs the trends to decipher if this pattern is exhibited in month to month variations
+    * can be seasonal, can superimpose curves vs the trends to decipher if a pattern is exhibited in variations (eg: month to month)
     * can both be seasonal and have an overall trend, too.  To get the overall trend, subtract out noise and seasonality 
   * Noise: random variations
     * Additive model
