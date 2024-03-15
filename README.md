@@ -3928,7 +3928,7 @@ Instance Types:
 
 #####  IAM Access Analyzer: service to identify unintended access  to resources in an organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity to avoid security risk(s)
 
-##### IAM Policy Evaulation Logic:
+##### IAM Policy Evalation Logic:
 ![IAM Policy Evaulation Logic](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal111621.png)
 
 ##### Amazon Cognito:
