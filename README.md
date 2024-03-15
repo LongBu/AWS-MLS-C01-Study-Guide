@@ -999,21 +999,20 @@ graph LR
 
 *new_data = scaler.fit_transform(input)*
 
-### General flow for analyzing data import at first glance (note consider merging this with the next topic):
+### General flow for analyzing imported data to sanitizing and preparing for modeling:
   * import data
   * head()
   * Does the data have column names?
+  * Identify and handle missing data, corrupt data, stop words, etc.
+    * Labeled data (recognizing when you have enough labeled data and identifying mitigation\[s])
+    * strategies [Data labeling tools (Mechanical Turk, manual labor)])
   * Are certain rows attributes of the data type or na values?
     * Can drop rows potentially (*.dropna(inplace=True), though this might introduce bias if the missing values aren't evenly distributed
   * describe()=> are counts of all the columns equal?
+  * Formatting, normalizing, augmenting, and scaling data
   * If remapping the data, it is a good idea to check the mean/std of attributes from/to via describe()
   * To convert to the numpy array=>*.values()
 
-### Sanitize and prepare data for modeling
-  * Identify and handle missing data, corrupt data, stop words, etc.
-  * Formatting, normalizing, augmenting, and scaling data
-  * Labeled data (recognizing when you have enough labeled data and identifying mitigation
-  * strategies [Data labeling tools (Mechanical Turk, manual labor)])
 
 #### Imputing missing data
 ##### Mean Replacement 
