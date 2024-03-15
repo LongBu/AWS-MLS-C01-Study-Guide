@@ -1414,7 +1414,6 @@ graph LR
       * Batch sizes that are larger can increase chances of becoming stuck in a local minima
       * Higher learning rates run the risk of overshooting an optimal solution
       * Generally good to pair a small batch size and a small learning rate
-    * Regularization techniques are intended to prevent overfitting.
     * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * Specific to NN:
       * Dropout: Remove some neurons at each Epoch During training, which forces the model to learn/spread out learning among other neurons Preventing individual neurons from overfitting specific data point(s)
