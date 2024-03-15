@@ -983,16 +983,15 @@ graph LR
     B --> E
 ```
 ### Zeppelin + Spark 
-  * Can run Spark code interactively (like you can in the Spark shell)
-    * This speeds up your development cycle
-    * And allows easy experimentation and exploration of your big data
+  * Can run Spark code interactively (like you can in the Spark shell) via browser (Notebook)
+    * Speeds up your development cycle
+    * Allows easy experimentation and exploration of your big data
   * Can execute SQL queries directly against SparkSQL
   * Query results may be visualized in charts and graphs
   * Makes Spark feel more like a data science tool!
-  * Conducted via browser (Notebook)
 
 ### Jupyter Notebooks
-  * runs in browser(s) to communicate with the python environment (eg: anaconda) server
+  * runs in browser to communicate with the python environment (eg: anaconda) server
  
 *from sklearn import preprocessing*
 
