@@ -1068,17 +1068,17 @@ graph LR
 #### Adjusting thresholds
   * When making predictions about a classification (fraud / not fraud), you have some sort of threshold of probability at which point you'll flag something as the positive case (fraud)
   * If you have too many false positives, one way to fix that is to simply increase that threshold.
-    * Reduces false positives but, could result in more false negatives
+    * Reduces false positives but; could result in more false negatives
 
 ### Perform feature engineering
 
-  * Applying your knowledge of the data - and the model you're using - to identify and extract useful features to train your model with.  * 
+  * Applying your knowledge of the data - and the model you're using - to identify and extract useful features to train your model with.
   * Analyze/evaluate feature engineering concepts (binning, tokenization, outliers, synthetic features, 1 hot encoding, reducing dimensionality of data) to understand what features one should use
     * Do I need to transform these features in some way?
     * How do I handle missing data?
     * Should I create new features from the existing ones?
     * You can't just throw in raw data and expect good results
-    * This is the art of machine learning; where expertise is applied
+    * Expertise in the applied field helps
     * Trim down feature data or create and combine new ones
     * Normalize or encode data
     * Handle missing data
@@ -1125,8 +1125,7 @@ graph LR
     * Parsing documents into a bag of words can be most of the work
     * Words can be represented as a hash value (number) for efficiency
     * What about synonyms? Various tenses? Abbreviations? Capitalizations? Misspellings?
-  * Doing this at scale is the hard part
-    * That's where Spark comes in!
+  * Doing this at scale is the hard part (Spark can help here)
  
 #### Unigrams, bigrams, etc.
   * An extension of TF-IDF is to not only compute relevancy for individual words (terms) but also for bi-grams or, more generally, n-grams.
