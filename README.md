@@ -1106,21 +1106,17 @@ graph LR
      
 ### NLP
 
-####  TF-IDF
-  * Stands for Term Frequency and Inverse Document Frequency
+#### Term Frequency and Inverse Document Frequency ( TF-IDF)
   * Important data for search - figures out what terms are most relevant for a document
     * Compute TF-IDF for every word/n-gram in a corpus
     * For a given search word/n-gram, sort the documents by their TF-IDF score accordingly 
     * Display the results
-  * Term Frequency just measures how often a word occurs in a document
+  * Term Frequency just measures how often/relevancy of a word occurs in a document
     * A word that occurs frequently is probably important to that document's meaning
-* Document Frequency is how often a word occurs in an entire set of documents, i.e., all of Wikipedia or every web page
-  * This tells us about common words that just appear everywhere no matter what the topic, like "a", "the", "and", etc.
-* So a measure of the relevancy of a word to a document might be:
-  * Term Frequency/Document Frequency
-  * Or: Term Frequency * Inverse Document Frequency
-* That is, take how often the word appears in a document, over how often it just appears everywhere. That gives you a measure of how important and unique this word is for this document
-  * We actually use the log of the IDF, since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
+  * Document Frequency is how often a word occurs in an entire set of documents, i.e., all of Wikipedia or every web page
+    * This tells us about common words that just appear everywhere no matter what the topic, like "a", "the", "and", etc.
+  * Equal to: Term Frequency/Document Frequency or Term Frequency * Inverse Document Frequency
+    * We actually use the log of the IDF, since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
   * TF-IDF assumes a document is just a "bag of words"
     * Parsing documents into a bag of words can be most of the work
     * Words can be represented as a hash value (number) for efficiency
