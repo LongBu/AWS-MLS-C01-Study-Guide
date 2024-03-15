@@ -3853,7 +3853,7 @@ Instance Types
     * States are still described as s and s'
     * State transition functions are described as Pa (s, s')
     * Our "O" values are described as a reward function Ra (s, s')
-  * MDP is a discrete time stochastic control process.
+    * MDP is a discrete time stochastic control process.
   * You can make an intelligent Pac-Man in a few steps:
     * Have it semi-randomly explore different choices of movement (actions) given different conditions (states)
     * Keep track of the reward or penalty associated with each choice for a given state/action (Q) and can propagate rewards and penalties backwards multiple steps for better performance
