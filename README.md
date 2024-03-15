@@ -1112,12 +1112,10 @@ graph LR
     * For a given search word/n-gram, sort the documents by their TF-IDF score accordingly 
     * Display the results
   * Term Frequency just measures how often/relevancy of a word occurs in a document
-    * A word that occurs frequently is probably important to that document's meaning
-  * Document Frequency is how often a word occurs in an entire set of documents, i.e., all of Wikipedia or every web page
-    * This tells us about common words that just appear everywhere no matter what the topic, like "a", "the", "and", etc.
+  * Document Frequency is how often a word occurs in an entire set of documents, i.e., all of Wikipedia or every web page (predicts common words)
   * Equal to: Term Frequency/Document Frequency or Term Frequency * Inverse Document Frequency
-    * We actually use the log of the IDF, since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
-  * TF-IDF assumes a document is just a "bag of words"
+    * We actually use the log of the TF-IDF, since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
+  * TF-IDF assumes a document is a "bag of words"
     * Parsing documents into a bag of words can be most of the work
     * Words can be represented as a hash value (number) for efficiency
     * What about synonyms? Various tenses? Abbreviations? Capitalizations? Misspellings?
