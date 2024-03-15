@@ -1458,7 +1458,7 @@ graph LR
       * Somewhat counter-intuitively:
         * *Smaller batch sizes tend to work their way out of "local minima" more easily*
         * *Batch sizes that are too large can end up getting stuck in the wrong solution*
-        * Random shuffling at each epoch can make this look like very inconsistent results from run to run
+        * Random shuffling at each epoch can make for very inconsistent results from run to run
     * NN activation functions
   * Tree-based models (# of trees, # of levels)
   * Linear models (learning rate)
