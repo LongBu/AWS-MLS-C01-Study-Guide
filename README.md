@@ -1434,8 +1434,8 @@ graph LR
         * Computationally efficient
         * Dense output
       * Same idea can be applied to loss functions and/or weights as learned
-  * Training data vs Validation data
-    * 80/20 rule if data is largely available
+  * Training data vs Validation data vs Test data
+    * 80/20 (Training/Validation) rule if data is largely available
     * Cross validation - usually done if data is in short supply
     * Validation set used to get the error rate (aka generalization or out of sample error)
     * If you training error is low and the generalization error is high=>overfitting
