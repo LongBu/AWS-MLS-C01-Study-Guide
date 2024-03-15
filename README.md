@@ -1440,7 +1440,7 @@ graph LR
     * Validation set used to get the error rate (aka generalization or out of sample error)
     * If you training error is low and the generalization error is high=>overfitting
     * If you'd like to validate which algorithm is best, harness the training data on them and then validate against test set
-    * If also validating multiple hyperparameters, a holdout, validation set, might be decent to validate following the training set=>validation set (select best model and hyperparameters that perform best), and then testing against the test set to avoid selecting a model that performs best on the test set data
+    * If also validating multiple hyperparameters, a holdout, validation set, might be decent to validate following the training set=>validation set (select best model and hyperparameters that perform best), and then testing against the holdout set to avoid selecting a model that performs best on the test set data
     * Alternatively there is cross validation too, to avoid wasting too much training data on validation sets.  This involves splitting the training set into complementary subsets and the model is trained against a different combination of the subsets and tested against the remaining data subset(s).  Once the model/hyperparameters are finalized they are then trained on the complete training data to then measure the generalized error against the test set.
   
   * Model initialization
