@@ -1516,7 +1516,6 @@ How do we "know" what we're seeing is what we're seeing?
   * The edges of the object get picked up by a higher level convolution that identifies the object's shape (and letters, too)
   * This shape then gets matched against your pattern of what your desired object looks like, also using the color layers to help narrow it down
   * The information continues to be processed upward until you are aware of what the object is
-  * A CNN works the same way
 
 CNNs using Keras / Tensorflow
   * ﻿﻿Source data must be of appropriate dimensions
