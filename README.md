@@ -1551,7 +1551,7 @@ Usage:
     * When you want to predict future behavior based on past behavior
     * Web logs, sensor logs, stock trades
     * Where to drive your self-driving car based on past trajectories
-  * Data that consists of sequentes of arbitrary length
+  * Data that consists of sequences of arbitrary length
     * Machine translation
     * Image captions
     * Machine-generated music
