@@ -777,7 +777,7 @@ graph LR
       * Not (yet) available in EMR
       * Also used for Android game streaming
     * P4d - A100 "UltraClusters" for supercomputing
-  * Deep Learning AMI's
+  * Deep Learning AMIs
   * Sagemaker can deploy a cluster using whatever architecture you want
   * Trn1 instances
     * "Powered by Trainium"
@@ -1281,7 +1281,7 @@ graph LR
       * CLS
   * Use Cases:
     * Interactive ad-hoc exploration / visualization of data
-    * Dashboards and KPI's
+    * Dashboards and KPIs
     * Analyze / visualize data from:
       * Logs in S3
       * On-premise databases
@@ -1527,7 +1527,7 @@ CNNs using Keras / Tensorflow
   * ﻿﻿Typical usage:
     * ﻿﻿Conv2D=>MaxPooling2D=>Dropout=>Flatten=>Dense=>Dropout=>Softmax
 
-CNN's training isn't easy
+CNN training isn't easy
   * ﻿﻿Very resource-intensive (CPU, GPU, and RAM)
   * ﻿﻿Lots of hyperparameters
     * ﻿﻿Kernel sizes, many layers with different numbers of units, amount of pooling, number of layers, choice of optimizer, etc.
@@ -1570,7 +1570,7 @@ Types:
 
 Training:
   * Backpropagation through time
-    * Just like backpropagation on MLP's, but applied to each time step.
+    * Just like backpropagation on MLPs, but applied to each time step.
     * Back propagation must take into account nn topology as well as the time steps taken
   * All those time steps add up fast
     * Ends up looking like a really, really deep neural network.
@@ -1596,14 +1596,14 @@ Training:
 ##### Transformers
 
 The Evolution of Transformers
-  * Prior to Transformers, there were RNN'S, LSTMs
+  * Prior to Transformers, there were RNNs, LSTMs
   * Introduced a feedback loop for propagating information forward
   * Useful for modeling sequential things
     * Time series
     * Language! A sequence of words (or tokens)
   * Machine translation
   * Encoder / Decoder architecture
-  * Encoders and Decoders are RNN's
+  * Encoders and Decoders are RNNs
   * But, the one vector tying them together creates an information bottleneck
     * Information from the start of the sequence may be lost
 
@@ -1615,7 +1615,7 @@ Attention
   * But RNNs are still sequential in nature, can't parallelize it
  
  What are Transformers
-  * Ditch RNN's for feed-forward neural networks (FFNN's)
+  * Ditch RNNs for feed-forward neural networks (FFNNs)
   * Use "self-attention"
   * This makes it parallelizable (so can train on much more data)
   * Attention-as a token is translated in a sentence, what other token(s) in said sentence, should attention be paid, potentially extracting meaning
@@ -1713,7 +1713,7 @@ GPT Output processing
     * Multilingual LLMs for text generation
     * Spanish, French, German, Portuguese, Italian, Dutch
   * Claude (Anthropic)
-    * LLM's for conversations
+    * LLMs for conversations
     * Question answering
     * Workflow automation
   * Stable Diffusion (stability.ai)
@@ -1781,7 +1781,7 @@ Sigmoid / Logistic / TanH
     * The "Vanishing Gradient" problem exists for both when getting toward extremes in +/-, output changes very slowly, where numerical precision can become an issue
       * When the slope of the learning curve approaches zero, things can get stuck
       * We end up working with very small numbers that slow down training, or even introduce numerical errors
-      * Becomes a problem with deeper networks and RNN's as these "vanishing gradients" propagate to deeper layers
+      * Becomes a problem with deeper networks and RNNs as these "vanishing gradients" propagate to deeper layers
       * Opposite problem: "exploding gradients"
     * Fixing the Vanishing Gradient Problem
       * Multi-level heirarchy
@@ -1842,7 +1842,7 @@ Softmax
 
 How to choose an activation function
   * ﻿﻿For multiple classification, use softmax on the output layer
-  * ﻿﻿RNN's do well with Tanh
+  * ﻿﻿RNNs do well with Tanh
   * ﻿﻿For everything else
     * ﻿﻿Start with ReLU
     * ﻿﻿If performance needs to do better, try Leaky ReLU
@@ -2342,7 +2342,7 @@ Personalize Pricing
   * Real-time code suggestions
     * Write a comment of what you want
     * It suggests blocks of code into your IDE
-    * Based on LLM's trained on billions of lines of code
+    * Based on LLMs trained on billions of lines of code
       * Amazon's code and open source code
   * Security scans
     * Analyzes code for vulnerabilities
@@ -2354,7 +2354,7 @@ Personalize Pricing
   * Bias avoidance
     * Filters out code suggestions that might be biased or unfair
   * AWS service integration
-    * Can suggest code for interacting wIth AWS API's
+    * Can suggest code for interacting with AWS APIs
       * EC2
       * Lambda
       * S3
@@ -2376,7 +2376,7 @@ Personalize Pricing
     * Up to 500/user/month security scans
     * $19 / user / month
  
-###### Amazon CodeWhisperer: Supported IDE'S
+###### Amazon CodeWhisperer: Supported IDEs
   * Visual Studio Code
   * JetBrains
     * IntelliJ
@@ -2432,7 +2432,7 @@ Personalize Pricing
   * SDK for optimizing ML inference models specifically on AWS Inferentia chips
   * By using SDK access, you can integrate with anything you care for
   * EC2 Inf1 instance type
-  * Integrated with SageMaker or whatever else you want (deep learning AMI's, containers, Tensorflow, PyTorch, MXNet)
+  * Integrated with SageMaker or whatever else you want (deep learning AMIs, containers, Tensorflow, PyTorch, MXNet)
 
 #### SageMaker
 
@@ -2940,9 +2940,9 @@ Protecting your Data at Rest in SageMaker
     * MXNet
     * XGBoost
     * SageMaker generic estimator (for use with custom training containers)
-  * Debugger API's available in GitHub
+  * Debugger APIs available in GitHub
     * Construct hooks & rules for Create Training Job and
-    * Describe TrainingJob API's
+    * Describe TrainingJob APIs
     * SMDebug client library lets you register hooks for accessing training data
   * SageMaker Debugger Insights Dashboard
   * Debugger ProfilerRule
@@ -3020,7 +3020,7 @@ Protecting your Data at Rest in SageMaker
   * It's also a challenge to keep it organized and share features across different models.
   * Feature Store inputs could be any input you want
   * Feature Store organizes your data into feature groups with such attributes as record identifiers, feature names and event times
-  * STREAMING access via PutRecord / GetRecord API's
+  * STREAMING access via PutRecord / GetRecord APIs
   * BATCH access via the offline S3 store (use with anything that hits S3, like Athena, Data Wrangler, etc. Automatically creates a Glue Data Catalog for you.)
   * Security
     * Encrypted at rest and in transit
@@ -3054,7 +3054,7 @@ Protecting your Data at Rest in SageMaker
   * ﻿﻿It does all the trial & error for you
   * ﻿﻿More broadly this is called AutoML
   * Can add in human guidance
-  * ﻿﻿With or without code in SageMaker Studio or AWS SDK's
+  * ﻿﻿With or without code in SageMaker Studio or AWS SDKs
   * ﻿﻿Problem types:
     * ﻿﻿Binary classification
     * ﻿﻿Multiclass classification
@@ -3062,7 +3062,7 @@ Protecting your Data at Rest in SageMaker
   * ﻿﻿Algorithm Types:
     * ﻿﻿Linear Learner
     * ﻿﻿XGBoost
-    * ﻿﻿Deep Learning (MLP's)
+    * ﻿﻿Deep Learning (MLPs)
     * ﻿﻿Ensemble mode
   * ﻿﻿Data must be tabular CSV or Parquet
 
@@ -3170,7 +3170,7 @@ Usage:
   * ﻿﻿Machine Translation
   * ﻿﻿Text summarization
   * ﻿﻿Speech to text
-  * ﻿﻿Implemented with RNN's and CNN's with attention
+  * ﻿﻿Implemented with RNNs and CNNs with attention
 
 Training input:
   * ﻿﻿recordIO-Protobuf
@@ -3272,7 +3272,7 @@ Instance Types:
 
 Usage:
   * Forecasting one-dimensional time series data
-  * Uses RNN's
+  * Uses RNNs
   * Allows you to train the same model over several related time series
   * Can train over several related times series at once, not limited to single time series. Good if these multiple times series are interdependent, it can learn those relationships to create a better model to generalize to a given singular time series. 
   * Finds frequencies and seasonality
@@ -3829,11 +3829,11 @@ Instance Types:
 Usage:
   * Unsupervised learning of IP address usage patterns
   * Identifies suspicious/anomalous behavior from IP  addresses using a NN
-    * Identify logins from anomalous IP's
-    * Identify accounts creating resources from anomalous IP's
+    * Identify logins from anomalous IPs
+    * Identify accounts creating resources from anomalous IPs
 
 Training input:
-  * User names, account ID's can be fed in directly; no need to pre-process
+  * User names, account IDs can be fed in directly; no need to pre-process
   * Training channel, optional validation (computes AUC score)
   * CSV only
     * Entity, IP
@@ -3842,7 +3842,7 @@ How to use:
   * Uses a neural network to learn latent vector representations of entities and IP addresses.
   * Entities are hashed and embedded
     * Need sufficiently large hash size
-  * Automatically generates negative samples during training by randomly pairing entities and IP's
+  * Automatically generates negative samples during training by randomly pairing entities and IPs
 
 Hyperparameters:
   * Num_entity_vectors
