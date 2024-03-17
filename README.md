@@ -1584,7 +1584,7 @@ Training:
     * over time during training is "memory cell" as it maintains memories of previous steps
   * LSTM Cell
     * Long Short-Term Memory Cell
-    * Maintains separate short-term and long-term States
+    * Maintains separate short-term and long-term  States
   * GRU Cell
     * Gated Recurrent Unit
     * Simplified LSTM Cell that performs about as well, but shorter to train
