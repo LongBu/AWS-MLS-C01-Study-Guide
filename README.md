@@ -4039,6 +4039,7 @@ Instance Types:
 | KPI | Key Performance Indicator |
 | LSTM | Long Short Term Memory |
 | ML | Machine Learning |
+| MLP | Multilayer Perceptron |
 | MQTT | Message Queuing Telemetry Transport |
 | MSK | Managed Streaming Kafka |
 | NACL | Network Access Control List |
