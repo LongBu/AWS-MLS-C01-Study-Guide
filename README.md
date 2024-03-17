@@ -1606,7 +1606,8 @@ The Evolution of Transformers
   * Encoders and Decoders are RNN's
   * But, the one vector tying them together creates an information bottleneck
     * Information from the start of the sequence may be lost
- 
+
+ 
 Attention
   * A hidden state for each step (token)
   * Deals better with differences in word order
