@@ -39,7 +39,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 #### Identify data sources (e.g., content and location, primary sources such as user data) and determine storage mediums (e.g., DB, Data Lake, S3, EFS, EBS)
 
 ##### Amazon Redshift:
-  * fully managed, scalable cloud data warehouse, columnar instead of row based (no Multi-AZ, based on Postgres, No OLTP [row based], but OLAP [column based])
+  * fully managed, scalable cloud data warehouse, columnar instead of row based (based on Postgres, No OLTP [row based], but OLAP [column based]); no Multi-AZ
   * Offers parallel sql queries
   * Can be server less or use cluster(s)
   * Uses SQL to analyze structured and semi-structured data across data warehouses, operational DBs, and data lakes
@@ -53,7 +53,7 @@ Note these are my own personal notes and are a work in progress as I study torwa
 
 ##### Amazon Redshift Spectrum:
   * Resides on dedicated Amazon Redshift servers independent of your cluster
-  * Can efficiently query and retrieve structured and semistructured data from files in S3 into Redshift Cluster tables (points at S3) without loading data in Redshift tables
+  * Can efficiently query and retrieve structured and semistructured data from files in S3 into Redshift Cluster tables (points at S3) without loading data into Redshift tables
   * Pushes many compute intensive tasks such as predicate filtering (ability to skip reading unnecessary data at storage level from a data set into RAM) and aggregation, down to the Redshift Spectrum layer
   * Redshift Spectrum queries use much less of the formal cluster's processing capacity than other queries
 
