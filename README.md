@@ -1,6 +1,6 @@
 ## AWS-MLS-C01-Study-Guide
 
-Note these are my own personal notes and are a work in progress as I study torwards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
+Note these are my own personal notes and are a work in progress as I study towards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
 
 ## Table of Contents
 1. <a href="#introduction">Introduction</a>
@@ -126,18 +126,18 @@ Note these are my own personal notes and are a work in progress as I study torwa
   * Requires a cluster of instances (can also be Multi-AZ)
   * Doesn't support SQL (own query language)
   * Comes with Opensearch dashboards (visualization)
-  * Built in integrations: Kinesis Firehose, AWS IOT, λ, Cloudwatch logs for data ingest
+  * Built in integrations: Amazon Data Firehose, AWS IOT, λ, Cloudwatch logs for data ingest
   * Security through Cognito and IAM, KMS encryption, SSL and VPC
   * Can help efficiently store and analyze logs (amongst cluster) for uses such as Clickstream Analytics
   * Patterns:
  ```mermaid
 sequenceDiagram
     participant Kinesis data streams
-    participant Kinesis data firehose (near real time)
+    participant Amazon Data Firehose (near real time)
     participant OpenSearch
-    Kinesis data streams->>Kinesis data firehose (near real time): 
-    Kinesis data firehose (near real time)->>OpenSearch: 
-    Kinesis data firehose (near real time)->>Kinesis data firehose (near real time): data tranformation via λ
+    Kinesis data streams->>Amazon Data Firehose (near real time): 
+    Amazon Data Firehose (near real time)->>OpenSearch: 
+    Amazon Data Firehose (near real time)->>Amazon Data Firehose (near real time): data tranformation via λ
 ```
 ```mermaid
 sequenceDiagram
@@ -547,7 +547,7 @@ graph LR
   * IAM access => Identity-based (used by users and/or groups)
   * Types:
     * Kinesis Data Streams
-    * Kinesis Data Firehose
+    * Amazon Data Firehose (formerly Kinesis Data Firehose)
     * Kinesis Analytics
     * Kinesis Video Streams
 
@@ -573,7 +573,7 @@ graph LR
   * *Can't subscribe to SNS*
   * *Can't write directly to S3*
   * Can output to:
-    * Kinesis Data Firehose
+    * Amazon Data Firehose
     * Kinesis Data Analytics
     * Containers
     * λ
@@ -593,15 +593,15 @@ graph LR
   * Can utilize λ for preprocessing (near real-time)
   * Input stream can be joined with a ref table in S3
   * Output results include streams/errors
-  * Can use either Kinesis Data Streams or Kinesis Data Firehose to analyze data in kinesis
+  * Can use either Kinesis Data Streams or Amazon Data Firehose to analyze data in kinesis
   * Pay only for resources used, though that can end up not being cheap
   * Schema discovery
   * IAM permissions to access input(s)/output(s)
-  * For SQL Applications: Input/Output: Kinesis Data Streams or Kinesis Data Firehose to analyze data
+  * For SQL Applications: Input/Output: Kinesis Data Streams or Amazon Data Firehose to analyze data
   * Managed Apache Flink [Formerly Kinesis Data Analytics for Apache Flink or for Java (on a cluster)] :
     * Replacing Kinesis Data Analytics
     * Input: Kinesis Data Stream or Amazon MSK
-    * Output: Sink (S3/Kinesis Data Firehose/Kinesis Data Stream), data analysis via data analytics app, or query data stream via queries (studio notebook)
+    * Output: Sink (S3/Amazon Data Firehose/Kinesis Data Stream), data analysis via data analytics app, or query data stream via queries (studio notebook)
     * If output is S3, S3 Select available to query the output object(s) data
     * Managed Apache Flink provides an Apache Flink Dashboard
     * Managed Apache Flink resultant deployment by Cloud Formation contains a Flink Application (*.jar file based) and the source (Kinesis Data Stream)
@@ -631,10 +631,10 @@ graph LR
     B[Amazon Managed Streaming for Apache Kafka] -->|Flink Sources to Flink Application DataStream API| C
     C -->|Flink Application DataStream API to Flink Sinks| D[S3]
     C -->|Flink Application DataStream API to Flink Sinks| E[Amazon Kinesis Data Streams]
-    C -->|Flink Application DataStream API to Flink Sinks| F[Amazon Kinesis Data Firehose]
+    C -->|Flink Application DataStream API to Flink Sinks| F[Amazon Data Firehose]
 ```
 
-##### Amazon Kinesis Data Firehose:
+##### Amazon Data Firehose (formerly Amazon Kinesis Data Firehose):
   * Fully Managed (serverless) service, no administration, automatic scaling
   * Allows for custom code to be written for producer/consumer
   * Can use λ to filter/transform data prior to output (Better to use if filter/tranform with a λ to S3 over Kinesis Data Streams)
@@ -2023,7 +2023,7 @@ How to choose an activation function
     * Performance monitoring and dashboards (metrics, CPU, network, etc.)
     * Events and Alerting
     * Log aggregation and analysis
-    * Cloudwatch metric=>kinesis data firehose to S3 or 3rd parties in near real time
+    * Cloudwatch metric=>Amazon Data Firehose to S3 or 3rd parties in near real time
   * CloudTrail: 
     * Record API calls made within Account by everyone
     * Can define trails for specific resources
