@@ -574,12 +574,12 @@ graph LR
   * *Can't write directly to S3*
   * Can output to:
     * Amazon Data Firehose
-    * Kinesis Data Analytics
+    * Amazon Managed Service for Apache Flink
     * Containers
     * λ
     * AWS Glue
 
-##### Amazon Kinesis Data Analytics:
+##### Amazon Managed Service for Apache Flink (formerly Amazon Kinesis Data Analytics):
   * Fully Managed (serverless; scales automatically)
   * AWS Lambda can be a destination as well
   * Allows lots of flexibility for post-processing
@@ -599,13 +599,13 @@ graph LR
   * IAM permissions to access input(s)/output(s)
   * For SQL Applications: Input/Output: Kinesis Data Streams or Amazon Data Firehose to analyze data
   * Managed Apache Flink [Formerly Kinesis Data Analytics for Apache Flink or for Java (on a cluster)] :
-    * Replacing Kinesis Data Analytics
+    * Replaced Kinesis Data Analytics
     * Input: Kinesis Data Stream or Amazon MSK
     * Output: Sink (S3/Amazon Data Firehose/Kinesis Data Stream), data analysis via data analytics app, or query data stream via queries (studio notebook)
     * If output is S3, S3 Select available to query the output object(s) data
     * Managed Apache Flink provides an Apache Flink Dashboard
     * Managed Apache Flink resultant deployment by Cloud Formation contains a Flink Application (*.jar file based) and the source (Kinesis Data Stream)
-    * Kinesis Data Analytics always used Flink under the hood
+    * Flink under the hood
     * Now supports Python and Scala
     * Flink is a framework for processing data streams
     * MSAF integrates Flink with AWS
