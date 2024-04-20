@@ -2968,8 +2968,7 @@ Protecting your Data at Rest in SageMaker
   * Metrics are emitted to CloudWatch
     * CloudWatch notifications can be used to trigger alarms
     * You'd then take corrective action (retrain the model, audit the data)
-  * Integrates with Tensorboard, QuickSight, Tableau
-    * Or just visualize within SageMaker Studio
+  * Integrates with Tensorboard, QuickSight, Tableau, though visualizations can also occur within SageMaker Studio
   * Monitoring Types:
     * Drift in data quality
       * Relative to a baseline you create
@@ -2983,10 +2982,9 @@ Protecting your Data at Rest in SageMaker
       * This compares feature ranking of training vs. live data
   * Integrates with SageMaker Clarify
     * SageMaker Clarify detects potential bias
-    * eg: imbalances across different groups / ages / income brackets
-    * With ModelMonitor, you can monitor for bias and be alerted to new potential bias via CloudWatch
-    * SageMaker Clarify also helps explain model behavior
-      * Understand which features contribute the most to your predictions
+    * Imbalances across different groups/ages/income brackets
+    * With Model Monitor, you can monitor for bias and be alerted to new potential bias via CloudWatch
+    * SageMaker Clarify also helps explain model behavior to understand which features contribute the most to your predictions
  
 #### SageMaker Deployment Safeguards
   * Deployment Guardrails-when a new model is rolled out, bad performance doesn't occur
