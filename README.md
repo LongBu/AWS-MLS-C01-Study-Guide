@@ -2966,7 +2966,7 @@ Protecting your Data at Rest in SageMaker
   * Data is stored in S3 and secured
   * Monitoring jobs are scheduled via a Monitoring Schedule
   * Metrics are emitted to CloudWatch
-    * CloudWatch notifications can ke used to trigger alarms
+    * CloudWatch notifications can be used to trigger alarms
     * You'd then take corrective action (retrain the model, audit the data)
   * Integrates with Tensorboard, QuickSight, Tableau
     * Or just visualize within SageMaker Studio
