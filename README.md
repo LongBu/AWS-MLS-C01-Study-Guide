@@ -2928,8 +2928,7 @@ Protecting your Data at Rest in SageMaker
     * Define rules for detecting unwanted conditions while training
     * A debug job is run for each rule you configure
     * Logs & fires a CloudWatch event when the rule is hit
-  * Integrates with SM studio via SM Studio Debugger Dashboard
-  * SageMaker Studio Debugger dashboards
+  * Integrates with SM studio via SM Studio Debugger Dashboards
   * Auto-generated training reports
   * Built-in rules:
     * Monitor system bottlenecks
