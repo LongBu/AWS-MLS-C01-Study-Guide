@@ -1308,6 +1308,7 @@ graph LR
     * \[stacked] area line charts - allows visualization of different components added up to a change/trend
   * Scatter plots, heat maps
     * For correlation
+    * Residual plot \[a type of scatter plot, containining a regression line, measuring how data point(s) overestimating/underestimating target value(s)]
   * Pie graphs, tree maps - Heirarchical Aggregation chart (eg: npm package map)
     * For aggregation
   * Pivot tables
