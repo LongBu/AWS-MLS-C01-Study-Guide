@@ -2535,7 +2535,7 @@ graph LR
   * This allows you to use any script or algorithm within SageMaker, regardless of runtime or language 
     * Containers are isolated, and contain all dependencies and resources needed to run 
 
-Using Docker   
+Using Docker  in SM
   * Docker containers are created from images
   * Images are built from a Dockerfile
   * Can separate or combine images for training and deployment
