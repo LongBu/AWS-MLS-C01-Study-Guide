@@ -2504,8 +2504,8 @@ Personalize Pricing
 
 ```mermaid
 graph LR
-    A[Deploy model, Evaluate result in prod] --> B(Fetch, clean and prep data)
-    B --> C(Trainand evaluate model)
+    A[Deploy model, Evaluate results in prod] --> B(Fetch, clean and prep data)
+    B --> C(Train and evaluate model)
     C --> A
 
 ```
