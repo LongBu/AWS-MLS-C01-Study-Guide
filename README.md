@@ -1681,7 +1681,8 @@ Applications of Transformers
   * It's "learning a language" rather than optimizing for some specific task
   * Hundreds of billions of parameters
   * GPT output is not based on finding true or correct results, but results generated based upon the input it was trained on
- 
+
+ 
 GPT Input processing
   * Tokenization, token encoding
   * Token embedding
