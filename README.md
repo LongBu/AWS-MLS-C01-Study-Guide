@@ -1712,7 +1712,8 @@ GPT Output processing
   * DALL-E (OpenAl, Microsoft)
   * LLaMa (Meta)
   * Segment Anything (Meta)
-  * Where's Amazon?
+    
+###### AWS Foundation Models
   * Jurassic-2 (Al21labs)
     * Multilingual LLMs for text generation
     * Spanish, French, German, Portuguese, Italian, Dutch
