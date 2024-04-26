@@ -1676,12 +1676,12 @@ Applications of Transformers
     * As an aside, BERT consists only of encoders. T5 is an example of a model that uses both encoders and decoders.
   * No concept of input, all it does is generate the next token over and over
     *  Using attention to maintain relationships to previous words / tokens
-    * You "prompt" it with the tokens of your question or whatever
-    * It then keeps on generating given the previous tokens
+    * You "prompt" it with the tokens of your question
+    * It then generates given the previous tokens
   * Getting rid of the idea of inputs and outputs is what allows us to train it on unlabeled piles of text
     * It's "learning a language" rather than optimizing for some specific task
   * Hundreds of billions of parameters
-  * GPT output is not based on finding true or correct results, but results generated based upon the input it was trained on
+  * GPT output isn't based on finding true or correct results, but results generated based upon the input it was trained on
 
  
 GPT Input processing
