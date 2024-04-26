@@ -1638,7 +1638,7 @@ Self-Attention (in more depth)
 
  
 Masked Self-Attention
-  * A mask can be applied to prevent tokens from peeking" into future tokens (words)
+  * A mask can be applied to prevent tokens from "peeking" into future tokens (words)
   * GPT does this, but BERT does something else (masked language modeling)
   * In this example, "good" wouldn't be altected by "novel", but "novel" could by affected by "good"
   * This is just the concept... actual implementation detalls will vary.
