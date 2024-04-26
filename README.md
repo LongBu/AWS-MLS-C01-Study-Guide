@@ -1736,25 +1736,26 @@ GPT Output processing
   * SageMaker Studio has a "JumpStart" feature
   * Lets you quickly open up a notebook with a given model loaded up and ready to go
   * Current foundation models
-    * Hugging race models (text generation
+    * Hugging race models (text generation)
       * Falcon, Flan, BloomZ, GPT-J
     * Stabile Diffusion (image generation)
     * Amazon Alexa (encoder/decoder multilingual LLM)
-    * Google, and Microsoft models aren't supported on AWS as their direct competitors
-  * jumpstart=> launch NB within SM, with pre-populated foundation, models, (internal, hugging face, etc.)
-    * create a domain
-      * A unique domain name
-      * The user profile
-        * execution role
-      * IAM/identity center
-      * SM studio integrations
-      * SM canvas
-      * fine tuned network security settings
-      * fine-tuned encryption settings
-      * VPC associated with an account
-    * deploys actual hardware, though you were also given the opportunity to change the instance type(s) or potentially changing the use/# of GPUs
-    * Can fine-tune the model through direct input within the notebook or S3
-      * if input is large, it will train it many times trying to optimally tune, hyperparameters
+    * Google, and Microsoft models aren't supported on AWS as they are direct competitors
+
+###### Amazon SM Jumpstart How-To
+  * launch NB within SM, with pre-populated foundation models (internal, hugging face, etc.)
+  * create a domain
+    * A unique domain name
+    * The user profile (eg: execution role)
+    * IAM/identity center
+    * SM studio integrations
+    * SM canvas
+    * fine-tuned network security settings
+    * fine-tuned encryption settings
+    * VPC associated with an account
+  * deploys actual hardware, though you are also given the opportunity to change instance type(s) or potentially changing the use/# of GPUs
+  * Can fine-tune the model through direct input within the NB or S3
+    * if input is large, it will train it many times trying to optimally tune hyperparameters
  
 #### Activation functions
 
