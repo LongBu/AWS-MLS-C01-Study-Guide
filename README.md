@@ -2408,7 +2408,7 @@ Personalize Pricing
   * Your data is encrypted and does not leave your VPC
   * Integrates with SageMaker
   * don't have to access model through a SM NB, but an API
-  * integrates with sage maker (notebooks)
+  * integrates with SM (notebooks)
   * able to find two models and/or simply output results from pre-train models
 
 ##### Amazon DeepComposer
@@ -2451,7 +2451,7 @@ Personalize Pricing
     * Wide variety of built-in models
     * Ability to spin up training instances
     * Ability to deploy trained models for making predictions at scale
-  * Sage maker Console can serve as an alternative to notebooks 
+  * SM Console can serve as an alternative to notebooks 
 
 ###### SageMaker Processing
   * Processing jobs
@@ -2873,7 +2873,7 @@ Protecting your Data at Rest in SageMaker
       * Disparity of outcomes between facets as a whole, and by subgroups
 
 #### SageMaker Notebooks
-  * Notebooks within Sage maker can be opened directly via the browser
+  * Notebooks within SM can be opened directly via the browser
   * Can pass in parameters, they can be set to default values via environment, variables, or directly hardcoded
   * to import and display a script in a notebook => !pygmentize xyz.py
   * if wanting to see if a model works initially perhaps only try one epoch to save time and money
@@ -2924,7 +2924,7 @@ Protecting your Data at Rest in SageMaker
   * SageMaker Notebooks
     * Create and share Jupyter notebooks with SageMaker Studio
     * Switch between hardware configurations (no infrastructure to manage)
-  * SageMaker Experiments-component of sage maker studio
+  * SageMaker Experiments-component of SM studio
     * Organize, capture, compare, and search your ML jobs
 
 #### SageMaker Debugger
