@@ -1640,14 +1640,14 @@ Self-Attention (in more depth)
 Masked Self-Attention
   * A mask can be applied to prevent tokens from "peeking" into future tokens (words)
   * GPT does this, but BERT does something else (masked language modeling)
-  * In this example, "good" wouldn't be altected by "novel", but "novel" could by affected by "good"
-  * This is just the concept... actual implementation detalls will vary.
-  * Now we sum.
-  * Multiply values by scores, and sum them up.
+  * In a sentence "A good novel", "good" wouldn't be affected by "novel", but "novel" could by "good"
+  * This is just the concept... actual implementation details will vary.
+  * Multiply values by scores (after masking, softmax), and sum them up.
   * Repeat entire process for each token (in parallel)
-  * Now we have our updated embeddings for each token!
+  * Now we have updated embeddings for each token!
   * These weight each token embedding as it's passed into the feed-forward NN.
- 
+
+ 
 Multi-Headed Self-Attention
   * The q, k, and v vectors are reshaped into matrices
   * Then each row of the matrix can be processed in parallel
