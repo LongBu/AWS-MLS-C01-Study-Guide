@@ -1670,15 +1670,16 @@ Applications of Transformers
     * eg: automated customer service 
 
 ##### GPT
-  * Generative Pre-Trained Transformer (GPT-2 in this example)
+  * Generative Pre-Trained Transformer (eg: GPT-2)
   * Decoder-only - stacks of decoder blocks
-  * Each consisting of a masked self-attention layer, and a feed-forward neural network
-  * As an aside, BERT consists only of encoders. TS is an example of a model that uses both encoders and decoders.
-  * No concept of input, all it does is generate the next token over and over Using attention to maintain relationships to previous words / tokens
-  * You "prompt" it with the tokens of your question or whatever
-  * It then keeps on generating given the previous tokens
+    * Each consisting of a masked self-attention layer, and a feed-forward neural network
+    * As an aside, BERT consists only of encoders. T5 is an example of a model that uses both encoders and decoders.
+  * No concept of input, all it does is generate the next token over and over
+    *  Using attention to maintain relationships to previous words / tokens
+    * You "prompt" it with the tokens of your question or whatever
+    * It then keeps on generating given the previous tokens
   * Getting rid of the idea of inputs and outputs is what allows us to train it on unlabeled piles of text
-  * It's "learning a language" rather than optimizing for some specific task
+    * It's "learning a language" rather than optimizing for some specific task
   * Hundreds of billions of parameters
   * GPT output is not based on finding true or correct results, but results generated based upon the input it was trained on
 
