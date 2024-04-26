@@ -1623,7 +1623,7 @@ Attention
   * Attention weights-certain weighting applied as sequential tokens are processed
 
 Self-Attention (in more depth)
-  * Each encoder or decoder has a list of embeddings (vectors) for each token that are the token's numerical translation placed in an embedding layer which is a multi dimensional vectore.  Space between vectors represents similarity of tokens
+  * Each encoder or decoder has a list of embeddings (vectors) for each token that are the token's numerical translation placed in an embedding layer which is a multi dimensional vector.  Space between vectors represents similarity of tokens
   * Self-attention produces a weighted average of all token embeddings.   The magic is in computing the attention weights.
   * This results in tokens being tied to other tokens that are important for its context, and a new embedding that captures its "meaning" in context.
   * Three matrices of weights are learned through back-propagation
