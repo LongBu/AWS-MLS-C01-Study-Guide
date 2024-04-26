@@ -1635,7 +1635,8 @@ Self-Attention (in more depth)
   * "Scaled dot-product attention"
   * Dot product is just one similarity function we can use.
   * In practice, softmax is then applied to the scores to normalize them.
- 
+
+ 
 Masked Self-Attention
   * A mask can be applied to prevent tokens from peeking" into future tokens (words)
   * GPT does this, but BERT does something else (masked language modeling)
