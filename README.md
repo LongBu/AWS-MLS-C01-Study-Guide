@@ -2583,11 +2583,11 @@ Structure of a Deployment Container
  
      └── \<model files>
 
-Structure of your Docker image 
+Docker Image Structure
   * WORKDIR 
     * nginx.conf=>front-end server configuration
     * predictor.py=>flask web server for predictions
-    * serve/ =>deployment materials that launches G-unicorn server running multiple instance os the flask application detailed in predictor.py
+    * serve/ =>deployment materials that launches G-unicorn server running multiple instances of the flask application detailed in predictor.py
     * train/ =>training image, code, etc.
     * wsgi.py => wrapper used to invoke flask app for serving results
 
