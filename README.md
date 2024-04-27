@@ -2620,8 +2620,12 @@ Using your own image
   * cd dockerfile
   * !docker build -t foo .
   * from sagemaker.estimator import Estimator 
-    estimator = Estimator(image_name=‘foo', role='SageMakerRole', train_instance_count=1, train_instance_type='local') 
-    estimator.fit() 
+
+        estimator = Estimator(image_name=‘foo',
+                     role='SageMakerRole',
+                     train_instance_count=1,
+                     train_instance_type='local') 
+        estimator.fit() 
 
 Production Variants 
   * You can test out multiple models on live traffic using Production Variants 
