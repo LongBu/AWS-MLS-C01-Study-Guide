@@ -2442,7 +2442,8 @@ Personalize Pricing
 
 #### SageMaker
 
-##### SageMaker Notebooks can direct the process (data preparation)
+##### SageMaker Notebooks
+  * Can direct the process (data preparation)
   * Notebook Instances on EC2 are spun up from the console
     * S3 data access (data usually comes from here)
       * Ideal format varies with algorithm - often it is RecordIO / Protobuf being the most efficient
@@ -2451,7 +2452,15 @@ Personalize Pricing
     * Wide variety of built-in models
     * Ability to spin up training instances
     * Ability to deploy trained models for making predictions at scale
-  * SM Console can serve as an alternative to notebooks 
+  * SM Console can serve as an alternative to notebooks
+  * Notebooks within SM can be opened directly via the browser
+  * Can pass in parameters, they can be set to default values via the environment, variables, or directly hardcoded
+  * to import and display a script in a notebook => !pygmentize xyz.py
+  * if wanting to see if a model works initially perhaps only try one epoch to save time and money
+  * Monitoring the progress of a NB can be done in the individual NB or through SM=>Training Jobs in the console
+  * Stop notebooks when not in use to not incur charges
+  * Terminate session deployments when not in use to not incur charges
+
 
 ###### SageMaker Processing
   * Processing jobs
@@ -2875,15 +2884,6 @@ Protecting your Data at Rest in SageMaker
       * Maximum divergence between outcomes in distributions from facets
     * Conditional Demographic Disparity (CDD)-do some groups have a larger proportion of rejections than acceptance? Effectively looking at the groups distributions to check acceptance/rejection disparities
       * Disparity of outcomes between facets as a whole, and by subgroups
-
-#### SageMaker Notebooks
-  * Notebooks within SM can be opened directly via the browser
-  * Can pass in parameters, they can be set to default values via environment, variables, or directly hardcoded
-  * to import and display a script in a notebook => !pygmentize xyz.py
-  * if wanting to see if a model works initially perhaps only try one epoch to save time and money
-  * Monitoring the progress of a NB can be done in the individual NB or through SM=>Training Jobs in the console
-  * Stop notebooks when not use to not incur charges
-  * Terminate session deployments when not in use to not incur charges
 
 #### SageMaker Serverless Inference 
   * Introduced for 2022 
