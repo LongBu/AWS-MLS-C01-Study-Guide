@@ -2663,8 +2663,7 @@ Production Variants
     ![SageMaker Operators for Kubernetes](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Operators%20for%20Kubernetes.e2852ce0148e84e9c135dd155adda07eff6124e7.png)
   * SageMaker Components for Kubeflow Pipelines 
  ![SageMaker Components for Kubeflow Pipelines](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Components%20for%20Kubeflow%20Pipelines.457ed1b488de6fe25a0b51951b6ba59f92cc0e38.png)
-  * SageMaker Projects  (effectively MLOps for SM, which manages the larger pipeline for development, testing and deployment of models
-)
+  * SageMaker Projects  (effectively MLOps for SM, which manages the larger pipeline for development, testing and deployment of models)
     * SageMaker Studio’s native MLOps solution with CI/CD 
     * Build images
     * Prep data, feature engineering
