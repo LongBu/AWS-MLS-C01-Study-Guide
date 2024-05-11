@@ -2659,7 +2659,7 @@ Production Variants
   * Components for Kubeflow Pipelines 
   * Enables hybrid ML workflows (on-prem + cloud) 
   * Enables integration of existing ML platforms built on Kubernetes / Kubeflow (K8s MLOps solution)  
-  * SageMaker Operators for Kubernetes -wraps SM operations so K8s can you utilize them via K8s API (kubectl)
+  * SageMaker Operators for Kubernetes -wraps SM operations so K8s can utilize them via K8s API (kubectl)
     ![SageMaker Operators for Kubernetes](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Operators%20for%20Kubernetes.e2852ce0148e84e9c135dd155adda07eff6124e7.png)
   * SageMaker Components for Kubeflow Pipelines 
  ![SageMaker Components for Kubeflow Pipelines](https://d1.awsstatic.com/SageMaker/SageMaker%20reInvent%202020/K8/Amazon%20SageMaker%20Components%20for%20Kubeflow%20Pipelines.457ed1b488de6fe25a0b51951b6ba59f92cc0e38.png)
