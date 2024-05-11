@@ -2655,8 +2655,6 @@ Production Variants
 
 ##### SM integration with MLOps and Kubernetes 
   * Integrates SageMaker with Kubernetes-based ML infrastructure 
-  * Amazon SageMaker Operators for Kubernetes 
-  * Components for Kubeflow Pipelines 
   * Enables hybrid ML workflows (on-prem + cloud) 
   * Enables integration of existing ML platforms built on Kubernetes / Kubeflow (K8s MLOps solution)  
   * SageMaker Operators for Kubernetes -wraps SM operations so K8s can utilize them via K8s API (kubectl)
