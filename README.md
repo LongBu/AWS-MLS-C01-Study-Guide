@@ -2686,7 +2686,8 @@ Production Variants
   * Use CloudTrail to log API and user activity 
   * Use encryption 
   * Be careful with PII=>Encryption(at rest and in-transit)=> Both types of encryption are good for PII or sensitive info 
-Protecting your Data at Rest in SageMaker 
+
+###### Protecting your Data at Rest in SM 
   * AWS Key Management Service (KMS) 
     * At rest encryption
     * Accepted by notebooks and all SageMaker jobs 
@@ -2697,7 +2698,7 @@ Protecting your Data at Rest in SageMaker
     * Can use encrypted S3 buckets for training data and hosting models 
     * S3 can also use KMS 
 
-###### Protecting Data in Transit in SageMaker 
+###### Protecting Data in Transit in SM 
   * All traffic supports TLS / SSL 
   * IAM roles are assigned to SageMaker to give it permissions to access resources 
   * Inter-node training communication may be optionally encrypted (might be necessary due to regulations)
