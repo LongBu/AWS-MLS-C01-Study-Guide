@@ -3141,6 +3141,7 @@ Training input:
   * Pipe mode streams from S3 -> More efficient and solves the problem of optimizing slow training
 
 How to use:
+  * Tabular data
   * ﻿﻿Preprocessing
     * ﻿﻿Training data must be normalized (so all features are weighted the same)
     * ﻿﻿Linear Learner can do this for you automatically
@@ -3229,10 +3230,11 @@ Training input:
 
 
 How to use:
-* Models are serialized/deserialized with Pickle
-  * Can use as a framework within notebooks
-    * Sagemaker.xgboost
-  * Or as a built-in SageMaker algorithm-> Refer to XG boost docker image in ECR-> Deploy a fleet of training hosts for large scale jobs
+  * Tabular data
+  * Models are serialized/deserialized with Pickle
+    * Can use as a framework within notebooks
+      * Sagemaker.xgboost
+    * Or as a built-in SageMaker algorithm-> Refer to XG boost docker image in ECR-> Deploy a fleet of training hosts for large scale jobs
 
 
 Hyperparameters:
@@ -3272,7 +3274,7 @@ Instance Types:
     * Set distribution to fully_replicated in Training nput
     * Only works with csv or parquet input
 
-##### DeepAR
+##### DeepAR Forecasting
 
 Usage:
   * Forecasting one-dimensional time series data
@@ -3296,6 +3298,7 @@ Training input:
 {"start": "1999-01-30 00:00:00", "target": [4.3, "NaN", 7.1, ...], "cat": [2,4], "dynamic_feat": [[2.3, 0.4, ...]]}
  
 How to use:
+  * Tabular data
   * Always include entire time series for training, testing, and inference
   * Use entire dataset as test set, remove last time points for training. Evaluate on withheld values.
   * Don t use very large values for prediction length (> 400 data points)
@@ -3409,6 +3412,7 @@ Training input:
 
 
 How to use:
+  * Tabular data
   * Process data into JSON Lines and shuffle it
   * Train with two input channels, two encoders, and a comparator
   * Encoder choices:
@@ -3586,6 +3590,7 @@ Training input:
   * Optional test channel for computing accuracy, precision, recall, and F1 on labeled data (anomaly or not)
 
 How to use:
+  * Tabular data
   * Creates a forest of trees where each tree is a partition of the training data; looks at expected change in complexity of the tree as a result of adding a point into it
   * Data is sampled randomly
   * Then trained
@@ -3697,6 +3702,7 @@ Training input:
   * ﻿﻿File or pipe mode on either
 
 How to use:
+  * Tabular data
   * ﻿﻿Data is first sampled
   * ﻿﻿SageMaker includes a dimensionality reduction stage
     * ﻿﻿Avoid sparse data ("curse of dimensionality")
@@ -3734,6 +3740,7 @@ Training input:
   * ﻿﻿File or Pipe on either
 
 How to use:
+  * Tabular data
   * ﻿﻿Every observation mapped to n-dimensional space (n = number of features)
   * ﻿﻿Works to optimize the center of K clusters
     * ﻿﻿"extra cluster centers" may be specified to improve accuracy (which end up getting reduced to k)
@@ -3780,6 +3787,7 @@ Training input:
   * ﻿﻿File or Pipe on either
 
 How to use:
+  * Tabular data
   * ﻿﻿Covariance matrix is created, then singular value decomposition (SVD)
   * ﻿﻿Two modes
     * ﻿﻿Regular
@@ -3814,6 +3822,7 @@ Training input:
   * Sparse data means CSV isn't practical
 
 How to use:
+  * Tabular data
 * Finds factors we can use to predict a classification (click or not? Purchase or not?) or value (predicted rating?) given a matrix representing some pair of things (users & items?)
   * Usually used in the context of recommender systems (Really good choice for this scenario)
   * Good choice of handling only sparse data
