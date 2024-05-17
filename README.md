@@ -3302,7 +3302,7 @@ How to use:
   * Tabular data
   * Always include entire time series for training, testing, and inference
   * Use entire dataset as test set, remove last time points for training. Evaluate on withheld values.
-  * Don t use very large values for prediction length (> 400 data points)
+  * Don't use very large values for prediction length (> 400 data points)
   * Train on many time series and not just one when possible
 
 Hyperparameters:
