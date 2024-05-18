@@ -2247,7 +2247,7 @@ Personalize Pricing
 )
 
 ##### Amazon Rekognition:
-  * Find objects, people, text, scenes in images and videos using computer vision ML
+  * Find objects, people, text, activities, scenes in images and videos using computer vision ML
   * Facial analysis and search to perform user verification, people counting
     * Create a DB of "familiar faces" or compare against celebrities
   * Images come from S3, or provide image bytes as part of request using the API
