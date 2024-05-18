@@ -3041,6 +3041,7 @@ Production Variants
     * Training instances are spun up as needed (parallel), potentially a lot of them
   * The set of hyperparameters producing the best results can then be deployed as a model
   * It learns as it goes, so it doesn't have to try every possible combination
+  * Utlizes Bayesian Search
   * Best Practices:
     * Don't optimize too many hyperparameters at once
     * Limit your ranges to as small a range as possible
