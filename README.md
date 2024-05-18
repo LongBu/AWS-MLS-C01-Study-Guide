@@ -2982,7 +2982,7 @@ Production Variants
       * Works the same way with a model quality baseline
       * Can integrate with Ground Truth labels (what humans say) comparing classification drift and model quality versus these attributes to alert if it diverges too much
     * Bias drift (new biases in your feature data)
-    * Feature attribution drift
+    * Feature attribution drift (aka Concept drift)
       * Based on Normalized Discounted Cumulative Gain (NDCG) score
       * This compares feature ranking of training vs. live data
   * Integrates with SageMaker Clarify
