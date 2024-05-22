@@ -816,7 +816,7 @@ graph LR
   
 #### AWS Glue:
   * Managed ETL service (fully serverless) used to prepare/transform data for analysis
-    * upper limit of 5 minutes as it is serverless
+    * upper limit of 15 minutes as it is serverless
     * Utilizes Python (PySpark) or Scala (Spark) scripts, but runs on serverless Spark platform
     * Targets: S3, JDBC (RDS, Redshift), or Glue Data Catalog
     * Jobs scheduled via Glue Scheduler
