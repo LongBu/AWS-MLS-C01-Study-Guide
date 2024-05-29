@@ -101,7 +101,17 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Scalable, highly available, serverless, and managed Apache Cassandra compatible (NoSQL) DB service offering consistent single-digit millisecond server-side read/write performance, while also providing HA and data durability
   * Uses the Cassandra Query Language (CQL)
   * All writes are replicated 3x across multiple AWS AZ for durability and availability
-  * Tables can scale up and down with virtually unlimited throughput and storage.  There is no limit on the size of a table or the number of rows you can store in a table. 
+  * Tables can scale up and down with virtually unlimited throughput and storage.  There is no limit on the size of a table or the number of rows you can store in a table.
+
+##### Amazon DocumentDB:
+  * Effectively the AWS "Aurora" version of MongoDB
+  * Used to store query and index JSON data
+  * Similar "deployment concepts" as Aurora
+  * Fully managed, HA with replication across 3 AZs
+  * Storage automatically grows in increments of 10 GB, up to 64 TB
+  * Automatically scales to workloads with millions of requests per second
+  * Anything related to MongoDB => DocumentDB
+  * Doesn't have an in-memory caching layer => Consider DynamoDB (DAX) for a NoSQL approach
 
 ##### DynamoDB:
   * (Serverless) NoSQL Key-value / document DB that delivers single-digit millisecond performance at any scale.  It's a fully managed, multi-region, multi-master, durable DB with built-in security, backup and restore, and in-memory caching for internet scale applications
@@ -4001,7 +4011,7 @@ Instance Types:
     * Check DNS setting resolution in VPC 
     * Check Route tables
   * Types of Endpoints:
-    * Interface Endpoints: provisions an ENI (private ip) as an entry point (must attach a SG); supports most AWS services; powered by Private Link
+    * Interface Endpoints: provisions an ENI (private ip) as an entry point (must attach a SG); supports most AWS services; powered by PrivateLink
     * Gateway Endpoints: provisions a gateway and must be used as a target in Route table; supports both *S3 and DynamoDB*
   * Gateway Endpoints are preferred most of the time over Interface Endpoints as the former is free and the latter costs $
   * Interface endpoint is preferred if access is required from on-premises (site-to-site VPN or Direct Connect), a different VPC or a different region
