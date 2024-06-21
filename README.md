@@ -216,7 +216,7 @@ sequenceDiagram
 | structured, processed | data | structured, semi-structured, unstructured, raw |
 | schema-on-write | processing | schema-on-read |
 | hierarchically archived | storage | object-based, no hierarchy |
-| less agile, fixed configuration | agility | hihgly agile, configure and reconfigure as needed |
+| less agile, fixed configuration | agility | highly agile, configure and reconfigure as needed |
 | mature | security | maturing |
 | business professionals | users | data scientists et. al. |
 
