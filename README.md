@@ -578,6 +578,7 @@ graph LR
   * Use fan-out if lag is encountered by stream consumers (~200ms vs ~70ms latency)
   * Requires code (producer/consumer)
   * Shards can be split or merged
+  * Shard count = ceil(max(incoming_write_bandwidth_in_KB/1000, outgoing_read_bandwidth_in_KB/2000))
   * 1 MB message size limit
   * TLS in flight or KMS at-rest encryption
   * *Can't subscribe to SNS*
@@ -904,7 +905,7 @@ graph LR
 ### Data Distributions
   * Normal distribution: bell curve centered around 0
     * Probability density function: gives the probability of a data point falling within a given range of values (on a curve) with infinite possibilities (non-discrete)
-  * Poisson distribution: series of discrete events that end in a success or failure, where the average number of successes over time is known.  As λ value approaches 0, distribution looks exponential
+  * Poisson distribution: series of discrete events that end in a success or failure, where the average number of successes over a period of time is known (count distribution).  As λ value approaches 0, distribution looks exponential
     * Probability mass function: discrete data example being a bell curve surrounding a histogram chart
   * Binomial Distribution: number of successes dealing with a binary result; discrete trials (n)
   * Bernouli Distribution: 
@@ -1952,8 +1953,8 @@ How to choose an activation function
     | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
     | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)|
    
-  * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection)
-  * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing)
+  * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection).  
+  * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.  
   * F1 is a good choice when you care about precision AND recall
   * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
   * Offline and online model evaluation, A/B testing
