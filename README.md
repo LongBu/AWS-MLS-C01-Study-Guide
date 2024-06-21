@@ -40,6 +40,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ##### Amazon Redshift:
   * fully managed, scalable cloud data warehouse, columnar instead of row based (based on Postgres, No OLTP [row based], but OLAP [column based]); no Multi-AZ
+  * As it is a data warehouse, can only store structured data
   * Offers parallel sql queries
   * Can be server less or use cluster(s)
   * Uses SQL to analyze structured and semi-structured data across data warehouses, operational DBs, and data lakes
@@ -204,8 +205,20 @@ sequenceDiagram
 
 ##### Data Lake
   * Offers centralized architecture within S3
+  * Can store structured, semi-structured and unstructured data
   * Decouples storage (S3) from compute resources
   * Analagous to S3, any format is permitted, but typically they are: CSV, JSON, Parquet, Orc, Avro, and Protobuf
+
+##### Data Lake vs Data Warehouse
+
+| Data Warehouse | Capability | Data Lake |
+| ------------- | ------------- | ------------- |
+| structured, processed | data | structured, semi-structured, unstructured, raw |
+| schema-on-write | processing | schema-on-read |
+| hierarchically archived | storage | object-based, no hierarchy |
+| less agile, fixed configuration | agility | hihgly agile, configure and reconfigure as needed |
+| mature | security | maturing |
+| business professionals | users | data scientists et. al. |
 
 ##### S3
 
