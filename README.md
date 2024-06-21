@@ -2922,7 +2922,8 @@ Production Variants
 
 
 #### SageMaker Inference Pipelines 
-  * Linear sequence of 2-15 containers 
+  * Linear sequence of 2-15 containers
+  * Fully Managed
   * Any combination of pre-trained built-in algorithms or your own algorithms in Docker containers 
   * Combine pre-processing, predictions, post-processing 
   * Spark ML and scikit-learn containers OK
