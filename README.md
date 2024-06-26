@@ -874,6 +874,17 @@ graph LR
     * No custom code, Glue monitors for changes in the source data, serverless
     * Leverages a "virtual table" (materialized view)
 
+##### AWS Glue Inputs
+  * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores)
+  * dynamodb
+  * mongodb/documentdb
+  * Kinesis Data Streams
+  * Kafka/Amazon Managed Streaming for Apache Kafka
+  * Athena
+  * Spark
+  * S3
+  * Files (Orc, Parquet)
+
 ##### AWS Glue Data Brew
 
   * Allows you to clean, normalize, and translate data without writing any code (ETL)
