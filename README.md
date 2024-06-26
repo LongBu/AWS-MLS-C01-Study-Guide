@@ -3920,6 +3920,7 @@ Usage:
     * MATLAB, Simulink
     * EnergyPlus, RoboSchool, PyBullet
     * Amazon Sumerian, AWS RoboMaker
+  * Neither Supervised or Unsupervised as a well-defined end goal in the form of a desired result, but no supervisor to label associated data in advance.  During training, instead of trying to map inputs with known outputs, it maps inputs with possible outcomes.  By rewarding desired behavior, you give weight to the best outcome(s)
 
 Training input:
   * Can distribute training and/or environment rollout
@@ -3947,6 +3948,33 @@ Instance Types:
   * But, it's deep learning - so GPUs are helpful
   * And we know it supports multiple instances and cores
   * More than one machine, if using CPUs 
+
+##### Supervised vs Unsupervised Algorithms
+  * Unsupervised:
+    * Singular Value Decomposition (SVD)
+    * Random Cut Forest
+    * Neural Topic Model
+    * LDA
+    * K-Means
+    * PCA
+    * IP Insights
+  * Supervised:
+    * Factorization Machines
+    * KNN
+    * Semantic Segmentation
+    * Image Classification
+    * Object Detection
+    * Object2Vec
+    * Deep AR Forecasting
+    * Seq2Seq
+    * BlazingText
+    * XGBoost
+    * Linear Learner
+    * Decision Trees
+    * Naive Bayes
+    * Logistic Regression
+    * Recommendation Engine (ALS)
+  * Neither: Reinforcement Learning
 
 #### Identity and Access Management (IAM)
 
