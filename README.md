@@ -4081,6 +4081,7 @@ Instance Types:
     * Monitor performance of the model 
 
 ## Question Answer Shortcuts
+  * If you see "near real time" in the question, be on the look out for the use of λ in the answer
 
 ## Acronyms
 
