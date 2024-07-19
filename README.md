@@ -8,7 +8,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 3. <a href="#exploratory-data-analysis">Exploratory Data Analysis</a>
 4. <a href="#modeling">Modeling</a>
 5. <a href="#machine-learning-implementation-and-operations">Machine Learning Implementation and Operations</a>
-6. <a href="#question-answer-shortcuts"><Question/Answer Shortcuts</a>
+6. <a href="#question-answer-shortcuts">Question/Answer Shortcuts</a>
 7. <a href="#acronyms">Acronyms</a>
 
 ## Introduction
