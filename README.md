@@ -1447,7 +1447,7 @@ graph LR
     * Overfitted models have learned patterns in the training data that don't generalize to the real world
     * Often seen as high accuracy on training data set, but lower accuracy on test or evaluation data set.
     * Batch sizes that are larger can increase chances of becoming stuck in a local minima
-    * Higher learning rates run the risk of overshooting an optimal solution
+    * Higher learning rates run the risk of overshooting an optimal solution or causing oscillation of accurate results
     * Generally good to pair a small batch size and a small learning rate
     * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * Specific to NN:
