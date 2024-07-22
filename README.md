@@ -1376,7 +1376,6 @@ graph LR
     * Some will take part in new training sets more often
     * Training is sequential; each classifier takes into account the previous one's success.
     * Boosting generally yields better accuracy than Bagging
-
   * logistic regression - supervised model dealing with classification and probability outcomes, though the former is more prevalent
   * K-means - unsupervised cluster analysis on unlabeled data where the aim is to partition a set of objects into K clusters in such a way to understand what types of groups exist or to identify unknown groups in complex data sets
   * linear regression - useful in predicting a variable based on the value of another variable, a supervised model curvature, if you will, in a n-space dimensional plane 
@@ -1388,6 +1387,13 @@ graph LR
   * Bagging - generate N new training sets by random sampling with replacement.  Each resampled model can be trained in parallel
     * Bagging avoids overfitting over boost
     * Bagging is easier to parallelize over boost
+  * Support Vector Machine (SVM)
+    * a supervised ML algorithm that can be used for either classification or regression
+    * can solve linear and nonlinear problems
+    * SVM classification creates a line or hyperplane to separate data into classes 
+    * can be used for text classification such as categories, detecting spam and sentiment analysis
+    * commonly used for image recognition (performs particularly well in aspect-based recognition and color-based classification)
+    * outlier detection
 
 ### Train machine learning models
 
@@ -4160,6 +4166,7 @@ Instance Types:
 | SSL | Secure Sockets Layer |
 | SSM | Systems Manager |
 | SSML | Speech Synthesis Markup Language |
+| SVM | Support Vector Machine |
 | TLS | Transport Layer Security |
 | TN | True Negative |
 | TP | True Positive |
