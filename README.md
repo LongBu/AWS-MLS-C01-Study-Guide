@@ -952,7 +952,7 @@ graph LR
   * Matplotlib (graphics might be good?)
     * boxplot (with whiskers)
     * histograms (binning: bins of results of similar measure)
-  * Seaborn  (graphics might be good?)
+  * Seaborn (graphics might be good?)
     * essentially Matplotlib extended
     * heatmap: demonstrates another dimension within the given plot axes
     * pairplot: good for attribute correlations
@@ -965,6 +965,7 @@ graph LR
     * predict function harnesses the model to output inferences based on input
     * good for preprocessing data (input data=>normal distribution)
       * to avoid unequal weightings, scale to the around the mean for each column
+  * Horovod: distributed deep learning framework for TensorFlow, Keras, PyTorch, and Apache MxNet
   * Spark MLLib (see Apache Spark on EMR)
 
 
