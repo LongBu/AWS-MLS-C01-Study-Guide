@@ -1537,6 +1537,7 @@ Usage:
   * They can find features that aren't in a specific spot
     * Like a stop sign in a picture
     * Or words within a sentence
+    * Primarily used to work with image data
 
 How do they work?
   * ﻿﻿Inspired by the biology of the visual cortex
