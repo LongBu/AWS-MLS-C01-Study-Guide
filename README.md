@@ -2829,6 +2829,26 @@ Production Variants
     * ﻿﻿Comprehend=>Automatically classify text by topics, sentiment
     * ﻿﻿Any pre-trained model or unsupervised technique that may be helpful
 
+#### SM Ground Truth Labels
+  * Label Images: 
+    * Bounding Box
+    * Image Semantic Segmentation
+    * Auto-Segmentation Tool
+    * Image Classification (Single or Multi-Label)
+    * Image Label Verification
+  * Label Text:
+    * Named Entity Recognition
+    * Text Classification (Single or Multi-Label)
+  * Label Video (Frames)
+    * Video Frame Object Detection
+    * Video Frame Object Tracking
+    * Video Frame Labeling Job Overview
+  * Label 3D Point Clouds
+    * 3D Point Cloud Object Detection
+    * 3D Point Cloud Object Tracking
+    * 3D Point Cloud Semantic Segmentation
+    * 3D-2D Point Cloud Object Tracking
+
 #### SageMaker Ground Truth Plus:
   * Turnkey solution managing the workflow and team of labelers
   * You fill out an intake form
