@@ -2250,6 +2250,7 @@ Personalize Pricing
   * PII Identification & Redaction
   * Targeted sentiment (for specific entities)
   * Can train on your own data
+  * Can integrate with S3, Firehose, Lambda, Lex (eg realtime sentiment analysis), KMS, etc.
   * Results of the model are the following:
     * Events detection
     * Entities-nouns
