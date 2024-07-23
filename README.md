@@ -2114,6 +2114,7 @@ How to choose an activation function
   * Allows discovery of information spanning all connected data allocated in AWS (given permission) and any 3rd party connected data (salesforce, ServiceNow, SharePoint, Intranet, sharing services \[JDBC, S3], DBs, Microsoft One Drive, etc.) into one searchable repository
   * Can use other services in AWS to preprocess content to text that is searchable/indexable
   * Relevance tuning - boost strength of document freshness, view counts, etc.
+  * Text (extracted?) from a document can't exceed 5 MB
 
 ##### Amazon Lex: 
   * ASR to convert speech to text
