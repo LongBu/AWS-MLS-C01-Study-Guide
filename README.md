@@ -2883,6 +2883,7 @@ Production Variants
   * Effectively a cogeneration tool to handle transformations
   * Is not a pipeline itself, but the code it provides can go into a pipeline
   * Steps:Import=>Preview (can change data types or column names)=> Visualized data=> Transform=>"Quick Model" to analyze (data prep choices check)=> export data flow (python code)
+  * Target Leakage measured via AUC-ROC (classification) or R2 (regression)
   * Inputs
     * S3
     * Athena
