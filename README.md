@@ -563,6 +563,24 @@ graph LR
     * More control over environment, compute resources that run code and the code itself
     * EC2 or EMR instance based
 
+##### λ:
+  * Serverless backend capable of supporting container image (must implement λ Runtime API)
+  * Free tier => 1,000,000 requests and 400,000 GBs of compute time
+  * Pay .20 per 1,000,000 requests after free threshold
+  * Pay per duration of memory (in increments of 1 ms) after the free threshold ($1.00 for 600,000 GBs)
+  * Up to 10 GB of RAM, minimum 128 MB
+  * More RAM improves CPU and network capabilities
+  * Environment variables (< 4KB)
+  * Does not have out-of-the box caching
+  * Regionally based
+  * Disk capacity in function container (/tmp) 512 MB to 10 GB
+  * Can use /tmp to load other files at startup
+  * Concurrency executions: 1000, but can be increased
+  * Deployment size: uncompressed 250 MB, compressed 50 MB
+  * Can run via CloudFront as CloudFront functions and λ@edge
+  * Can create λ layers (up to 5) to reuse code, making deployment smaller
+  * Timeout is the maximum amount of time in seconds that a Lambda function can run. The default value for this setting is 3 seconds, though can be adjusted in increments of 1 second up to 900 seconds (15 minutes).
+
 ##### Amazon Kinesis:
   * Platform to send stream data (eg: IoT, metrics and logs) making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
   * Any mention of "streaming (system[s])" and/or "real time" (big) data is of importance, kinesis is likely the best fit as it makes it easy to collect, process, and analyze real-time, streaming data to allow quick reactions from information taken in.  
