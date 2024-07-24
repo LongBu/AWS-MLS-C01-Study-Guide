@@ -1941,6 +1941,11 @@ How to choose an activation function
       * So the standard deviation of (1, 4, 5, 4, 8) is 2.24.
       * This is usually used as a way to identify outliers. Data points that lie more than one standard deviation from the mean can be considered unusual.
       * You can tell how extreme a data point is by asking about "how many sigmas" away from the mean it is?
+    * Correlation Types
+      * Covariance correlation coefficient: used when you have a Gaussian relationship between your variables.
+      * Pearson’s correlation coefficient: used when you have a Gaussian relationship between your variables.
+      * Spearman’s correlation coefficient: used when you have a non-Gaussian relationship between your variables.
+      * Polychoric correlation coefficient:  used to understand relationships of variables gathered via surveys such as personality tests and surveys that use rating scales.
     * Dealing with Outliers
       * Sometimes it's appropriate to remove outliers from your training data
       * Do this responsibly! Understand why you are doing this.
