@@ -1945,7 +1945,7 @@ How to choose an activation function
       * Covariance correlation coefficient: used when you have a Gaussian relationship between your variables.
       * Pearson’s correlation coefficient: used when you have a Gaussian relationship between your variables.
       * Spearman’s correlation coefficient: used when you have a non-Gaussian relationship between your variables.
-      * Polychoric correlation coefficient:  used to understand relationships of variables gathered via surveys such as personality tests and surveys that use rating scales.
+      * Polychoric correlation coefficient:  used to understand relationships of variables gathered via surveys (such as personality tests) that use rating scales.
     * Dealing with Outliers
       * Sometimes it's appropriate to remove outliers from your training data
       * Do this responsibly! Understand why you are doing this.
@@ -4141,6 +4141,8 @@ Instance Types:
 
 ## Question Answer Shortcuts
   * If you see "near real time" in the question, be on the look out for the use of λ in the answer
+  * If given a choice between a "hand rolled" service vs an AWS solution, choose the latter
+  * If classification is needed at the "pixel" level, look for a solution utilizing Semantic Segmentation
 
 ## Acronyms
 
