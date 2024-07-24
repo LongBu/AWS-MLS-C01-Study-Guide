@@ -1986,7 +1986,7 @@ How to choose an activation function
       * Most models require feature data to at least be scaled to comparable values
       * Otherwise features with larger magnitudes will have more weight than they should
         * Example: modeling age and income as features - incomes will be much higher values than ages
-        * Scikit_learn has a preprocessor module that helps (MinMaxScaler, etc)
+        * Scikit_learn has a preprocessor module that helps (MinMaxScaler \[vars => 0-1], etc)
       * Remember to scale your results back up
     * Shuffling
       * Many algorithms benefit from shuffling their training data
