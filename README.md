@@ -981,8 +981,11 @@ graph LR
     * y=>labels
     * X and y are utilized in conjunction with the fit function to train the model(s)
     * predict function harnesses the model to output inferences based on input
-    * good for preprocessing data (input data=>normal distribution)
-      * to avoid unequal weightings, scale to the around the mean for each column
+    * good for preprocessing data (input data=>normal distribution \[MinMaxScaler])
+      * to avoid unequal weightings, scale to the around the mean for each column, but if scales vastly different use MinMaxScaler to have values between 0 and 1
+    * Metrics:
+      * mutual_info_regression: metric used for ranking features that are continuous (display in ranked order)
+      * mutual_info_classif: metric used for ranking features that are discrete targets (display in ranked order)
   * Horovod: distributed deep learning framework for TensorFlow, Keras, PyTorch, and Apache MxNet
   * Spark MLLib (see Apache Spark on EMR)
 
