@@ -2747,7 +2747,9 @@ Production Variants
   * Use SSL/TLS when connecting to anything 
   * Use CloudTrail to log API and user activity 
   * Use encryption 
-  * Be careful with PII=>Encryption(at rest and in-transit)=> Both types of encryption are good for PII or sensitive info 
+  * Be careful with PII
+    * Encryption(at rest and in-transit)=> Both types of encryption are good for PII or sensitive info
+    * Alternatively a less complex/more efficient way could be tokenization of PII fields (especially if not adding any specific value)
 
 ###### Protecting your Data at Rest in SM 
   * AWS Key Management Service (KMS) 
