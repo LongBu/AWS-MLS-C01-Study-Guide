@@ -579,7 +579,7 @@ graph LR
   * Deployment size: uncompressed 250 MB, compressed 50 MB
   * Can run via CloudFront as CloudFront functions and λ@edge
   * Can create λ layers (up to 5) to reuse code, making deployment smaller
-  * Timeout is the maximum amount of time in seconds that a Lambda function can run. The default value for this setting is 3 seconds, though can be adjusted in increments of 1 second up to 900 seconds (15 minutes).
+  * Timeout is the maximum amount of time in seconds a λ can run (default 3). This can be adjusted from 1 to 900 seconds (15 minutes).  A low timeout value has increased risk of unexpected timeout due to external service lag, downloads or long(er) computational executions.  
 
 ##### Amazon Kinesis:
   * Platform to send stream data (eg: IoT, metrics and logs) making it easy to load and analyze as well as provide the ability to build your own custom applications for your business needs
