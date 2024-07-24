@@ -3201,6 +3201,8 @@ Usage:
   * ﻿﻿Can handle both regression (numeric)predictions and classification predictions
     * ﻿﻿For classification, a linear threshold function is used.
     * ﻿﻿Can do binary or multi-class
+    * binary classification => predicted_label of complete (1) or not complete (0)
+    * multiclass classification => predicted_class of 0 to num_class - 1 and a score list of floating point numbers per class
 
 Training input:
   * ﻿﻿recordIO-wrapped protobuf
