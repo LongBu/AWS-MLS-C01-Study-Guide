@@ -2280,7 +2280,7 @@ Personalize Pricing
 ##### Amazon Transcribe:
   * Automatically convert speech to text
     * Input in FLAC, MP3, MP4, or WAV, in a specified language
-    * Streaming audio supported (HTTP/2 or WebSocket)
+    * Streaming audio supported (WebSocket or HTTP/2 \[HTTP/2 streaming client can handle connection retries if there are intermittent network issues])
       * French, English, Spanish only
   * Uses Deep Learning - Automatic Speech Recognition (ASR)
   * Use cases:
