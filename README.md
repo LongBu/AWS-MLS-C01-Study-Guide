@@ -1127,6 +1127,12 @@ graph LR
     * Create a new sample from the KNN result (mean of the neighbors)
   * Both generates new samples and undersamples majority class
   * Generally better than just oversampling
+  * New samples are almost identical
+  * Technique is expeditious, though the results aren't as useful as unique observations created by alternative techniques (eg: GAN)
+
+#### GAN 
+  * Technique generates unique observations that more closely resemble real minority observations without being almost identical. This results in more unique observations of your minority class that improves your model’s accuracy by helping to correct the imbalance in your data.
+
 
 #### Adjusting thresholds
   * When making predictions about a classification (fraud / not fraud), you have some sort of threshold of probability at which point you'll flag something as the positive case (fraud)
@@ -4177,6 +4183,7 @@ Instance Types:
 | ETL | Extract, Translate, Load |
 | FN | False Negative |
 | FP | False Positive |
+| GAN | Generative Adversarial Networks |
 | GPT | Generative Pre-trained Transformer |
 | GRU | Gated Recurrent Unit |
 | IA | Infrequent Access |
