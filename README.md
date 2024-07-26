@@ -224,7 +224,7 @@ sequenceDiagram
 ##### AWS Lake Formation
 
   * FindMatches transform enables you to identify matching records in your dataset, even when the records do not have a common unique identifier. No fields match exactly. 
-  * Can import data from MySQL, PostgreSQL, SQL Server, MariaDB, Oracle databases (Amazon RDS or EC2 based), on prem-JDBC based, or alternatively through a AWS Glue ETL if not any of the other connection types
+  * Can import data from MySQL, PostgreSQL, SQL Server, MariaDB, Oracle databases (Amazon RDS or EC2 based), on prem-JDBC based, or alternatively through an AWS Glue ETL if not any of the other connection types
 
 ##### S3
 
