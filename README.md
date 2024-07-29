@@ -3774,6 +3774,10 @@ Usage:
   * Not deep learning
   * Unsupervised
     * The topics themselves are unlabeled; they are just groupings of documents with a shared subset of words
+    * Observations == documents
+    * feature set == vocabulary
+    * feature == word
+    * resulting categories == topics
   * Can be used for things other than words
     * Cluster customers based on purchases
     * Harmonic analysis in music
