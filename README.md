@@ -2025,7 +2025,10 @@ How to choose an activation function
     | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)|
    
   * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection).  
-  * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.  
+  * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.
+  * Be sure to read the question(s) to understand the goal, regardless of the test type
+    * If they mention not wanting True cases going undetected=>recall
+    * If they mention not wanting False cases being detected=>precision
   * F1 is a good choice when you care about precision AND recall
   * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
   * Offline and online model evaluation, A/B testing
@@ -2072,6 +2075,7 @@ How to choose an activation function
   * Provides governance, compliance and audit for your AWS account:
     * Enabled by default
     * Trail can be applied to all regions (default) or a single region
+    * Doen't monitor SM InvokeEndpoint calls
 
 ##### CloudTrail Events:
   * Able to be separated into read/write events
@@ -2112,6 +2116,7 @@ How to choose an activation function
     * Events and Alerting
     * Log aggregation and analysis
     * Cloudwatch metric=>Amazon Data Firehose to S3 or 3rd parties in near real time
+    * Captures SM monitoring metrics at a 1 minute frequency
   * CloudTrail: 
     * Record API calls made within Account by everyone
     * Can define trails for specific resources
