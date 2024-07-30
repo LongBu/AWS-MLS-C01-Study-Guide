@@ -1001,6 +1001,7 @@ graph LR
   * Hadoop consists largely of HDFS, YARN and Map Reduce
   * Hadoop Core or Hadoop - Common java archive (JAR) files/scripts used to boot Hadoop
   * YARN used to centrally manage cluster resources for different frameworks
+  * Apache Spark can write output in RecordIO-protobuf format
   * Spark (faster alternative to Map Reduce)
     * Can be included within SageMaker
     * In memory cache
