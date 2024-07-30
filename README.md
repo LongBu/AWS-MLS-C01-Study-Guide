@@ -2815,7 +2815,7 @@ Production Variants
   * Training and Inference Containers are also Internet-enabled by default
     * Network isolation is an option, but this also prevents S3 access 
 
-###### SM integration with IAM 
+###### SM integration with IAM
   * User permissions for:   
     * CreateTrainingJob
     * CreateModel
@@ -2828,7 +2828,10 @@ Production Variants
     * AmazonSageMakerReadOnly
     * AmazonSageMakerFullAccess
     * AdministratorAccess
-    * DataScientist 
+    * DataScientist
+  * Both User permissions and Predefined policies are identity policies supported by IAM
+  * SM doesn't support resource-based policies, nor service linked roles
+  * SM supports authorization based on resource tags, which can be attached to SM resources or past to SM via request(s).  To control access via tag, you add tag info in the condition element of the policy (eg: sagemaker:ResourceTag/key-name, aws:ResourceTag/key-name, or aws:TagKeys condition)
 
 ###### SM Logging and Monitoring 
   * CloudWatch can log, monitor and alarm on:
