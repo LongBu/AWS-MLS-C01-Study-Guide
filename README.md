@@ -1484,6 +1484,11 @@ graph LR
 #### Loss Functions (aka Cost Function): seek to calculate/minimize the error (difference between actual and predicted value)
 
 #### Perform hyperparameter optimization
+  * Preventing Underfitting
+    * If your model peforms poorly on the traing, as well as evalution data=>underfitting
+    * Solutions:
+      * Add more features to the model
+      * Remove regularization
   * Preventing overfitting
     * Models that are good at making predictions on the data they were trained on, but not on new data it hasn’t seen before
     * Overfitted models have learned patterns in the training data that don't generalize to the real world
