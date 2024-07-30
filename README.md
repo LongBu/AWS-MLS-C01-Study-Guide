@@ -702,6 +702,7 @@ graph LR
     * error/!{firehose:random-string}/!{firehose:error-output-type}/!{timestamp:yyyy/MM/dd}/
   * Data Conversion from csv/json to Parquet/ORC using AWS Glue (only for S3)
   * Data Transformation through λ (eg: csv=>json)
+  * Can't write output as RecordIO-protobuf
   * Supports compression if target is S3 (GZIP/ZIP/SNAPPY)
 
 ##### Amazon Kinesis Video Streams 
@@ -870,6 +871,7 @@ graph LR
     * Jobs scheduled via Glue Scheduler
     * Jobs triggered by events=>Glue Triggers
     * Transformations:
+      * Glue can't output RecordIO-protobuf format
       * Bundled Transformations
         * DropFields/DropNullFields
         * Filter records
