@@ -2030,6 +2030,7 @@ How to choose an activation function
     * If they mention not wanting True cases going undetected=>recall
     * If they mention not wanting False cases being detected=>precision
   * F1 is a good choice when you care about precision AND recall
+  * Precision-Recall Area-Under-Curve (PR AUC) > recall if trying to improve positive case results
   * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
   * Offline and online model evaluation, A/B testing
   * Compare models using metrics (time to train a model, quality of model, engineering costs)
