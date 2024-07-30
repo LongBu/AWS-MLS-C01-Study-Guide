@@ -2561,9 +2561,10 @@ Personalize Pricing
 
 ###### Training on SageMaker
   * Create a training job
+    * ARN of an IAM role that SM can assume to perform the (training) tasks with the proper permissions
     * URL of S3 bucket with training data
-    * ML compute resources
-    * URL of S3 bucket for output
+    * ML compute/storage resources for training
+    * URL of S3 bucket for output of the trained model
     * ECR path to training code
   * Training options
     * Built-in training algorithms
@@ -4177,6 +4178,7 @@ Instance Types:
 | AMI | Amazon Machine Image |
 | AOF | Append-only file |
 | AR | AutoRegressive |
+| ARN | Amazon Resource Name | 
 | ASR | Automatic Speech Recognition |
 | AZ | Availability Zones |
 | BERT | Bi-directional Encoder Representations from Transformers |
