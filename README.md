@@ -1114,7 +1114,11 @@ graph LR
     * i.e., fraud detection. Fraud is rare, and most rows will be not-fraud
     * "positive" doesn't mean "good" it means the thing you're testing for happened.
       * If your machine learning model is made to detect fraud, then fraud is the positive case.
-  * Mainly a problem with neural networks 
+  * Mainly a problem with neural networks
+  * Potential Solutions:
+    * Create additional "positive" cases (eg: SMOTE/GAN)
+    * Optimize the cost function to penalize the model for predicting negative outcomes when the actual outcome is positive (punish false negatives, or in other words, false negatives have a larger impact than that of false positives)
+
 #### Oversampling
   * Duplicate samples from the minority class
   * Can be done at random
