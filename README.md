@@ -2834,6 +2834,7 @@ Production Variants
     * AdministratorAccess
     * DataScientist
   * Both User permissions and Predefined policies are identity policies supported by IAM
+  * Creation of role(s) to delegate access to 3rd party AWS accounts feasible
   * SM doesn't support resource-based policies, nor service linked roles
   * SM supports authorization based on resource tags, which can be attached to SM resources or past to SM via request(s).  To control access via tag, you add tag info in the condition element of the policy (eg: sagemaker:ResourceTag/key-name, aws:ResourceTag/key-name, or aws:TagKeys condition)
 
