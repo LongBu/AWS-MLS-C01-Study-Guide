@@ -1500,7 +1500,7 @@ graph LR
     * Batch sizes that are larger can increase chances of becoming stuck in a local minima
     * Higher learning rates run the risk of overshooting an optimal solution or causing oscillation of accurate results
     * Generally good to pair a small batch size and a small learning rate
-    * If seeing such a graph as either, overfitting is usually the case:
+    * If seeing such a graph as either, overfitting is usually the case (blue is training, red is validation and the dashed line is the target):
       ![Classic signs of overfitting](https://img-b.udemycdn.com/redactor/raw/2020-10-03_10-38-36-1360ed7c3e1b03e7028e82140947f65a.png)
     * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * Specific to NN:
