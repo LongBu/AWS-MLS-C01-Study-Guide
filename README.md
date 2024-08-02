@@ -3281,6 +3281,7 @@ Training input:
     * ﻿﻿Float32 data only!
   * ﻿﻿or CSV
     * ﻿﻿First column assumed to be the label
+    * should not have a header
   * ﻿﻿File or Pipe mode both supported
   * Pipe mode streams from S3 -> More efficient and solves the problem of optimizing slow training
 
@@ -3370,6 +3371,9 @@ Usage:
 Training input:
 * XGBoost for SageMaker is just open source  XGBoost
   * Takes CSV or libsvm input.
+    * CSV input
+      * first column is the label
+      * should not have a header
   * AWS recently extended it to accept recordIO-protobuf and Parquet
 
 
@@ -3848,6 +3852,7 @@ Training input:
   * ﻿﻿Test channel emits accuracy or MSE
   * ﻿﻿recordIO-protobuf or CSV training
     * ﻿﻿First column is the label
+    * if csv, should not have a header
   * ﻿﻿File or pipe mode on either
 
 How to use:
