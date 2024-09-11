@@ -4201,6 +4201,7 @@ Instance Types:
   * If you see "near real time" in the question, be on the look out for the use of λ in the answer
   * If given a choice between a "hand rolled" service vs an AWS solution, choose the latter
   * If classification is needed at the "pixel" level, look for a solution utilizing Semantic Segmentation
+  * If metadata mentioned, Glue is likely part of the solution 
 
 ## Acronyms
 
