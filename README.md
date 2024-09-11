@@ -2553,7 +2553,7 @@ Personalize Pricing
 
 ##### SageMaker Notebooks
   * Can direct the process (data preparation)
-  * Notebook Instances on EC2 are spun up from the console
+  * Notebook Instances are EC2 instances, running within AWS Service Accounts, that are spun up from the console
     * S3 data access (data usually comes from here)
       * Ideal format varies with algorithm - often it is RecordIO / Protobuf being the most efficient
     * Can also ingest from Athena, EMR, Redshift, and Amazon Keyspaces
