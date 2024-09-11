@@ -2821,7 +2821,7 @@ Production Variants
     * Enabled via console or API when setting up a training or tuning job 
 
 ###### SM integration with VPC 
-  * Training jobs run in a Virtual Private Cloud (VPC) 
+  * Training jobs run in a VPC on EC2 instances within AwS Service Accounts.  
   * You can use a private VPC for even more security (note: the following are necessary for SM to work at all within a private VPC)
   * You’ll need to set up S3 VPC endpoints
   * Custom endpoint policies and S3 bucket policies can keep this secure 
