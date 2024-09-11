@@ -1540,7 +1540,7 @@ graph LR
       * We start at some random point, and sample different solutions (weights) seeking to minimize some cost function, over many epochs
         * Epochs – iterations at which we train, and attempt a different set of weights, looking to minimize the cost/loss function
       * How far apart these samples are is the learning rate
-      * *Too high a learning rate means you might overshoot the optimal solution!*
+      * *Too high a learning rate means you might overshoot the optimal solution or oscillate on accuracy!*
       * *Too small a learning rate will take too long to train/find the optimal solution*
       * Learning rate is an example of a hyperparameter
     * NN Batch Size
