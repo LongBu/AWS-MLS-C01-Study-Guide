@@ -1503,10 +1503,10 @@ graph LR
     * Generally good to pair a small batch size and a small learning rate
     * If seeing such a graph as either, overfitting is usually the case (blue is training, red is validation and the dashed line is the target):
       ![Classic signs of overfitting](https://img-b.udemycdn.com/redactor/raw/2020-10-03_10-38-36-1360ed7c3e1b03e7028e82140947f65a.png)
-    * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * Specific to NN:
       * Dropout: Remove some neurons at each Epoch During training, which forces the model to learn/spread out learning among other neurons Preventing individual neurons from overfitting specific data point(s)
       * Early stopping is breaking early training from Epochs as accuracy levels out, preventing overfitting
+      * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * L1 (LASSO) / L2 (Ridge) Regularization
       * Preventing overfitting in ML in general
       * A regularization term is added as weights are learned
