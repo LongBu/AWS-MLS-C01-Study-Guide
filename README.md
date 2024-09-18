@@ -2059,6 +2059,7 @@ How to choose an activation function
     * choose remaining holdouts to validate against
     * average out the validation step results
     * good if lacking data
+    * stratified k-folds is good to use when dealing with a classifier with imbalanced class data distribution input (training/validation)
   * Sometimes accuracy isn't everything:
     * A test for a rare disease can be 99.9% accurate by just guessing "no" all the time
     * We need to understand true positives and true negative, as well as false positives and false negatives.
