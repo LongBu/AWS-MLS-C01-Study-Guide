@@ -2967,7 +2967,7 @@ Production Variants
     * Redshift
     * Lake formation
     * SageMaker Feature Store
-    * JDBD (Databricks, Saas)
+    * JDBC (Databricks, Saas)
   * Outputs (via a notebook)
     * SageMaker Processing
     * SageMaker Pipelines
