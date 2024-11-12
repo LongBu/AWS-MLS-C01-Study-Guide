@@ -2570,6 +2570,10 @@ Personalize Pricing
   * to import and display a script in a notebook => !pygmentize xyz.py
   * if wanting to see if a model works initially perhaps only try one epoch to save time and money
   * Monitoring the progress of a NB can be done in the individual NB or through SM=>Training Jobs in the console
+  * Sagemaker lifecycle configuration (LCC) can:
+    * installing packages or sample notebooks on a notebook instance
+    * configuring, networking and security for a notebook instance
+    * using a shell script to customize a notebook instance
   * Stop notebooks when not in use to not incur charges
   * Terminate session deployments when not in use to not incur charges
 
