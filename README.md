@@ -2412,6 +2412,7 @@ Personalize Pricing
     * Price, promotions, economic performance, etc.
     * Can combine with associated data to find relationships
   * Based on "dataset groups," "predictors," and "forecasts.'
+  * No longer available to new customers, though perhaps still on the exam?
 
 ###### Amazon Forecast algorithms
   * CNN-QR ($$$)
