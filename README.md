@@ -2454,7 +2454,7 @@ Personalize Pricing
   * Powered by ML
   * Supports Java and Python
 
-##### Amazon CodeWhisperer
+##### Amazon Q Developer (formerly CodeWhisperer)
   * An "Al coding companion"
     * Java, JavaScript, Python, TypeScript, C#
   * Real-time code suggestions
@@ -2482,7 +2482,7 @@ Personalize Pricing
     * Encrypted at rest
     * However - Amazon is allowed to mine your data for individual plans
    
-###### Amazon CodeWhisperer Pricing
+###### Amazon Q Developer (formerly CodeWhisperer) Pricing
   * Individual Tier
     * Free to use
     * Up to 50 security scans / month
@@ -2494,7 +2494,7 @@ Personalize Pricing
     * Up to 500/user/month security scans
     * $19 / user / month
  
-###### Amazon CodeWhisperer: Supported IDEs
+###### Amazon Q Developer (formerly CodeWhisperer): Supported IDEs
   * Visual Studio Code
   * JetBrains
     * IntelliJ
