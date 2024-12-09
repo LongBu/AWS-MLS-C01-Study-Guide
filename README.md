@@ -2394,7 +2394,7 @@ Personalize Pricing
    * Good for invoices, financial reports, medical records, insurance claims, taxforms, ids, passports
 
  ##### Amazon HealthScribe:
-  * Speech to text from recordings providing a conversation transcript between a patient and clinician and an automatically generated draft of clinical notes that reference the transcript
+  * Speech to text from recordings, providing a conversation transcript between a patient and clinician and an automatically generated draft of clinical notes that reference said transcript
     * Speaker roles identified
     * Recognizes medical terms
     * Skips small talk and silence
