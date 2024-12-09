@@ -2392,7 +2392,15 @@ Personalize Pricing
    * OCR that extracts text, handwriting and data from any scanned documents (eg: forms, tables tables, etc.) using ML
    * Read from any type of document (PDFs, images, etc.)
    * Good for invoices, financial reports, medical records, insurance claims, taxforms, ids, passports
-		
+
+ ##### Amazon HealthScribe:
+  * Speech to text from recordings providing a conversation transcript between a patient and clinician and an automatically generated draft of clinical notes that reference the transcript
+    * Speaker roles identified
+    * Recognizes medical terms
+    * Skips small talk and silence
+  * HIPAA compliant
+  * Recordings and Notes aren't stored in the cloud as a result of this service
+  
 ##### Amazon Translate:
   * Natural and accurate language translation using deep learning
   * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently 
