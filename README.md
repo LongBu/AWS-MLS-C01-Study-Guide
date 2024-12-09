@@ -2519,17 +2519,28 @@ Personalize Pricing
   * AWS Cloud9
 
 ##### Amazon Bedrock
-  * An API for Foundation Models
+  * An API for generative AI Foundation Models
+    * Invoke chat, text, or image models
+    * Pre-built, your own fine-tuned models, or you own models
+    * Third-party models bill you through AWS via their own pricing
+    * Support for RAG (Retreival-Augmented Generation)
+    * Support for LLM agents
   * Serverless
   * Fine-tuning API
-  * Provide labeled examples in S3
-  * As few as 20
+  * Provide labeled examples in S3 (as few as 20)
   * Your data is only used in your copy of the FM
   * Your data is encrypted and does not leave your VPC
-  * Integrates with SageMaker
-  * don't have to access model through a SM NB, but an API
-  * integrates with SM (notebooks)
-  * able to find two models and/or simply output results from pre-train models
+  * Integrates with SageMaker Canvas
+  * Don't have to access model through a SM NB, but an API
+  * Integrates with SM (notebooks)
+  * Able to find two models and/or simply output results from pre-trained models
+  * Bedrock API Endpoints
+    * bedrock: manage, deploy, train models
+    * bedrock-runtime: inference (execute prompts, generate embeddings) against a model
+      * Converse, ConverseStream, InvokeModel, InvokeModelWithResponseStream
+    * bedrock-agent: manage, deploy, train LLM agents and knowledge bases
+    * bedrock-agent-runtime: inference against agents and knowledge bases
+      * InvokeAgent, Retrieve, RetrieveAndGenerate
 
 ##### Amazon DeepComposer
   * Al-powered keyboard
