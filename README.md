@@ -1367,7 +1367,7 @@ graph LR
       * Any JDBC/ODBC data source
   * ML insights feature (only ML capabilties of Quicksight)
     * Anomaly detection (uses Random Cut Forest)
-    * Forcasting to get rid of anomalies to make forcast (uses Random Cut Forest)
+    * Forecasting to get rid of anomalies to make forecast (uses Random Cut Forest)
     * Autonarratives to build rich dashboards with embedded narratives
   * Anti-Patterns
     * Highly formatted canned reports
