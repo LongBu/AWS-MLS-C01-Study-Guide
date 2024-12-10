@@ -1371,7 +1371,7 @@ graph LR
     * Autonarratives to build rich dashboards with embedded narratives
   * Anti-Patterns
     * Highly formatted canned reports
-      * QuickSight is for ad ho queries, analysis, and visualization
+      * QuickSight is for ad hoc queries, analysis, and visualization
       * No longer true with paginated reports!
     * ETL
       * Use Glue instead, although QuickSight can do some transformations
