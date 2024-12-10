@@ -2533,6 +2533,10 @@ Personalize Pricing
   * Integrates with SageMaker Canvas and SM (notebooks)
   * Don't have to access model through a SM NB, but an API
   * Able to fine tune models and/or simply output results from pre-trained models
+  * Model Acess must be granted before any use of base/third party models
+  * IAM
+    * Must use an IAM user
+    * Have relevant permissions (eg: AmazonBedrockFullAccess/AmazonBedrockReadOnly)
   * Bedrock API Endpoints
     * bedrock: manage, deploy, train models
     * bedrock-runtime: inference (execute prompts, generate embeddings) against a model
