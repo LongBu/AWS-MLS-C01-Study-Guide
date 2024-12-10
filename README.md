@@ -2530,10 +2530,9 @@ Personalize Pricing
   * Provide labeled examples in S3 (as few as 20)
   * Your data is only used in your copy of the FM
   * Your data is encrypted and does not leave your VPC
-  * Integrates with SageMaker Canvas
+  * Integrates with SageMaker Canvas and SM (notebooks)
   * Don't have to access model through a SM NB, but an API
-  * Integrates with SM (notebooks)
-  * Able to find two models and/or simply output results from pre-trained models
+  * Able to fine tune models and/or simply output results from pre-trained models
   * Bedrock API Endpoints
     * bedrock: manage, deploy, train models
     * bedrock-runtime: inference (execute prompts, generate embeddings) against a model
