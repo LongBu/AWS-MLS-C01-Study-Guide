@@ -3793,7 +3793,7 @@ Instance Types:
 
 -A topic modeling algorithm
 -Not really trained as it's unsupervised, so you can do a training pass, a validation, or test channel to measure performance versus known data, where you know the topics
- 
+
 Usage:
   * A topic modeling algorithm (like LDA)
   * Organize documents into topics
