@@ -1490,7 +1490,7 @@ graph LR
 
 #### Perform hyperparameter optimization
   * Preventing Underfitting
-    * If your model peforms poorly on the traing, as well as evalution data=>underfitting
+    * If your model peforms poorly on the training, as well as evalution data=>underfitting
     * Solutions:
       * Add more features to the model
       * Remove regularization
