@@ -3976,7 +3976,7 @@ Usage:
   * ﻿﻿Unsupervised
 
 Training input:
-  * ﻿﻿recordIO-protobuf or CSV
+  * ﻿﻿recordIO-protobuf or CSV ('content_type=text/csv;label_size=0')
   * ﻿﻿File or Pipe on either
 
 How to use:
