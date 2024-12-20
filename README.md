@@ -1499,6 +1499,8 @@ graph LR
     * Overfitted models have learned patterns in the training data that don't generalize to the real world
     * Often seen as high accuracy on training data set, but lower accuracy on test or evaluation data set.
     * Batch sizes that are larger can increase chances of becoming stuck in a local minima
+    * More training data might help
+    * Use of less features might help
     * Higher learning rates run the risk of overshooting an optimal solution or causing oscillation of accurate results
     * Generally good to pair a small batch size and a small learning rate
     * If seeing such a graph as either, overfitting is usually the case (blue is training, red is validation and the dashed line is the target):
