@@ -3356,7 +3356,7 @@ Instance Types:
 
 Usage:
   * ﻿﻿Input is a sequence of tokens, output is a sequence of tokens
-  * ﻿﻿Machine Translation
+  * ﻿﻿Machine Translation (eg: Language A => Language B, intelligent spell check)
   * ﻿﻿Text summarization
   * ﻿﻿Speech to text
   * ﻿﻿Implemented with RNNs and CNNs with attention
