@@ -4104,6 +4104,19 @@ Instance Types:
   * And we know it supports multiple instances and cores
   * More than one machine, if using CPUs 
 
+##### Parallel Algorithms
+  * PCA
+  * Random Cut Forest
+  * DeepAR Forecasting
+  * Image Classification
+
+##### Not Parallel Algorithms
+  * LDA
+  * K-Means
+  * Semantic Segmentation
+  * Object2Vec
+  * Seq2Seq
+
 ##### Supervised vs Unsupervised Algorithms
   * Unsupervised:
     * Singular Value Decomposition (SVD)
