@@ -3773,7 +3773,7 @@ Usage:
   * Based on an algorithm developed by Amazon that they seem to be very proud of! and trying
 
 Training input:
-  * recordIO-protobuf or CSV
+  * recordIO-protobuf or CSV ('content_type=text/csv;label_size=0')
   * Can use File or Pipe mode on either
   * Optional test channel for computing accuracy, precision, recall, and F1 on labeled data (anomaly or not)
 
@@ -3815,7 +3815,7 @@ Training input:
   * Four data channels
     * "train" is required
     * "validation", "test", and "auxiliary" optional
-  * recordlO-protobuf or CSV
+  * recordlO-protobuf or CSV ('content_type=text/csv;label_size=0')
   * Words must be tokenized into integers
     * Every document must contain a count for every word in the vocabulary in CSV
     * The "auxiliary" channel is for the vocabulary
@@ -3855,7 +3855,7 @@ Usage:
 
 Training input:
   * Train channel, optional test channel (to measure accuracy)
-  * recordIO-protobuf or CSV
+  * recordIO-protobuf or CSV ('content_type=text/csv;label_size=0')
   * Each document has counts for every word in vocabulary (in CSV format)
   * Pipe mode only supported with recordIO
 
@@ -3929,7 +3929,7 @@ Usage:
 Training input:
   * ﻿﻿Train channel, optional test
     * ﻿﻿Train ShardedByS3Key (More efficient), test FullyReplicated
-  * ﻿﻿recordIO-protobuf or CSV
+  * ﻿﻿recordIO-protobuf or CSV ('content_type=text/csv;label_size=0')
   * ﻿﻿File or Pipe on either
 
 How to use:
@@ -4041,7 +4041,7 @@ Usage:
 Training input:
   * User names, account IDs can be fed in directly; no need to pre-process
   * Training channel, optional validation (computes AUC score)
-  * CSV only
+  * CSV only ('content_type=text/csv;label_size=0')
     * Entity, IP
 
 How to use:
