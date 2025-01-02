@@ -901,7 +901,8 @@ graph LR
     * Leverages a "virtual table" (materialized view)
 
 ##### AWS Glue Inputs
-  * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores)
+  * Aurora
+  * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
   * dynamodb
   * mongodb/documentdb
   * Kinesis Data Streams
