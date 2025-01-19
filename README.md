@@ -1999,7 +1999,7 @@ How to choose an activation function
       * Example: estimated ages of people
         * Put all 20-somethings in one classification, 30-somethings in another, etc.
       * Quantile binning categorizes data by their place in the data distribution
-      * Ensures even sizes of bins
+        * Ensures fixed number of observations within a fixed number of bins
       * Transforms numeric data to ordinal data
       * Especially useful when there is uncertainty in the measurements
       * Helps to cover up imprecision in data collection(s)
