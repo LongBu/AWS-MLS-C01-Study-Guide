@@ -2968,6 +2968,9 @@ Production Variants
   * ﻿﻿You track progress via the Ground Truth Plus Project Portal
   * Get labeled data from S3 when done
 
+#### Ground Truth vs A2I vs Mechanical Turk
+  * WIP
+
 #### SageMaker integration with Spark
   * Pre-process data as normal with Spark (eg: distribute computation across an entire cluster)
     * ﻿﻿Generate DataFrames
