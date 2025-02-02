@@ -976,8 +976,8 @@ graph LR
     * used for slicing and mapping data (DataFrames, Series) and interoperates with numpy
     * Dataframe/Series are interchangeable with numpy arrays, though the former is often converted to the former to feed ML algorithms
   * Matplotlib (graphics might be good?)
-    * boxplot (with whiskers)
-    * histograms (binning: bins of results of similar measure)
+    * boxplot (with whiskers)=>good for showing distributions and outliers
+    * histograms (binning: bins of results of similar measure)=>good for showing distributions and outliers
   * Seaborn (graphics might be good?)
     * essentially Matplotlib extended
     * heatmap: demonstrates another dimension within the given plot axes
@@ -2943,24 +2943,24 @@ Production Variants
     * ﻿﻿Any pre-trained model or unsupervised technique that may be helpful
 
 #### SM Ground Truth Labels
-  * Label Images: 
-    * Bounding Box
-    * Image Semantic Segmentation
-    * Auto-Segmentation Tool
-    * Image Classification (Single or Multi-Label)
-    * Image Label Verification
+  * Label Images:
+    * Bounding Box
+    * Image Semantic Segmentation
+    * Auto-Segmentation Tool
+    * Image Classification (Single or Multi-Label)
+    * Image Label Verification
   * Label Text:
-    * Named Entity Recognition
-    * Text Classification (Single or Multi-Label)
+    * Named Entity Recognition
+    * Text Classification (Single or Multi-Label)
   * Label Video (Frames)
-    * Video Frame Object Detection
-    * Video Frame Object Tracking
-    * Video Frame Labeling Job Overview
+    * Video Frame Object Detection
+    * Video Frame Object Tracking
+    * Video Frame Labeling Job Overview
   * Label 3D Point Clouds
-    * 3D Point Cloud Object Detection
-    * 3D Point Cloud Object Tracking
-    * 3D Point Cloud Semantic Segmentation
-    * 3D-2D Point Cloud Object Tracking
+    * 3D Point Cloud Object Detection
+    * 3D Point Cloud Object Tracking
+    * 3D Point Cloud Semantic Segmentation
+    * 3D-2D Point Cloud Object Tracking
 
 #### SageMaker Ground Truth Plus:
   * Turnkey solution managing the workflow and team of labelers
