@@ -1991,6 +1991,7 @@ How to choose an activation function
       * Tranformation options:
         * Logarithm Transformation: decreases the effect of the outliers, due to the normalization of magnitude differences and the model become more robust.
         * Robust Standardization: Standardization (or z-score normalization) scales the values while taking into account standard deviation. If the standard deviation of features is different, their range also would differ from each other. This reduces the effect of the outliers in the features.  A better approach to standardizing input variables in the presence of outliers is to ignore the outliers from the calculation of the mean and standard deviation, then use the calculated values to scale the variable (eg: robust standardization).
+        * Standard Scaler is also an option if dealing with large weights for some features, though it is sensitive to outliers
       * Incorrect option:
         * Normalization:  scales all values in a fixed range between 0 and 1. This transformation does not change the distribution of the feature and due to the decreased standard deviations, the effects of the outliers increases. 
 
