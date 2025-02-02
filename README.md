@@ -2668,10 +2668,11 @@ graph LR
 ![Detailed Sagemaker Lifecycle](https://cdn.thenewstack.io/media/2018/11/003c9b68-sagemaker-architecture.png)
   * Note: ECR (aka the EC2 Container Registry) spins up instances for deployment of endpoint to make inferences in production as is needed
 
-###### Deploying a Model via SM hosting services steps:
+###### Deploying a Model via SM hosting services in 3 steps:
   * Create a model in SageMaker - By creating a model, you tell SageMaker where it can find the model components. This includes the S3 path where the model artifacts are stored and the Docker registry path for the image that contains the inference code.
   * Create an endpoint configuration for an HTTPS endpoint - You specify the name of one or more models in production variants and the ML compute instances that you want SageMaker to launch to host each production variant. SageMaker supports running (a) multiple models, (b) multiple variants of a model, or (c) combinations of models and variants on the same endpoint. Model variants can reference the same model inference container (i.e. run the same algorithm), but use different model artifacts (e.g., different model weight values based on other hyper-parameter configurations).
   * Create an HTTPS endpoint - Provide the endpoint configuration to SageMaker. The service launches the ML compute instances and deploys the model(s) as specified in the configuration.
+  * Note: If wanting to substitute in a different model, de-register the endpoint as a scalable target. Update the endpoint using a new endpoint configuration with the latest model Amazon S3 path. Finally, register the new endpoint as a scalable target, again.
 
 ###### SM Automatic Scaling 
   * You set up a scaling policy to define target metrics, min/max capacity, cooldown periods 
