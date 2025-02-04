@@ -3229,7 +3229,7 @@ Production Variants
     * Training instances are spun up as needed (parallel), potentially a lot of them
   * The set of hyperparameters producing the best results can then be deployed as a model
   * It learns as it goes, so it doesn't have to try every possible combination
-  * Best to utilizes Bayesian Search or alternatively Random Search, which can be useful when the hyperparameter space is large and the relationship between settings is not well understood.  Also have Grid Search and Hyperband (with early stopping)
+  * Best to utilizes Bayesian Search or alternatively Random Search as they both leave smaller unexplored regions than say grid search which is an option.  Random Search can be useful when the hyperparameter space is large and the relationship between settings is not well understood.  Also have Hyperband (with early stopping)
   * Best Practices:
     * Don't optimize too many hyperparameters at once
     * Limit your ranges to as small a range as possible
