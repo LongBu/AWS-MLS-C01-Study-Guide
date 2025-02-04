@@ -1435,6 +1435,7 @@ graph LR
     * can be used for text classification such as categories, detecting spam and sentiment analysis
     * commonly used for image recognition (performs particularly well in aspect-based recognition and color-based classification)
     * outlier detection
+  * t-SNE or t-distributed stochastic neighbor embedding - utilized for reducing high high dimensional data usually to two to three dimensions with the intent of visualization
 
 ### Train machine learning models
 
