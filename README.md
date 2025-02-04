@@ -2034,6 +2034,7 @@ How to choose an activation function
       * Remember to scale your results back up
     * Shuffling
       * Many algorithms benefit from shuffling their training data
+        * Shuffling should be conducted prior to uploading to S3
       * Otherwise they may learn from residual signals in the training data resulting from the order in which it was collected
   * Binary confusion matrix:
     | | Actual Yes | Actual No |
