@@ -132,9 +132,10 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Can be exported to S3 as DynamoDB JSON or ion format
   * Can be imported from S3 as CSV, DynamoDB JSON or ion format
 
-##### Amazon OpenSearch Service (Amazon ElasticSearch Service)
+##### Amazon OpenSearch Service (Amazon Elasticsearch Service)
   * Service to search any field, even partial matches at petabyte scale
   * Common to use as a complement to another DB (conduct search in the service, but retrieve data based on indices from an actual DB)
+  * Can receive indices to ES to enable faster searches
   * Requires a cluster of instances (can also be Multi-AZ)
   * Doesn't support SQL (own query language)
   * Comes with Opensearch dashboards (visualization)
@@ -4287,6 +4288,7 @@ Instance Types:
 | EMRFS | Elastic Map Reduce File System|
 | ENI | Elastic Network Interface |
 | ETL | Extract, Translate, Load |
+| ES | Elasticsearch |
 | FN | False Negative |
 | FP | False Positive |
 | GAN | Generative Adversarial Networks |
