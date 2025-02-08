@@ -2189,6 +2189,7 @@ How to choose an activation function
   * Can return precise answers or pointers to document(s) from natural language (eg: "Where is the IT support desk?" "How do I connect to my VPN?")
   * Allows discovery of information spanning all connected data allocated in AWS (given permission) and any 3rd party connected data (salesforce, ServiceNow, SharePoint, Intranet, sharing services \[JDBC, S3], DBs, Microsoft One Drive, etc.) into one searchable repository
   * Can use other services in AWS to preprocess content to text that is searchable/indexable
+  * Results can be filtered by using facets from metadata
   * Relevance tuning - boost strength of document freshness, view counts, etc.
   * Text (extracted?) from a document can't exceed 5 MB
 
