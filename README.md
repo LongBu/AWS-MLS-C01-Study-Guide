@@ -196,7 +196,7 @@ sequenceDiagram
     * Amazon Redshift
     * DynamoDB
     * S3
-    * Elastic Search service
+    * Elasticsearch service
     * Kinesis Data Streams
     * DocumentDB
   * Homogenous migration: Oracle => Oracle
@@ -694,7 +694,7 @@ graph LR
   * Sent to (S3 as a backup \[of source records] or failed \[transformations or delivery] case[s]):
     * S3
     * Amazon Redshift (copy through S3)
-    * Amazon Elastic Search
+    * Amazon Elasticsearch
     * 3rd party partners (datadog/splunk/etc.)
     * Custom destination (http[s] endpoint)
   * S3 Destination(s) (Error and/or output) allow for bucket prefixes:
