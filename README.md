@@ -569,6 +569,25 @@ graph LR
     * More control over environment, compute resources that run code and the code itself
     * EC2 or EMR instance based
 
+##### API Gateway:
+  * Essentially a front door to AWS resources (λ/EC2/Dynamodb/etc.)
+  * Can cache for increased performance
+  * Able to throttle
+  * Low cost
+  * Scales
+  * Can enable/disable CORS
+  * Handle security (Authentication [*Integrates with Cognito User Pools*]/Authorization[IAM-internal AWS]) 
+  * Create API keys
+  * Swagger/Open API import to define APIs
+  * Custom Domain name HTTPS security integration with ACM
+    * If Edge-Optimized=>certificate in US-East-1
+    * If Regional=>certificate in API Gateway region
+    * Must setup CNAME or A-Alias record in Route 53
+  * Endpoints:
+    * Edge-Optimized: Cloudfront Edge Locations (API GW 1 region)
+    * Regional: clients/API GW in the same region
+    * Private: VPC accessible via VPC endpoint with resource policy
+
 ##### λ:
   * Serverless backend capable of supporting container image (must implement λ Runtime API)
   * Free tier => 1,000,000 requests and 400,000 GBs of compute time
@@ -4270,6 +4289,7 @@ Instance Types:
 | Acronym  | Definition |
 | ------------- | ------------- |
 | ACL | Access Control List |
+| ACM | AWS Certificate Manager |
 | ALS | Alternating Least Squares |
 | AMI | Amazon Machine Image |
 | AOF | Append-only file |
@@ -4295,6 +4315,7 @@ Instance Types:
 | GAN | Generative Adversarial Networks |
 | GPT | Generative Pre-trained Transformer |
 | GRU | Gated Recurrent Unit |
+| GW | Gateway |
 | IA | Infrequent Access |
 | IAM | Identity and Access Management |
 | IdP | Identity Provider |
