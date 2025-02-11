@@ -1604,7 +1604,7 @@ graph LR
     * after running/tunneling into the instance=> 'jupyter notebook' to then run in the browser
   * NN
     * data should be re-shaped/scaled appropriately between values of zero to one => Label should ideally be one-hot encoded
-    * Other types of data matrices ((eg: reviews or any given sentence) row's length (aka columns) need to of equal count, otherwise they need to be truncated or have padding added before batch processing
+    * Other types of data matrices (eg: reviews or any given sentence) row's length (aka columns) need to of equal count, otherwise they need to be truncated or have padding added before batch processing
 
 ##### CNN
 
