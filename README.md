@@ -2996,7 +2996,7 @@ Production Variants
   * Get labeled data from S3 when done
 
 #### Ground Truth vs A2I vs Mechanical Turk
-  * Both Ground Truth and A2I are able to harnesss Mechanical Turk workforce
+  * Both Ground Truth and A2I are able to harnesss the Mechanical Turk workforce
 
 #### SageMaker integration with Spark
   * Pre-process data as normal with Spark (eg: distribute computation across an entire cluster)
