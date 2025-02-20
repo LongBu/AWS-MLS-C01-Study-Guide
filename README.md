@@ -2022,7 +2022,8 @@ How to choose an activation function
       * Bucket observations together based on ranges of values.
       * Example: estimated ages of people
         * Put all 20-somethings in one classification, 30-somethings in another, etc.
-      * Quantile binning categorizes data by their place in the data distribution
+      * Interval binning groups categories into discrete interval bins that may or may not have equal counts
+      * Quantile binning, a type of interval binning, categorizes data by their place in the data distribution
         * Ensures fixed number of observations within a fixed number of bins
       * Transforms numeric data to ordinal data
       * Especially useful when there is uncertainty in the measurements
