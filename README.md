@@ -3985,7 +3985,7 @@ Hyperparameters:
   * K！
     * ﻿﻿Choosing K is tricky
     * ﻿﻿Plot within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit
-    * ﻿﻿Use "elbow method"
+    * ﻿﻿Use "elbow method" (eg: a plot of the total within cluster sum of squares (WSS) as a function of k to measure/optimize the tightness of the clusters)
     * ﻿﻿Basically optimize for tightness of clusters
   * ﻿﻿Mini _batch_size
   * ﻿﻿Extra_center_factor: this is the x variable
@@ -4375,3 +4375,4 @@ Instance Types:
 | VPC | Virtual Private Cloud |
 | VPN | Virtual Private Network |
 | WCU | Write Capacity Units |
+| WSS | Within-Cluster Sum of Squares |
