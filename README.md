@@ -3984,9 +3984,7 @@ How to use:
 Hyperparameters:
   * K！
     * ﻿﻿Choosing K is tricky
-    * ﻿﻿Plot within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit
-    * ﻿﻿Use "elbow method" (eg: a plot of the total within cluster sum of squares (WSS) as a function of k to measure/optimize the tightness of the clusters)
-    * ﻿﻿Basically optimize for tightness of clusters
+    * ﻿﻿Plot (WSS) within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit, measuring/optimizing the tightness of the clusters, using the "elbow method"
   * ﻿﻿Mini _batch_size
   * ﻿﻿Extra_center_factor: this is the x variable
   * ﻿﻿Init_method: random or K-means++
