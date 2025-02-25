@@ -4283,7 +4283,8 @@ Instance Types:
   * If given a choice between a "hand rolled" service vs an AWS solution, choose the latter
   * If there is an AWS Service (excluding SageMaker Algorithms) available to do a job and minimal work is to be done, go with this (eg: Personalize for a recommendation engine would be less effort that setting up a SM Factorization Machine)
   * If classification is needed at the "pixel" level, look for a solution utilizing Semantic Segmentation
-  * If metadata mentioned, Glue is likely part of the solution 
+  * If metadata mentioned, Glue is likely part of the solution
+  * If a fully managed (scalable) service used transfer of any data/logs/text/videos => Amazon Data Firehose
 
 ## Acronyms
 
