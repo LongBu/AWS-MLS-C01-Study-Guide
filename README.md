@@ -4285,6 +4285,7 @@ Instance Types:
   * If classification is needed at the "pixel" level, look for a solution utilizing Semantic Segmentation
   * If metadata mentioned, Glue is likely part of the solution
   * If a fully managed (scalable) service used transfer of any data/logs/text/videos => Amazon Data Firehose
+  * Remember the following algorithm optimizers: Adam, AdaGrad, SGD, Rmsprop, and adadelta
 
 ## Acronyms
 
