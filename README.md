@@ -4139,6 +4139,8 @@ Instance Types:
   * Random Cut Forest
   * DeepAR Forecasting
   * Image Classification
+  * KNN
+  * Linear Learner
 
 ##### Not Parallel Algorithms
   * LDA
