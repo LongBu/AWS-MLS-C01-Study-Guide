@@ -1333,6 +1333,7 @@ graph LR
       * Excel
       * CSV, TSV
       * Common or extended log format
+      * If another file type (eg: json), a conversion is necessary or a feed from Athena (in this case ideally Orc or Parquet for performance efficiency)
     * AWS loT Analytics
     * Data preparation allows limited ETL
   * Quicksight Paginated Reports
