@@ -4154,6 +4154,11 @@ Instance Types:
   * Object2Vec
   * Seq2Seq
 
+##### SM algorithms that support incremental training: 
+  * Object Detection - MXNet
+  * Image Classification - MXNet
+  * Semantic Segmentation
+
 ##### Supervised vs Unsupervised Algorithms
   * Unsupervised:
     * Singular Value Decomposition (SVD)
