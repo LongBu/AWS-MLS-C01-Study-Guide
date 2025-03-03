@@ -3740,6 +3740,8 @@ How to use:
   * ﻿﻿MXNet:
     * Full training mode
       * ﻿﻿Network initialized with random weights
+    * Incremental Training
+      * Seed the training of a new model with artifacts from a model that you trained previously with SM
     * Transfer learning mode
       * Initialized with pre-trained weights
       * The top fully-connected layer is initialized with random weights
