@@ -3374,12 +3374,14 @@ How to use:
     * ﻿﻿Most optimal model is selected during validation step
 
 Hyperparameters:
-  * ﻿﻿Balance_multiclass_weights
+  * predictor_type (required):binary_classifier, multiclass_classifier, or regressor
+  * num_class (required if predictor_type:multiclass_classifier):3 to 1,000,000 => 0, ..., num_classes - 1
+  * balance_multiclass_weights
     * ﻿﻿Gives each class equal importance in loss functions
-  * ﻿﻿Learning_rate, mini_batch_size
-  * ﻿﻿L1
+  * ﻿﻿learning_rate, mini_batch_size
+  * ﻿﻿l1
     * ﻿﻿Regularization
-  * ﻿﻿Wd
+  * ﻿﻿wd
     * Weight decay (L2 regularization)
 
 Instance Types:
@@ -3411,11 +3413,11 @@ How to use:
   * ﻿﻿Public training datasets are available for specific translation tasks
 
 Hyperparameters:
-  * ﻿﻿Batch_size
-  * ﻿﻿Optimizer_type (adam, sgd, rmsprop)
-  * ﻿﻿Learning_rate
-  * ﻿﻿Num_layers_encoder
-  * ﻿﻿Num_layers_decoder
+  * ﻿﻿batch_size
+  * ﻿﻿optimizer_type (adam, sgd, rmsprop)
+  * ﻿﻿learning_rate
+  * ﻿﻿num_layers_encoder
+  * ﻿﻿num_layers_decoder
   * ﻿﻿Can optimize on:
     * ﻿﻿Accuracy
       * ﻿﻿Vs. provided validation dataset
@@ -3460,17 +3462,19 @@ How to use:
 
 
 Hyperparameters:
-  * Subsample
+  * subsample
     * Prevents overfitting
-  * Eta
+  * num_class (required if objective hyperparameter is set to multi:softmax or multi:softprob)=>The number of classes
+  * num_rounds (required): rounds to run the training
+  * eta
     * Step size shrinkage, prevents overfitting
-  * Gamma
+  * gamma
     * Minimum loss reduction to create a partition; larger = more conservative
-  * Alpha
+  * alpha
     * L1 regularization term; larger = more conservative
-  * Lambda
+  * lambda
     * L2 regularization term; larger = more conservative
-  * eval metric
+  * eval_metric
     * Optimize on AUC, error, rmse...
     * For example, if you care about false positives more than accuracy, you might use AUC here
   * scale_pos_weight
@@ -3528,13 +3532,15 @@ How to use:
   * Train on many time series and not just one when possible
 
 Hyperparameters:
-  * Context_length
+  * context_length (required)
     * Number of time points the model sees before making a prediction
     * Can be smaller than seasonalities; the model will lag one year anyhow.
-  * Epochs
+  * epochs (required)
+  * prediction_length (required)
+  * time_freq (required)
   * mini_batch_size
-  * Learning_rate
-  * Num_cells (eg: the neurons used)
+  * learning_rate
+  * num_cells (eg: the neurons used)
 
 Instance Types:
   * Can use CPU or GPU
@@ -3790,7 +3796,7 @@ How to use:
   * ﻿﻿Incremental training, or training from scratch, supported too
 
 Hyperparameters:
-  * ﻿﻿Epochs, learning rate, batch size, optimizer, etc
+  * ﻿﻿epochs, learning rate, batch size, optimizer, etc
   * ﻿﻿Algorithm
   * ﻿﻿Backbone
 
