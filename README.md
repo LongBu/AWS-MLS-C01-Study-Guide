@@ -3594,16 +3594,17 @@ How to use:
 
 Hyperparameters:
   * Word2vec:
-    * Mode (batch_skipgram, skipgram, cbow)
-    * Learning_rate
-    * Window_size
-    * Vector_dim
-    * Negative_samples
+    * mode (batch_skipgram, skipgram, cbow) \[required]
+    * learning_rate
+    * window_size
+    * vector_dim
+    * negative_samples
   * Text classification:
-    * Epochs
-    * Learning_rate
-    * Word_ngrams
-    * Vector_dim
+    * mode (supervised) \[required]
+    * epochs
+    * learning_rate
+    * word_ngrams
+    * vector_dim
 
 Instance Types:
   * For cbow and skipgram, recommend a single ml.p3.2xlarge
@@ -3660,7 +3661,9 @@ graph LR
 Hyperparameters:
   * The usual deep learning ones...
     * Dropout, early stopping, epochs, learning rate, batch size, layers, activation function, optimizer, weight decay
-  * Enc1_network, enc2_network
+  * enc0_max_seq_len (required)
+  * enc0_vocab_size (required)
+  * enc1_network, enc2_network
     * Choose henn, bilstm, pooled embedding
 
 Instance Types:
@@ -3724,9 +3727,12 @@ How to use:
     * ﻿﻿Uses ResNet, EfficientNet, MobileNet models from the TensorFlow Model Garden
 
 Hyperparameters:
-  * ﻿﻿Mini_batch_size / batch_size
-  * ﻿﻿Learning_rate
-  * ﻿﻿Optimizer
+  * num_classes (required)
+  * num_training_samples (required)
+  * ﻿﻿mini_batch_size
+  * batch_size
+  * ﻿﻿learning_rate
+  * ﻿﻿optimizer
     * ﻿﻿Sgd, adam, rmsprop, adadelta
 
 Instance Types:
