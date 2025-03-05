@@ -847,6 +847,9 @@ graph LR
       * Also used for Android game streaming
     * P4d - A100 "UltraClusters" for supercomputing
   * Deep Learning AMIs
+    * Preloaded with all Deep Learning frameworks
+    * Can perform Multi-GPU training
+    * Three styles available: conda, base AMI and AMI with source code
   * Sagemaker can deploy a cluster using whatever architecture you want
   * Trn1 instances
     * "Powered by Trainium"
