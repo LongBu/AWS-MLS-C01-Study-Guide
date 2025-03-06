@@ -3265,7 +3265,7 @@ Production Variants
     * Limit your ranges to as small a range as possible
     * Use logarithmic scales when appropriate
     * Don't run too many training jobs concurrently
-      * This limits how well the process can learn as it goes (one at time is best)
+      * This limits how well the process can learn as it goes (one at a time is best)
     * Make sure training jobs running on multiple instances report the correct objective metric in the end
 
 #### SageMaker Autopilot
