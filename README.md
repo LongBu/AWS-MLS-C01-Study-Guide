@@ -2931,7 +2931,8 @@ Production Variants
   * CloudWatch can log, monitor and alarm on:
     * Invocations and latency of endpoints
     * Health of instance nodes (CPU, memory, etc)
-    * Ground Truth (active workers, how much they are doing) 
+    * Ground Truth (active workers, how much they are doing)
+    * If SM training job fails without logs, ensure the S3 Training input location is correct and the training job has the Training Image is correct
   * CloudTrail records actions from users, roles, and services within SageMaker 
     * Log files delivered to S3 for auditing 
 
