@@ -2655,6 +2655,7 @@ Personalize Pricing
     * ECR path to training code
   * Training options
     * Built-in training algorithms
+      * output is of model.tar.gz format specified within an S3 bucket from the OutputDataConfig S3OutputPath of the create_training_job call
     * Spark MLLib
     * Custom Python Tensorflow / MXNet code
     * PyTorch, Scikit-Learn, RLEstimator
