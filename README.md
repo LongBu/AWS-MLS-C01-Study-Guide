@@ -2730,10 +2730,15 @@ graph LR
   * This allows you to use any script or algorithm within SageMaker, regardless of runtime or language 
     * Containers are isolated, and contain all dependencies and resources needed to run 
 
-Using Docker  in SM
+Using Docker in SM
   * Docker containers are created from images
   * Images are built from a Dockerfile
   * Can separate or combine images for training and deployment
+  * Container types that don't offer network isolation (no external network access to said containers):
+    * Pytorch
+    * Amazon SM Reinforcment Learning
+    * Scikit-learn
+    * Chainer
   * Run pip install sagemaker-training=> install common functionality necessary to create containers that work with SM
   * Images are saved in a repository (All SM docker containers need to be registered in ECR) Amazon SageMaker Containers
     * Library for making containers compatible with SageMaker 
