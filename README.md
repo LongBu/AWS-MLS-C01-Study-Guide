@@ -2932,7 +2932,7 @@ Production Variants
     * Invocations and latency of endpoints
     * Health of instance nodes (CPU, memory, etc)
     * Ground Truth (active workers, how much they are doing)
-    * If SM training job fails without logs, ensure the S3 Training input location is correct and the training job has the Training Image is correct
+    * If SM training job fails without logs, ensure the S3 Training input location is correct and the training job has the correct Training Image
   * CloudTrail records actions from users, roles, and services within SageMaker 
     * Log files delivered to S3 for auditing 
 
