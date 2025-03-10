@@ -4182,6 +4182,9 @@ Instance Types:
   * Image Classification - MXNet
   * Semantic Segmentation
 
+##### SM algorithm Images
+  * Both Training and Inference Image Registry paths are regionally based
+
 ##### SM Supported Instances: 
   * SM supports a few selected types prefaced by ml.* from the t*, m*, c*, p* and r* family as hosting instance types. 
 
