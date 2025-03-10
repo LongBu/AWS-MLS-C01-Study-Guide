@@ -4181,6 +4181,9 @@ Instance Types:
   * Image Classification - MXNet
   * Semantic Segmentation
 
+##### SM Supported Instances: 
+  * SM supports a few selected types prefaced by ml.* from the t*, m*, c*, p* and r* family as hosting instance types. 
+
 ##### Supervised vs Unsupervised Algorithms
   * Unsupervised:
     * Singular Value Decomposition (SVD)
