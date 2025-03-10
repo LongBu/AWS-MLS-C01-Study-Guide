@@ -2945,6 +2945,7 @@ Production Variants
   * Optimizes code for specific devices 
     * Tensorflow, MXNet, PyTorch, ONNX, XGBoost, DarkNet, Keras 
   * Consists of a compiler and a runtime library
+  * Supports image classification models exported as frozen graphs from TensorFlow, MXNet, PyTorch, or XGBoost models
 
 ###### SM Neo + AWS IoT Greengrass 
   * Neo-compiled models can be deployed to an HTTPS endpoint 
