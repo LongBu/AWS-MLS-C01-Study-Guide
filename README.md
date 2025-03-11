@@ -784,7 +784,7 @@ graph LR
   * Spot instances: 
     * cheaper, can be terminated, less reliable
     * Good choice for task nodes (temporary capacity)
-    * Only use on core & master if you're testing or very cost-sensitive; you're risking partial data loss
+    * Only use on core & master if you're testing only (not production) or very cost-sensitive; you're risking partial data loss
    
 ##### EMR Instance Type(s) selection
   * Master node:
