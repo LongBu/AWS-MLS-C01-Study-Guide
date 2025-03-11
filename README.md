@@ -3175,7 +3175,8 @@ Production Variants
     * XGBoost
     * SageMaker generic estimator (for use with custom training containers)
   * Debugger APIs available in GitHub
-    * Construct hooks & rules for Create Training Job and Describe TrainingJob APIs
+    * Construct hooks & rules for CreateTrainingJob and DescribeTrainingJob APIs
+      * DescribeTrainingJob is helpful to assess training failures
     * SMDebug client library lets you register hooks for accessing training data
   * SageMaker Debugger Insights Dashboard
   * Debugger ProfilerRule
