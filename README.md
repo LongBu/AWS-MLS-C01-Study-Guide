@@ -2086,7 +2086,9 @@ How to choose an activation function
   * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.
   * Be sure to read the question(s) to understand the goal, regardless of the test type
     * If they mention not wanting True cases going undetected=>recall
+      * eg:The cost of not catching a fraudulent claim is higher than the cost of investigating a claim that is suspected to be fraudulent=>recall
     * If they mention not wanting False cases being detected=>precision
+      * eg:The cost of paying a fraudulent claim is higher than the cost of investigating a claim that is suspected to be fraudulent=>precision
   * F1 is a good choice when you care about precision AND recall
   * Precision-Recall Area-Under-Curve (PR AUC) > recall if trying to improve positive case results
   * RMSE, an accuracy measurement, is a good choice when you only care about right & wrong answers
