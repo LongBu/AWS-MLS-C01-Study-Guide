@@ -3776,11 +3776,13 @@ How to use:
     * Top classification layer is available for fine tuning or further training
 
 Hyperparameters:
+  * num_classes, num_training_samples (required for MXNET)
+  * resize (required for MXNET when using image content types)
   * The usual suspects for deep learning
-    * Batch size, learning rate, optimizer
+    * batch_size, learning_rate, optimizer
   * Optimizer-specific parameters
-    * Weight decay, beta 1, beta 2, eps, gamma
-    * Slightly different between MXNet and  Tensorflow versions
+    * weight_decay, beta_1, beta_2, eps, gamma
+    * Slightly different between MXNet and Tensorflow versions
 
 Instance Types:
   * GPU instances for training (ml.p2, p3, g4dn, g5) Multi-GPU  and multi-machine OK.
@@ -3815,9 +3817,8 @@ How to use:
   * ﻿﻿Incremental training, or training from scratch, supported too
 
 Hyperparameters:
-  * ﻿﻿epochs, learning rate, batch size, optimizer, etc
-  * ﻿﻿Algorithm
-  * ﻿﻿Backbone
+  * num_classes, num_training_samples (required)
+  * ﻿﻿epochs, learning rate, batch size, optimizer, ﻿﻿algorithm, backbone, etc.
 
 Instance Types:
   * ﻿﻿Only GPU supported for training (P2, P3, G4dn, G5) on a single machine only
@@ -3847,9 +3848,10 @@ How to use:
   * RCF shows up in Kinesis Analytics as well; it can work on streaming data too.
 
 Hyperparameters:
-  * Num_trees
+  * feature_dim (required)
+  * num_trees
     * Increasing reduces noise
-  * Num_samples_per_tree
+  * num_samples_per_tree
     * Should be chosen such that  1/num_samples_per_tree approximates the ratio of anomalous to normal data
 
 Instance Types:
@@ -3891,7 +3893,7 @@ How to use:
 Hyperparameters:
   * Lowering mini_batch_size and learning_rate can reduce validation loss
     * At expense of training time
-  * Num_topics
+  * num_topics, feature_dim (both required)
 
 Instance Types:
   * GPU or CPU
@@ -3929,8 +3931,8 @@ How to use:
     * Therefore maybe cheaper / more efficient
 
 Hyperparameters:
-  * Num_topics
-  * Alpha
+  * num_topics, feature_dim, mini_batch_size (all required)
+  * alpha
     * Initial guess for concentration parameter
     * Smaller values generate sparse topic mixtures
     * Larger values (>1.0) produce uniform mixtures
@@ -3969,8 +3971,8 @@ How to use:
   * k parameter=> Experiment on this until diminishing returns on high values of K
 
 Hyperparameters:
-  * ﻿﻿К!
-  * ﻿﻿Sample_size
+  * ﻿﻿k, feature_dim, predictor_type, sample_size (all required)
+  * ﻿﻿dimension_reduction_target (also required if dimension_reduction_type parameter specified)
 
 Instance Types:
   * ﻿﻿Training on CPU or GPU
@@ -4012,12 +4014,13 @@ How to use:
     * ﻿﻿Using Lloyd's method with means++
 
 Hyperparameters:
-  * K！
+  * feature_dim (required)
+  * k (required)
     * ﻿﻿Choosing K is tricky
     * ﻿﻿Plot (WSS) within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit, measuring/optimizing the tightness of the clusters, using the "elbow method"
-  * ﻿﻿Mini _batch_size
-  * ﻿﻿Extra_center_factor: this is the x variable
-  * ﻿﻿Init_method: random or K-means++
+  * ﻿﻿,ini_batch_size
+  * ﻿﻿extra_center_factor: this is the x variable
+  * ﻿﻿init_method: random or K-means++
 
 Instance Types:
   * ﻿﻿CPU or GPU, but CPU recommended
@@ -4050,8 +4053,9 @@ How to use:
       * ﻿﻿Uses approximation algorithm
 
 Hyperparameters:
-  * ﻿﻿Algorithm_mode
-  * ﻿﻿Subtract_mean
+  * feature_dim, mini_batch_size, num_components (all required)
+  * algorithm_mode
+  * ﻿﻿subtract_mean
     * ﻿﻿Unbias data
 
 Instance Types:
@@ -4081,6 +4085,7 @@ How to use:
   * Good choice of handling only sparse data
 
 Hyperparameters:
+  * feature_dim, num_factors, predictor_type (all required)
   * Initialization methods for bias, factors, and linear terms
   * Uniform, normal, or constant
   * Can tune properties of each method
@@ -4111,14 +4116,14 @@ How to use:
   * Automatically generates negative samples during training by randomly pairing entities and IPs
 
 Hyperparameters:
-  * Num_entity_vectors
+  * num_entity_vectors (required)
     * Hash size
     * Set to twice the number of unique entity identifiers
-  * Vector_dim
+  * vector_dim (required)
     * Size of embedding vectors
     * Scales model size
     * Too large results in overfitting
-  * Epochs, learning rate, batch size, etc.
+  * epochs, learning_rate, mini_batch_size, etc.
 
 Instance Types
   * CPU or GPU
