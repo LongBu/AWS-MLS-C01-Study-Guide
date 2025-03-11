@@ -3579,11 +3579,13 @@ Usage:
     * Remember it only works on individual words, not sentences or documents
 
 Training input:
+  * Word2vec just wants a text file with one training sentence per line.
+  * Word2vec training metric: train:mean_rho
   * For supervised mode (text classification):
+    * training metric: validation:accuracy
     * need to supply labels
     * One sentence per line
     * First "word" in the sentence is the string _label _ followed by the label
-  * Word2vec just wants a text file with one training sentence per line.
   * Also "augmented manifest text format", eg:
 
 __label__4 linux ready for prime time, intel says, despite all the linux hype, the open-source movement has yet to make a huge splash in the desktop market. that may be about to change, thanks to chipmaking giant intel corp.
