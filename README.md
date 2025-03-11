@@ -2726,7 +2726,7 @@ graph LR
     * Pre-built Tensorflow, MXNet, Chainer, PyTorch
       * Distributed training via Horovod (tensorflow can't be distributed across multiple machines) or Parameter Servers
     * Your own training and inference code! Or extend a pre-built image.
-      * To leverage gpu types, the container must be built off the compatible container (Nvidia gpu => Nvidia based docker container)
+      * To leverage gpu types, the container must be built off the compatible container (Nvidia gpu => Nvidia based docker container), note there isn't a setting for GPU support in the image
   * This allows you to use any script or algorithm within SageMaker, regardless of runtime or language 
     * Containers are isolated, and contain all dependencies and resources needed to run 
 
