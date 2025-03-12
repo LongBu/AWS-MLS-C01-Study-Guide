@@ -2691,6 +2691,9 @@ Personalize Pricing
     * Elastic Inference for accelerating deep learning models
     * Automatic scaling (increase # of endpoints as needed)
     * Shadow Testing evaluates new models against currently deployed model to catch errors
+    * Inference containers use port 8080
+    * Inference container routes include /ping, /invocations
+    * Inference containers must respond within 2 seconds 
 
 ```mermaid
 graph LR
