@@ -4400,6 +4400,7 @@ Instance Types:
 | PHI | Protected Health Information |
 | PII | Personal Identifiable Information |
 | QR | Quantile Regression |
+| RCF | Random Cut Forest |
 | RCU | Read Capacity Units |
 | RDD | Resiliant Distributed Dataset |
 | RDS | Relational Database Service |
