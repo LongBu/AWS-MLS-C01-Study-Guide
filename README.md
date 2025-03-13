@@ -509,7 +509,7 @@ graph LR
   * Amazon FSx File Gateway allows native access to FSx for Windows from on-premises, local cache for frequently accessed data via Gateway
 
 ##### Amazon FSx for Lustre ("Linux" "Cluster"):
-  * High performance, parallel, distributed file system designed for Applications that require fast storage to keep up with your compute such as ML, high peformance computing, video processing, Electronic Design Automation, or financial modeling
+  * High performance, parallel (eg: concurrency), distributed file system designed for Applications that require fast storage to keep up with your compute such as ML, high peformance computing, video processing, Electronic Design Automation, or financial modeling
   * Integrates with linked S3 bucket(s), making it easy to process S3 objects as files and allows you to write changed data back to S3
   * Provides ability to both process 'hot data' in parallel/distributed fashion as well as easily store 'cold data' to S3
   * Storage options include SSD or HDD
