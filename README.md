@@ -3268,7 +3268,7 @@ Production Variants
   * Often you have to experiment
   * Problem blows up quickly when you have many different hyperparameters; need to try every combination of every possible value somehow, train a model, and evaluate it every time
   * Define the hyperparameters you care about and the ranges you want to try, and the metrics you are optimizing for
-  * SageMaker spins up a "HyperParameter Tuning Job" that trains as many combinations as you'll allow
+  * SageMaker spins up a "HyperParameter Tuning Job" via the SM SDK HyperParameterTuner() API that trains as many combinations as you'll allow
     * Training instances are spun up as needed (parallel), potentially a lot of them
     * If early stopping enabled and the value of the objective metric for the current training job is worse (higher when minimizing or lower when maximizing the objective metric) than the median value of running averages of the objective metric for previous training jobs up to the same epoch, SageMaker AI stops the current training job
   * The set of hyperparameters producing the best results can then be deployed as a model
