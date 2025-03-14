@@ -4075,7 +4075,7 @@ Instance Types:
 Usage:
   * Dealing with sparse data; find factors from a giant sparse matrix
   * Click prediction
-  * Item recommendations
+  * Item recommendations (eg: collaborative filtering)
   * Since an individual user doesn't interact with most pages / products the data is sparse
   * Supervised
   * Classification or regression
