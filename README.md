@@ -1220,6 +1220,15 @@ graph LR
     * Words can be represented as a hash value (number) for efficiency
     * What about synonyms? Various tenses? Abbreviations? Capitalizations? Misspellings?
   * Doing this at scale is the hard part (Spark can help here)
+
+#### NLP Preprocessing/Cleaning Techniques for scalability:
+  * lowercase characters
+  * punctuation removal
+  * word tokenization
+  * stop word removal
+  * html tag removal
+  * stemming
+  * lemmatization
  
 #### Unigrams, bigrams, etc.
   * An extension of TF-IDF is to not only compute relevancy for individual words (terms) but also for bi-grams or, more generally, n-grams.
