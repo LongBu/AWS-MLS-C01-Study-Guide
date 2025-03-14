@@ -2358,11 +2358,13 @@ Personalize Pricing
   * Can integrate with S3, Firehose, Lambda, Lex (eg realtime sentiment analysis), KMS, etc.
   * Results of the model are the following:
     * Events detection
-    * Entities-nouns
     * Key phrases-noun phrases
     * Language
     * Sentiment
     * Syntax-boils down each word into a part of speech
+    * Entities-nouns
+      * Entity types include: COMMERCIAL_ITEM, DATE, EVENT, LOCATION, ORGANIZATION, OTHER, PERSON, QUANTITY, TITLE
+      * Creating a Custom entity recognizer/recognition model can extend beyond the generic Entity types
 
 ##### Amazon Transcribe:
   * Automatically convert speech to text
