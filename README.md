@@ -3993,7 +3993,7 @@ Instance Types:
 ##### K-Means Clustering
 Usage:
   * ﻿﻿Unsupervised clustering
-  * ﻿﻿Divide data into K groups, where members of a group are as similar as possible to each other
+  * ﻿﻿Divide data into K groups/segments, where members of a group are as similar as possible to each other
     * ﻿﻿You define what "similar" means
     * ﻿﻿Measured by Euclidean distance
   * ﻿﻿Web-scale K-Means clustering
