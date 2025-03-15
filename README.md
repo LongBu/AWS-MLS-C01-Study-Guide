@@ -2088,14 +2088,15 @@ How to choose an activation function
   * Confusion Matrix Measurements:
     | Measure | Abbreviation | Formula |
     | ------------- | ------------- | ------------- |
-    | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N)|
+    | Error Rate | ERR | (FP + FN)/(TP + TN + FN + FP) = (FP + FN)/(P + N) |
     | Root Mean Square | RMSE | square root of the mean of the sum of all squared errors of each prediction from the actual true value |
     | Accuracy | ACC | (TP + TN)/(TP + FP + TN + FN) |
-    | Sensitivity, True positive rate, Recall, Completeness| SN, TPR, REC | TP/(TP + FN) = TP/P|
+    | Sensitivity, True positive rate, Recall, Completeness| SN, TPR, REC | TP/(TP + FN) = TP/P = 1 - FNR |
     | Precision, Positive predictive value, Correct Positives| PREC, PPV | TP/(TP + FP) |
-    | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N|
-    | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR|
-    | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)|
+    | Specificity, True negative rate | SP, TNR | TN/(TN + FP) = TN/N |
+    | False positive rate | FPR | FP/(FP + TN) = 1 - SP = 1 - TNR |
+    | False negative rate | FNR | FN/(TP + FN) = FN/P = 1 - REC |
+    | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall) |
    
   * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection).  
   * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.
@@ -4391,6 +4392,7 @@ Instance Types:
 | ETL | Extract, Translate, Load |
 | ES | Elasticsearch |
 | FN | False Negative |
+| FNR | False Negative Rate |
 | FP | False Positive |
 | GAN | Generative Adversarial Networks |
 | GPT | Generative Pre-trained Transformer |
