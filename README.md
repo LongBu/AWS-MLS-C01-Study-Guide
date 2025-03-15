@@ -4210,6 +4210,29 @@ Instance Types:
   * Semantic Segmentation
   * Object2Vec
   * Seq2Seq
+  * 
+
+##### SM Algorithms CPU and/or GPU
+  * CPU Only:
+    * RCF
+    * LDA
+  * GPU Only:
+    * Seq2Seq
+  * Either
+    * XGBoost (formerly only CPU)
+    * Linear Learner
+    * DeepAR Forecasting (CPU only for inference)
+    * BlazingText (though this is dependent on how it's used)
+    * Object2Vec
+    * Object Detectection (GPU for training)
+    * Image Classification (GPU for training)
+    * Semantic Segmentation (GPU for training)
+    * Neural Topic Model
+    * KNN
+    * K-Means
+    * PCA
+    * Factorization Machines
+    * IP Insights
 
 ##### SM algorithms that support incremental training: 
   * Object Detection - MXNet
