@@ -363,9 +363,9 @@ graph LR
   * Rules can be created for object prefixes (addresses) or associated object tags
 
 ###### S3 Analytics
-Used to aid when moving between storage classes in S3 via Lifecycle Rules, or perhaps revise
-One Zone-IA/Glacier classes aren't supported
-Daily report, though takes 24-48 hours to initially start
+  * Used to aid when moving between storage classes in S3 via Lifecycle Rules, or perhaps revise
+  * One Zone-IA/Glacier classes aren't supported
+  * Daily report, though takes 24-48 hours to initially start
 
 ###### S3 Data Partioning
   * Harnesses disparate key \[path] to speed up queries (eg: Athena)
