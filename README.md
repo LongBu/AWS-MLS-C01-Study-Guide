@@ -4002,6 +4002,7 @@ Hyperparameters:
   * ﻿﻿dimension_reduction_target (also required if dimension_reduction_type parameter specified)
 
 Instance Types:
+  * Is memory-bound
   * ﻿﻿Training on CPU or GPU
     * ﻿﻿MI.m5.2xlarge
     * ﻿﻿MI.p2.xlarge
