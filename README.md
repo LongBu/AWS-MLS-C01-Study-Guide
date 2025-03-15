@@ -4233,6 +4233,7 @@ Instance Types:
     * K-Means
     * PCA
     * IP Insights
+    * BlazingText (Word2vec)
   * Supervised:
     * Factorization Machines
     * KNN
@@ -4242,7 +4243,7 @@ Instance Types:
     * Object2Vec
     * Deep AR Forecasting
     * Seq2Seq
-    * BlazingText
+    * BlazingText (Text Classification)
     * XGBoost
     * Linear Learner
     * Decision Trees
