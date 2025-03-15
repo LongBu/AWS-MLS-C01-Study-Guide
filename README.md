@@ -1331,7 +1331,7 @@ graph LR
       * Super-fast, Parallel, In-memory Calculation Engine
       * Uses columnar storage, in-memory, machine code generation
       * Accelerates interactive queries on large datasets
-    * Each user gets 10GB/month of SPICE
+    * Each user gets 10GB/month of SPICE (ceiling of 200 GB in Enterprise)
     * Highly available / durable
     * Scales to hundreds of thousands of users
   * Can share analysis (if published) or the dashboard (read only) with users or groups
