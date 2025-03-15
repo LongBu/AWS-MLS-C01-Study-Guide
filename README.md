@@ -2701,7 +2701,7 @@ Personalize Pricing
 ###### Deploying Trained Models via SageMaker
   * Save your trained model to S3
   * Can deploy two ways.
-    * Persistent endpoints for making individual predictions on demand (eg: API Gateway => λ => SM Inference Model endpoint) \[uses predict function]
+    * Persistent endpoints for making individual predictions on demand (eg: API Gateway => λ => SM Inference Model endpoint) \[uses predict function (SM SDK) or invoke_endpoint (boto3)]
     * SageMaker Batch Transform to get predictions for an entire dataset (uses transform function)
   * SageMaker deployment options
     * Inference Pipelines for more complex processing
