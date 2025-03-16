@@ -3849,7 +3849,7 @@ Hyperparameters:
 
 Instance Types:
   * ﻿﻿Only GPU supported for training (P2, P3, G4dn, G5) on a single machine only
-  * ﻿﻿Inference on CPU (C5 or M5) or GPU (P3 or G4dn)
+  * ﻿﻿Inference on CPU (C5 or M5) or GPU (P3 or G4dn)
  
 ##### Random Cut Forest
 
