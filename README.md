@@ -3809,7 +3809,7 @@ Hyperparameters:
     * batch_size, learning_rate, optimizer
   * Optimizer-specific parameters
     * weight_decay, beta_1, beta_2, eps, gamma
-    * Slightly different between MXNet and Tensorflow versions
+    * Slightly different between MXNet and Tensorflow versions
 
 Instance Types:
   * GPU instances for training (ml.p2, p3, g4dn, g5) Multi-GPU  and multi-machine OK.
