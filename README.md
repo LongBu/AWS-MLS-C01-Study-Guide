@@ -2437,7 +2437,7 @@ Personalize Pricing
     * Text (in image) detection
     * Face detection and analysis (gender, emotions, age range, etc.)
     * Face search, comparison and verification
-    * Celebrity recognition
+    * Celebrity recognition (with minimal development)
     * Video analysis
       * Objects / people / celebrities marked on timeline
       * Pathing (eg: for sports game analysis)
@@ -2945,7 +2945,7 @@ Production Variants
     * AdministratorAccess
     * DataScientist
   * Both User permissions and Predefined policies are identity policies supported by IAM
-  * If using the default IAM role, and needing S3 access (eg: SM notebook instance), it is restricted to buckets with the  'sagemaker' in the bucketname.  In order to access otherly named buckets, the S3FullAccess policy must be added to the role.  
+  * If using the default IAM role, and needing S3 access (eg: SM notebook instance), it is restricted to buckets with 'sagemaker' in the bucketname.  In order to access otherly named buckets, the S3FullAccess policy must be added to the role.  
   * Creation of role(s) to delegate access to 3rd party AWS accounts feasible
   * SM doesn't support resource-based policies, nor service linked roles
   * SM supports authorization based on resource tags, which can be attached to SM resources or past to SM via request(s).  To control access via tag, you add tag info in the condition element of the policy (eg: sagemaker:ResourceTag/key-name, aws:ResourceTag/key-name, or aws:TagKeys condition)
