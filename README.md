@@ -3410,7 +3410,7 @@ How to use:
 
 Hyperparameters:
   * predictor_type (required):binary_classifier, multiclass_classifier, or regressor
-  * num_class (required if predictor_type:multiclass_classifier):3 to 1,000,000 => 0, ..., num_classes - 1
+  * num_class (required if predictor_type:multiclass_classifier):3 to 1,000,000 => 3, ..., num_classes - 1
   * balance_multiclass_weights
     * ﻿﻿Gives each class equal importance in loss functions
   * ﻿﻿learning_rate, mini_batch_size
