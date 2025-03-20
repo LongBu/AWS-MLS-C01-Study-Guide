@@ -4243,7 +4243,7 @@ Instance Types:
 ##### SM algorithm Images
   * Both Training and Inference Image Registry paths are regionally based
   * Using the :latest tag in the registry path provides you with the most up-to-date version of the algorithm/DLC, but might cause problems with backward compatibility. Avoid using the :latest tag for production purposes in favor of using the :1 version tag to ensure that you are using a stable version.
-  * If using SM AI XGBoost image URI, do not use :latest or :1 for the image URI tag. You must specify one of the Supported versions (eg: 1.2-1, etc.)
+  * If using SM AI XGBoost image URI, do not use :latest or :1 for the image URI tag. You must specify one of the supported versions (eg: 1.2-1, etc.)
 
 ##### SM Supported Instances: 
   * SM supports a few selected types prefaced by ml.* from the t*, m*, c*, p* and r* family as hosting instance types. 
