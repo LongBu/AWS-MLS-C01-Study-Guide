@@ -4046,7 +4046,7 @@ Hyperparameters:
   * k (required)
     * ﻿﻿Choosing K is tricky
     * ﻿﻿Plot (WSS) within-cluster sum of squares (Measure how tight your clusters are) as function of K where larger values aren't producing any further benefit, measuring/optimizing the tightness of the clusters, using the "elbow method"
-  * ﻿﻿,ini_batch_size
+  * ﻿﻿ini_batch_size
   * ﻿﻿extra_center_factor: this is the x variable
   * ﻿﻿init_method: random or K-means++
 
