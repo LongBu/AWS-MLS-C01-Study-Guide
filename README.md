@@ -4211,7 +4211,6 @@ Instance Types:
   * Semantic Segmentation
   * Object2Vec
   * Seq2Seq
-  * 
 
 ##### SM Algorithms CPU and/or GPU
   * CPU Only:
