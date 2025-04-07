@@ -1058,7 +1058,7 @@ graph LR
 
 ##### Spark MLLIB
   * Distributed and scalable via cluster nodes offering the following:
-    * Classification: logistic regression, naive Bayes
+    * Classification: logistic regression, Naive Bayes (linear classifier\[s])
     * Regression
     * ﻿﻿Decision trees
     * Recommendation engine (ALS)
