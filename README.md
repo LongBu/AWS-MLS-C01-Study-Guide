@@ -2694,9 +2694,10 @@ Personalize Pricing
     * ONNX-> Used to make model compatible with an elastic interface
   * Works with custom containers built with EI- enabled Tensorflow, PyTorch, or MXNet 
   * Works with Image Classification and Object Detection built-in algorithms 
-  * add elastic inference accelerator machine type alongside a CPU instance
+  * Must provision an AWS PrivateLink VPC Endpoint for the subnets where you plan to launch accelerators
+  * Need to provide an instance role with a policy allowing user access to the instance to connect to accelerators.
+  * Add elastic inference accelerator machine type alongside a CPU instance.  When you configure an instance to launch with Amazon EI, an accelerator is provisioned in the same AZ behind the VPC endpoint.
   * Note elastic interface is now deprecated, but may still appear on the exam? 
-
 
 ###### Deploying Trained Models via SageMaker
   * Save your trained model to S3
