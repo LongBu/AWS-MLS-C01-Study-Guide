@@ -2669,10 +2669,10 @@ Personalize Pricing
 
 ###### Training on SageMaker
   * Create a training job
-    * ARN of an IAM role that SM can assume to perform the (training) tasks with the proper permissions
+    * ARN of an IAM role (RoleArn) that SM can assume to perform the (training) tasks with the proper permissions (required by built in SM algorithms)
     * URL of S3 bucket with training data
-    * ML compute/storage resources for training
-    * URL of S3 bucket for output of the trained model
+    * ML compute (CPU or GPU) and storage resources (ResourceConfig) for training (required by built in SM algorithms)
+    * URL of S3 bucket for output (OutputDataConfig) of the trained model (required by built in SM algorithms)
     * ECR path to training code
   * Training options (conducted via SM console, SM SDK, or Jupyter NB)
     * Built-in training algorithms
