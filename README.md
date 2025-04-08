@@ -2927,7 +2927,7 @@ Production Variants
   * Custom endpoint policies and S3 bucket policies can keep this secure 
   * Notebooks are Internet-enabled by default 
     * This can be a security hole
-    * If disabled, your VPC needs an interface endpoint (PrivateLink) to access AWS services or NAT Gateway to allow outbound connections, for training and hosting to work
+    * If disabled, your VPC needs an interface endpoint (PrivateLink) to privately access AWS services without the internet or a NAT Gateway to allow outbound connections, for training and hosting to work
   * Training and Inference Containers are also Internet-enabled by default
     * Network isolation is an option, but this also prevents S3 access 
 
