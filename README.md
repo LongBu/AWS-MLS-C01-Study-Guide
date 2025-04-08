@@ -2098,7 +2098,8 @@ How to choose an activation function
     | False negative rate | FNR | FN/(TP + FN) = FN/P = 1 - REC |
     | F1 Score (harmonic mean of precision and recall) | F1 | 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall) |
    
-  * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection).  
+  * Recall is a good choice of metric when you care a lot about false negatives (eg: fraud detection).
+  * Recall and FPR prioritize the identification of True cases, though recall of course prioritizes higher (eg: TPR > FPR)
   * Precision is a good choice of metric when you care a lot about false positives (eg: medical screening, drug testing).  In the event that precision is not available for such a scenario, specificity is a good choice, too, as this indicates how well the test indicates true negatives.  Specificity is effectively precision in the negative sense.
   * Be sure to read the question(s) to understand the goal, regardless of the test type
     * If they mention not wanting True cases going undetected=>recall
