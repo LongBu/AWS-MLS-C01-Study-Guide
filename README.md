@@ -665,8 +665,8 @@ graph LR
   * Perform real-time analytics on stream via SQL
   * Can utilize λ for preprocessing (near real-time)
   * Input stream can be joined with a ref table in S3
-  * Output results include streams/errors
-  * Can use either Kinesis Data Streams or Amazon Data Firehose as inputs to analyze data in kinesis
+  * Output results include streams/errors 
+  * Can use either Kinesis Data Streams or Amazon Data Firehose as inputs to analyze data in kinesis (can't ingest streaming data on it's own)
   * Pay only for resources used, though that can end up not being cheap
   * Schema discovery
   * IAM permissions to access input(s)/output(s)
