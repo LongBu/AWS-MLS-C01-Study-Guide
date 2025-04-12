@@ -3293,7 +3293,7 @@ Production Variants
     * If early stopping enabled and the value of the objective metric for the current training job is worse (higher when minimizing or lower when maximizing the objective metric) than the median value of running averages of the objective metric for previous training jobs up to the same epoch, SageMaker AI stops the current training job
   * The set of hyperparameters producing the best results can then be deployed as a model
   * It learns as it goes, so it doesn't have to try every possible combination
-  * Best to utilizes Bayesian Search or alternatively Random Search as they both leave smaller unexplored regions than say grid search which is an option.  Random Search can be useful when the hyperparameter space is large and the relationship between settings is not well understood.  Also have Hyperband (with early stopping)
+  * Best to utilizes Bayesian Search or alternatively Random Search as they both leave smaller unexplored regions than say grid search which is an option.  Random Search can be useful when the hyperparameter space is large and the relationship between settings is not well understood.  Hyperband is good with parallel jobs and early stopping so as to stop under-performing jobs and reallocate resources towards well-utilized hyperparameter configurations
   * Best Practices:
     * Don't optimize too many hyperparameters at once
     * Limit your ranges to as small a range as possible
@@ -3483,7 +3483,7 @@ Usage:
  
 Training input:
 * XGBoost for SageMaker is just open source  XGBoost
-  * Takes CSV or libsvm input.
+  * Takes CSV or LibSVM input (important side note: nothing currently in AWS services converts to LibSVM format)
     * CSV input
       * first column is the label
       * should not have a header
