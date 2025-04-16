@@ -616,6 +616,7 @@ graph LR
   * Any mention of "streaming (system[s])" and/or "real time" (big) data is of importance, kinesis is likely the best fit as it makes it easy to collect, process, and analyze real-time, streaming data to allow quick reactions from information taken in.  
   * Output can be classic or enhanced fan-out consumers
   * Accessed via VPC
+  * Programmatically accessed via Kinesis API (real-time) or KPL/KCL (buffered; non-real-time)
   * IAM access => Identity-based (used by users and/or groups)
   * Types:
     * Kinesis Data Streams
@@ -4432,8 +4433,10 @@ Instance Types:
 | IGW | Internet Gateway |
 | IOPS | Input/Output operations per second |
 | IOT | Internet of Things |
+| KCL | Kinesis Client Library |
 | KMS | Key Management Service |
 | KNN | K-Nearest Neighbors |
+| KPL | Kinesis Producer Library |
 | KPI | Key Performance Indicator |
 | LSTM | Long Short Term Memory |
 | ML | Machine Learning |
