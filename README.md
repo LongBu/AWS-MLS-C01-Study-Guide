@@ -52,6 +52,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Enhanced VPC Routing forces all COPY and UNLOAD traffic moving between your cluster and data repositories through your VPCs, otherwise over the internet routing, including to other AWS services
   * Can configure to automatically copy snapshots to other Regions
   * Large inserts are better (S3 copy, firehose)
+  * Size limit of 2PB
 
 ##### Amazon Redshift Spectrum:
   * Resides on dedicated Amazon Redshift servers independent of your cluster
