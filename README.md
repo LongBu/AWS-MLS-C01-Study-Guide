@@ -3004,6 +3004,10 @@ Production Variants
   * Ground Truth creates its own model as images are labeled by people
   * ﻿﻿As this model learns, only images the model isn't sure about are sent to human labelers.
   * ﻿﻿This can reduce the cost of labeling jobs by 70%
+  * Accuracy can be improved via:
+    * Annotation Consolidation: data object sent to multiple workers, stripped of ouliers, and then weighted concerning more reliable results utilizing an Anotation Consolidation Algorithm (automated)
+    * Annotation interface best practices; eg: provide brief instructions with positive/negative case or mask outside bounding box (automated)
+    * Ground Truth label verification and adjustment involves workers verifying and correcting labels (manual)
   * human labelers include
     * ﻿﻿Mechanical Turk
     * internal team (your company?)
