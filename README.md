@@ -1224,6 +1224,7 @@ graph LR
     * We actually use the log of the TF-IDF (sometimes depending on magnitudes), since word frequencies are distributed exponentially. That gives us a better weighting of a words overall popularity
   * TF-IDF assumes a document is a "bag of words"
     * Parsing documents into a bag of words can be most of the work
+    * Bag of words can be used to show the statistics/occurence of individual words in a document
     * Words can be represented as a hash value (number) for efficiency
     * What about synonyms? Various tenses? Abbreviations? Capitalizations? Misspellings?
   * Doing this at scale is the hard part (Spark can help here)
