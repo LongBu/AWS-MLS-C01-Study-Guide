@@ -2498,6 +2498,8 @@ Personalize Pricing
     * Recurrent Neural Network - AutoRegressive recurrent network
     * Best for large datasets
     * Accepts related forward-looking time series & metadata
+    * Able to capture complex temporal patterns, including seasonality
+    * Can automatically handle correlated time series data
   * Prophet ($$)
     * Additive model with non-linear trends and seasonality
   * NPTS ($)
@@ -2506,6 +2508,7 @@ Personalize Pricing
   * ARIMA ($)
     * Autoregressive integrated moving average
     * Commonly used for simple datasets (<100 time series)
+    * Not effective for complex temporal patterns (eg: Seasons) or correlations with other data
   * ETS ($)
     * Exponential Smoothing
     * Commonly used for simple datasets (<100 time series)
