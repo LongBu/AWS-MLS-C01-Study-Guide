@@ -3076,6 +3076,7 @@ Production Variants
   * ETL Visual interface (in SageMaker Studio) to prepare data for machine learning
   * Import data
   * Visualize data
+  * If validating a model (without imputing), eg: a daily forecast, resample the data using the aggregate daily total to compare against.  
   * Transform data (300+ transformations to choose from)
     * Or integrate your own custom forms with pandas, PySpark, PySpark SQL
   * "Quick Model" to train your model with your data and measure its results
