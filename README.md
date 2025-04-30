@@ -1021,7 +1021,7 @@ graph LR
     * predict function harnesses the model to output inferences based on input
     * good for preprocessing data (input data=>normal distribution \[MinMaxScaler])
       * to avoid unequal weightings, scale to the around the mean for each column, but if scales vastly different use MinMaxScaler to have values between 0 and 1
-      * OrdinalEncoder to encode multi-categorical data to int array
+      * OrdinalEncoder to encode multi-categorical data to an int array
       * LabelBinarizer to encode binary-categorical data to 0 and 1
     * Metrics:
       * mutual_info_regression: metric used for ranking features that are continuous (display in ranked order)
@@ -2409,8 +2409,10 @@ Personalize Pricing
     * eg: two callers could be transcribed separately
     * Merging based on timing of "utterances"
   * Custom Vocabularies
-    * Vocabulary Lists just a list of special words - names, acronyms)
+    * Vocabulary Lists just a list of special words - names, acronyms, etc.
     * Vocabulary Tables (can include "SoundsLike", "IPA", and "DisplayAs")
+    * Does not consider commentary context
+  * Custom Language Models - designed to improve transcription accuracy for domain-specific context/speech, which would fall out of what would be considered normal everyday speech 
 
 ##### DeepLens: 
   * Deep learning-enabled video camera service
