@@ -2324,8 +2324,8 @@ Personalize Terminology to remember
   * Datasets
     * Users, Items, Interactions
   * Recipes
-    * USER_PERSONALIZATION - recommendations for a specific user
-    * PERSONALIZED_ RANKING - give a list of items that are rent by end, user and a personal way
+    * USER_PERSONALIZATION - recommendations for a specific user and can be filtered (eg: already purchased items)
+    * PERSONALIZED_RANKING - give a list of items that are ranked by an end user in a personal way, though doesn't consider history and can't be filtered
     * RELATED_ITEMS - similar items per a given item based on aggregate customer behavior
   * Solutions
     * Trains the model
