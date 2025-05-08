@@ -1151,6 +1151,7 @@ graph LR
   * Potential Solutions:
     * Create additional "positive" cases (eg: SMOTE/GAN)
     * Optimize the cost function to penalize the model for predicting negative outcomes when the actual outcome is positive (punish false negatives, or in other words, false negatives have a larger impact than that of false positives)
+  * If having to use unmodified, unbalanced data some good metrics would be F1 Score, Recall, Precision and AUROC
 
 #### Oversampling
   * Duplicate samples from the minority class
