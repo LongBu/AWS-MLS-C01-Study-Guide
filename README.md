@@ -3746,6 +3746,7 @@ Usage:
   * ﻿﻿Identify all objects in an image with bounding boxes
   * ﻿﻿Detects and classifies objects with a single deep neural network
   * Better suited to detect multiple objects than Image Classification in an image as it provides a bounding box around class(es)
+  * Not meant for Image Classification at Scale => Image Classification
   * ﻿﻿Classes are accompanied by confidence scores
   * ﻿﻿Can train from scratch, or use pre-trained models based on ImageNet
 
@@ -3811,6 +3812,7 @@ Instance Types:
 
 Usage:
   * Assign one or more labels to an image
+  * Utilizes a multilayer CNN
   * ﻿﻿Doesn't tell you where objects are, just what objects are in the image
   * Not as well suited to detect multiple objects in an image as Object Detection, due to the lack of placement context
 
