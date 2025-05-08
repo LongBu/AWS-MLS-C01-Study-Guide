@@ -2080,6 +2080,8 @@ How to choose an activation function
       * Most models require feature data to at least be scaled to comparable values
       * Otherwise features with larger magnitudes will have more weight than they should
         * Example: modeling age and income as features - incomes will be much higher values than ages
+        * Normalization of numeric variables can help the learning process if are very large range differences between numeric variables as those with the highest magnitude could dominate the ML model, no matter if the feature is correlated with the target or not
+        * Normalization isn't a good solution to deal with outliers, but is so for dealing with large magnitudes.  
         * Scikit_learn has a preprocessor module that helps (especially outliers)
           * MinMaxScaler \[vars => 0 to 1] column-wise, if features within columns
           * MaxAbsScaler \[vars => -1 to 1]
