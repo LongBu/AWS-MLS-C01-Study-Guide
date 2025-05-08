@@ -750,6 +750,9 @@ graph LR
   * Sensor data transferred to your model
   * The AWS loT Device SDK can connect via MQTT
 
+##### AWS IoT
+  * AWS IoT Rules listen for MQTT messages so as to match and execute a range of actions \[eg: send SNS notification(s)]
+
 ### Identify and implement a data transformation solution. 
   * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
   * Transforming data transit (ETL: Glue, EMR, AWS Batch)
