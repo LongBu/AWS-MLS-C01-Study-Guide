@@ -1164,6 +1164,13 @@ graph LR
   * Instead of creating more positive samples, remove negative ones
   * Throwing data away is usually not the right answer
     * Unless you are specifically trying to avoid "big data" scaling issues
+
+#### Random Sampling
+  * Most popular sampling technique, though if time-series based, needs to be mindful of temporal order so as to keep the training relevant
+
+#### Stratified Sampling
+  * If some strata are unique in your data, this technique ensures proportional representation of each representational class, allowing you to understand how each group compares with each other
+  * Divides data per designated column, selecting samples randomly from each strata to then combine these samples into a stratified population sample, which might be helpful to mitigate class imbalances
    
 #### SMOTE 
   * Artificially generate new samples of the minority class using nearest neighbors
