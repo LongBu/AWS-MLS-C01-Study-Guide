@@ -3339,7 +3339,7 @@ Production Variants
       * Other reasons to use warm start:
         * Faster than a new SM automatic hyperparameter tuning job
         * Tune a model with new data
-        * Stopped a previous hyperparameter job early or had it stoppe for whatever reason
+        * Stopped a previous hyperparameter tuning job early or had it stop for whatever reason
         * Change hyperparameter ranges from a previous tuning job, edit static hyperparameters to tunable or vice versa
         * Increase the amount of training jobs spaced out of several tuning jobs per the results of said increments
 
