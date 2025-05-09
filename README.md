@@ -1121,6 +1121,7 @@ graph LR
   * Replace missing values with the mean value from the rest of the column (single feature)
   * Fast & easy, won't affect mean or sample size of overall data set
   * Median may be a better choice than mean when outliers are present
+  * Certainly better than imputing 0
   * But it's generally pretty terrible.
     * Only works on column level, misses correlations between features
     * Can't use on categorical features (imputing, with most frequent value can work in this case, though)
@@ -1131,6 +1132,7 @@ graph LR
     * you don't have a lot of time
   * Will never be the right answer for the "best" approach.
   * Almost anything is better. Can you substitute another similar field perhaps? (i.e., review summary vs. full text)
+  * However, if generalization is the goal and leaving in outliers will have a negative impact this might be beneficial
 ##### KNN: Find K "nearest" (most similar) rows and average their values
   * Assumes numerical data, not categorical
   * There are ways to handle categorical data (Hamming distance)
