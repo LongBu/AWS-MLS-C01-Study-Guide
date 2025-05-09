@@ -2288,12 +2288,14 @@ graph LR
 ##### Contact Lens for Amazon Connect
   * For customer support call centers
   * Ingests audio data from recorded calls
+  * Transcribes in multiple languages
   * Allows search on calls / chats
   * Sentiment analysis
   * Find "utterances" that correlate with successful calls
   * Categorize calls automatically
   * Measure talk speed and interruptions
-  * Theme detection: discovers emerging issues
+  * Monitor live and recorded conversations
+  * Theme detection: discovers emerging issues, trends and themes
 
 ##### Amazon Personalize:
   * Fully managed ML service to build real-time personalized recommendations applications (same one as Amazon)
