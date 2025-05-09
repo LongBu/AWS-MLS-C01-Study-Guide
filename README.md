@@ -3335,7 +3335,13 @@ Production Variants
     * Don't run too many training jobs concurrently
       * This limits how well the process can learn as it goes (one at a time is best)
     * Make sure training jobs running on multiple instances report the correct objective metric in the end
-    * If expanding the hyperparameter range for a new hyperparameter tuning job, utilize a warm start to a hyperparameter tuning job (bayesian or random search), which utilizes information from previous hyperparameter tuning jobs to understand the best combination of hyperparameters, to increase the performance/efficiency of the new hyperparameter tuning job.  
+    * If expanding the hyperparameter range for a new hyperparameter tuning job, utilize a warm start to a hyperparameter tuning job (bayesian or random search), which utilizes information from previous hyperparameter tuning jobs to understand the best combination of hyperparameters, to increase the performance/efficiency of the new hyperparameter tuning job.
+      * Other reasons to use warm start:
+        * Faster than a new SM automatic hyperparameter tuning job
+        * Tune a model with new data
+        * Stopped a previous hyperparameter job early or had it stoppe for whatever reason
+        * Change hyperparameter ranges from a previous tuning job, edit static hyperparameters to tunable or vice versa
+        * Increase the amount of training jobs spaced out of several tuning jobs per the results of said increments
 
 #### SageMaker Autopilot
   * ﻿﻿Automates:
