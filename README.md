@@ -618,6 +618,8 @@ graph LR
   * Output can be classic or enhanced fan-out consumers
   * Accessed via VPC
   * Programmatically accessed via Kinesis API (real-time) or KPL/KCL (buffered; non-real-time)
+    * KCL can only consume streaming data in Kinesis (eg: not S3)
+    * KCL enables fault-tolerant consumption of data from streams and provide scaling support for Kinesis Data Streams applications
   * IAM access => Identity-based (used by users and/or groups)
   * Types:
     * Kinesis Data Streams
