@@ -4435,7 +4435,7 @@ Instance Types:
   * If classification is needed at the "pixel" level, look for a solution utilizing Semantic Segmentation
   * If metadata mentioned, Glue is likely part of the solution
   * If a fully managed (scalable) service used transfer of any data/logs/text/videos => Amazon Data Firehose
-  * If anything concerning 'celebrity' detection (with minimal development), Rekognition is likely part of the solution.
+  * If anything concerning 'celebrity' detection (with minimal development), Rekognition is likely part of the solution, and if video based input => Amazon Rekognition Video
   * Built in SM algorithms are not customizable (containers, frameworks, archetecture, etc.)
   * Remember the following algorithm optimizers: Adam, AdaGrad, SGD, Rmsprop, and adadelta
 
