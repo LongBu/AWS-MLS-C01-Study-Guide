@@ -2769,7 +2769,7 @@ graph LR
   * Can host both CPU or GPU based models
   * Reduces hosting costs by improving endpoint utilization with fewer resources compared with using single-model endpoints 
   * Reduces deployment overhead because Sagemaker manages loading models in memory based on traffic patterns to the endpoint
-  * Endpoint usage should consider cold start-related delay penalties, though if you have models with significantly higher TPS or latency needs, a single-model endpoint
+  * Endpoint usage should consider cold start-related delay penalties, though if you have models with significantly higher TPS or latency needs, a single-model endpoint might be a better fit
   * Can be used in conjunction with SM Inference pipeline
   * Can be utilized with built in SM algorithms as they have Native Support for containers
 
