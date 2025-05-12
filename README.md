@@ -737,7 +737,7 @@ graph LR
     * used to capture, process and store video streams in real-time such as smartphone/security/body camera(s), AWS DeepLens, audio feeds, images, RADAR data; RTSP camera.
     * One producer per video streams
     * Video playback capability
-    * RTSP based cameras will work for a small load (~100), but if scaling is necessary utilize AWS DeepLens cameras 
+    * RTSP-proxy based cameras will work for a small load (~100), but if scaling is necessary utilize AWS DeepLens cameras 
   * Consumers
     * custom build server (MXNet, Tensorflow, etc.)
       * This may pass on the data to db (checkpoint stream per processing status), decode the input frames and pass onto SageMaker, or even inference results to Kinesis Streams=>λ for downstream notifications
