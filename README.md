@@ -2763,6 +2763,16 @@ graph LR
   * Create an HTTPS endpoint - Provide the endpoint configuration to SageMaker. The service launches the ML compute instances and deploys the model(s) as specified in the configuration.  Note a single SM endpoint can only serve one model.
   * Note: If wanting to substitute in a different model, de-register the endpoint as a scalable target. Update the endpoint using a new endpoint configuration with the latest model Amazon S3 path. Finally, register the new endpoint as a scalable target, again.
 
+###### SM Multi-Model Endpoints
+  * Can deploy large number of models
+  * Use the same ML framework on a shared serving container
+  * Can host both CPU or GPU based models
+  * Reduces hosting costs by improving endpoint utilization with fewer resources compared with using single-model endpoints 
+  * Reduces deployment overhead because Sagemaker manages loading models in memory based on traffic patterns to the endpoint
+  * Endpoint usage should consider cold start-related delay penalties, though if you have models with significantly higher TPS or latency needs, a single-model endpoint
+  * Can be used in conjunction with SM Inference pipeline
+  * Can be utilized with built in SM algorithms as they have Native Support for containers
+
 ###### SM Automatic Scaling 
   * You set up a scaling policy to define target metrics, min/max capacity, cooldown periods 
   * Works with CloudWatch 
