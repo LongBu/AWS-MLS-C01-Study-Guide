@@ -1226,6 +1226,7 @@ graph LR
       * Seasonal variation is constant => seasonality + trends + noise = TS model
     * Multiplicative model
       * seasonal variation increases as the trend increases => seasonality * trends * noise = TS model
+  * If developing a model, avoid harnessing static attributes, or limited data in favor of data detailing correlational activity
      
 ### NLP
 
