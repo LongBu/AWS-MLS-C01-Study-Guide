@@ -753,6 +753,9 @@ graph LR
 
 ##### AWS IoT
   * AWS IoT Rules listen for MQTT messages so as to match and execute a range of actions \[eg: send SNS notification(s)]
+  * IoT Core utilized to conduct sensor data
+  * IoT Analytics is built for analyzing highly unstructured IoT data
+  * IoT Greengrass is built for local inference on deployed devices
 
 ### Identify and implement a data transformation solution. 
   * Handle ML-specific data using map reduce (Hadoop, Spark, Hive) 
