@@ -4081,6 +4081,7 @@ Usage:
     * ﻿﻿You define what "similar" means
     * ﻿﻿Measured by Euclidean distance
   * ﻿﻿Web-scale K-Means clustering
+  * Mostly used on numeric data that is continuous (note: image data is not numeric and is not continuous)
 
 Training input:
   * ﻿﻿Train channel, optional test
