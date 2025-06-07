@@ -557,7 +557,7 @@ graph LR
 ```
 
 ##### AWS Data Pipeline (DP)
-  * Data sources can be on-prem or AWS
+  * Data sources can be on-prem or AWS (Can be integrated with EMR and EMR Spark Streaming for processing and transformation of data)
   * Destinations: S3, RDS, DynamoDB, Redshift, EMR
   * Conducted with EC2 or EMR instances managed by DP
   * Manages task dependencies
@@ -626,6 +626,7 @@ graph LR
     * Amazon Data Firehose (formerly Kinesis Data Firehose)
     * Kinesis Analytics
     * Kinesis Video Streams
+    * Can be integrated with EMR and EMR Spark Streaming for processing and transformation of data
 
 
 ##### Amazon Kinesis Data Streams:
@@ -1216,9 +1217,14 @@ graph LR
   * Every feature is a new dimension
   * Much of feature engineering is selecting the features most relevant to the problem at hand
     * This often is where domain knowledge comes into play
-  * Unsupervised dimensionality reduction techniques can also be employed to distill many teatures into fewer features
+  * Unsupervised dimensionality reduction techniques can also be employed to distill many features into fewer features
     * РСА
     * K-Means
+   
+### Feature Dependencies:
+  * Features that are perfectly linearly dependent=>leads to a singular matrix=>infinity solutions
+  * Vectors are linearly dependent if at least one vector of the set can be expressed as a linear combination of the other vectors, which equates to a homogenous system having a non-zero solution
+  * Highly correlated features can be alleviated by Lasso Regularization and PCA, which otherwise can cause trouble for models to arrive a solutions
 
 ### Time Series Analysis:
   * Discrete samples taken over a period of time
