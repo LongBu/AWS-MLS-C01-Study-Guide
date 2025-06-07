@@ -2718,6 +2718,7 @@ Personalize Pricing
     * ML compute (CPU or GPU) and storage resources (ResourceConfig) for training (required by built in SM algorithms)
     * URL of S3 bucket for output (OutputDataConfig) of the trained model (required by built in SM algorithms)
     * ECR path to training code
+    * Can't directly use ECS, this is used by AWS SM via ECR
   * Training options (conducted via SM console, SM SDK, or Jupyter NB)
     * Built-in training algorithms
       * output is of model.tar.gz format specified within an S3 bucket from the OutputDataConfig S3OutputPath of the create_training_job call
