@@ -2879,13 +2879,13 @@ RUN pip install sagemaker-containers
 
 COPY train.py /opt/ml/code/train.py 
 
-\# Defines train.py as script entrypoint 
+\# Defines train.py as script entrypoint
 
 ENV SAGEMAKER_PROGRAM train.py 
 
 
 Environment variables 
-  * SAGEMAKER_PROGRAM=>env variable must be defined if defining your container from scratch
+  * SAGEMAKER_PROGRAM=>env variable must be defined as the entrypoint, if defining your container from scratch
     * Run a script inside /opt/ml/code 
   * SAGEMAKER_TRAINING_MODULE =>load libraries and modules
   * SAGEMAKER_SERVICE_MODULE  =>load libraries and modules
