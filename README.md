@@ -3245,7 +3245,12 @@ Production Variants
     * Define rules for detecting unwanted conditions while training
     * A debug job is run for each rule you configure
     * Logs & fires a CloudWatch event when the rule is hit
+  * SageMaker Debugger Insights Dashboard
   * Integrates with SM studio via SM Studio Debugger Dashboards
+  * Built-in actions to receive notifications or stop training 
+    * Stop Training(), Email), or SMS()
+    * In response to Debugger Rules in SM studio integration
+    * Sends notifications via SNS
   * Auto-generated training reports
   * Able to provide suggestions  through interactive visualizations  for viewing and analysis to identify the root cause(s) collected from metrics and vectors to train lighter, more efficient (eg: less neuron[s] layer[s]) and additionally cheaper model(s)
   * Real time monitoring: debug and profile data while training is ongoing to find issues early, stop training, fix issue(s), and accelerate prototyping to save time and money
@@ -3253,26 +3258,21 @@ Production Variants
     * Monitor system performance bottlenecks and detect training issues automatically
     * Profile model framework operations
     * Debug model parameters
+  * Debugger APIs available in GitHub
+    * Construct hooks & rules for CreateTrainingJob and DescribeTrainingJob APIs
+      * DescribeTrainingJob is helpful to assess training failures
+    * SMDebug client library lets you register hooks for accessing training data
+  * Debugger ProfilerRule
+    * ProfilerReport
+    * Hardware system metrics (CPUBottlenck, GPUMemoryIncrease, etc)
+    * Framework Metrics (MaxInitialization Time, OverallFrameworkMetrics, StepOutlier); these metrics are hyperparameters
+  * Profiling system resource usage and training
   * Supported Frameworks & Algorithms:
     * Tensorflow
     * PyTorch
     * MXNet
     * XGBoost
     * SageMaker generic estimator (for use with custom training containers)
-  * Debugger APIs available in GitHub
-    * Construct hooks & rules for CreateTrainingJob and DescribeTrainingJob APIs
-      * DescribeTrainingJob is helpful to assess training failures
-    * SMDebug client library lets you register hooks for accessing training data
-  * SageMaker Debugger Insights Dashboard
-  * Debugger ProfilerRule
-    * ProfilerReport
-    * Hardware system metrics (CPUBottlenck, GPUMemoryIncrease, etc)
-    * Framework Metrics (MaxInitialization Time, OverallFrameworkMetrics, StepOutlier); these metrics are hyperparameters
-  * Built-in actions to receive notifications or stop training 
-    * Stop Training(), Email), or SMS()
-    * In response to Debugger Rules in SM studio integration
-    * Sends notifications via SNS
-  * Profiling system resource usage and training
 
 #### SageMaker Model Monitor
   * Get alerts on quality deviations, drift, etc. on your deployed models (via CloudWatch); set up via SM studio
