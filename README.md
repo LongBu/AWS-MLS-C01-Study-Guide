@@ -3241,7 +3241,7 @@ Production Variants
 
 #### SageMaker Debugger
   * Saves internal model state at periodical intervals
-    * Gradients / tensors / training weights / gradients / biases / neuron(s) / activation outputs over time as a model is trained
+    * gradients / tensors / training weights / biases / neuron(s) / activation outputs over time as a model is trained
     * Define rules for detecting unwanted conditions while training
     * A debug job is run for each rule you configure
     * Logs & fires a CloudWatch event when the rule is hit
