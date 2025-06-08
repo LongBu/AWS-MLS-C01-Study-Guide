@@ -3248,7 +3248,7 @@ Production Variants
   * SageMaker Debugger Insights Dashboard
   * Integrates with SM studio via SM Studio Debugger Dashboards
   * Built-in actions to receive notifications or stop training 
-    * Stop Training(), Email), or SMS()
+    * Stop Training(), Email(), or SMS()
     * In response to Debugger Rules in SM studio integration
     * Sends notifications via SNS
   * Auto-generated training reports
