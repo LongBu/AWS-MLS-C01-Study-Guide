@@ -3241,14 +3241,16 @@ Production Variants
 
 #### SageMaker Debugger
   * Saves internal model state at periodical intervals
-    * Gradients / tensors over time as a model is trained
+    * Gradients / tensors / training weights / gradients / biases / neuron(s) / activation outputs over time as a model is trained
     * Define rules for detecting unwanted conditions while training
     * A debug job is run for each rule you configure
     * Logs & fires a CloudWatch event when the rule is hit
   * Integrates with SM studio via SM Studio Debugger Dashboards
   * Auto-generated training reports
+  * Able to provide suggestions  through interactive visualizations  for viewing and analysis to identify the root cause(s) collected from metrics and vectors to train lighter, more efficient (eg: less neuron[s] layer[s]) and additionally cheaper model(s)
+  * Real time monitoring: debug and profile data while training is ongoing to find issues early, stop training, fix issue(s), and accelerate prototyping to save time and money
   * Built-in rules:
-    * Monitor system bottlenecks
+    * Monitor system performance bottlenecks and detect training issues automatically
     * Profile model framework operations
     * Debug model parameters
   * Supported Frameworks & Algorithms:
@@ -3266,9 +3268,9 @@ Production Variants
     * ProfilerReport
     * Hardware system metrics (CPUBottlenck, GPUMemoryIncrease, etc)
     * Framework Metrics (MaxInitialization Time, OverallFrameworkMetrics, StepOutlier); these metrics are hyperparameters
-  * Built-in actions to receive notifications or stop training
+  * Built-in actions to receive notifications or stop training 
     * Stop Training(), Email), or SMS()
-    * In response to Debugger Rules
+    * In response to Debugger Rules in SM studio integration
     * Sends notifications via SNS
   * Profiling system resource usage and training
 
