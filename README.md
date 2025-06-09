@@ -2703,6 +2703,13 @@ Personalize Pricing
     * using a shell script to customize a notebook instance
   * Stop notebooks when not in use to not incur charges
   * Terminate session deployments when not in use to not incur charges
+  * SM runs the following job types in a VPC by default
+    * Processing
+    * Training
+    * Model hosting
+    * Batch transform
+    * Amazon SM Clarify
+    * SM Compilation
 
 
 ###### SageMaker Processing
