@@ -3548,7 +3548,7 @@ Usage:
   * Can be used for:
     * classification
     * regression: using regression trees
-
+  * Good for static, non time series based attributes
  
 Training input:
 * XGBoost for SageMaker is just open source  XGBoost
@@ -3614,6 +3614,8 @@ Usage:
   * Allows you to train the same model over several related time series
   * Can train over several related times series at once, not limited to single time series. Good if these multiple times series are interdependent, it can learn those relationships to create a better model to generalize to a given singular time series. 
   * Finds frequencies and seasonality
+  * AR in Deep AR stands for AutoRegressive recurrent network
+  * Not a fit if attributes are static, non time series based
 
 Training input:
   * JSON lines format
