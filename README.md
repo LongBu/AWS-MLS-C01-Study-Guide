@@ -245,6 +245,7 @@ sequenceDiagram
     * Between 3-63 characters long
     * No uppercase
     * No underscores
+  * Need to be marked private to block/deny internet traffic
 
 ###### Objects/Files
    * Each has a key, it's full path within the s3 bucket including the object/file separated by backslashes ("/")
