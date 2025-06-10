@@ -3414,6 +3414,9 @@ Production Variants
     * Don't run too many training jobs concurrently
       * This limits how well the process can learn as it goes (one at a time is best)
     * Make sure training jobs running on multiple instances report the correct objective metric in the end
+    * If increasing from say 1 GPU to multiple GPUs (to speed up training)
+      * Increase the mini-batch size by the a factor of the number of GPUs to keep the mini-batch size per GPU consistent.
+      * Increase the learning rate as this will increase the rate of convergence with the larger mini-batch size, since keeping the learning rate the same, the average step size is unchanged, leading to a lesser degree of step savings to converge
     * If expanding the hyperparameter range for a new hyperparameter tuning job, utilize a warm start to a hyperparameter tuning job (bayesian or random search), which utilizes information from previous hyperparameter tuning jobs to understand the best combination of hyperparameters, to increase the performance/efficiency of the new hyperparameter tuning job.
       * Other reasons to use warm start:
         * Faster than a new SM automatic hyperparameter tuning job
