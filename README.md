@@ -187,10 +187,10 @@ sequenceDiagram
 
 ##### AWS Snow Family: 
   * Offline devices to perform data migrations
-  * If it takes more than a week to transfer over the network, use Snowball devices!
+  * If it takes more than a week to transfer over the network, use Snow devices!
 
 ##### Snowball Edge (for data transfers)
-  * Physical data transport solution:moveTBs or PBs of data in or out of AWS
+  * Physical data transport solution: move TBs or PBs of data in or out of AWS
   * Alternative to moving data over the network (and paying network fees)
   * Pay per data transfer job with speeds up to 100 Gbit/sec
   * Provide block storage and Amazon S3-compatible object storage
