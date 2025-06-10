@@ -194,11 +194,9 @@ sequenceDiagram
   * Alternative to moving data over the network (and paying network fees)
   * Pay per data transfer job with speeds up to 100 Gbit/sec
   * Provide block storage and Amazon S3-compatible object storage
-  * Snowball Edge Storage Optimized
-  * 80 TB of HDD capacity for block volume and S3 compatible object storage
-  * Snowball Edge Compute Optimized
-  * 42 TB of HDD capacity for block volume and S3 compatible object storage
-  * Usecases: large data cloud migrations, decommission, disaster recovery
+  * Snowball Edge Storage Optimized - 80 TB of HDD capacity for block volume and S3 compatible object storage
+  * Snowball Edge Compute Optimized - 42 TB of HDD capacity for block volume and S3 compatible object storage
+  * Use cases: large data cloud migrations, decommission, disaster recovery
 
 ##### AWS Snowcone
   * Small, portable computing, anywhere, rugged & secure, withstands harsh environments
