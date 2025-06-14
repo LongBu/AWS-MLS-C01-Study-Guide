@@ -3167,7 +3167,7 @@ Production Variants
 #### SageMaker Data Wrangler
   * ETL Visual interface (in SageMaker Studio) to prepare data for machine learning
   * Import data
-  * Data Quality and Insights Report provides a data quality and insights report that automatically verifies data quality imported into Data Wrangler (such as missing values, invalid values, duplicate rows, data types, and counts related therein) and helps detect anomalies (such as outliers, class imbalance, data leakage, and counts related therein) in your data to help you clean and process your data 
+  * Data Quality and Insights Report provides a report that automatically verifies data quality imported into Data Wrangler (such as missing values, invalid values, duplicate rows, data types, and counts related therein) and helps detect anomalies (such as outliers, class imbalance, data leakage, and counts related therein) to help you clean and process your data 
   * Visualize data
   * If validating a model (without imputing), eg: a daily forecast, resample the data using the aggregate daily total to compare against.  
   * Transform data (300+ transformations to choose from)
