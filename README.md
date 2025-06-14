@@ -2548,7 +2548,7 @@ Personalize Pricing
   
 ##### Amazon Translate:
   * Natural and accurate language translation using deep learning
-  * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently 
+  * Allows localization of content (eg applications/websites) for international users, and to easily translate large volumes of text efficiently (input can only be text)
   * Supports custom terminology
     * CSV or TMX format
     * Appropriate for proper names, brands, etc.
