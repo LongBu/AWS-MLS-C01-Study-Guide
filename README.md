@@ -2795,6 +2795,7 @@ Personalize Pricing
   * Need to provide an instance role with a policy allowing user access to the instance to connect to accelerators.
   * Add elastic inference accelerator machine type alongside a CPU instance.  When you configure an instance to launch with Amazon EI, an accelerator is provisioned in the same AZ behind the VPC endpoint.
   * Note elastic interface is now deprecated, but may still appear on the exam? Apparently this is AWS Inferentia?
+  * If your model supports GPU usage, this could reduce latency if utilized for inference
 
 ###### Deploying Trained Models via SageMaker
   * Save your trained model to S3
