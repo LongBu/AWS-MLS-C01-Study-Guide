@@ -4521,6 +4521,7 @@ Instance Types:
   * If anything concerning 'celebrity' detection (with minimal development), Rekognition is likely part of the solution, and if video based input => Amazon Rekognition Video
   * Built in SM algorithms are not customizable (containers, frameworks, archetecture, etc.)
   * Remember the following algorithm optimizers: Adam, AdaGrad, SGD, Rmsprop, and adadelta
+  * If a question's premise specifies the prescense of labeled or unlabled data, this should grant insight into eliminating either unsupervised or supervised algorithms
 
 ## Acronyms
 
