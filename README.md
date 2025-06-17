@@ -3114,8 +3114,9 @@ Production Variants
     * ﻿﻿Mechanical Turk
     * internal team (your company?)
     * Professional labeling companies
-  * Alternatives to generate training labels:
-    * ﻿﻿Rekognition=>Automatically classify images
+  * Alternatives to generate training labels (can be faster, but might be less accurate):
+    * ﻿﻿Rekognition=>Automatically classify images or videos
+    * Transcribe=>Convert video/audio to text
     * ﻿﻿Comprehend=>Automatically classify text by topics, sentiment
     * ﻿﻿Any pre-trained model or unsupervised technique that may be helpful
 
