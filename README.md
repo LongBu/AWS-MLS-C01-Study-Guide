@@ -2794,7 +2794,7 @@ Personalize Pricing
   * Must provision an AWS PrivateLink VPC Endpoint for the subnets where you plan to launch accelerators
   * Need to provide an instance role with a policy allowing user access to the instance to connect to accelerators.
   * Add elastic inference accelerator machine type alongside a CPU instance.  When you configure an instance to launch with Amazon EI, an accelerator is provisioned in the same AZ behind the VPC endpoint.
-  * Note elastic interface is now deprecated, but may still appear on the exam? 
+  * Note elastic interface is now deprecated, but may still appear on the exam? Apparently this is AWS Inferentia?
 
 ###### Deploying Trained Models via SageMaker
   * Save your trained model to S3
@@ -3063,6 +3063,7 @@ Production Variants
     * Invocations and latency of endpoints
     * Health of instance nodes (CPU, memory, etc)
     * Ground Truth (active workers, how much they are doing)
+    * Latency metrics of OverheadLatency and ModelLatency for SM endpoint serving a single model
     * If SM training job fails without logs, ensure the S3 Training input location is correct and the training job has the correct Training Image
   * CloudTrail records actions from users, roles, and services within SageMaker 
     * Log files delivered to S3 for auditing 
