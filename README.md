@@ -3368,8 +3368,9 @@ Production Variants
         * Linear: Shift traffic in linearly spaced steps
     * If a new model doesn't scale, Auto-rollbacks are there to go back to the blue fleet
   * Shadow Tests
-    * Compare performance of shadow variant to production
-    * You monitor in SageMaker console and decide when to promote it
+    * Compare performance of shadow variant vs production
+    * Can capture results and send them to an S3 bucket (optional)
+    * You monitor performance in SageMaker console/Cloudwatch and decide when to promote it
  
 #### SageMaker Training Compiler
   * Integrated into AWS Deep Learning Containers (DLCs)
