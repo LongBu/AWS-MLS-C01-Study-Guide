@@ -1261,7 +1261,7 @@ graph LR
   * Every feature is a new dimension
   * Much of feature engineering is selecting the features most relevant to the problem at hand
     * This often is where domain knowledge comes into play
-  * Unsupervised dimensionality reduction techniques can also be employed to distill many features into fewer features
+  * Unsupervised dimensionality reduction techniques can also be employed to distill many features into fewer features to provide insights
     * РСА
     * K-Means
    
