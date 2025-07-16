@@ -2302,7 +2302,7 @@ How to choose an activation function
   * Can map stylized words and/or acronyms to resultant output
   * Can output directely to Audio or as an audio download (mp3 or other formats)
   * Generate more customized output from text marked up with SSML including:
-    * breating, whispering
+    * breathing, whispering
     * emphasis on words
     * phonetic pronunciation
     * speech rate, pitch, pauses
@@ -4526,6 +4526,7 @@ Instance Types:
   * Built in SM algorithms are not customizable (containers, frameworks, archetecture, etc.)
   * Remember the following algorithm optimizers: Adam, AdaGrad, SGD, Rmsprop, and adadelta
   * If a question's premise specifies the prescense of labeled or unlabled data, this should grant insight into eliminating either unsupervised or supervised algorithms
+  * Pronunciation=>Lexicons
 
 ## Acronyms
 
