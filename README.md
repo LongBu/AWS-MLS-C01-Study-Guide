@@ -3345,7 +3345,10 @@ Production Variants
   * Monitoring Types:
     * Drift in data quality
       * Relative to a baseline you create
+      * Define and schedule data quality monitoring jobs
       * "Quality" is just statistical properties of the features
+      * Integrates with Cloudwatch
+      * Integrates with SM Studio, which can enable the data quality mointoring and visualize real time endpoint results
     * Drift in model quality (accuracy, etc)
       * Works the same way with a model quality baseline
       * Can integrate with Ground Truth labels (what humans say) comparing classification drift and model quality versus these attributes to alert if it diverges too much
