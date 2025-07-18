@@ -1268,7 +1268,7 @@ graph LR
 ### Feature Dependencies:
   * Features that are perfectly linearly dependent=>leads to a singular matrix=>infinity solutions
   * Vectors are linearly dependent if at least one vector of the set can be expressed as a linear combination of the other vectors, which equates to a homogenous system having a non-zero solution
-  * Highly correlated features can be alleviated by Lasso Regularization and PCA or K-Means, which otherwise can cause trouble for models to arrive at solution(s)
+  * Highly correlated features can be alleviated by Lasso Regularization and PCA, K-Means, an autoencoder, which otherwise can cause trouble for models to arrive at solution(s)
 
 ### Time Series Analysis:
   * Discrete samples taken over a period of time
