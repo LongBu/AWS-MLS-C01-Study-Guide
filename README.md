@@ -3850,7 +3850,8 @@ Instance Types:
 ##### Object Detectection
 
 Usage:
-  * ﻿﻿Identify all objects in an image with bounding boxes
+  * ﻿﻿Identify/Locate all objects in an image with bounding boxes
+  * Count Objects
   * ﻿﻿Detects and classifies objects with a single deep neural network
   * Better suited to detect multiple objects than Image Classification in an image as it provides a bounding box around class(es)
   * Not meant for Image Classification at Scale => Image Classification
