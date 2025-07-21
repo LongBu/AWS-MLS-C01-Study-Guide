@@ -2342,6 +2342,21 @@ graph LR
     B --> C[Bot Design: intents, requests, prhases, slot values]
 ```
 
+##### Amazon Connect
+  * Cloud-based omnichannel contact center solution for handling customer interactions through voice, chat, and messaging and used to enhance functionality/analysis/experiences. 
+  * Not model based for specific (tailored) uses as is comprehend leaving analysis more open ended per input.
+  * Provides several ways to access data reporting and analysis.
+    * Downloading Historical Metrics Reports: reports in CSV format with a time range of up to the last 3 months
+    * Analytics Data Lake:
+      * Store and query contact center data.
+      * Athena to query the data lake and generate reports
+      * Amazon QuickSight can be used to build dashboards and visualizations from the data lake
+    * Amazon Connect Service APIs: retrieve data and build real-time custom reports.
+    * Streaming Contact Trace Records (CTR): stream CTR to services like Amazon Kinesis for extended retention and advanced analysis allowing integration with Amazon Athena and QuickSight, or third-party reporting applications to perform more in-depth analysis
+    * Exporting Reports to Amazon S3:
+      * Store various data, including call recordings, chat transcripts, and reports.
+      * Can configure to automatically export reports to S3, allowing other tools access for processing 
+
 ##### Contact Lens for Amazon Connect
   * For customer support call centers
   * Ingests audio data from recorded calls
