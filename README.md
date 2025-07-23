@@ -2977,7 +2977,8 @@ Using your own image
 Production Variants 
   * You can test out multiple models on live traffic using Production Variants 
     * Variant Weights tell SageMaker how to distribute traffic among them 
-    * So, you could roll out a new iteration of your model at say 10% variant weight 
+    * So, you could roll out a new iteration of your model at say 10% variant weight
+    * Can test specific variants by invoking them conditionally via the TargetVariant header (eg: EU vs US traffic) 
     * Once you’re confident in its performance, ramp it up to 100% 
   * This lets you do A/B tests, and to validate performance in real- world settings 
     * Offline validation isn’t always useful
