@@ -1372,6 +1372,7 @@ graph LR
   * Commonly used/integrated with Amazon Quicksight
   * Federated query allows SQL queries across relational, object, non-relational, custom (AWS or on-premisis) using Data Source Connectors that run on λ with results being returned and stored in S3
   * presto under the hood
+  * To integrate query with a SM endpoint, utilize USING EXTERNAL FUNCTION *given_func_name* within the query
   * supports: csv, json, orc, parquet, Auro
   * parquet or orc formats are best suited to improve query performance (eg: due to large file size) as they are splittable and compress data by default when working with Athena
   * able to query unstructured, semi-structured or structured data with in the data lake
