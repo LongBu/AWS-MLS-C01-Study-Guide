@@ -2255,7 +2255,9 @@ How to choose an activation function
   * Service to provide connectivity between certain events and resultant services such as
     * CRON job triggering (via EventBridge) a λ 
     * λ triggering (via EventBridge) SNS/SQS messages
-    * S3 Event Notifications (via EventBridge) to trigger whatever service is required
+    * S3 Event Notifications (via EventBridge) to trigger whatever service is required (eg: trigger SM Pipeline)
+    * SNS topics
+    * SM endpoint change in status due to drift
     * Event Pattern: rules specified in AWS JSON rule configs react (eg: filter) to certain service action(s) (eg: check for external generated certs that are n days away from expiration, metadata, object sizes, names, etc.)
     * When an EventBridge rule runs, it needs permission on the target (eg: \[λ, SNS, SQS, Cloudwatch Logs, API GW, etc.] resource based policy or \[Kinesis Streams, Sys Mgr Run Command, ECS tasks etc.] IAM Role must allow EventBridge)
     * Externally available to 3rd party SAAS partners
