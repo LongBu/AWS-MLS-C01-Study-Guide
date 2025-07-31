@@ -3051,7 +3051,8 @@ Production Variants
   * Training jobs run in a VPC on EC2 instances within AwS Service Accounts.  
   * You can use a private VPC for even more security (note: the following are necessary for SM to work at all within a private VPC)
   * You’ll need to set up S3 VPC endpoints
-  * Custom endpoint policies and S3 bucket policies can keep this secure 
+  * Custom endpoint policies and S3 bucket policies can keep this secure
+    * S3 bucket policies can restrict access to the given VPC endpoint and the VPC, and if the bucket is private, no public internet access
   * Notebooks are Internet-enabled by default 
     * This can be a security hole
     * If disabled, your VPC needs an interface endpoint (PrivateLink) to privately access AWS services without the internet or a NAT Gateway to allow outbound connections, for training and hosting to work
