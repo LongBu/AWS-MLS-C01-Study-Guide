@@ -4432,6 +4432,7 @@ Instance Types:
     * Naive Bayes
     * Logistic Regression
     * Recommendation Engine (ALS)
+    * Support Vector Machine (SVM)
   * Neither: Reinforcement Learning
 
 #### Identity and Access Management (IAM)
