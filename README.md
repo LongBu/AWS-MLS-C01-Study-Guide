@@ -1628,7 +1628,7 @@ graph LR
       ![Classic signs of overfitting](https://img-b.udemycdn.com/redactor/raw/2020-10-03_10-38-36-1360ed7c3e1b03e7028e82140947f65a.png)
     * Specific to NN:
       * Dropout: Remove some neurons at each Epoch During training, which forces the model to learn/spread out learning among other neurons Preventing individual neurons from overfitting specific data point(s)
-      * Early stopping is breaking early training from Epochs as accuracy levels out, preventing overfitting
+      * Early stopping is breaking early training from Epochs as accuracy (or another metric) levels out, preventing overfitting
       * Too wide/deep of a neural layer(s) ending in overfitting=> simpler model might be better
     * L1 (LASSO) / L2 (Ridge) Regularization
       * Preventing overfitting in ML in general
